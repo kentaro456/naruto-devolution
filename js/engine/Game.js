@@ -807,16 +807,16 @@ class Game {
         this._fightSetupToken = setupToken;
         const assetJobs = [
             this._withTimeout(
-                this._loadFighterAssets(this.fighter1, p1Data),
-                8000,
+                this._loadFighterAssets(this.fighter1, p1Data, setupToken, p1CharId),
+                2500,
                 `fighter assets ${p1CharId}`
             )
         ];
         if (this.fighter2) {
             assetJobs.push(
                 this._withTimeout(
-                    this._loadFighterAssets(this.fighter2, p2Data),
-                    8000,
+                    this._loadFighterAssets(this.fighter2, p2Data, setupToken, this._p2CharId),
+                    2500,
                     `fighter assets ${this._p2CharId}`
                 )
             );
@@ -942,62 +942,95 @@ class Game {
         });
     }
 
-    _loadFighterAssets(fighter, data) {
+    _loadFighterAssets(fighter, data, setupToken = this._fightSetupToken, fighterId = data?.id || fighter?.charId || 'unknown') {
         if (!data) return Promise.resolve();
-        const jobs = [this._applyComboConfigFromRoster(fighter, data)];
 
         // Form-based characters (Naruto/Sasuke) need form setup first
         if (data.sprite && typeof fighter.configureFormSprites === 'function') {
             fighter.configureFormSprites(data);
         }
 
-        // Sprite loading — await it so the round doesn't start before sprites are ready
-        if (data.sprite && typeof SpriteFactory !== 'undefined') {
-            const spriteJob = SpriteFactory.build(data.sprite, {
-                ...(data.spriteConfig || {}),
-                fallbackPath: data.thumbnail
-            }).then((result) => {
-                if (!result || !result.image) return;
-                fighter.spriteSheet = result.image;
-                fighter.useFullSprite = false;
-                if (result.frameWidth) fighter.frameWidth = result.frameWidth;
-                if (result.frameHeight) fighter.frameHeight = result.frameHeight;
-                if (result.animations) fighter.animations = result.animations;
-            }).catch((err) => {
-                console.warn('Sprite load failed:', err);
-                // Fallback: load thumbnail as single sprite
-                if (data.thumbnail) {
-                    return new Promise((resolve) => {
-                        const img = new Image();
-                        img.onload = () => {
-                            fighter.spriteSheet = img;
-                            fighter.useFullSprite = true;
-                            fighter.frameWidth = img.naturalWidth || 64;
-                            fighter.frameHeight = img.naturalHeight || 64;
-                            resolve();
-                        };
-                        img.onerror = () => resolve();
-                        img.src = data.thumbnail;
-                    });
-                }
-            });
-            jobs.push(spriteJob);
-        } else if (data.sprite) {
-            // No SpriteFactory — just load raw image
-            const rawJob = new Promise((resolve) => {
-                const img = new Image();
-                img.onload = () => {
+        const quickVisualJob = this._loadFighterFallbackVisual(fighter, data, setupToken);
+        this._hydrateFighterAssetsInBackground(fighter, data, setupToken, fighterId);
+        return Promise.all([quickVisualJob]);
+    }
+
+    _canApplyFighterAssets(fighter, setupToken) {
+        return (
+            !!fighter &&
+            this._fightSetupToken === setupToken &&
+            (fighter === this.fighter1 || fighter === this.fighter2)
+        );
+    }
+
+    _applyLoadedSpriteResult(fighter, result, setupToken) {
+        if (!result || !result.image || !this._canApplyFighterAssets(fighter, setupToken)) return false;
+        fighter.spriteSheet = result.image;
+        fighter.useFullSprite = false;
+        if (result.frameWidth) fighter.frameWidth = result.frameWidth;
+        if (result.frameHeight) fighter.frameHeight = result.frameHeight;
+        if (result.animations) fighter.animations = result.animations;
+        return true;
+    }
+
+    _loadImageIntoFighter(fighter, path, setupToken) {
+        if (!path) return Promise.resolve(false);
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () => {
+                if (this._canApplyFighterAssets(fighter, setupToken)) {
                     fighter.spriteSheet = img;
                     fighter.useFullSprite = true;
-                    resolve();
-                };
-                img.onerror = () => resolve();
-                img.src = data.sprite;
+                    fighter.frameWidth = img.naturalWidth || fighter.frameWidth || 64;
+                    fighter.frameHeight = img.naturalHeight || fighter.frameHeight || 64;
+                }
+                resolve(true);
+            };
+            img.onerror = () => resolve(false);
+            img.src = path;
+        });
+    }
+
+    _loadFighterFallbackVisual(fighter, data, setupToken) {
+        const candidates = [data?.thumbnail, data?.portrait, data?.sprite].filter(Boolean);
+        const imageCandidates = candidates.filter((candidate) => /\.(png|jpg|jpeg|gif|webp)$/i.test(String(candidate)));
+        if (!imageCandidates.length) return Promise.resolve();
+
+        let chain = Promise.resolve(false);
+        imageCandidates.forEach((path) => {
+            chain = chain.then((loaded) => {
+                if (loaded) return true;
+                return this._loadImageIntoFighter(fighter, path, setupToken);
             });
-            jobs.push(rawJob);
+        });
+        return chain.then(() => undefined);
+    }
+
+    _hydrateFighterAssetsInBackground(fighter, data, setupToken, fighterId) {
+        const startedAt = performance.now();
+        const jobs = [
+            this._applyComboConfigFromRoster(fighter, data),
+        ];
+
+        if (data?.sprite && typeof SpriteFactory !== 'undefined') {
+            jobs.push(
+                SpriteFactory.build(data.sprite, {
+                    ...(data.spriteConfig || {}),
+                    fallbackPath: data.thumbnail
+                }).then((result) => {
+                    this._applyLoadedSpriteResult(fighter, result, setupToken);
+                }).catch((err) => {
+                    console.warn(`Sprite load failed (${fighterId}):`, err);
+                })
+            );
+        } else if (data?.sprite && /\.(png|jpg|jpeg|gif|webp)$/i.test(String(data.sprite))) {
+            jobs.push(this._loadImageIntoFighter(fighter, data.sprite, setupToken));
         }
 
-        return Promise.all(jobs);
+        Promise.allSettled(jobs).then(() => {
+            if (!this._canApplyFighterAssets(fighter, setupToken)) return;
+            console.info(`[perf] fighter assets hydrated for ${fighterId} in ${Math.round(performance.now() - startedAt)}ms`);
+        });
     }
 
     /* ═══════════════════════════════════════════
@@ -2879,6 +2912,7 @@ class Game {
         if (input.heavy) pressed.push('D');
         if (input.special) pressed.push('F');
         if (input.projectile) pressed.push('E');
+        if (input.teleport) pressed.push('R');
         if (input.transform) pressed.push('G');
         if (input.dash) pressed.push('DASH');
 

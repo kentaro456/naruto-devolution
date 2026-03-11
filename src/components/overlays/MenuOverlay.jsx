@@ -62,7 +62,10 @@ export function MenuOverlay({ ui }) {
           <div className="flex items-center gap-3"><Keycap>Q</Keycap><span>Garde / Chakra</span></div>
           <div className="flex items-center gap-3"><Keycap>S</Keycap><span>Attaque rapide</span></div>
           <div className="flex items-center gap-3"><Keycap>D</Keycap><span>Attaque puissante</span></div>
-          <div className="flex items-center gap-3"><Keycap>E</Keycap><span>Technique secrète</span></div>
+          <div className="flex items-center gap-3"><Keycap>F</Keycap><span>Spécial / Jutsu</span></div>
+          <div className="flex items-center gap-3"><Keycap>1 2 3 4</Keycap><span>Techniques directes</span></div>
+          <div className="flex items-center gap-3"><Keycap>E</Keycap><span>Projectile</span></div>
+          <div className="flex items-center gap-3"><Keycap>R</Keycap><span>Téléport derrière</span></div>
           <div className="flex items-center gap-3"><Keycap>G</Keycap><span>Éveil</span></div>
           <div className="flex items-center gap-3"><Keycap>←→</Keycap><span>Pas éclair</span></div>
         </div>

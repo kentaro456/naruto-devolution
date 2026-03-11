@@ -279,7 +279,10 @@ class Fighter {
       config.facingRight !== undefined ? config.facingRight : true;
 
     // Stats
-    this.maxHealth = config.maxHealth || 100;
+    this.healthMultiplier = Number.isFinite(config.healthMultiplier)
+      ? config.healthMultiplier
+      : 1.3;
+    this.maxHealth = Math.round((config.maxHealth || 100) * this.healthMultiplier);
     this.health = this.maxHealth;
     this.maxChakra = config.maxChakra || 100;
     this.chakra = this.maxChakra;
@@ -324,6 +327,11 @@ class Fighter {
       heavy: 0,
       special: 0,
       projectile: 0,
+      special1: 0,
+      special2: 0,
+      special3: 0,
+      special4: 0,
+      teleport: 0,
       transform: 0,
       dash: 0,
       jump: 0,
@@ -333,6 +341,24 @@ class Fighter {
     this.spawnedSounds = [];
     this.behaviorDriver = null;
     this.directSpritePath = null;
+    this.teleportBehindEnabled = config.teleportBehindEnabled ?? true;
+    this.teleportBehindCost = Number.isFinite(config.teleportBehindCost)
+      ? config.teleportBehindCost
+      : 18;
+    this.teleportBehindCooldown = Number.isFinite(config.teleportBehindCooldown)
+      ? config.teleportBehindCooldown
+      : this.dashCooldown;
+    this.teleportBehindOffset = Number.isFinite(config.teleportBehindOffset)
+      ? config.teleportBehindOffset
+      : 56;
+    this.teleportBehindMaxCharges = Number.isFinite(config.teleportBehindMaxCharges)
+      ? Math.max(1, Math.round(config.teleportBehindMaxCharges))
+      : 2;
+    this.teleportBehindCharges = this.teleportBehindMaxCharges;
+    this.teleportBehindCooldownTimer = 0;
+    this.teleportBehindRecoveryCooldown = Number.isFinite(config.teleportBehindRecoveryCooldown)
+      ? config.teleportBehindRecoveryCooldown
+      : 90;
 
     // Sprite system
     this.spriteSheet = null;
@@ -722,6 +748,8 @@ class Fighter {
     this.staminaDelayTimer = 0;
     this.dashTimer = 0;
     this.dashCooldownTimer = 0;
+    this.teleportBehindCharges = this.teleportBehindMaxCharges;
+    this.teleportBehindCooldownTimer = 0;
     this.comboHitCount = 0;
     this.comboHitTimer = 0;
     this.hitstunTimer = 0;
@@ -787,7 +815,7 @@ class Fighter {
       return false;
     }
     if (this.isAttacking()) return false;
-    if (this.state === "HIT" || this.state === "KO" || this.state === "DASH") {
+    if (this.state === "HIT" || this.state === "KO" || this._isDashLikeState()) {
       return false;
     }
     if (this.hitstunTimer > 0 || this.blockstunTimer > 0) return false;
@@ -884,6 +912,11 @@ class Fighter {
     if (nextInput.heavy) this.inputBuffer.heavy = bufferWindow;
     if (nextInput.special) this.inputBuffer.special = bufferWindow;
     if (nextInput.projectile) this.inputBuffer.projectile = bufferWindow;
+    if (nextInput.special1) this.inputBuffer.special1 = bufferWindow;
+    if (nextInput.special2) this.inputBuffer.special2 = bufferWindow;
+    if (nextInput.special3) this.inputBuffer.special3 = bufferWindow;
+    if (nextInput.special4) this.inputBuffer.special4 = bufferWindow;
+    if (nextInput.teleport) this.inputBuffer.teleport = bufferWindow;
     if (nextInput.transform) this.inputBuffer.transform = bufferWindow;
     if (nextInput.dash) this.inputBuffer.dash = bufferWindow;
 
@@ -929,6 +962,72 @@ class Fighter {
 
     if (this.specialStyles.raikiri) this._setPendingSpecialStyle("raikiri");
     else if (this.specialStyles.a) this._setPendingSpecialStyle("a");
+  }
+
+  _resolveSpecialHotkeyBinding(slot = 1) {
+    if (!this.specialStyles) return null;
+    const normalizedSlot = Math.max(1, Math.min(4, Number(slot) || 1));
+    const bindingsBySlot = {
+      1: [
+        { style: "raikiri", direction: "neutral" },
+        { style: "a", direction: "neutral" },
+      ],
+      2: [
+        { style: "kamui", direction: "up" },
+        { style: "s1", direction: "up" },
+      ],
+      3: [
+        { style: "tsukuyomi", direction: "down" },
+        { style: "s2", direction: "down" },
+      ],
+      4: [
+        { style: "amaterasu", direction: "back" },
+        { style: "s3", direction: "back" },
+        { style: "s4", direction: "forward" },
+      ],
+    };
+    const candidates = bindingsBySlot[normalizedSlot] || bindingsBySlot[1];
+    return candidates.find((entry) => this.specialStyles[entry.style]) || null;
+  }
+
+  _buildDirectionalInputForSpecial(direction = "neutral") {
+    const input = {
+      up: false,
+      down: false,
+      left: false,
+      right: false,
+      special: true,
+    };
+    if (direction === "up") {
+      input.up = true;
+      return input;
+    }
+    if (direction === "down") {
+      input.down = true;
+      return input;
+    }
+    if (direction === "forward") {
+      if (this.facingRight) input.right = true;
+      else input.left = true;
+      return input;
+    }
+    if (direction === "back") {
+      if (this.facingRight) input.left = true;
+      else input.right = true;
+      return input;
+    }
+    return input;
+  }
+
+  _tryStartSpecialHotkey(slot = 1) {
+    if (this.chakra < this.attacks.special.chakraCost) return false;
+    const binding = this._resolveSpecialHotkeyBinding(slot);
+    if (!binding) return false;
+    this._setPendingSpecialStyle(binding.style);
+    return this._startAttackFromInput(
+      "special",
+      this._buildDirectionalInputForSpecial(binding.direction),
+    );
   }
 
   consumeSpawnedProjectiles() {
@@ -1882,6 +1981,13 @@ class Fighter {
     if (this.hitFlash > 0) this.hitFlash -= dtScale;
     if (this.hitstunTimer > 0) this.hitstunTimer -= dtScale;
     if (this.blockstunTimer > 0) this.blockstunTimer -= dtScale;
+    if (this.teleportBehindCooldownTimer > 0) {
+      this.teleportBehindCooldownTimer -= dtScale;
+      if (this.teleportBehindCooldownTimer <= 0) {
+        this.teleportBehindCooldownTimer = 0;
+        this.teleportBehindCharges = this.teleportBehindMaxCharges;
+      }
+    }
     if (this.comboTimer > 0) {
       this.comboTimer -= dtScale;
     } else {
@@ -1900,7 +2006,7 @@ class Fighter {
       this.maxChakra,
       this.chakra + this.chakraRegen * dtScale,
     );
-    if (this.staminaDelayTimer <= 0 && this.state !== "DASH") {
+    if (this.staminaDelayTimer <= 0 && !this._isDashLikeState()) {
       this.stamina = Math.min(
         this.maxStamina,
         this.stamina + this.staminaRegen * dtScale,
@@ -1935,7 +2041,7 @@ class Fighter {
       this.state !== "HIT" &&
       !this.isAttacking() &&
       this.state !== "BLOCK" &&
-      this.state !== "DASH"
+      !this._isDashLikeState()
     ) {
       this.facingRight = opponent.x > this.x;
     }
@@ -1969,12 +2075,16 @@ class Fighter {
     }
 
     // Dash flow.
-    if (this.state === "DASH" && this.dashTimer > 0) {
-      this.vx = this.dashDirection * this.speed * this.dashSpeedMultiplier;
+    if (this._isDashLikeState() && this.dashTimer > 0) {
+      if (this.state === "DASH") {
+        this.vx = this.dashDirection * this.speed * this.dashSpeedMultiplier;
+      } else {
+        this.vx = 0;
+      }
       this._updateAnimation(dtScale);
       return;
     }
-    if (this.state === "DASH" && this.dashTimer <= 0) {
+    if (this._isDashLikeState() && this.dashTimer <= 0) {
       this._setState(this.grounded ? "IDLE" : "JUMP");
     }
 
@@ -2133,9 +2243,29 @@ class Fighter {
           attackStarted = this._startAttackFromInput("special", input);
           if (attackStarted) this._consumeBufferedAction("special");
         }
+        if (!attackStarted && this._hasBufferedAction("special1")) {
+          attackStarted = this._tryStartSpecialHotkey(1);
+          if (attackStarted) this._consumeBufferedAction("special1");
+        }
+        if (!attackStarted && this._hasBufferedAction("special2")) {
+          attackStarted = this._tryStartSpecialHotkey(2);
+          if (attackStarted) this._consumeBufferedAction("special2");
+        }
+        if (!attackStarted && this._hasBufferedAction("special3")) {
+          attackStarted = this._tryStartSpecialHotkey(3);
+          if (attackStarted) this._consumeBufferedAction("special3");
+        }
+        if (!attackStarted && this._hasBufferedAction("special4")) {
+          attackStarted = this._tryStartSpecialHotkey(4);
+          if (attackStarted) this._consumeBufferedAction("special4");
+        }
         if (!attackStarted && this._hasBufferedAction("projectile")) {
           attackStarted = this._startProjectileThrow();
           if (attackStarted) this._consumeBufferedAction("projectile");
+        }
+        if (!attackStarted && this._hasBufferedAction("teleport")) {
+          attackStarted = this.startTeleportBehind(opponent);
+          if (attackStarted) this._consumeBufferedAction("teleport");
         }
         if (!attackStarted && this._hasBufferedAction("heavy")) {
           attackStarted = this._startAttackFromInput("heavy", input);
@@ -2200,7 +2330,7 @@ class Fighter {
     ) {
       return false;
     }
-    if (this.state === "DASH" && this.dashTimer > 0) return false;
+    if (this._isDashLikeState() && this.dashTimer > 0) return false;
 
     const { profile, step, total } = this._getComboStepProfile(
       attackType,
@@ -2390,6 +2520,54 @@ class Fighter {
     );
   }
 
+  canTeleportBehind(opponent = null) {
+    return (
+      this.teleportBehindEnabled &&
+      !!opponent &&
+      this.teleportBehindCharges > 0 &&
+      this.teleportBehindCooldownTimer <= 0 &&
+      this.grounded &&
+      this.state !== "HIT" &&
+      this.state !== "KO" &&
+      !this.isAttacking() &&
+      this.dashCooldownTimer <= 0 &&
+      this.stamina >= this.teleportBehindCost
+    );
+  }
+
+  startTeleportBehind(opponent = null) {
+    if (!this.canTeleportBehind(opponent)) return false;
+
+    const offset = Math.max(24, Number(this.teleportBehindOffset) || 56);
+    const behindDir = opponent.facingRight ? -1 : 1;
+    const teleportState = this._resolveTeleportAnimationState();
+    const teleportDuration = Math.max(
+      6,
+      Math.min(24, this._getAnimationPlaybackDuration(teleportState, 8)),
+    );
+
+    this._spendStamina(this.teleportBehindCost);
+    this.teleportBehindCharges = Math.max(0, this.teleportBehindCharges - 1);
+    if (this.teleportBehindCharges <= 0) {
+      this.teleportBehindCooldownTimer = this.teleportBehindRecoveryCooldown;
+    }
+    this.dashCooldownTimer = this.teleportBehindCharges > 0 ? 0 : this.teleportBehindCooldown;
+    this.dashTimer = 0;
+    this._clearAttackContext();
+    this.attackHasHit = false;
+    this.vx = 0;
+    this.vy = 0;
+    this.dashDirection = 0;
+    this.x = opponent.x + behindDir * offset;
+    this.facingRight = opponent.x > this.x;
+    this._applyCrouchBody(false);
+    this._setState(teleportState);
+    this.dashTimer = teleportDuration;
+    this.stateTimer = Math.max(this.stateTimer, teleportDuration);
+    this.emitSound?.("kakashi_teleport", 0.9);
+    return true;
+  }
+
   startDash(input = null) {
     if (!this.canDash()) return false;
 
@@ -2561,6 +2739,42 @@ class Fighter {
       if (String(key).toUpperCase() === target) return key;
     }
     return null;
+  }
+
+  _isDashLikeState(state = this.state) {
+    const s = String(state || "").toUpperCase();
+    return s === "DASH" || s === "TELEPORT" || s === "SPECIAL_TELEPORT";
+  }
+
+  _resolveTeleportAnimationState() {
+    return (
+      this._getExistingAnimationKey("SPECIAL_TELEPORT") ||
+      this._getExistingAnimationKey("TELEPORT") ||
+      this._getExistingAnimationKey("DASH") ||
+      this._getExistingAnimationKey("RUN") ||
+      this._getExistingAnimationKey("IDLE") ||
+      "DASH"
+    );
+  }
+
+  _getAnimationPlaybackDuration(state = this.state, fallback = 8) {
+    const animKey = this._resolveAnimationStateKey(state);
+    const anim = this.animations?.[animKey];
+    if (!anim) return Math.max(1, Number(fallback) || 8);
+
+    const frameCount = Math.max(1, Number(anim.frames) || 1);
+    let frameDurations = Array.isArray(anim.frameDurations)
+      ? anim.frameDurations
+      : null;
+    if (!frameDurations || !frameDurations.length) {
+      const step = Math.max(1, Number(anim.speed) || 8);
+      frameDurations = Array.from({ length: frameCount }, () => step);
+    }
+
+    const total = frameDurations
+      .slice(0, frameCount)
+      .reduce((sum, value) => sum + Math.max(1, Number(value) || 1), 0);
+    return Math.max(1, Math.round(total || fallback || 8));
   }
 
   _findAnimationKeyByPrefix(prefix) {
