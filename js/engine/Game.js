@@ -808,7 +808,7 @@ class Game {
         const assetJobs = [
             this._withTimeout(
                 this._loadFighterAssets(this.fighter1, p1Data, setupToken, p1CharId),
-                2500,
+                12000,
                 `fighter assets ${p1CharId}`
             )
         ];
@@ -816,7 +816,7 @@ class Game {
             assetJobs.push(
                 this._withTimeout(
                     this._loadFighterAssets(this.fighter2, p2Data, setupToken, this._p2CharId),
-                    2500,
+                    12000,
                     `fighter assets ${this._p2CharId}`
                 )
             );
@@ -944,15 +944,36 @@ class Game {
 
     _loadFighterAssets(fighter, data, setupToken = this._fightSetupToken, fighterId = data?.id || fighter?.charId || 'unknown') {
         if (!data) return Promise.resolve();
+        const jobs = [this._applyComboConfigFromRoster(fighter, data)];
 
         // Form-based characters (Naruto/Sasuke) need form setup first
         if (data.sprite && typeof fighter.configureFormSprites === 'function') {
             fighter.configureFormSprites(data);
         }
 
-        const quickVisualJob = this._loadFighterFallbackVisual(fighter, data, setupToken);
-        this._hydrateFighterAssetsInBackground(fighter, data, setupToken, fighterId);
-        return Promise.all([quickVisualJob]);
+        if (data.sprite && typeof SpriteFactory !== 'undefined') {
+            jobs.push(
+                SpriteFactory.build(data.sprite, {
+                    ...(data.spriteConfig || {}),
+                    fallbackPath: data.thumbnail
+                }).then((result) => {
+                    this._applyLoadedSpriteResult(fighter, result, setupToken);
+                }).catch((err) => {
+                    console.warn(`Sprite load failed (${fighterId}):`, err);
+                    if (data.thumbnail) {
+                        return this._loadImageIntoFighter(fighter, data.thumbnail, setupToken);
+                    }
+                    return null;
+                })
+            );
+        } else if (data.sprite && /\.(png|jpg|jpeg|gif|webp)$/i.test(String(data.sprite))) {
+            jobs.push(this._loadImageIntoFighter(fighter, data.sprite, setupToken));
+        }
+
+        return Promise.all(jobs).then((results) => {
+            console.info(`[perf] fighter assets ready for ${fighterId}`);
+            return results;
+        });
     }
 
     _canApplyFighterAssets(fighter, setupToken) {
@@ -988,48 +1009,6 @@ class Game {
             };
             img.onerror = () => resolve(false);
             img.src = path;
-        });
-    }
-
-    _loadFighterFallbackVisual(fighter, data, setupToken) {
-        const candidates = [data?.thumbnail, data?.portrait, data?.sprite].filter(Boolean);
-        const imageCandidates = candidates.filter((candidate) => /\.(png|jpg|jpeg|gif|webp)$/i.test(String(candidate)));
-        if (!imageCandidates.length) return Promise.resolve();
-
-        let chain = Promise.resolve(false);
-        imageCandidates.forEach((path) => {
-            chain = chain.then((loaded) => {
-                if (loaded) return true;
-                return this._loadImageIntoFighter(fighter, path, setupToken);
-            });
-        });
-        return chain.then(() => undefined);
-    }
-
-    _hydrateFighterAssetsInBackground(fighter, data, setupToken, fighterId) {
-        const startedAt = performance.now();
-        const jobs = [
-            this._applyComboConfigFromRoster(fighter, data),
-        ];
-
-        if (data?.sprite && typeof SpriteFactory !== 'undefined') {
-            jobs.push(
-                SpriteFactory.build(data.sprite, {
-                    ...(data.spriteConfig || {}),
-                    fallbackPath: data.thumbnail
-                }).then((result) => {
-                    this._applyLoadedSpriteResult(fighter, result, setupToken);
-                }).catch((err) => {
-                    console.warn(`Sprite load failed (${fighterId}):`, err);
-                })
-            );
-        } else if (data?.sprite && /\.(png|jpg|jpeg|gif|webp)$/i.test(String(data.sprite))) {
-            jobs.push(this._loadImageIntoFighter(fighter, data.sprite, setupToken));
-        }
-
-        Promise.allSettled(jobs).then(() => {
-            if (!this._canApplyFighterAssets(fighter, setupToken)) return;
-            console.info(`[perf] fighter assets hydrated for ${fighterId} in ${Math.round(performance.now() - startedAt)}ms`);
         });
     }
 

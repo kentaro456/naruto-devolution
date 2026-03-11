@@ -71,11 +71,11 @@ export default function App() {
   const selectedCpu = roster.find((char) => char.id === ui.selectedCpuId) || null;
   const showLoadingOverlay = runtimeStatus === 'loading' || ui.stageLoadingVisible;
   const loadingTitle = runtimeStatus === 'loading'
-    ? 'Chargement'
-    : (ui.loadingTitle || 'Chargement de l’arène');
+    ? 'Ouverture du jeu'
+    : (ui.loadingTitle || 'Préparation du combat');
   const loadingMessage = runtimeStatus === 'loading'
-    ? 'React charge maintenant le runtime du jeu. Le HTML reste limite au bootstrap Vite.'
-    : (ui.loadingMessage || 'Préparation de l’arène avant le début du combat.');
+    ? 'Le moteur, le canvas et l’interface se mettent en place.'
+    : (ui.loadingMessage || 'L’arène et les combattants se mettent en place avant le round.');
 
   const inFight = showShell && ui.hudVisible && !ui.menuVisible && !ui.charSelectVisible;
 
@@ -91,6 +91,7 @@ export default function App() {
         <LoadingOverlay
           title={loadingTitle}
           message={loadingMessage}
+          variant={runtimeStatus === 'loading' ? 'boot' : 'fight'}
         />
       )}
       {runtimeStatus === 'error' && <ErrorOverlay runtimeError={runtimeError} />}

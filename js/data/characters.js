@@ -611,6 +611,7 @@ const CHARACTER_ROSTER = [
         sprite: SB3_FULLPACK_MANIFEST,
         spriteConfig: sb3FullpackMappedSpriteConfig('Madara', 'madara', FULLPACK_EXTENDED_PLAN, null),
         stats: { speed: 7, power: 10, defense: 6, chakra: 9 },
+        displayScale: 0.75, // Compensate for dynamic cell size maintaining large true resolution
     },
 
     /* ═══════════════════════════════════════════
