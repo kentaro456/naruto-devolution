@@ -564,7 +564,7 @@ class Fighter {
     // Input-driven combo chaining by default (no mandatory hit confirm).
     this.requireHitForComboRoutes = config.requireHitForComboRoutes ?? false;
     // Global animation pacing for attacks (1.0 = responsive baseline).
-    this.attackDurationScale = config.attackDurationScale || 0.65;
+    this.attackDurationScale = config.attackDurationScale || 1.0;
     // Cinematic no-hit states (1.0 = no added slowdown).
     this.specialTransformDurationScale =
       config.specialTransformDurationScale || 1.0;
