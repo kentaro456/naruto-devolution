@@ -112,6 +112,14 @@
                 requireHitRoutes: document.getElementById('require-hit-routes'),
                 commandBindingGrid: document.getElementById('command-binding-grid'),
                 commandDerivedGrid: document.getElementById('command-derived-grid'),
+                hotkeySlot1: document.getElementById('hotkey-slot-1'),
+                hotkeySlot2: document.getElementById('hotkey-slot-2'),
+                hotkeySlot3: document.getElementById('hotkey-slot-3'),
+                hotkeySlot4: document.getElementById('hotkey-slot-4'),
+                hotkeySummary1: document.getElementById('hotkey-summary-1'),
+                hotkeySummary2: document.getElementById('hotkey-summary-2'),
+                hotkeySummary3: document.getElementById('hotkey-summary-3'),
+                hotkeySummary4: document.getElementById('hotkey-summary-4'),
                 chainLight: document.getElementById('chain-light'),
                 chainHeavy: document.getElementById('chain-heavy'),
                 chainSpecial: document.getElementById('chain-special'),
@@ -257,6 +265,10 @@
             if (this.el.previewLast) {
                 this.el.previewLast.addEventListener('click', () => this.preview.goToEnd());
             }
+            ['hotkeySlot1', 'hotkeySlot2', 'hotkeySlot3', 'hotkeySlot4'].forEach((key) => {
+                if (!this.el[key]) return;
+                this.el[key].addEventListener('change', () => this.applyComboEditorChanges());
+            });
 
             this.el.resolveRouteBtn.addEventListener('click', () => this.resolveRouteTest());
             this.el.applyComboBtn.addEventListener('click', () => this.applyComboEditorChanges());
@@ -385,6 +397,112 @@
             };
         }
 
+        _getHotkeyPresetOptions() {
+            return [
+                { value: '', label: 'Auto / défaut du perso' },
+                { value: 'a', label: 'Spécial neutre (a)' },
+                { value: 's1', label: 'Style 1 (s1)' },
+                { value: 's2', label: 'Style 2 (s2)' },
+                { value: 's3', label: 'Style 3 (s3)' },
+                { value: 's4', label: 'Style 4 (s4)' },
+                { value: 'raikiri', label: 'Raikiri' },
+                { value: 'kamui', label: 'Kamui' },
+                { value: 'tsukuyomi', label: 'Tsukuyomi' },
+                { value: 'amaterasu', label: 'Amaterasu' },
+            ];
+        }
+
+        _slotToDefaultSpecialDirection(slot) {
+            if (slot === 2) return 'up';
+            if (slot === 3) return 'down';
+            if (slot === 4) return 'back';
+            return 'neutral';
+        }
+
+        _getSpecialHotkeyLabel(value, slot) {
+            const normalized = typeof value === 'string' ? value.trim() : '';
+            if (!normalized) {
+                if (slot === 2) return 'Auto -> spécial haut';
+                if (slot === 3) return 'Auto -> spécial bas';
+                if (slot === 4) return 'Auto -> spécial arrière / avant';
+                return 'Auto -> spécial neutre';
+            }
+            const preset = this._getHotkeyPresetOptions().find((option) => option.value === normalized);
+            return preset ? preset.label : `Style perso: ${normalized}`;
+        }
+
+        _resolveSpecialHotkeyStateForValue(combo, slot, hotkeyValue = '') {
+            const fixedStates = this._getFixedCommandStateMap();
+            if (hotkeyValue) {
+                return this._resolveComboCommandState(combo, 'special', 'neutral') || fixedStates.special;
+            }
+            const direction = this._slotToDefaultSpecialDirection(slot);
+            const resolved = this._resolveComboCommandState(combo, 'special', direction);
+            if (slot === 4) {
+                return resolved
+                    || this._resolveComboCommandState(combo, 'special', 'forward')
+                    || fixedStates.special;
+            }
+            return resolved || fixedStates.special;
+        }
+
+        _resolveSpecialHotkeyState(combo, slot) {
+            const hotkeyValue = combo?.hotkeys?.[slot] || combo?.hotkeys?.[String(slot)] || '';
+            return this._resolveSpecialHotkeyStateForValue(combo, slot, hotkeyValue);
+        }
+
+        _buildHotkeyOptionLabel(combo, slot, option) {
+            const state = this._resolveSpecialHotkeyStateForValue(combo, slot, option.value);
+            return `${option.label} · ${state || 'SPECIAL'}`;
+        }
+
+        _populateHotkeySelect(select, value = '', combo = null, slot = 1) {
+            if (!select) return;
+            const normalized = typeof value === 'string' ? value.trim() : '';
+            const options = this._getHotkeyPresetOptions().slice();
+            if (normalized && !options.some((option) => option.value === normalized)) {
+                options.push({ value: normalized, label: `Style perso: ${normalized}` });
+            }
+            select.innerHTML = '';
+            options.forEach((option) => {
+                const node = document.createElement('option');
+                node.value = option.value;
+                node.textContent = this._buildHotkeyOptionLabel(combo, slot, option);
+                select.appendChild(node);
+            });
+            select.value = normalized;
+        }
+
+        _renderHotkeySummary(combo, slot) {
+            const root = this.el[`hotkeySummary${slot}`];
+            if (!root) return;
+            const hotkeyValue = combo?.hotkeys?.[slot] || combo?.hotkeys?.[String(slot)] || '';
+            const state = this._resolveSpecialHotkeyStateForValue(combo, slot, hotkeyValue);
+            const label = this._getSpecialHotkeyLabel(hotkeyValue, slot);
+            const routeHint = !hotkeyValue
+                ? this._slotToDefaultSpecialDirection(slot)
+                : 'neutral';
+            root.innerHTML = `
+                <div class="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">Aperçu runtime</div>
+                <div class="mt-2 text-sm font-semibold text-cyan-100">${state || 'SPECIAL'}</div>
+                <div class="mt-1 text-xs leading-5 text-slate-400">${label} · route ${routeHint}</div>
+            `;
+        }
+
+        _renderHotkeySummaries(combo) {
+            [1, 2, 3, 4].forEach((slot) => this._renderHotkeySummary(combo, slot));
+        }
+
+        _readHotkeyEditor() {
+            const out = {};
+            [1, 2, 3, 4].forEach((slot) => {
+                const el = this.el[`hotkeySlot${slot}`];
+                const value = typeof el?.value === 'string' ? el.value.trim() : '';
+                if (value) out[String(slot)] = value;
+            });
+            return out;
+        }
+
         _resolveComboCommandState(combo, type, direction) {
             const routeMap = combo?.rootRoutes?.[type] || {};
             const fixedStates = this._getFixedCommandStateMap();
@@ -424,6 +542,10 @@
                 { key: 'special_down', label: 'Spécial bas', input: '↓ + F', state: this._resolveComboCommandState(combo, 'special', 'down') || fixedStates.special, note: 'Variante basse / proche', category: 'special' },
                 { key: 'special_back', label: 'Spécial arrière', input: '← + F', state: this._resolveComboCommandState(combo, 'special', 'back') || fixedStates.special, note: 'Variante recul / punish', category: 'special' },
                 { key: 'special_forward', label: 'Spécial avant', input: '→ + F', state: this._resolveComboCommandState(combo, 'special', 'forward') || fixedStates.special, note: 'Variante avance / zoning', category: 'special' },
+                { key: 'special_hotkey_1', label: 'Hotkey spécial 1', input: '1', state: this._resolveSpecialHotkeyState(combo, 1), note: this._getSpecialHotkeyLabel(combo?.hotkeys?.[1] || combo?.hotkeys?.['1'], 1), category: 'special' },
+                { key: 'special_hotkey_2', label: 'Hotkey spécial 2', input: '2', state: this._resolveSpecialHotkeyState(combo, 2), note: this._getSpecialHotkeyLabel(combo?.hotkeys?.[2] || combo?.hotkeys?.['2'], 2), category: 'special' },
+                { key: 'special_hotkey_3', label: 'Hotkey spécial 3', input: '3', state: this._resolveSpecialHotkeyState(combo, 3), note: this._getSpecialHotkeyLabel(combo?.hotkeys?.[3] || combo?.hotkeys?.['3'], 3), category: 'special' },
+                { key: 'special_hotkey_4', label: 'Hotkey spécial 4', input: '4', state: this._resolveSpecialHotkeyState(combo, 4), note: this._getSpecialHotkeyLabel(combo?.hotkeys?.[4] || combo?.hotkeys?.['4'], 4), category: 'special' },
                 { key: 'transform', label: 'Transformation', input: 'G', state: fixedStates.transform, note: 'Commande simple', category: 'special' },
             ];
 
@@ -1978,6 +2100,11 @@
             this.el.attackDurationScale.value = combo.settings.attackDurationScale;
             this.el.specialDurationScale.value = combo.settings.specialTransformDurationScale;
             this.el.requireHitRoutes.checked = !!combo.settings.requireHitForComboRoutes;
+            this._populateHotkeySelect(this.el.hotkeySlot1, combo.hotkeys?.['1'] || combo.hotkeys?.[1] || '', combo, 1);
+            this._populateHotkeySelect(this.el.hotkeySlot2, combo.hotkeys?.['2'] || combo.hotkeys?.[2] || '', combo, 2);
+            this._populateHotkeySelect(this.el.hotkeySlot3, combo.hotkeys?.['3'] || combo.hotkeys?.[3] || '', combo, 3);
+            this._populateHotkeySelect(this.el.hotkeySlot4, combo.hotkeys?.['4'] || combo.hotkeys?.[4] || '', combo, 4);
+            this._renderHotkeySummaries(combo);
 
             if (this.el.chainLight) this.el.chainLight.value = JSON.stringify(combo.chains?.light || [], null, 2);
             if (this.el.chainHeavy) this.el.chainHeavy.value = JSON.stringify(combo.chains?.heavy || [], null, 2);
@@ -2013,6 +2140,7 @@
                     special: JSON.parse(this.el.rootRoutesSpecial ? (this.el.rootRoutesSpecial.value || '{}') : '{}'),
                 },
                 actionMap: this._readActionMapEditor(),
+                hotkeys: this._readHotkeyEditor(),
                 nodePatches: JSON.parse(this.el.nodePatches ? (this.el.nodePatches.value || '{}') : '{}'),
             };
 
@@ -2026,6 +2154,9 @@
             });
             if (combo.nodePatches === null || typeof combo.nodePatches !== 'object' || Array.isArray(combo.nodePatches)) {
                 throw new Error('nodePatches doit etre un objet JSON.');
+            }
+            if (combo.hotkeys === null || typeof combo.hotkeys !== 'object' || Array.isArray(combo.hotkeys)) {
+                throw new Error('hotkeys doit etre un objet JSON.');
             }
             return combo;
         }

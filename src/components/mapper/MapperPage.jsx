@@ -377,6 +377,46 @@ export function MapperPage({ runtimeStatus, runtimeError, onRuntimeStatusChange,
                   </div>
                 </div>
 
+                <div className="grid gap-4 rounded-xl border border-white/[0.06] bg-white/[0.02] p-4">
+                  <div>
+                    <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Hotkeys 1-4</div>
+                    <div className="mt-2 text-xs leading-6 text-slate-400">
+                      Assigne un style spécial aux touches <span className="font-semibold text-slate-200">1</span>, <span className="font-semibold text-slate-200">2</span>, <span className="font-semibold text-slate-200">3</span> et <span className="font-semibold text-slate-200">4</span>.
+                    </div>
+                  </div>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <Lbl text="Touche 1" id="hotkey-slot-1">
+                      <div className="grid gap-2">
+                        <select id="hotkey-slot-1" className={input} />
+                        <div id="hotkey-summary-1" className="rounded-lg border border-white/[0.06] bg-black/30 px-3 py-2.5" />
+                      </div>
+                    </Lbl>
+                    <Lbl text="Touche 2" id="hotkey-slot-2">
+                      <div className="grid gap-2">
+                        <select id="hotkey-slot-2" className={input} />
+                        <div id="hotkey-summary-2" className="rounded-lg border border-white/[0.06] bg-black/30 px-3 py-2.5" />
+                      </div>
+                    </Lbl>
+                    <Lbl text="Touche 3" id="hotkey-slot-3">
+                      <div className="grid gap-2">
+                        <select id="hotkey-slot-3" className={input} />
+                        <div id="hotkey-summary-3" className="rounded-lg border border-white/[0.06] bg-black/30 px-3 py-2.5" />
+                      </div>
+                    </Lbl>
+                    <Lbl text="Touche 4" id="hotkey-slot-4">
+                      <div className="grid gap-2">
+                        <select id="hotkey-slot-4" className={input} />
+                        <div id="hotkey-summary-4" className="rounded-lg border border-white/[0.06] bg-black/30 px-3 py-2.5" />
+                      </div>
+                    </Lbl>
+                  </div>
+                  <div id="command-binding-grid" className="grid gap-3" />
+                  <div>
+                    <div className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-slate-500">Commandes dérivées</div>
+                    <div id="command-derived-grid" className="grid gap-3" />
+                  </div>
+                </div>
+
                 {/* projectiles */}
                 <details className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4" open>
                   <summary className="cursor-pointer text-[11px] font-semibold uppercase tracking-wider text-slate-400">
@@ -464,8 +504,6 @@ export function MapperPage({ runtimeStatus, runtimeError, onRuntimeStatusChange,
           <input id="attack-duration-scale" type="number" step="0.1" defaultValue="1.0" />
           <input id="special-duration-scale" type="number" step="0.1" defaultValue="1.0" />
           <input id="require-hit-routes" type="checkbox" defaultChecked />
-          <div id="command-binding-grid" />
-          <div id="command-derived-grid" />
         </div>
         <div id="tab-chains" data-mapper-tab-panel="">
           <textarea id="root-routes-light" />

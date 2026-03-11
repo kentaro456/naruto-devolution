@@ -1,6 +1,6 @@
 {
   "targetName": "Boruto",
-  "version": 7,
+  "version": 8,
   "categories": {
     "idle": [
       "boruto__costume56.png",
@@ -400,11 +400,15 @@
       "crouch": "CROUCH",
       "dash": "DASH"
     },
+    "hotkeys": {
+      "1": "s2",
+      "2": "s2"
+    },
     "nodePatches": {}
   },
   "meta": {
     "editedByMapper": true,
-    "editedAt": "2026-03-09T19:04:54.745Z",
+    "editedAt": "2026-03-11T19:30:27.178Z",
     "mappingMode": "manual_editor_modal"
   },
   "projectile": {

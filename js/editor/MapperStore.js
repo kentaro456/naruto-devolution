@@ -112,6 +112,7 @@
                 crouch: 'CROUCH',
                 dash: 'DASH',
             },
+            hotkeys: {},
             nodePatches: {},
         };
     }
@@ -142,6 +143,10 @@
 
         if (incomingCombo.actionMap && typeof incomingCombo.actionMap === 'object') {
             merged.actionMap = { ...(merged.actionMap || {}), ...incomingCombo.actionMap };
+        }
+
+        if (incomingCombo.hotkeys && typeof incomingCombo.hotkeys === 'object' && !Array.isArray(incomingCombo.hotkeys)) {
+            merged.hotkeys = { ...(merged.hotkeys || {}), ...incomingCombo.hotkeys };
         }
 
         if (incomingCombo.nodePatches && typeof incomingCombo.nodePatches === 'object') {

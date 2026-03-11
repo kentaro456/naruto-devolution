@@ -553,6 +553,7 @@ class Fighter {
     this.comboHitTimer = 0;
     this.comboHitResetFrames = 45;
     this.lastAttackConnected = false;
+    this.hotkeys = {};
 
     this.currentAttackData = null;
     this.currentAttackType = null;
@@ -967,6 +968,16 @@ class Fighter {
   _resolveSpecialHotkeyBinding(slot = 1) {
     if (!this.specialStyles) return null;
     const normalizedSlot = Math.max(1, Math.min(4, Number(slot) || 1));
+
+    // 1. Check for player-defined hotkey bindings (from mapping.json)
+    if (this.hotkeys && this.hotkeys[normalizedSlot]) {
+      const style = this.hotkeys[normalizedSlot];
+      if (this.specialStyles[style]) {
+        return { style, direction: "neutral" };
+      }
+    }
+
+    // 2. Fallback to hardcoded legacy defaults
     const bindingsBySlot = {
       1: [
         { style: "raikiri", direction: "neutral" },
@@ -1019,217 +1030,46 @@ class Fighter {
     return input;
   }
 
-  _tryStartSpecialHotkey(slot = 1) {
-    if (this.chakra < this.attacks.special.chakraCost) return false;
-    const binding = this._resolveSpecialHotkeyBinding(slot);
-    if (!binding) return false;
-    this._setPendingSpecialStyle(binding.style);
-    return this._startAttackFromInput(
-      "special",
-      this._buildDirectionalInputForSpecial(binding.direction),
-    );
-  }
-
-  consumeSpawnedProjectiles() {
-    if (!this.spawnedProjectiles.length) return [];
-    const out = this.spawnedProjectiles;
-    this.spawnedProjectiles = [];
-    return out;
-  }
-
-  emitSound(id, volume = 1.0) {
-    if (!id) return;
-    this.spawnedSounds.push({ id, volume });
-  }
-
-  consumeSpawnedSounds() {
-    if (!this.spawnedSounds.length) return [];
-    const out = this.spawnedSounds;
-    this.spawnedSounds = [];
-    return out;
-  }
-
-  _refreshComboTree() {
-    this.comboTree = this._buildDefaultComboTree();
-  }
-
-  setBehaviorDriver(driver) {
-    this.behaviorDriver = driver || null;
-  }
-
-  async loadMappingConfig(mappingPath) {
-    if (!mappingPath) return null;
-    if (typeof fetch !== "function") return null;
-
-    if (!Fighter._mappingJsonCache) Fighter._mappingJsonCache = new Map();
-    if (Fighter._mappingJsonCache.has(mappingPath)) {
-      return Fighter._mappingJsonCache.get(mappingPath);
-    }
-
-    const promise = fetch(mappingPath)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(
-            `Unable to load mapping (${response.status}): ${mappingPath}`,
-          );
-        }
-        return response.json();
-      })
-      .catch((err) => {
-        Fighter._mappingJsonCache.delete(mappingPath);
-        throw err;
-      });
-
-    Fighter._mappingJsonCache.set(mappingPath, promise);
-    return promise;
-  }
-
-  async loadComboConfigFromMapping(mappingPath) {
-    const mapping = await this.loadMappingConfig(mappingPath);
-    if (!mapping || typeof mapping !== "object") return null;
-    if (!mapping.combo || typeof mapping.combo !== "object") return null;
-    return mapping.combo;
-  }
-
-  _normalizeComboStep(step, fallback = {}) {
-    const out = { ...fallback };
-    if (!step || typeof step !== "object") return out;
-
-    if (typeof step.state === "string" && step.state.trim()) {
-      out.state = step.state.trim().toUpperCase();
-    }
-
-    const numericKeys = [
-      "duration",
-      "damageMultiplier",
-      "rangeMultiplier",
-      "knockbackMultiplier",
-      "hitHeightMultiplier",
-      "hitstun",
-      "blockstun",
-      "hitstop",
-      "moveSpeed",
-      "startupFrames",
-      "activeFrames",
-      "activeStart",
-      "activeEnd",
-      "cancelStart",
-      "hitConfirmCancelStart",
-    ];
-    numericKeys.forEach((key) => {
-      if (step[key] === undefined) return;
-      const parsed = Number(step[key]);
-      if (Number.isFinite(parsed)) out[key] = parsed;
-    });
-
-    if (step.motion && typeof step.motion === "object") {
-      const motion = {};
-      [
-        "windupEnd",
-        "burstEnd",
-        "windupMul",
-        "burstMul",
-        "recoveryMul",
-      ].forEach((key) => {
-        const parsed = Number(step.motion[key]);
-        if (Number.isFinite(parsed)) motion[key] = parsed;
-      });
-      if (Object.keys(motion).length) out.motion = motion;
-    }
-
-    if (step.noHit === true) out.noHit = true;
-    else if (
-      step.noHit === false &&
-      Object.prototype.hasOwnProperty.call(out, "noHit")
-    )
-      delete out.noHit;
-
-    return out;
-  }
-
-  applyComboConfig(comboConfig = null) {
-    if (!comboConfig || typeof comboConfig !== "object") return false;
-
-    const settings = comboConfig.settings || {};
-    const comboCancelRatio = Number(settings.comboCancelRatio);
-    if (Number.isFinite(comboCancelRatio)) {
-      this.comboCancelRatio = Math.max(0.1, Math.min(0.95, comboCancelRatio));
-    }
-
-    const comboHitResetFrames = Number(settings.comboHitResetFrames);
-    if (Number.isFinite(comboHitResetFrames)) {
-      this.comboHitResetFrames = Math.max(1, Math.round(comboHitResetFrames));
-    }
-
-    if (typeof settings.requireHitForComboRoutes === "boolean") {
-      this.requireHitForComboRoutes = settings.requireHitForComboRoutes;
-    }
-
-    const attackDurationScale = Number(settings.attackDurationScale);
-    if (Number.isFinite(attackDurationScale)) {
-      this.attackDurationScale = Math.max(
-        0.2,
-        Math.min(1.0, attackDurationScale),
-      );
-    }
-
-    const specialTransformDurationScale = Number(
-      settings.specialTransformDurationScale,
-    );
-    if (Number.isFinite(specialTransformDurationScale)) {
-      this.specialTransformDurationScale = Math.max(
-        0.2,
-        Math.min(1.0, specialTransformDurationScale),
-      );
-    }
-
-    const chains = comboConfig.chains || {};
-    const nextChains = { ...this.comboChains };
-    ["light", "heavy", "special"].forEach((type) => {
-      if (!Array.isArray(chains[type]) || !chains[type].length) return;
-      const prev = Array.isArray(this.comboChains[type])
-        ? this.comboChains[type]
-        : [];
-      nextChains[type] = chains[type].map((step, idx) =>
-        this._normalizeComboStep(step, prev[idx] || {}),
-      );
-    });
-    this.comboChains = nextChains;
-
-    this._refreshComboTree();
-
-    const rootRoutes = comboConfig.rootRoutes || {};
-    ["light", "heavy", "special"].forEach((type) => {
-      const routeMap = rootRoutes[type];
-      if (!routeMap || typeof routeMap !== "object") return;
-      const cleanRouteMap = {};
-      Object.entries(routeMap).forEach(([k, v]) => {
-        if (typeof v === "string" && v.trim()) cleanRouteMap[k] = v.trim();
-      });
-      if (Object.keys(cleanRouteMap).length) {
-        this._setComboRootRoute(type, cleanRouteMap);
-      }
-    });
-
-    const nodePatches = comboConfig.nodePatches || {};
-    if (nodePatches && typeof nodePatches === "object") {
-      Object.entries(nodePatches).forEach(([nodeId, patch]) => {
-        if (!nodeId || typeof patch !== "object" || !patch) return;
-        this._patchComboNode(nodeId, patch);
-      });
-    }
-
-    this.lastAppliedComboConfig = JSON.parse(JSON.stringify(comboConfig));
-    return true;
-  }
-
-  applyMappingRuntimeConfig(mappingConfig = null) {
-    if (!mappingConfig || typeof mappingConfig !== "object") return false;
-    if (mappingConfig.combo && typeof mappingConfig.combo === "object") {
+  applyMappingConfig(mappingConfig) {
+    if (!mappingConfig) return false;
+    if (mappingConfig.combo) {
       this.applyComboConfig(mappingConfig.combo);
     }
     this.applyProjectileConfig(mappingConfig);
     return true;
+  }
+
+  applyComboConfig(comboConfig) {
+    if (!comboConfig) return;
+    if (comboConfig.chains) {
+      this.attacks.light.chain = comboConfig.chains.light || [];
+      this.attacks.heavy.chain = comboConfig.chains.heavy || [];
+      this.attacks.special.chain = comboConfig.chains.special || [];
+    }
+    if (comboConfig.routes) {
+      this.comboTree = comboConfig.routes;
+    } else {
+      this._refreshComboTree();
+    }
+    
+    // Load custom hotkeys if they exist in the config
+    if (comboConfig.hotkeys) {
+      this.hotkeys = {
+        ...this.hotkeys,
+        ...comboConfig.hotkeys
+      };
+    }
+  }
+
+  _tryStartSpecialHotkey(slot = 1) {
+    const binding = this._resolveSpecialHotkeyBinding(slot);
+    if (!binding) return false;
+
+    this._setPendingSpecialStyle(binding.style);
+    return this._startAttackFromInput(
+      "special",
+      this._buildDirectionalInputForSpecial(binding.direction || "neutral"),
+    );
   }
 
   applyProjectileConfig(mappingConfig = null) {
@@ -1295,6 +1135,13 @@ class Fighter {
     }
 
     this.comboTree.nodes[nodeId] = merged;
+  }
+
+  _refreshComboTree() {
+    this.comboTree = this._buildDefaultComboTree();
+    this.currentComboNodeId = null;
+    this.currentComboNode = null;
+    return this.comboTree;
   }
 
   _buildDefaultComboTree() {
