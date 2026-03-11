@@ -7,7 +7,7 @@ class ItachiFighter extends Fighter {
         super({
             name: 'ITACHI',
             color: '#7A0F1C',
-            displayScale: 1.8,
+            displayScale: 0.75,
             speed: 4.2,
             jumpPower: -11.5,
             attackPower: 12,

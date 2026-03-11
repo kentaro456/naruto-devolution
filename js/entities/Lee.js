@@ -14,7 +14,7 @@ class LeeFighter extends Fighter {
             maxHealth: 96,
             maxChakra: 92,
             chakraRegen: 0.08,
-            displayScale: 2.15, // Added explicitly since his native sprite is 102px tall
+            displayScale: 0.90, // Adjusted for true resolution scaling
             ...config,
         });
 

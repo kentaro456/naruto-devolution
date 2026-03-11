@@ -106,7 +106,7 @@ const KAKASHI_EXTENDED_PLAN = [
     ['EFFECT_AMATERASU', 11, 4],
 ];
 
-function sb3SpriteConfig(targetName, mappingSlug = null, plan = null, cellSize = 64) {
+function sb3SpriteConfig(targetName, mappingSlug = null, plan = null, cellSize = null) {
     const slug = (mappingSlug || targetName).trim().toLowerCase().replace(/[^a-z0-9]+/g, '_');
     const cfg = {
         mode: 'sb3-target-mapped',
@@ -119,7 +119,7 @@ function sb3SpriteConfig(targetName, mappingSlug = null, plan = null, cellSize =
     return cfg;
 }
 
-function sb3FullpackSpriteConfig(targetName, plan = null, cellSize = 64) {
+function sb3FullpackSpriteConfig(targetName, plan = null, cellSize = null) {
     const cfg = {
         mode: 'sb3-target',
         targetName,
@@ -130,7 +130,7 @@ function sb3FullpackSpriteConfig(targetName, plan = null, cellSize = 64) {
     return cfg;
 }
 
-function sb3FullpackMappedSpriteConfig(targetName, mappingSlug, plan = null, cellSize = 64) {
+function sb3FullpackMappedSpriteConfig(targetName, mappingSlug, plan = null, cellSize = null) {
     const cfg = {
         mode: 'sb3-target-mapped',
         targetName,
@@ -142,7 +142,7 @@ function sb3FullpackMappedSpriteConfig(targetName, mappingSlug, plan = null, cel
     return cfg;
 }
 
-function wholeLotMappedSpriteConfig(targetName, mappingSlug, plan = null, cellSize = 64) {
+function wholeLotMappedSpriteConfig(targetName, mappingSlug, plan = null, cellSize = null) {
   const cfg = {
     mode: 'sb3-target-mapped',
     targetName,
@@ -154,7 +154,7 @@ function wholeLotMappedSpriteConfig(targetName, mappingSlug, plan = null, cellSi
     return cfg;
 }
 
-function superMappedSpriteConfig(targetName, mappingSlug, plan = null, cellSize = 64) {
+function superMappedSpriteConfig(targetName, mappingSlug, plan = null, cellSize = null) {
   const cfg = {
     mode: 'sb3-target-mapped',
     targetName,
@@ -166,7 +166,7 @@ function superMappedSpriteConfig(targetName, mappingSlug, plan = null, cellSize 
     return cfg;
 }
 
-function narutoSpritesSb3MappedSpriteConfig(targetName, mappingSlug, plan = null, cellSize = 64) {
+function narutoSpritesSb3MappedSpriteConfig(targetName, mappingSlug, plan = null, cellSize = null) {
   const cfg = {
     mode: 'sb3-target-mapped',
     targetName,
@@ -324,7 +324,7 @@ const CHARACTER_ROSTER = [
             targetName: 'Naruto',
             assetsBasePath: 'assets/organized/characters/naruto/frames',
             mappingPath: 'assets/organized/characters/naruto/mapping.json',
-            cellSize: 64,
+            cellSize: null,
             plan: NARUTO_EXTENDED_PLAN,
         },
         preserveSpriteSource: true,
@@ -349,7 +349,7 @@ const CHARACTER_ROSTER = [
             targetName: 'Naruto',
             assetsBasePath: 'assets/organized/characters/naruto_kyuubi/frames',
             mappingPath: 'assets/organized/characters/naruto_kyuubi/mapping.json',
-            cellSize: 64,
+            cellSize: null,
             plan: NARUTO_EXTENDED_PLAN,
         },
         preserveSpriteSource: true,
@@ -565,7 +565,7 @@ const CHARACTER_ROSTER = [
         special: 'Sand Burial',
         FighterClass: 'GaaraFighter',
         color: '#C19A6B',
-        displayScale: 2.25,
+        displayScale: 0.94,
         thumbnail: `${MASTER_WHOLE_LOT_ASSETS_BASE}/gaara__gaara_ll.png`,
         sprite: MASTER_WHOLE_LOT_MANIFEST,
         spriteConfig: superMappedSpriteConfig('gaara_mega', 'gaara_mega', FULLPACK_EXTENDED_PLAN),
@@ -611,7 +611,7 @@ const CHARACTER_ROSTER = [
         sprite: SB3_FULLPACK_MANIFEST,
         spriteConfig: sb3FullpackMappedSpriteConfig('Madara', 'madara', FULLPACK_EXTENDED_PLAN, null),
         stats: { speed: 7, power: 10, defense: 6, chakra: 9 },
-        displayScale: 0.75, // Compensate for dynamic cell size maintaining large true resolution
+        displayScale: 0.31, // Compensate for dynamic cell size maintaining large true resolution
     },
 
     /* ═══════════════════════════════════════════
@@ -786,7 +786,7 @@ const CHARACTER_ROSTER = [
         sprite: 'assets/organized/characters/gaara_grand_alt/source_project.json',
         spriteConfig: narutoSpritesSb3MappedSpriteConfig('Sprite8', 'ns_sprite8', FULLPACK_EXTENDED_PLAN, null),
         stats: { speed: 7, power: 7, defense: 7, chakra: 7 },
-        displayScale: 0.95,
+        displayScale: 0.40,
     },
 
     {
@@ -801,7 +801,7 @@ const CHARACTER_ROSTER = [
         sprite: 'assets/organized/characters/hinata_grande_alt/source_project.json',
         spriteConfig: narutoSpritesSb3MappedSpriteConfig('Sprite10', 'ns_sprite10', FULLPACK_EXTENDED_PLAN),
         stats: { speed: 7, power: 7, defense: 7, chakra: 7 },
-        displayScale: 2.2,
+        displayScale: 0.92,
     },
 
     {

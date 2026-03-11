@@ -365,7 +365,7 @@ class Fighter {
     this.useFullSprite = false; // true when drawing full image (no atlas slicing)
     this.frameWidth = 64;
     this.frameHeight = 64;
-    this.displayScale = config.displayScale || 1.8;
+    this.displayScale = config.displayScale || 0.75;
     this.animFrame = 0;
     this.animTimer = 0;
     this.animFrameTimer = 0;

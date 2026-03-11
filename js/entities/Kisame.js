@@ -14,7 +14,7 @@ class KisameFighter extends Fighter {
             maxHealth: 110,
             maxChakra: 90,
             chakraRegen: 0.05,
-            displayScale: 1.6, // Added explicitly since his native sprite is 150px tall
+            displayScale: 0.67, // Adjusted for true resolution scaling
             ...config,
         });
 
