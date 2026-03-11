@@ -20,7 +20,7 @@ class MinatoFighter extends Fighter {
         this.attacks = {
             light: { damage: 7, range: 38, hitHeight: 30, duration: 26, chakraCost: 0, knockback: 2.8, offsetY: -10 },
             heavy: { damage: 14, range: 48, hitHeight: 34, duration: 40, chakraCost: 0, knockback: 5.6, offsetY: -8 },
-            special: { damage: 28, range: 78, hitHeight: 42, duration: 60, chakraCost: 35, knockback: 13, offsetY: -12, moveSpeed: 5.5, name: 'RASENGAN' },
+            special: { damage: 28, range: 78, hitHeight: 42, duration: 150, chakraCost: 35, knockback: 13, offsetY: -12, moveSpeed: 5.5, name: 'RASENGAN' },
         };
 
         this.specialStyles = {
@@ -29,7 +29,7 @@ class MinatoFighter extends Fighter {
                 name: 'RASENGAN',
                 state: 'SPECIAL',
                 profileOverrides: {
-                    duration: 60,
+                    duration: 150,
                     damageMultiplier: 1.0,
                     rangeMultiplier: 1.0,
                     knockbackMultiplier: 1.0,
@@ -71,7 +71,7 @@ class MinatoFighter extends Fighter {
                 { state: 'ATTACK_HEAVY_2', duration: 48, cancelWindow: [32, 40] },
             ],
             special: [
-                { state: 'SPECIAL', duration: 60 },
+                { state: 'SPECIAL', duration: 150 },
             ],
         };
 

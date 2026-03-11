@@ -21,7 +21,7 @@ class MinatoFighter extends Fighter {
         this.attacks = {
             light: { damage: 7, range: 40, hitHeight: 32, duration: 18, chakraCost: 0, knockback: 2.5, offsetY: -10 },
             heavy: { damage: 14, range: 48, hitHeight: 34, duration: 28, chakraCost: 0, knockback: 5.5, offsetY: -8 },
-            special: { damage: 28, range: 78, hitHeight: 42, duration: 90, chakraCost: 35, knockback: 13, offsetY: -12, moveSpeed: 5.5, name: 'RASENGAN' },
+            special: { damage: 28, range: 78, hitHeight: 42, duration: 150, chakraCost: 35, knockback: 13, offsetY: -12, moveSpeed: 5.5, name: 'RASENGAN' },
         };
 
         /* ── Special Styles ── */
@@ -349,3 +349,6 @@ class MinatoFighter extends Fighter {
                 triggerFlashVFX: true,
                 spawnAfterimages: true,
             },
+        };
+    }
+}
