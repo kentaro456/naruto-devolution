@@ -1,0 +1,313 @@
+{
+  "targetName": "Orochimaru",
+  "version": 2,
+  "categories": {
+    "idle": ["orochimaru__costume_001__o_stance.png"],
+    "walk": [
+      "orochimaru__costume_007__o_run1.png",
+      "orochimaru__costume_008__o_run2.png",
+      "orochimaru__costume_009__o_run3.png",
+      "orochimaru__costume_010__o_run4.png",
+      "orochimaru__costume_012__o_run6.png",
+      "orochimaru__costume_011__o_run5.png"
+    ],
+    "jump": [
+      "orochimaru__costume_024__o_apr.png",
+      "orochimaru__costume_025__o_apr2.png",
+      "orochimaru__costume_026__o_apr3.png",
+      "orochimaru__costume_027__o_apr4.png",
+      "orochimaru__costume_028__o_apr5.png",
+      "orochimaru__costume_029__o_apr6.png",
+      "orochimaru__costume_030__o_apr7.png"
+    ],
+    "attack_light_1": [
+      "orochimaru__costume_035__o_cmb5.png",
+      "orochimaru__costume_036__o_cmb6.png",
+      "orochimaru__costume_037__o_cmb7.png",
+      "orochimaru__costume_038__o_cmb8.png",
+      "orochimaru__costume_039__o_cmb9.png",
+      "orochimaru__costume_040__o_cmb10.png",
+      "orochimaru__costume_041__o_cmb11.png",
+      "orochimaru__costume_042__o_cmb12.png",
+      "orochimaru__costume_043__o_wind1.png"
+    ],
+    "attack_light_2": [
+      "orochimaru__costume_044__o_wind2.png",
+      "orochimaru__costume_045__o_wind3.png",
+      "orochimaru__costume_046__o_wind4.png",
+      "orochimaru__costume_047__o_wind5.png",
+      "orochimaru__costume_048__o_wind6.png",
+      "orochimaru__costume_049__o_wind7.png",
+      "orochimaru__costume_050__o_wind8.png",
+      "orochimaru__costume_051__o_wind9.png",
+      "orochimaru__costume_052__o_wind10.png",
+      "orochimaru__costume_053__o_wind11.png",
+      "orochimaru__costume_054__o_wind12.png",
+      "orochimaru__costume_055__o_wind13.png"
+    ],
+    "attack_light_3": [],
+    "attack_heavy_1": [],
+    "attack_heavy_2": [],
+    "special_transform": ["orochimaru__costume_013__o_snake1.png"],
+    "special": [
+      "orochimaru__costume_013__o_snake1.png",
+      "orochimaru__costume_014__o_snake2.png",
+      "orochimaru__costume_015__o_snake3.png",
+      "orochimaru__costume_016__o_snake4.png",
+      "orochimaru__costume_017__o_snake5.png",
+      "orochimaru__costume_018__o_snake6.png",
+      "orochimaru__costume_019__o_snake7.png",
+      "orochimaru__costume_020__o_snake8.png",
+      "orochimaru__costume_021__o_snake9.png",
+      "orochimaru__costume_022__o_snake10.png",
+      "orochimaru__costume_023__o_snake11.png"
+    ],
+    "block": ["orochimaru__costume_001__o_stance.png"],
+    "hit": [
+      "orochimaru__costume_003__o_fall2.png",
+      "orochimaru__costume_004__o_fall3.png"
+    ],
+    "ko": [
+      "orochimaru__costume_003__o_fall2.png",
+      "orochimaru__costume_004__o_fall3.png",
+      "orochimaru__costume_005__o_fall4.png",
+      "orochimaru__costume_002__o_fall.png",
+      "orochimaru__costume_006__o_fall5.png"
+    ],
+    "attack_light": [
+      "orochimaru__costume_035__o_cmb5.png",
+      "orochimaru__costume_036__o_cmb6.png",
+      "orochimaru__costume_037__o_cmb7.png",
+      "orochimaru__costume_038__o_cmb8.png",
+      "orochimaru__costume_039__o_cmb9.png",
+      "orochimaru__costume_040__o_cmb10.png",
+      "orochimaru__costume_041__o_cmb11.png",
+      "orochimaru__costume_042__o_cmb12.png",
+      "orochimaru__costume_043__o_wind1.png",
+      "orochimaru__costume_044__o_wind2.png",
+      "orochimaru__costume_045__o_wind3.png",
+      "orochimaru__costume_046__o_wind4.png",
+      "orochimaru__costume_047__o_wind5.png",
+      "orochimaru__costume_048__o_wind6.png",
+      "orochimaru__costume_049__o_wind7.png",
+      "orochimaru__costume_050__o_wind8.png",
+      "orochimaru__costume_051__o_wind9.png",
+      "orochimaru__costume_052__o_wind10.png",
+      "orochimaru__costume_053__o_wind11.png",
+      "orochimaru__costume_054__o_wind12.png",
+      "orochimaru__costume_055__o_wind13.png",
+      "orochimaru__costume_031__o_cmb1.png",
+      "orochimaru__costume_032__o_cmb2.png",
+      "orochimaru__costume_033__o_cmb3.png"
+    ],
+    "attack_heavy": [
+      "orochimaru__costume_044__o_wind2.png",
+      "orochimaru__costume_031__o_cmb1.png",
+      "orochimaru__costume_032__o_cmb2.png",
+      "orochimaru__costume_033__o_cmb3.png",
+      "orochimaru__costume_034__o_cmb4.png"
+    ]
+  },
+  "stateMap": {
+    "IDLE": ["orochimaru__costume_001__o_stance.png"],
+    "WALK": [
+      "orochimaru__costume_007__o_run1.png",
+      "orochimaru__costume_008__o_run2.png",
+      "orochimaru__costume_009__o_run3.png",
+      "orochimaru__costume_010__o_run4.png",
+      "orochimaru__costume_012__o_run6.png",
+      "orochimaru__costume_011__o_run5.png"
+    ],
+    "JUMP": [
+      "orochimaru__costume_024__o_apr.png",
+      "orochimaru__costume_025__o_apr2.png",
+      "orochimaru__costume_026__o_apr3.png",
+      "orochimaru__costume_027__o_apr4.png",
+      "orochimaru__costume_028__o_apr5.png",
+      "orochimaru__costume_029__o_apr6.png",
+      "orochimaru__costume_030__o_apr7.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "orochimaru__costume_031__o_cmb1.png",
+      "orochimaru__costume_032__o_cmb2.png",
+      "orochimaru__costume_033__o_cmb3.png",
+      "orochimaru__costume_035__o_cmb5.png",
+      "orochimaru__costume_036__o_cmb6.png",
+      "orochimaru__costume_037__o_cmb7.png",
+      "orochimaru__costume_038__o_cmb8.png",
+      "orochimaru__costume_039__o_cmb9.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "orochimaru__costume_040__o_cmb10.png",
+      "orochimaru__costume_041__o_cmb11.png",
+      "orochimaru__costume_042__o_cmb12.png",
+      "orochimaru__costume_043__o_wind1.png",
+      "orochimaru__costume_044__o_wind2.png",
+      "orochimaru__costume_045__o_wind3.png",
+      "orochimaru__costume_046__o_wind4.png",
+      "orochimaru__costume_047__o_wind5.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "orochimaru__costume_048__o_wind6.png",
+      "orochimaru__costume_049__o_wind7.png",
+      "orochimaru__costume_050__o_wind8.png",
+      "orochimaru__costume_051__o_wind9.png",
+      "orochimaru__costume_052__o_wind10.png",
+      "orochimaru__costume_053__o_wind11.png",
+      "orochimaru__costume_054__o_wind12.png",
+      "orochimaru__costume_055__o_wind13.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "orochimaru__costume_031__o_cmb1.png",
+      "orochimaru__costume_032__o_cmb2.png",
+      "orochimaru__costume_033__o_cmb3.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "orochimaru__costume_034__o_cmb4.png",
+      "orochimaru__costume_044__o_wind2.png"
+    ],
+    "SPECIAL_TRANSFORM": ["orochimaru__costume_013__o_snake1.png"],
+    "SPECIAL": [
+      "orochimaru__costume_013__o_snake1.png",
+      "orochimaru__costume_014__o_snake2.png",
+      "orochimaru__costume_015__o_snake3.png",
+      "orochimaru__costume_016__o_snake4.png",
+      "orochimaru__costume_017__o_snake5.png",
+      "orochimaru__costume_018__o_snake6.png",
+      "orochimaru__costume_019__o_snake7.png",
+      "orochimaru__costume_020__o_snake8.png",
+      "orochimaru__costume_021__o_snake9.png",
+      "orochimaru__costume_022__o_snake10.png",
+      "orochimaru__costume_023__o_snake11.png"
+    ],
+    "BLOCK": ["orochimaru__costume_001__o_stance.png"],
+    "HIT": [
+      "orochimaru__costume_003__o_fall2.png",
+      "orochimaru__costume_004__o_fall3.png"
+    ],
+    "KO": [
+      "orochimaru__costume_003__o_fall2.png",
+      "orochimaru__costume_004__o_fall3.png",
+      "orochimaru__costume_005__o_fall4.png",
+      "orochimaru__costume_002__o_fall.png",
+      "orochimaru__costume_006__o_fall5.png"
+    ],
+    "ATTACK_LIGHT": [
+      "orochimaru__costume_031__o_cmb1.png",
+      "orochimaru__costume_032__o_cmb2.png",
+      "orochimaru__costume_033__o_cmb3.png"
+    ],
+    "ATTACK_HEAVY": [
+      "orochimaru__costume_031__o_cmb1.png",
+      "orochimaru__costume_032__o_cmb2.png",
+      "orochimaru__costume_033__o_cmb3.png",
+      "orochimaru__costume_034__o_cmb4.png"
+    ]
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 45,
+      "requireHitForComboRoutes": false,
+      "attackDurationScale": 1.25,
+      "specialTransformDurationScale": 1.45
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 11,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 11,
+          "damageMultiplier": 1.15,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.05
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 14,
+          "damageMultiplier": 1.35,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.35
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 16,
+          "damageMultiplier": 1.2,
+          "rangeMultiplier": 1.08,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 20,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.15,
+          "knockbackMultiplier": 1.5
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL",
+          "duration": 35,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 1
+        }
+      ]
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "fixedCounts": {
+      "IDLE": 1,
+      "WALK": 6,
+      "JUMP": 7,
+      "ATTACK_LIGHT": 3,
+      "ATTACK_HEAVY": 4,
+      "SPECIAL": 11,
+      "BLOCK": 1,
+      "HIT": 2,
+      "KO": 5,
+      "ATTACK_LIGHT_1": 9,
+      "ATTACK_LIGHT_2": 12,
+      "ATTACK_LIGHT_3": 1,
+      "ATTACK_HEAVY_1": 1,
+      "ATTACK_HEAVY_2": 1,
+      "SPECIAL_TRANSFORM": 1
+    },
+    "fallbacks": [],
+    "genericRatio": 0,
+    "mostlyGeneric": false,
+    "editedByMapper": true,
+    "editedAt": "2026-02-23T23:32:42.030Z",
+    "mappingMode": "manual_editor_drag_drop",
+    "autoAssignedAt": "2026-02-24T01:14:08.154Z",
+    "autoAssignedCount": 0
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "targetName": "Hinata",
+  "version": 2,
+  "categories": {},
+  "stateMap": {
+    "IDLE": [
+      "hinata__afd2.png",
+      "hinata__afd3.png",
+      "hinata__afd4.png",
+      "hinata__afd.png"
+    ],
+    "WALK": [
+      "hinata__afd2.png",
+      "hinata__afd3.png",
+      "hinata__afd4.png",
+      "hinata__afd.png"
+    ],
+    "RUN": [
+      "hinata__afd2.png",
+      "hinata__afd3.png",
+      "hinata__afd4.png",
+      "hinata__afd.png"
+    ],
+    "JUMP": [
+      "hinata__afd2.png",
+      "hinata__afd3.png",
+      "hinata__afd4.png",
+      "hinata__afd.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "hinata__afd2.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "hinata__afd3.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "hinata__afd4.png",
+      "hinata__afd.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "hinata__afd2.png",
+      "hinata__afd3.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "hinata__afd4.png",
+      "hinata__afd.png"
+    ],
+    "RUN_ATTACK": [
+      "hinata__afd2.png",
+      "hinata__afd3.png",
+      "hinata__afd4.png",
+      "hinata__afd.png"
+    ],
+    "THROW": [
+      "hinata__afd2.png",
+      "hinata__afd3.png",
+      "hinata__afd4.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "hinata__afd2.png",
+      "hinata__afd3.png",
+      "hinata__afd4.png",
+      "hinata__afd.png"
+    ],
+    "SPECIAL": [
+      "hinata__afd2.png",
+      "hinata__afd3.png",
+      "hinata__afd4.png",
+      "hinata__afd.png"
+    ],
+    "BLOCK": [
+      "hinata__afd2.png"
+    ],
+    "HIT": [
+      "hinata__afd2.png",
+      "hinata__afd3.png",
+      "hinata__afd4.png"
+    ],
+    "KO": [
+      "hinata__afd2.png",
+      "hinata__afd3.png",
+      "hinata__afd4.png"
+    ],
+    "ATTACK_LIGHT": [
+      "hinata__afd2.png"
+    ],
+    "ATTACK_HEAVY": [
+      "hinata__afd2.png",
+      "hinata__afd3.png"
+    ],
+    "DASH": [
+      "hinata__afd2.png",
+      "hinata__afd3.png"
+    ]
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 50,
+      "attackDurationScale": 1.2,
+      "specialTransformDurationScale": 1.35,
+      "requireHitForComboRoutes": false
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 13,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 13,
+          "damageMultiplier": 1.13,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.03
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 15,
+          "damageMultiplier": 1.3,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.24
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 18,
+          "damageMultiplier": 1.22,
+          "rangeMultiplier": 1.1,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 22,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.18,
+          "knockbackMultiplier": 1.45
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL_TRANSFORM",
+          "duration": 18,
+          "noHit": true
+        },
+        {
+          "state": "SPECIAL",
+          "duration": 28,
+          "damageMultiplier": 1.24,
+          "rangeMultiplier": 1.14,
+          "knockbackMultiplier": 1.24
+        }
+      ]
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "polished": true,
+    "fullCoverage": true,
+    "leftoversInArchive": 0
+  }
+}

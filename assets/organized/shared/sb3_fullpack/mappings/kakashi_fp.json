@@ -1,0 +1,355 @@
+{
+  "targetName": "Kakashi",
+  "version": 2,
+  "categories": {},
+  "stateMap": {
+    "IDLE": [
+      "kakashi__stand1.png",
+      "kakashi__stand2.png",
+      "kakashi__stand3.png",
+      "kakashi__stand4.png"
+    ],
+    "WALK": [
+      "kakashi__crouchwalk1.png",
+      "kakashi__crouchwalk2.png",
+      "kakashi__crouchwalk3.png",
+      "kakashi__crouchwalk4.png"
+    ],
+    "RUN": [
+      "kakashi__run1.png",
+      "kakashi__run2.png",
+      "kakashi__run3.png",
+      "kakashi__run4.png",
+      "kakashi__run5.png",
+      "kakashi__run6.png"
+    ],
+    "JUMP": [
+      "kakashi__jump1.png",
+      "kakashi__jump2.png",
+      "kakashi__jump3.png",
+      "kakashi__jump4.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "kakashi__combo1.png",
+      "kakashi__combo2.png",
+      "kakashi__combo3.png",
+      "kakashi__combo4.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "kakashi__combo10.png",
+      "kakashi__combo11.png",
+      "kakashi__combo12.png",
+      "kakashi__combo13.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "kakashi__runattack2.png",
+      "kakashi__runattack3.png",
+      "kakashi__runattack4.png",
+      "kakashi__runattack5.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "kakashi__combo1.png",
+      "kakashi__combo2.png",
+      "kakashi__combo3.png",
+      "kakashi__combo4.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "kakashi__jumpattack2.png",
+      "kakashi__jumpattack3.png",
+      "kakashi__jumpattack4.png",
+      "kakashi__jumpattack5.png"
+    ],
+    "RUN_ATTACK": [
+      "kakashi__combo1.png",
+      "kakashi__combo2.png",
+      "kakashi__combo3.png",
+      "kakashi__combo4.png"
+    ],
+    "THROW": [
+      "kakashi__crouchthrow1.png",
+      "kakashi__crouchthrow2.png",
+      "kakashi__crouchthrow3.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "kakashi__handsigns1.png",
+      "kakashi__handsigns2.png",
+      "kakashi__handsigns3.png",
+      "kakashi__handsigns4.png",
+      "kakashi__handsigns5.png"
+    ],
+    "SPECIAL": [
+      "kakashi__chidori1.png",
+      "kakashi__teleport2.png",
+      "kakashi__chidori3.png",
+      "kakashi__chidori4.png",
+      "kakashi__chidori5.png",
+      "kakashi__chidori6.png",
+      "kakashi__chidori7.png",
+      "kakashi__chidori8.png",
+      "kakashi__chidori9.png",
+      "kakashi__chidori10.png"
+    ],
+    "BLOCK": [
+      "kakashi__crouch1.png"
+    ],
+    "HIT": [
+      "kakashi__damage1.png",
+      "kakashi__damage2.png",
+      "kakashi__damage3.png"
+    ],
+    "KO": [
+      "kakashi__damage1.png",
+      "kakashi__damage2.png",
+      "kakashi__damage3.png"
+    ],
+    "ATTACK_LIGHT": [
+      "kakashi__combo1.png",
+      "kakashi__combo2.png",
+      "kakashi__combo3.png",
+      "kakashi__combo4.png"
+    ],
+    "ATTACK_HEAVY": [
+      "kakashi__combo1.png",
+      "kakashi__combo2.png",
+      "kakashi__combo3.png",
+      "kakashi__combo4.png"
+    ],
+    "DASH": [
+      "kakashi__teleport1.png",
+      "kakashi__teleport2.png"
+    ],
+    "ARCHIVE_POOL": [
+      "kakashi__chidori11.png",
+      "kakashi__chidori12.png",
+      "kakashi__chidori13.png",
+      "kakashi__chidori14.png",
+      "kakashi__chidori15.png",
+      "kakashi__chidori16.png",
+      "kakashi__chidori17.png",
+      "kakashi__chidori18.png",
+      "kakashi__chidori19.png",
+      "kakashi__chidori20.png",
+      "kakashi__chidori21.png",
+      "kakashi__chidori22.png",
+      "kakashi__chidori13.png",
+      "kakashi__chidori14.png",
+      "kakashi__chidori15.png",
+      "kakashi__chidori16.png",
+      "kakashi__chidori17.png",
+      "kakashi__chidori18.png",
+      "kakashi__chidori19.png",
+      "kakashi__chidori20.png",
+      "kakashi__chidori21.png",
+      "kakashi__chidori22.png",
+      "kakashi__chidori33.png",
+      "kakashi__chidori34.png",
+      "kakashi__chidori35.png",
+      "kakashi__chidori36.png",
+      "kakashi__chidori37.png",
+      "kakashi__chidori38.png",
+      "kakashi__chidori39.png",
+      "kakashi__chidori40.png",
+      "kakashi__chidori41.png",
+      "kakashi__chidori42.png",
+      "kakashi__chidori43.png",
+      "kakashi__chidori44.png",
+      "kakashi__chidori45.png",
+      "kakashi__chidori46.png",
+      "kakashi__chidori47.png",
+      "kakashi__chidori48.png",
+      "kakashi__chidori49.png",
+      "kakashi__combo5.png",
+      "kakashi__combo6.png",
+      "kakashi__combo7.png",
+      "kakashi__combo8.png",
+      "kakashi__combo9.png",
+      "kakashi__crouch2.png",
+      "kakashi__crouchthrow4.png",
+      "kakashi__crouchwalk5.png",
+      "kakashi__crouchwalk6.png",
+      "kakashi__damage4.png",
+      "kakashi__damage5.png",
+      "kakashi__damage6.png",
+      "kakashi__fastgetup1.png",
+      "kakashi__fastgetup2.png",
+      "kakashi__handsigns7.png",
+      "kakashi__jumpattack1.png",
+      "kakashi__jumpthrow1.png",
+      "kakashi__jumpthrow2.png",
+      "kakashi__jumpthrow3.png",
+      "kakashi__jumpthrow4.png",
+      "kakashi__jumpthrow5.png",
+      "kakashi__crouch2.png",
+      "kakashi__raikiri2.png",
+      "kakashi__raikiri3.png",
+      "kakashi__raikiri4.png",
+      "kakashi__raikiri5.png",
+      "kakashi__raikiri6.png",
+      "kakashi__raikiri7.png",
+      "kakashi__raikiri8.png",
+      "kakashi__raikiri9.png",
+      "kakashi__raikiri10.png",
+      "kakashi__raikiri11.png",
+      "kakashi__raikiri12.png",
+      "kakashi__raikiri13.png",
+      "kakashi__raikiri14.png",
+      "kakashi__raikiri15.png",
+      "kakashi__raikiri16.png",
+      "kakashi__raikiri17.png",
+      "kakashi__raikiri18.png",
+      "kakashi__raikiri19.png",
+      "kakashi__raikiri20.png",
+      "kakashi__raikiri21.png",
+      "kakashi__raikiri22.png",
+      "kakashi__raikiri23.png",
+      "kakashi__raikiri24.png",
+      "kakashi__raikiri25.png",
+      "kakashi__runattack1.png",
+      "kakashi__runattack6.png",
+      "kakashi__stand5.png",
+      "kakashi__stand6.png",
+      "kakashi__summoning2.png",
+      "kakashi__summoning3.png",
+      "kakashi__summoning4.png",
+      "kakashi__summoning5.png",
+      "kakashi__summoning6.png",
+      "kakashi__summoning7.png",
+      "kakashi__summoning8.png",
+      "kakashi__summoning9.png",
+      "kakashi__summoning11.png",
+      "kakashi__summoning12.png",
+      "kakashi__summoning13.png",
+      "kakashi__summoning14.png",
+      "kakashi__summoning15.png",
+      "kakashi__summoning16.png",
+      "kakashi__summoning17.png",
+      "kakashi__summoning18.png",
+      "kakashi__summoning19.png",
+      "kakashi__summoning20.png",
+      "kakashi__summoning21.png",
+      "kakashi__summoning22.png",
+      "kakashi__summoning23.png",
+      "kakashi__summoning24.png",
+      "kakashi__summoning25.png",
+      "kakashi__summoning26.png",
+      "kakashi__summoning27.png",
+      "kakashi__summoning28.png",
+      "kakashi__summoning29.png",
+      "kakashi__summoning30.png",
+      "kakashi__summoning31.png",
+      "kakashi__summoning32.png",
+      "kakashi__summoning33.png",
+      "kakashi__summoning15.png",
+      "kakashi__summoning35.png",
+      "kakashi__summoning36.png",
+      "kakashi__summoning37.png",
+      "kakashi__upattack1-1.png",
+      "kakashi__upattack1-2.png",
+      "kakashi__upattack1-3.png",
+      "kakashi__upattack1-4.png",
+      "kakashi__upattack1-5.png",
+      "kakashi__walk1.png",
+      "kakashi__walk2.png",
+      "kakashi__walk3.png",
+      "kakashi__walk4.png",
+      "kakashi__walk5.png",
+      "kakashi__walk6.png",
+      "kakashi__walljump1.png",
+      "kakashi__walljump2.png",
+      "kakashi__walljump3.png",
+      "kakashi__walljump4.png",
+      "kakashi__weaponthrow1.png",
+      "kakashi__weaponthrow2.png",
+      "kakashi__weaponthrow3.png"
+    ]
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 50,
+      "attackDurationScale": 1.2,
+      "specialTransformDurationScale": 1.35,
+      "requireHitForComboRoutes": false
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 13,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 13,
+          "damageMultiplier": 1.13,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.03
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 15,
+          "damageMultiplier": 1.3,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.24
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 18,
+          "damageMultiplier": 1.22,
+          "rangeMultiplier": 1.1,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 22,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.18,
+          "knockbackMultiplier": 1.45
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL_TRANSFORM",
+          "duration": 18,
+          "noHit": true
+        },
+        {
+          "state": "SPECIAL",
+          "duration": 28,
+          "damageMultiplier": 1.24,
+          "rangeMultiplier": 1.14,
+          "knockbackMultiplier": 1.24
+        }
+      ]
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "polished": true,
+    "fullCoverage": true,
+    "leftoversInArchive": 142
+  }
+}

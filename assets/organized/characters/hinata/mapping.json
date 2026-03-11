@@ -1,0 +1,467 @@
+{
+  "targetName": "Hinata",
+  "version": 2,
+  "categories": {
+    "idle": [
+      "sprite10__costume_001__costume1.png",
+      "sprite10__costume_002__costume2.png",
+      "sprite10__costume_003__costume3.png",
+      "sprite10__costume_004__costume4.png",
+      "sprite10__costume_005__costume5.png",
+      "sprite10__costume_006__costume6.png"
+    ],
+    "walk": [
+      "sprite10__costume_007__costume7.png",
+      "sprite10__costume_008__costume8.png",
+      "sprite10__costume_009__costume9.png",
+      "sprite10__costume_010__costume10.png",
+      "sprite10__costume_011__costume11.png",
+      "sprite10__costume_012__costume12.png"
+    ],
+    "run": [
+      "sprite10__costume_013__costume13.png",
+      "sprite10__costume_014__costume14.png",
+      "sprite10__costume_015__costume15.png",
+      "sprite10__costume_016__costume16.png",
+      "sprite10__costume_017__costume17.png",
+      "sprite10__costume_018__costume18.png"
+    ],
+    "jump": [
+      "sprite10__costume_028__costume28.png",
+      "sprite10__costume_029__costume29.png",
+      "sprite10__costume_030__costume30.png",
+      "sprite10__costume_031__costume31.png",
+      "sprite10__costume_032__costume32.png",
+      "sprite10__costume_033__costume33.png"
+    ],
+    "crouch": [
+      "sprite10__costume_021__costume21.png"
+    ],
+    "crouch_walk": [
+      "sprite10__costume_022__costume22.png",
+      "sprite10__costume_023__costume23.png",
+      "sprite10__costume_024__costume24.png",
+      "sprite10__costume_025__costume25.png",
+      "sprite10__costume_026__costume26.png"
+    ],
+    "crouch_attack": [
+      "sprite10__costume_020__costume20.png",
+      "sprite10__costume_027__costume27.png"
+    ],
+    "crouch_throw": [
+      "sprite10__costume_043__costume43.png"
+    ],
+    "attack_light_1": [
+      "sprite10__costume_028__costume28.png",
+      "sprite10__costume_029__costume29.png",
+      "sprite10__costume_047__costume47.png",
+      "sprite10__costume_048__costume48.png",
+      "sprite10__costume_049__costume49.png",
+      "sprite10__costume_050__costume50.png",
+      "sprite10__costume_051__costume51.png",
+      "sprite10__costume_052__costume52.png",
+      "sprite10__costume_053__costume53.png",
+      "sprite10__costume_054__costume54.png",
+      "sprite10__costume_055__costume55.png"
+    ],
+    "attack_light_2": [
+      "sprite10__costume_029__costume29.png",
+      "sprite10__costume_028__costume28.png",
+      "sprite10__costume_050__costume50.png",
+      "sprite10__costume_054__costume54.png",
+      "sprite10__costume_053__costume53.png",
+      "sprite10__costume_048__costume48.png",
+      "sprite10__costume_052__costume52.png",
+      "sprite10__costume_051__costume51.png",
+      "sprite10__costume_047__costume47.png"
+    ],
+    "attack_light_3": [
+      "sprite10__costume_029__costume29.png",
+      "sprite10__costume_052__costume52.png",
+      "sprite10__costume_028__costume28.png",
+      "sprite10__costume_054__costume54.png",
+      "sprite10__costume_053__costume53.png",
+      "sprite10__costume_048__costume48.png",
+      "sprite10__costume_049__costume49.png",
+      "sprite10__costume_050__costume50.png",
+      "sprite10__costume_051__costume51.png"
+    ],
+    "attack_heavy_1": [
+      "sprite10__costume_053__costume53.png",
+      "sprite10__costume_054__costume54.png",
+      "sprite10__costume_055__costume55.png",
+      "sprite10__costume_050__costume50.png",
+      "sprite10__costume_051__costume51.png",
+      "sprite10__costume_052__costume52.png",
+      "sprite10__costume_049__costume49.png",
+      "sprite10__costume_048__costume48.png"
+    ],
+    "attack_heavy_2": [
+      "sprite10__costume_029__costume29.png",
+      "sprite10__costume_047__costume47.png",
+      "sprite10__costume_052__costume52.png",
+      "sprite10__costume_051__costume51.png",
+      "sprite10__costume_050__costume50.png",
+      "sprite10__costume_028__costume28.png",
+      "sprite10__costume_018__costume18.png",
+      "sprite10__costume_048__costume48.png",
+      "sprite10__costume_054__costume54.png",
+      "sprite10__costume_053__costume53.png"
+    ],
+    "run_attack": [],
+    "throw": [],
+    "koma_support": [],
+    "teleport": [
+      "sprite10__costume_045__costume45.png",
+      "sprite10__costume_046__costume46.png"
+    ],
+    "special_transform": [],
+    "special": [
+      "sprite10__costume_086__costume86.png",
+      "sprite10__costume_087__costume87.png",
+      "sprite10__costume_088__costume88.png",
+      "sprite10__costume_089__costume89.png",
+      "sprite10__costume_090__costume90.png",
+      "sprite10__costume_091__costume91.png",
+      "sprite10__costume_092__costume92.png",
+      "sprite10__costume_094__costume94.png",
+      "sprite10__costume_095__costume95.png",
+      "sprite10__costume_096__costume96.png",
+      "sprite10__costume_097__costume97.png",
+      "sprite10__costume_093__costume93.png",
+      "sprite10__costume_098__costume98.png",
+      "sprite10__costume_099__costume99.png",
+      "sprite10__costume_100__costume100.png",
+      "sprite10__costume_101__costume101.png",
+      "sprite10__costume_102__costume102.png",
+      "sprite10__costume_103__costume103.png",
+      "sprite10__costume_129__costume129.png",
+      "sprite10__costume_138__costume138.png",
+      "sprite10__costume_139__costume139.png",
+      "sprite10__costume_140__costume140.png"
+    ],
+    "charge": [
+      "sprite10__costume_086__costume86.png",
+      "sprite10__costume_087__costume87.png",
+      "sprite10__costume_088__costume88.png"
+    ],
+    "dash": [],
+    "block": [
+      "sprite10__costume_092__costume92.png"
+    ],
+    "hit": [],
+    "ko": [
+      "sprite10__costume_039__costume39.png",
+      "sprite10__costume_040__costume40.png",
+      "sprite10__costume_041__costume41.png",
+      "sprite10__costume_143__costume143.png",
+      "sprite10__costume_144__costume144.png"
+    ],
+    "attack_light": [
+      "sprite10__costume_131__costume131.png",
+      "sprite10__costume_132__costume132.png",
+      "sprite10__costume_133__costume133.png",
+      "sprite10__costume_134__costume134.png",
+      "sprite10__costume_135__costume135.png",
+      "sprite10__costume_136__costume136.png",
+      "sprite10__costume_036__costume36.png",
+      "sprite10__costume_037__costume37.png"
+    ],
+    "attack_heavy": [
+      "sprite10__costume_104__costume104.png",
+      "sprite10__costume_105__costume105.png",
+      "sprite10__costume_106__costume106.png",
+      "sprite10__costume_107__costume107.png",
+      "sprite10__costume_108__costume108.png",
+      "sprite10__costume_109__costume109.png",
+      "sprite10__costume_110__costume110.png",
+      "sprite10__costume_111__costume111.png",
+      "sprite10__costume_112__costume112.png",
+      "sprite10__costume_113__costume113.png",
+      "sprite10__costume_114__costume114.png"
+    ],
+    "unused_unknown": []
+  },
+  "stateMap": {
+    "IDLE": [
+      "sprite10__costume_001__costume1.png",
+      "sprite10__costume_002__costume2.png",
+      "sprite10__costume_003__costume3.png",
+      "sprite10__costume_004__costume4.png",
+      "sprite10__costume_005__costume5.png",
+      "sprite10__costume_006__costume6.png"
+    ],
+    "WALK": [
+      "sprite10__costume_007__costume7.png",
+      "sprite10__costume_008__costume8.png",
+      "sprite10__costume_009__costume9.png",
+      "sprite10__costume_010__costume10.png",
+      "sprite10__costume_011__costume11.png",
+      "sprite10__costume_012__costume12.png"
+    ],
+    "RUN": [
+      "sprite10__costume_013__costume13.png",
+      "sprite10__costume_014__costume14.png",
+      "sprite10__costume_015__costume15.png",
+      "sprite10__costume_016__costume16.png",
+      "sprite10__costume_017__costume17.png",
+      "sprite10__costume_018__costume18.png"
+    ],
+    "JUMP": [
+      "sprite10__costume_028__costume28.png",
+      "sprite10__costume_029__costume29.png",
+      "sprite10__costume_030__costume30.png",
+      "sprite10__costume_031__costume31.png",
+      "sprite10__costume_032__costume32.png",
+      "sprite10__costume_033__costume33.png"
+    ],
+    "CROUCH": [
+      "sprite10__costume_021__costume21.png"
+    ],
+    "CROUCH_WALK": [
+      "sprite10__costume_022__costume22.png",
+      "sprite10__costume_023__costume23.png",
+      "sprite10__costume_024__costume24.png",
+      "sprite10__costume_025__costume25.png",
+      "sprite10__costume_026__costume26.png"
+    ],
+    "CROUCH_ATTACK": [
+      "sprite10__costume_020__costume20.png",
+      "sprite10__costume_027__costume27.png"
+    ],
+    "CROUCH_THROW": [
+      "sprite10__costume_043__costume43.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "sprite10__costume_028__costume28.png",
+      "sprite10__costume_029__costume29.png",
+      "sprite10__costume_047__costume47.png",
+      "sprite10__costume_048__costume48.png",
+      "sprite10__costume_049__costume49.png",
+      "sprite10__costume_050__costume50.png",
+      "sprite10__costume_051__costume51.png",
+      "sprite10__costume_052__costume52.png",
+      "sprite10__costume_053__costume53.png",
+      "sprite10__costume_054__costume54.png",
+      "sprite10__costume_055__costume55.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "sprite10__costume_029__costume29.png",
+      "sprite10__costume_028__costume28.png",
+      "sprite10__costume_050__costume50.png",
+      "sprite10__costume_054__costume54.png",
+      "sprite10__costume_053__costume53.png",
+      "sprite10__costume_048__costume48.png",
+      "sprite10__costume_052__costume52.png",
+      "sprite10__costume_051__costume51.png",
+      "sprite10__costume_047__costume47.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "sprite10__costume_029__costume29.png",
+      "sprite10__costume_052__costume52.png",
+      "sprite10__costume_028__costume28.png",
+      "sprite10__costume_054__costume54.png",
+      "sprite10__costume_053__costume53.png",
+      "sprite10__costume_048__costume48.png",
+      "sprite10__costume_049__costume49.png",
+      "sprite10__costume_050__costume50.png",
+      "sprite10__costume_051__costume51.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "sprite10__costume_053__costume53.png",
+      "sprite10__costume_054__costume54.png",
+      "sprite10__costume_055__costume55.png",
+      "sprite10__costume_050__costume50.png",
+      "sprite10__costume_051__costume51.png",
+      "sprite10__costume_052__costume52.png",
+      "sprite10__costume_049__costume49.png",
+      "sprite10__costume_048__costume48.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "sprite10__costume_029__costume29.png",
+      "sprite10__costume_047__costume47.png",
+      "sprite10__costume_052__costume52.png",
+      "sprite10__costume_051__costume51.png",
+      "sprite10__costume_050__costume50.png",
+      "sprite10__costume_028__costume28.png",
+      "sprite10__costume_018__costume18.png",
+      "sprite10__costume_048__costume48.png",
+      "sprite10__costume_054__costume54.png",
+      "sprite10__costume_053__costume53.png"
+    ],
+    "RUN_ATTACK": [],
+    "THROW": [],
+    "KOMA_SUPPORT": [],
+    "TELEPORT": [
+      "sprite10__costume_045__costume45.png",
+      "sprite10__costume_046__costume46.png"
+    ],
+    "SPECIAL_TRANSFORM": [],
+    "SPECIAL": [
+      "sprite10__costume_086__costume86.png",
+      "sprite10__costume_087__costume87.png",
+      "sprite10__costume_088__costume88.png",
+      "sprite10__costume_089__costume89.png",
+      "sprite10__costume_090__costume90.png",
+      "sprite10__costume_091__costume91.png",
+      "sprite10__costume_092__costume92.png",
+      "sprite10__costume_094__costume94.png",
+      "sprite10__costume_095__costume95.png",
+      "sprite10__costume_096__costume96.png",
+      "sprite10__costume_097__costume97.png",
+      "sprite10__costume_093__costume93.png",
+      "sprite10__costume_098__costume98.png",
+      "sprite10__costume_099__costume99.png",
+      "sprite10__costume_100__costume100.png",
+      "sprite10__costume_101__costume101.png",
+      "sprite10__costume_102__costume102.png",
+      "sprite10__costume_103__costume103.png",
+      "sprite10__costume_129__costume129.png",
+      "sprite10__costume_138__costume138.png",
+      "sprite10__costume_139__costume139.png",
+      "sprite10__costume_140__costume140.png"
+    ],
+    "CHARGE": [
+      "sprite10__costume_086__costume86.png",
+      "sprite10__costume_087__costume87.png",
+      "sprite10__costume_088__costume88.png"
+    ],
+    "DASH": [],
+    "BLOCK": [
+      "sprite10__costume_092__costume92.png"
+    ],
+    "HIT": [],
+    "KO": [
+      "sprite10__costume_039__costume39.png",
+      "sprite10__costume_040__costume40.png",
+      "sprite10__costume_041__costume41.png",
+      "sprite10__costume_143__costume143.png",
+      "sprite10__costume_144__costume144.png"
+    ],
+    "ATTACK_LIGHT": [
+      "sprite10__costume_131__costume131.png",
+      "sprite10__costume_132__costume132.png",
+      "sprite10__costume_133__costume133.png",
+      "sprite10__costume_134__costume134.png",
+      "sprite10__costume_135__costume135.png",
+      "sprite10__costume_136__costume136.png",
+      "sprite10__costume_036__costume36.png",
+      "sprite10__costume_037__costume37.png"
+    ],
+    "ATTACK_HEAVY": [
+      "sprite10__costume_104__costume104.png",
+      "sprite10__costume_105__costume105.png",
+      "sprite10__costume_106__costume106.png",
+      "sprite10__costume_107__costume107.png",
+      "sprite10__costume_108__costume108.png",
+      "sprite10__costume_109__costume109.png",
+      "sprite10__costume_110__costume110.png",
+      "sprite10__costume_111__costume111.png",
+      "sprite10__costume_112__costume112.png",
+      "sprite10__costume_113__costume113.png",
+      "sprite10__costume_114__costume114.png"
+    ],
+    "UNUSED_UNKNOWN": []
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 45,
+      "requireHitForComboRoutes": false,
+      "attackDurationScale": 1.25,
+      "specialTransformDurationScale": 1.45
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 11,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 11,
+          "damageMultiplier": 1.15,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.05
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 14,
+          "damageMultiplier": 1.35,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.35
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 16,
+          "damageMultiplier": 1.2,
+          "rangeMultiplier": 1.08,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 20,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.15,
+          "knockbackMultiplier": 1.5
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL",
+          "duration": 35,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 1
+        }
+      ]
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "actionMap": {
+      "light": "ATTACK_LIGHT_1",
+      "heavy": "ATTACK_HEAVY_1",
+      "special": "SPECIAL",
+      "transform": "SPECIAL_TRANSFORM",
+      "block": "BLOCK",
+      "jump": "JUMP",
+      "run": "RUN",
+      "crouch": "CROUCH",
+      "runAttack": "RUN_ATTACK",
+      "throw": "THROW",
+      "teleport": "TELEPORT",
+      "support": "KOMA_SUPPORT",
+      "charge": "CHARGE",
+      "dash": "DASH"
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "editedByMapper": true,
+    "editedAt": "2026-03-08T01:59:10.811Z",
+    "mappingMode": "manual_editor_drag_drop"
+  },
+  "__validationWarnings": []
+}

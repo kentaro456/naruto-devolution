@@ -1,0 +1,290 @@
+{
+  "targetName": "Pein",
+  "version": 2,
+  "categories": {
+    "idle": [
+      "pein__costume_001__costume1.png",
+      "pein__costume_002__costume2.png",
+      "pein__costume_003__costume3.png",
+      "pein__costume_004__costume4.png"
+    ],
+    "walk": [
+      "pein__costume_006__costume6.png",
+      "pein__costume_007__costume7.png",
+      "pein__costume_008__costume8.png",
+      "pein__costume_009__costume9.png",
+      "pein__costume_005__costume5.png",
+      "pein__costume_010__costume10.png",
+      "pein__costume_011__costume11.png"
+    ],
+    "jump": [
+      "pein__costume_012__costume12.png",
+      "pein__costume_013__costume13.png",
+      "pein__costume_014__costume14.png"
+    ],
+    "attack_light_1": [
+      "pein__costume_018__costume18.png",
+      "pein__costume_019__costume19.png"
+    ],
+    "attack_light_2": [
+      "pein__costume_023__costume23.png",
+      "pein__costume_024__costume24.png",
+      "pein__costume_025__costume25.png",
+      "pein__costume_035__costume35.png",
+      "pein__costume_036__costume36.png",
+      "pein__costume_037__costume37.png",
+      "pein__costume_043__costume43.png",
+      "pein__costume_044__costume44.png",
+      "pein__costume_048__costume48.png",
+      "pein__costume_049__costume49.png",
+      "pein__costume_050__costume50.png",
+      "pein__costume_059__costume59.png"
+    ],
+    "attack_light_3": ["pein__costume_034__costume34.png"],
+    "attack_heavy_1": [],
+    "attack_heavy_2": [],
+    "special_transform": ["pein__costume_051__costume51.png"],
+    "special": [
+      "pein__costume_051__costume51.png",
+      "pein__costume_055__costume55.png",
+      "pein__costume_056__costume56.png",
+      "pein__costume_057__costume57.png",
+      "pein__costume_058__costume58.png",
+      "pein__costume_065__costume65.png",
+      "pein__costume_068__costume68.png",
+      "pein__costume_070__costume69.png",
+      "pein__costume_066__costume66.png",
+      "pein__costume_067__costume67.png",
+      "pein__costume_071__costume71.png",
+      "pein__costume_069__costume70.png"
+    ],
+    "block": ["pein__costume_001__costume1.png"],
+    "hit": ["pein__costume_018__costume18.png"],
+    "ko": [
+      "pein__costume_015__costume15.png",
+      "pein__costume_016__costume16.png",
+      "pein__costume_017__costume17.png"
+    ],
+    "attack_light": [
+      "pein__costume_018__costume18.png",
+      "pein__costume_019__costume19.png",
+      "pein__costume_023__costume23.png",
+      "pein__costume_024__costume24.png",
+      "pein__costume_025__costume25.png",
+      "pein__costume_035__costume35.png",
+      "pein__costume_036__costume36.png",
+      "pein__costume_037__costume37.png",
+      "pein__costume_043__costume43.png",
+      "pein__costume_044__costume44.png",
+      "pein__costume_048__costume48.png",
+      "pein__costume_049__costume49.png",
+      "pein__costume_050__costume50.png",
+      "pein__costume_059__costume59.png",
+      "pein__costume_034__costume34.png",
+      "pein__costume_020__costume20.png",
+      "pein__costume_021__costume21.png",
+      "pein__costume_022__costume22.png"
+    ],
+    "attack_heavy": [
+      "pein__costume_034__costume34.png",
+      "pein__costume_038__costume38.png",
+      "pein__costume_040__costume40.png",
+      "pein__costume_041__costume41.png",
+      "pein__costume_042__costume42.png"
+    ]
+  },
+  "stateMap": {
+    "IDLE": [
+      "pein__costume_001__costume1.png",
+      "pein__costume_002__costume2.png",
+      "pein__costume_003__costume3.png",
+      "pein__costume_004__costume4.png"
+    ],
+    "WALK": [
+      "pein__costume_006__costume6.png",
+      "pein__costume_007__costume7.png",
+      "pein__costume_008__costume8.png",
+      "pein__costume_009__costume9.png",
+      "pein__costume_005__costume5.png",
+      "pein__costume_010__costume10.png",
+      "pein__costume_011__costume11.png"
+    ],
+    "JUMP": [
+      "pein__costume_012__costume12.png",
+      "pein__costume_013__costume13.png",
+      "pein__costume_014__costume14.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "pein__costume_018__costume18.png",
+      "pein__costume_019__costume19.png",
+      "pein__costume_020__costume20.png",
+      "pein__costume_021__costume21.png",
+      "pein__costume_022__costume22.png",
+      "pein__costume_023__costume23.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "pein__costume_024__costume24.png",
+      "pein__costume_025__costume25.png",
+      "pein__costume_034__costume34.png",
+      "pein__costume_035__costume35.png",
+      "pein__costume_036__costume36.png",
+      "pein__costume_037__costume37.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "pein__costume_043__costume43.png",
+      "pein__costume_044__costume44.png",
+      "pein__costume_048__costume48.png",
+      "pein__costume_049__costume49.png",
+      "pein__costume_050__costume50.png",
+      "pein__costume_059__costume59.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "pein__costume_034__costume34.png",
+      "pein__costume_038__costume38.png",
+      "pein__costume_040__costume40.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "pein__costume_041__costume41.png",
+      "pein__costume_042__costume42.png"
+    ],
+    "SPECIAL_TRANSFORM": ["pein__costume_051__costume51.png"],
+    "SPECIAL": [
+      "pein__costume_051__costume51.png",
+      "pein__costume_055__costume55.png",
+      "pein__costume_056__costume56.png",
+      "pein__costume_057__costume57.png",
+      "pein__costume_058__costume58.png",
+      "pein__costume_065__costume65.png",
+      "pein__costume_068__costume68.png",
+      "pein__costume_070__costume69.png",
+      "pein__costume_066__costume66.png",
+      "pein__costume_067__costume67.png",
+      "pein__costume_071__costume71.png",
+      "pein__costume_069__costume70.png"
+    ],
+    "BLOCK": ["pein__costume_001__costume1.png"],
+    "HIT": ["pein__costume_018__costume18.png"],
+    "KO": [
+      "pein__costume_015__costume15.png",
+      "pein__costume_016__costume16.png",
+      "pein__costume_017__costume17.png"
+    ],
+    "ATTACK_LIGHT": [
+      "pein__costume_020__costume20.png",
+      "pein__costume_021__costume21.png",
+      "pein__costume_022__costume22.png"
+    ],
+    "ATTACK_HEAVY": [
+      "pein__costume_038__costume38.png",
+      "pein__costume_040__costume40.png",
+      "pein__costume_041__costume41.png",
+      "pein__costume_042__costume42.png"
+    ]
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 45,
+      "requireHitForComboRoutes": false,
+      "attackDurationScale": 1.25,
+      "specialTransformDurationScale": 1.45
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 11,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 11,
+          "damageMultiplier": 1.15,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.05
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 14,
+          "damageMultiplier": 1.35,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.35
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 16,
+          "damageMultiplier": 1.2,
+          "rangeMultiplier": 1.08,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 20,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.15,
+          "knockbackMultiplier": 1.5
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL",
+          "duration": 35,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 1
+        }
+      ]
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "fixedCounts": {
+      "IDLE": 4,
+      "WALK": 7,
+      "JUMP": 3,
+      "ATTACK_LIGHT": 3,
+      "ATTACK_HEAVY": 4,
+      "SPECIAL": 12,
+      "BLOCK": 1,
+      "HIT": 1,
+      "KO": 3,
+      "ATTACK_LIGHT_1": 2,
+      "ATTACK_LIGHT_2": 12,
+      "ATTACK_LIGHT_3": 1,
+      "ATTACK_HEAVY_1": 1,
+      "ATTACK_HEAVY_2": 1,
+      "SPECIAL_TRANSFORM": 1
+    },
+    "fallbacks": [],
+    "genericRatio": 1,
+    "mostlyGeneric": true,
+    "editedByMapper": true,
+    "editedAt": "2026-02-23T23:40:58.070Z",
+    "mappingMode": "manual_editor_drag_drop",
+    "autoAssignedAt": "2026-02-24T01:14:08.168Z",
+    "autoAssignedCount": 0
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "targetName": "Sprite11",
+  "states": [
+    "IDLE",
+    "WALK",
+    "RUN",
+    "JUMP",
+    "CROUCH",
+    "CROUCH_WALK",
+    "CROUCH_ATTACK",
+    "CROUCH_THROW",
+    "ATTACK_LIGHT_1",
+    "ATTACK_LIGHT_2",
+    "ATTACK_LIGHT_3",
+    "ATTACK_HEAVY_1",
+    "ATTACK_HEAVY_2",
+    "RUN_ATTACK",
+    "THROW",
+    "KOMA_SUPPORT",
+    "TELEPORT",
+    "SPECIAL_TRANSFORM",
+    "SPECIAL",
+    "CHARGE",
+    "DASH",
+    "BLOCK",
+    "HIT",
+    "KO",
+    "ATTACK_LIGHT",
+    "ATTACK_HEAVY"
+  ],
+  "stateMap": {
+    "IDLE": [
+      "sprite11__stance.png",
+      "sprite11__stance2.png",
+      "sprite11__stance3.png",
+      "sprite11__stance4.png",
+      "sprite11__stance5.png",
+      "sprite11__stance6.png"
+    ],
+    "WALK": [
+      "sprite11__sasorirun.png",
+      "sprite11__sasorirun2.png",
+      "sprite11__sasorirun3.png",
+      "sprite11__sasorirun4.png",
+      "sprite11__sasorirun5.png",
+      "sprite11__sasorirun6.png",
+      "sprite11__leftrun.png",
+      "sprite11__leftrun2.png",
+      "sprite11__leftrun3.png",
+      "sprite11__leftrun4.png",
+      "sprite11__leftrun5.png",
+      "sprite11__leftrun6.png",
+      "sprite11__dash.png",
+      "sprite11__dash2.png",
+      "sprite11__dash3.png",
+      "sprite11__dash4.png",
+      "sprite11__dash5.png",
+      "sprite11__dash6.png",
+      "sprite11__dash7.png",
+      "sprite11__dash8.png",
+      "sprite11__dash9.png",
+      "sprite11__dash10.png",
+      "sprite11__dash11.png",
+      "sprite11__dash13.png",
+      "sprite11__dash14.png",
+      "sprite11__dash15.png",
+      "sprite11__dash16.png",
+      "sprite11__dash17.png",
+      "sprite11__dash18.png"
+    ],
+    "RUN": [
+      "sprite11__sasorirun.png",
+      "sprite11__sasorirun2.png",
+      "sprite11__sasorirun3.png",
+      "sprite11__sasorirun4.png",
+      "sprite11__sasorirun5.png",
+      "sprite11__sasorirun6.png"
+    ],
+    "JUMP": [
+      "sprite11__jump.png",
+      "sprite11__jump2.png",
+      "sprite11__jump3.png",
+      "sprite11__jump4.png",
+      "sprite11__jump5.png"
+    ],
+    "CROUCH": [
+      "sprite11__stance.png"
+    ],
+    "CROUCH_WALK": [
+      "sprite11__stance.png"
+    ],
+    "CROUCH_ATTACK": [
+      "sprite11__attack.png",
+      "sprite11__attack6.png",
+      "sprite11__attack11.png"
+    ],
+    "CROUCH_THROW": [
+      "sprite11__attack4.png",
+      "sprite11__attack9.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "sprite11__attack.png",
+      "sprite11__attack6.png",
+      "sprite11__attack11.png",
+      "sprite11__attack16.png",
+      "sprite11__attack21.png",
+      "sprite11__upattack2.png",
+      "sprite11__upattack7.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "sprite11__attack2.png",
+      "sprite11__attack7.png",
+      "sprite11__attack12.png",
+      "sprite11__attack17.png",
+      "sprite11__attack22.png",
+      "sprite11__upattack3.png",
+      "sprite11__upattack8.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "sprite11__attack3.png",
+      "sprite11__attack8.png",
+      "sprite11__attack13.png",
+      "sprite11__attack18.png",
+      "sprite11__attack23.png",
+      "sprite11__upattack4.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "sprite11__attack4.png",
+      "sprite11__attack9.png",
+      "sprite11__attack14.png",
+      "sprite11__attack19.png",
+      "sprite11__attack24.png",
+      "sprite11__upattack5.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "sprite11__attack5.png",
+      "sprite11__attack10.png",
+      "sprite11__attack15.png",
+      "sprite11__attack20.png",
+      "sprite11__upattack.png",
+      "sprite11__upattack6.png"
+    ],
+    "RUN_ATTACK": [
+      "sprite11__attack2.png",
+      "sprite11__attack7.png",
+      "sprite11__attack12.png"
+    ],
+    "THROW": [
+      "sprite11__attack4.png",
+      "sprite11__attack9.png"
+    ],
+    "KOMA_SUPPORT": [
+      "sprite11__stance.png",
+      "sprite11__stance2.png"
+    ],
+    "TELEPORT": [],
+    "SPECIAL_TRANSFORM": [
+      "sprite11__dash7.png",
+      "sprite11__dash8.png",
+      "sprite11__dash9.png"
+    ],
+    "SPECIAL": [
+      "sprite11__dash9.png",
+      "sprite11__dash10.png",
+      "sprite11__dash11.png",
+      "sprite11__dash13.png",
+      "sprite11__dash14.png",
+      "sprite11__dash15.png",
+      "sprite11__dash16.png",
+      "sprite11__dash17.png"
+    ],
+    "CHARGE": [
+      "sprite11__stance.png",
+      "sprite11__stance2.png"
+    ],
+    "DASH": [
+      "sprite11__sasorirun.png",
+      "sprite11__sasorirun2.png",
+      "sprite11__sasorirun3.png"
+    ],
+    "BLOCK": [
+      "sprite11__stance.png"
+    ],
+    "HIT": [
+      "sprite11__damage.png",
+      "sprite11__damage2.png",
+      "sprite11__damage3.png",
+      "sprite11__damage4.png",
+      "sprite11__damage5.png",
+      "sprite11__damage6.png",
+      "sprite11__21.png",
+      "sprite11__22.png"
+    ],
+    "KO": [
+      "sprite11__23.png",
+      "sprite11__24.png",
+      "sprite11__25.png",
+      "sprite11__26.png",
+      "sprite11__27.png",
+      "sprite11__28.png"
+    ],
+    "ATTACK_LIGHT": [
+      "sprite11__attack.png",
+      "sprite11__attack6.png",
+      "sprite11__attack2.png",
+      "sprite11__attack7.png",
+      "sprite11__attack3.png",
+      "sprite11__attack8.png"
+    ],
+    "ATTACK_HEAVY": [
+      "sprite11__attack4.png",
+      "sprite11__attack9.png",
+      "sprite11__attack14.png",
+      "sprite11__attack5.png",
+      "sprite11__attack10.png",
+      "sprite11__attack15.png"
+    ]
+  }
+}

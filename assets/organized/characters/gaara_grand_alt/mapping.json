@@ -1,0 +1,134 @@
+{
+  "targetName": "Sprite8",
+  "states": [
+    "IDLE",
+    "WALK",
+    "RUN",
+    "JUMP",
+    "CROUCH",
+    "ATTACK_LIGHT_1",
+    "ATTACK_LIGHT_2",
+    "ATTACK_LIGHT_3",
+    "ATTACK_HEAVY_1",
+    "ATTACK_HEAVY_2",
+    "RUN_ATTACK",
+    "KOMA_SUPPORT",
+    "TELEPORT",
+    "SPECIAL_TRANSFORM",
+    "SPECIAL",
+    "DASH",
+    "BLOCK",
+    "HIT",
+    "KO",
+    "ATTACK_LIGHT",
+    "ATTACK_HEAVY"
+  ],
+  "stateMap": {
+    "IDLE": [
+      "sprite8__gaara_std.png",
+      "sprite8__gaara_std2.png",
+      "sprite8__gaara_std3.png",
+      "sprite8__gaara_std4.png",
+      "sprite8__gaara_std5.png",
+      "sprite8__gaara_std6.png"
+    ],
+    "WALK": [
+      "sprite8__gaara_std.png",
+      "sprite8__gaara_std3.png",
+      "sprite8__gaara_std5.png"
+    ],
+    "RUN": [
+      "sprite8__gaara_std.png",
+      "sprite8__gaara_std4.png"
+    ],
+    "JUMP": [
+      "sprite8__gaara_jump.png",
+      "sprite8__gaara_jump2.png"
+    ],
+    "CROUCH": [
+      "sprite8__gaara_std2.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "sprite8__gaara_jump3.png",
+      "sprite8__gaara_jump4.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "sprite8__gaara_jump_attack.png",
+      "sprite8__gaara_jump_attack2.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "sprite8__gaara_jump_attack3.png",
+      "sprite8__gaara_jump_attack4.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "sprite8__gaara_dsspear.png",
+      "sprite8__gaara_dsspear2.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "sprite8__gaara_jump_attack5.png",
+      "sprite8__gaara_jump_attack6.png",
+      "sprite8__gaara_jump_attack7.png"
+    ],
+    "RUN_ATTACK": [
+      "sprite8__gaara_dsspear.png",
+      "sprite8__gaara_dsspear2.png"
+    ],
+    "KOMA_SUPPORT": [
+      "sprite8__gaara_std6.png"
+    ],
+    "TELEPORT": [
+      "sprite8__gaara_jump2.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "sprite8__gaara_special.png",
+      "sprite8__gaara_special2.png",
+      "sprite8__gaara_special3.png",
+      "sprite8__gaara_special4.png",
+      "sprite8__gaara_special5.png",
+      "sprite8__gaara_special6.png",
+      "sprite8__gaara_special7.png",
+      "sprite8__gaara_special8.png"
+    ],
+    "SPECIAL": [
+      "sprite8__gaara_special9.png",
+      "sprite8__gaara_special10.png",
+      "sprite8__gaara_special11.png",
+      "sprite8__gaara_special12.png",
+      "sprite8__gaara_special13.png",
+      "sprite8__gaara_special14.png",
+      "sprite8__gaara_special15.png",
+      "sprite8__gaara_special16.png",
+      "sprite8__gaara_special17.png",
+      "sprite8__gaara_special18.png",
+      "sprite8__gaara_special19.png",
+      "sprite8__gaara_special20.png"
+    ],
+    "DASH": [
+      "sprite8__gaara_jump.png"
+    ],
+    "BLOCK": [
+      "sprite8__gaara_std3.png"
+    ],
+    "HIT": [
+      "sprite8__gaara_jump.png",
+      "sprite8__gaara_std2.png"
+    ],
+    "KO": [
+      "sprite8__gaara_jump2.png",
+      "sprite8__gaara_std.png"
+    ],
+    "ATTACK_LIGHT": [
+      "sprite8__gaara_jump3.png",
+      "sprite8__gaara_jump4.png",
+      "sprite8__gaara_jump_attack.png",
+      "sprite8__gaara_jump_attack2.png"
+    ],
+    "ATTACK_HEAVY": [
+      "sprite8__gaara_dsspear.png",
+      "sprite8__gaara_dsspear2.png",
+      "sprite8__gaara_jump_attack5.png",
+      "sprite8__gaara_jump_attack6.png",
+      "sprite8__gaara_jump_attack7.png"
+    ]
+  }
+}

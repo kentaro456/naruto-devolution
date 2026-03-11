@@ -1,0 +1,89 @@
+{
+  "targetName": "Sprite7",
+  "states": [
+    "IDLE",
+    "WALK",
+    "JUMP",
+    "ATTACK_LIGHT_1",
+    "ATTACK_LIGHT_2",
+    "ATTACK_LIGHT_3",
+    "ATTACK_HEAVY_1",
+    "ATTACK_HEAVY_2",
+    "SPECIAL_TRANSFORM",
+    "SPECIAL",
+    "BLOCK",
+    "HIT",
+    "KO",
+    "ATTACK_LIGHT",
+    "ATTACK_HEAVY"
+  ],
+  "stateMap": {
+    "IDLE": [
+      "sprite7__tenten_shippuden_1.png",
+      "sprite7__tenten_shippuden2.png"
+    ],
+    "WALK": [
+      "sprite7__tenten_shippuden3.png",
+      "sprite7__tenten_shippuden4.png",
+      "sprite7__tenten_shippuden5.png"
+    ],
+    "JUMP": [
+      "sprite7__tenten_shippuden6.png",
+      "sprite7__tenten_shippuden7.png",
+      "sprite7__tenten_shippuden8.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "sprite7__tenten_shippuden.png",
+      "sprite7__tenten_shippuden9.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "sprite7__tenten_shippuden10.png",
+      "sprite7__tenten_shippuden11.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "sprite7__tenten_shippuden12.png",
+      "sprite7__tenten_shippuden13.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "sprite7__tenten_shippuden11.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "sprite7__tenten_shippuden12.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "sprite7__tenten_shippuden22.png",
+      "sprite7__tenten_shippuden23.png",
+      "sprite7__tenten_shippuden24.png"
+    ],
+    "SPECIAL": [
+      "sprite7__tenten_shippuden14.png",
+      "sprite7__tenten_shippuden15.png",
+      "sprite7__tenten_shippuden16.png",
+      "sprite7__tenten_shippuden20.png",
+      "sprite7__tenten_shippuden19.png"
+    ],
+    "BLOCK": [
+      "sprite7__tenten_shippuden_1.png"
+    ],
+    "HIT": [
+      "sprite7__tenten_shippuden21.png",
+      "sprite7__tenten_shippuden22.png"
+    ],
+    "KO": [
+      "sprite7__tenten_shippuden23.png",
+      "sprite7__tenten_shippuden24.png"
+    ],
+    "ATTACK_LIGHT": [
+      "sprite7__tenten_shippuden.png",
+      "sprite7__tenten_shippuden9.png",
+      "sprite7__tenten_shippuden10.png",
+      "sprite7__tenten_shippuden11.png",
+      "sprite7__tenten_shippuden12.png",
+      "sprite7__tenten_shippuden13.png"
+    ],
+    "ATTACK_HEAVY": [
+      "sprite7__tenten_shippuden11.png",
+      "sprite7__tenten_shippuden12.png"
+    ]
+  }
+}

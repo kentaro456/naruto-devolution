@@ -1,0 +1,311 @@
+{
+  "targetName": "Sprite2",
+  "version": 2,
+  "categories": {
+    "idle": [
+      "sprite2__costume_001__costume1.png",
+      "sprite2__costume_002__costume3.png",
+      "sprite2__costume_003__costume4.png",
+      "sprite2__costume_015__costume15.png"
+    ],
+    "walk": [
+      "sprite2__costume_004__costume5.png",
+      "sprite2__costume_005__costume6.png",
+      "sprite2__costume_006__costume7.png",
+      "sprite2__costume_007__costume8.png",
+      "sprite2__costume_008__costume9.png",
+      "sprite2__costume_009__costume10.png",
+      "sprite2__costume_010__costume11.png",
+      "sprite2__costume_011__costume12.png"
+    ],
+    "jump": [
+      "sprite2__costume_034__costume34.png",
+      "sprite2__costume_035__costume35.png"
+    ],
+    "attack_light_1": [
+      "sprite2__costume_019__costume19.png",
+      "sprite2__costume_021__costume21.png",
+      "sprite2__costume_022__costume22.png",
+      "sprite2__costume_023__costume23.png",
+      "sprite2__costume_024__costume24.png"
+    ],
+    "attack_light_2": [
+      "sprite2__costume_012__costume13.png",
+      "sprite2__costume_025__costume25.png",
+      "sprite2__costume_027__costume27.png",
+      "sprite2__costume_031__costume31.png",
+      "sprite2__costume_033__costume33.png",
+      "sprite2__costume_036__costume36.png"
+    ],
+    "attack_light_3": [
+      "sprite2__costume_038__costume38.png",
+      "sprite2__costume_041__costume41.png",
+      "sprite2__costume_043__costume43.png",
+      "sprite2__costume_093__costume93.png",
+      "sprite2__costume_094__costume94.png",
+      "sprite2__costume_095__costume95.png",
+      "sprite2__costume_096__costume96.png",
+      "sprite2__costume_097__costume97.png",
+      "sprite2__costume_098__costume98.png",
+      "sprite2__costume_099__costume99.png"
+    ],
+    "attack_heavy_1": [
+      "sprite2__costume_026__costume26.png",
+      "sprite2__costume_028__costume28.png",
+      "sprite2__costume_030__costume30.png",
+      "sprite2__costume_032__costume32.png",
+      "sprite2__costume_034__costume34.png",
+      "sprite2__costume_035__costume35.png"
+    ],
+    "attack_heavy_2": [
+      "sprite2__costume_039__costume39.png",
+      "sprite2__costume_040__costume40.png",
+      "sprite2__costume_088__costume88.png",
+      "sprite2__costume_089__costume89.png",
+      "sprite2__costume_090__costume90.png",
+      "sprite2__costume_091__costume91.png",
+      "sprite2__costume_092__costume92.png",
+      "sprite2__costume_137__costume137.png",
+      "sprite2__costume_139__costume139.png",
+      "sprite2__costume_140__costume140.png",
+      "sprite2__costume_141__costume141.png"
+    ],
+    "special_transform": [
+      "sprite2__costume_014__costume2.png",
+      "sprite2__costume_042__costume42.png",
+      "sprite2__costume_044__costume44.png",
+      "sprite2__costume_045__costume45.png",
+      "sprite2__costume_046__costume46.png",
+      "sprite2__costume_047__costume47.png",
+      "sprite2__costume_048__costume48.png",
+      "sprite2__costume_049__costume49.png",
+      "sprite2__costume_050__costume50.png",
+      "sprite2__costume_051__costume51.png",
+      "sprite2__costume_052__costume52.png",
+      "sprite2__costume_053__costume53.png",
+      "sprite2__costume_054__costume54.png",
+      "sprite2__costume_055__costume55.png",
+      "sprite2__costume_056__costume56.png",
+      "sprite2__costume_057__costume57.png",
+      "sprite2__costume_058__costume58.png",
+      "sprite2__costume_059__costume59.png",
+      "sprite2__costume_060__costume60.png",
+      "sprite2__costume_061__costume61.png",
+      "sprite2__costume_100__costume100.png",
+      "sprite2__costume_101__costume101.png",
+      "sprite2__costume_102__costume102.png",
+      "sprite2__costume_103__costume103.png",
+      "sprite2__costume_104__costume104.png",
+      "sprite2__costume_105__costume105.png",
+      "sprite2__costume_106__costume106.png",
+      "sprite2__costume_117__costume117.png",
+      "sprite2__costume_118__costume118.png",
+      "sprite2__costume_119__costume119.png",
+      "sprite2__costume_120__costume120.png",
+      "sprite2__costume_121__costume121.png",
+      "sprite2__costume_122__costume122.png",
+      "sprite2__costume_123__costume123.png",
+      "sprite2__costume_124__costume124.png",
+      "sprite2__costume_125__costume125.png",
+      "sprite2__costume_126__costume126.png",
+      "sprite2__costume_127__costume127.png",
+      "sprite2__costume_128__costume128.png",
+      "sprite2__costume_129__costume129.png",
+      "sprite2__costume_131__costume131.png",
+      "sprite2__costume_132__costume132.png",
+      "sprite2__costume_133__costume133.png",
+      "sprite2__costume_134__costume134.png",
+      "sprite2__costume_135__costume135.png",
+      "sprite2__costume_136__costume136.png",
+      "sprite2__costume_138__costume138.png"
+    ],
+    "special": [
+      "sprite2__costume_073__costume73.png",
+      "sprite2__costume_084__costume84.png",
+      "sprite2__costume_085__costume85.png",
+      "sprite2__costume_086__costume86.png",
+      "sprite2__costume_087__costume87.png",
+      "sprite2__costume_088__costume88.png",
+      "sprite2__costume_090__costume90.png",
+      "sprite2__costume_091__costume91.png"
+    ],
+    "block": ["sprite2__costume_013__costume14.png"],
+    "hit": [
+      "sprite2__costume_016__costume16.png",
+      "sprite2__costume_130__costume130.png"
+    ],
+    "ko": [
+      "sprite2__costume_017__costume17.png",
+      "sprite2__costume_018__costume18.png",
+      "sprite2__costume_020__costume20.png"
+    ],
+    "attack_light": [
+      "sprite2__costume_021__costume21.png",
+      "sprite2__costume_022__costume22.png",
+      "sprite2__costume_024__costume24.png"
+    ],
+    "attack_heavy": [
+      "sprite2__costume_026__costume26.png",
+      "sprite2__costume_028__costume28.png",
+      "sprite2__costume_031__costume31.png",
+      "sprite2__costume_032__costume32.png"
+    ]
+  },
+  "stateMap": {
+    "IDLE": [
+      "sprite2__costume_001__costume1.png",
+      "sprite2__costume_002__costume3.png",
+      "sprite2__costume_003__costume4.png",
+      "sprite2__costume_015__costume15.png"
+    ],
+    "WALK": [
+      "sprite2__costume_004__costume5.png",
+      "sprite2__costume_005__costume6.png",
+      "sprite2__costume_006__costume7.png",
+      "sprite2__costume_007__costume8.png",
+      "sprite2__costume_008__costume9.png",
+      "sprite2__costume_009__costume10.png",
+      "sprite2__costume_010__costume11.png",
+      "sprite2__costume_011__costume12.png"
+    ],
+    "JUMP": [
+      "sprite2__costume_034__costume34.png",
+      "sprite2__costume_035__costume35.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "sprite2__costume_012__costume13.png",
+      "sprite2__costume_019__costume19.png",
+      "sprite2__costume_021__costume21.png",
+      "sprite2__costume_022__costume22.png",
+      "sprite2__costume_023__costume23.png",
+      "sprite2__costume_024__costume24.png",
+      "sprite2__costume_025__costume25.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "sprite2__costume_027__costume27.png",
+      "sprite2__costume_031__costume31.png",
+      "sprite2__costume_033__costume33.png",
+      "sprite2__costume_036__costume36.png",
+      "sprite2__costume_038__costume38.png",
+      "sprite2__costume_041__costume41.png",
+      "sprite2__costume_043__costume43.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "sprite2__costume_093__costume93.png",
+      "sprite2__costume_094__costume94.png",
+      "sprite2__costume_095__costume95.png",
+      "sprite2__costume_096__costume96.png",
+      "sprite2__costume_097__costume97.png",
+      "sprite2__costume_098__costume98.png",
+      "sprite2__costume_099__costume99.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "sprite2__costume_026__costume26.png",
+      "sprite2__costume_028__costume28.png",
+      "sprite2__costume_030__costume30.png",
+      "sprite2__costume_031__costume31.png",
+      "sprite2__costume_032__costume32.png",
+      "sprite2__costume_034__costume34.png",
+      "sprite2__costume_035__costume35.png",
+      "sprite2__costume_039__costume39.png",
+      "sprite2__costume_040__costume40.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "sprite2__costume_088__costume88.png",
+      "sprite2__costume_089__costume89.png",
+      "sprite2__costume_090__costume90.png",
+      "sprite2__costume_091__costume91.png",
+      "sprite2__costume_092__costume92.png",
+      "sprite2__costume_137__costume137.png",
+      "sprite2__costume_139__costume139.png",
+      "sprite2__costume_140__costume140.png",
+      "sprite2__costume_141__costume141.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "sprite2__costume_014__costume2.png",
+      "sprite2__costume_042__costume42.png",
+      "sprite2__costume_044__costume44.png",
+      "sprite2__costume_045__costume45.png",
+      "sprite2__costume_046__costume46.png",
+      "sprite2__costume_047__costume47.png",
+      "sprite2__costume_048__costume48.png",
+      "sprite2__costume_049__costume49.png",
+      "sprite2__costume_050__costume50.png",
+      "sprite2__costume_051__costume51.png",
+      "sprite2__costume_052__costume52.png",
+      "sprite2__costume_053__costume53.png",
+      "sprite2__costume_054__costume54.png",
+      "sprite2__costume_055__costume55.png",
+      "sprite2__costume_056__costume56.png",
+      "sprite2__costume_057__costume57.png",
+      "sprite2__costume_058__costume58.png",
+      "sprite2__costume_059__costume59.png",
+      "sprite2__costume_060__costume60.png",
+      "sprite2__costume_061__costume61.png",
+      "sprite2__costume_100__costume100.png",
+      "sprite2__costume_101__costume101.png",
+      "sprite2__costume_102__costume102.png",
+      "sprite2__costume_103__costume103.png",
+      "sprite2__costume_104__costume104.png",
+      "sprite2__costume_105__costume105.png",
+      "sprite2__costume_106__costume106.png",
+      "sprite2__costume_117__costume117.png",
+      "sprite2__costume_118__costume118.png",
+      "sprite2__costume_119__costume119.png",
+      "sprite2__costume_120__costume120.png",
+      "sprite2__costume_121__costume121.png",
+      "sprite2__costume_122__costume122.png",
+      "sprite2__costume_123__costume123.png",
+      "sprite2__costume_124__costume124.png",
+      "sprite2__costume_125__costume125.png",
+      "sprite2__costume_126__costume126.png",
+      "sprite2__costume_127__costume127.png",
+      "sprite2__costume_128__costume128.png",
+      "sprite2__costume_129__costume129.png",
+      "sprite2__costume_131__costume131.png",
+      "sprite2__costume_132__costume132.png",
+      "sprite2__costume_133__costume133.png",
+      "sprite2__costume_134__costume134.png",
+      "sprite2__costume_135__costume135.png",
+      "sprite2__costume_136__costume136.png",
+      "sprite2__costume_138__costume138.png"
+    ],
+    "SPECIAL": [
+      "sprite2__costume_073__costume73.png",
+      "sprite2__costume_084__costume84.png",
+      "sprite2__costume_085__costume85.png",
+      "sprite2__costume_086__costume86.png",
+      "sprite2__costume_087__costume87.png",
+      "sprite2__costume_088__costume88.png",
+      "sprite2__costume_090__costume90.png",
+      "sprite2__costume_091__costume91.png"
+    ],
+    "BLOCK": ["sprite2__costume_013__costume14.png"],
+    "HIT": [
+      "sprite2__costume_016__costume16.png",
+      "sprite2__costume_130__costume130.png"
+    ],
+    "KO": [
+      "sprite2__costume_017__costume17.png",
+      "sprite2__costume_018__costume18.png",
+      "sprite2__costume_020__costume20.png"
+    ],
+    "ATTACK_LIGHT": [
+      "sprite2__costume_021__costume21.png",
+      "sprite2__costume_022__costume22.png",
+      "sprite2__costume_024__costume24.png"
+    ],
+    "ATTACK_HEAVY": [
+      "sprite2__costume_026__costume26.png",
+      "sprite2__costume_028__costume28.png",
+      "sprite2__costume_031__costume31.png",
+      "sprite2__costume_032__costume32.png"
+    ]
+  },
+  "meta": {
+    "editedByMapper": true,
+    "editedAt": "2026-02-24T00:00:00.000Z",
+    "mappingMode": "manual_editor_drag_drop",
+    "notes": "Sai mapping rebuilt manually from visual frame inspection to avoid random assignment"
+  }
+}

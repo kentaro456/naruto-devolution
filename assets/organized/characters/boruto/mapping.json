@@ -1,0 +1,434 @@
+{
+  "targetName": "Boruto",
+  "version": 7,
+  "categories": {
+    "idle": [
+      "boruto__costume56.png",
+      "boruto__costume57.png",
+      "boruto__costume58.png",
+      "boruto__costume59.png",
+      "boruto__costume60.png"
+    ],
+    "walk": [
+      "boruto__costume11.png",
+      "boruto__costume12.png",
+      "boruto__costume13.png",
+      "boruto__costume14.png",
+      "boruto__costume15.png",
+      "boruto__costume16.png"
+    ],
+    "run": [
+      "boruto__costume11.png",
+      "boruto__costume12.png",
+      "boruto__costume13.png",
+      "boruto__costume14.png",
+      "boruto__costume15.png",
+      "boruto__costume16.png"
+    ],
+    "jump": [
+      "boruto__costume23.png",
+      "boruto__costume11.png",
+      "boruto__costume12.png"
+    ],
+    "crouch": [
+      "boruto__costume39.png"
+    ],
+    "crouch_walk": [
+      "boruto__costume39.png"
+    ],
+    "crouch_attack": [],
+    "crouch_throw": [],
+    "attack_light_1": [
+      "boruto__costume17.png",
+      "boruto__costume19.png",
+      "boruto__costume20.png",
+      "boruto__costume21.png",
+      "boruto__costume23.png",
+      "boruto__costume24.png",
+      "boruto__costume25.png",
+      "boruto__costume26.png",
+      "boruto__costume27.png"
+    ],
+    "attack_light_2": [
+      "boruto__costume42.png",
+      "boruto__costume43.png",
+      "boruto__costume47.png",
+      "boruto__costume53.png"
+    ],
+    "attack_light_3": [
+      "boruto__costume17.png",
+      "boruto__costume19.png",
+      "boruto__costume26.png",
+      "boruto__costume21.png",
+      "boruto__costume27.png"
+    ],
+    "attack_heavy_1": [
+      "boruto__costume55.png",
+      "boruto__costume53.png",
+      "boruto__costume52.png",
+      "boruto__costume51.png",
+      "boruto__costume50.png",
+      "boruto__costume49.png"
+    ],
+    "attack_heavy_2": [
+      "boruto__costume47.png",
+      "boruto__costume48.png",
+      "boruto__costume49.png",
+      "boruto__costume50.png",
+      "boruto__costume51.png",
+      "boruto__costume52.png",
+      "boruto__costume53.png",
+      "boruto__costume54.png",
+      "boruto__costume43.png"
+    ],
+    "run_attack": [
+      "boruto__costume11.png",
+      "boruto__costume12.png",
+      "boruto__costume19.png"
+    ],
+    "throw": [
+      "boruto__costume26.png"
+    ],
+    "koma_support": [],
+    "teleport": [
+      "boruto__shadowclonesign.png",
+      "boruto__costume40.png",
+      "boruto__costume41.png"
+    ],
+    "special_transform": [],
+    "special": [],
+    "charge": [],
+    "dash": [
+      "boruto__costume39.png",
+      "boruto__shadowclonesign.png"
+    ],
+    "block": [
+      "boruto__costume17.png"
+    ],
+    "hit": [
+      "boruto__costume28.png",
+      "boruto__costume29.png",
+      "boruto__costume30.png",
+      "boruto__costume31.png",
+      "boruto__costume32.png",
+      "boruto__costume33.png",
+      "boruto__costume34.png",
+      "boruto__costume35.png",
+      "boruto__costume36.png"
+    ],
+    "ko": [
+      "boruto__costume34.png",
+      "boruto__costume35.png",
+      "boruto__costume36.png"
+    ],
+    "attack_light": [
+      "boruto__costume42.png",
+      "boruto__costume43.png",
+      "boruto__costume44.png",
+      "boruto__costume47.png",
+      "boruto__costume48.png",
+      "boruto__costume49.png",
+      "boruto__costume50.png",
+      "boruto__costume51.png",
+      "boruto__costume52.png",
+      "boruto__costume53.png",
+      "boruto__costume54.png",
+      "boruto__costume55.png"
+    ],
+    "attack_heavy": [
+      "boruto__costume39.png",
+      "boruto__costume40.png",
+      "boruto__costume41.png",
+      "boruto__costume42.png",
+      "boruto__costume43.png",
+      "boruto__costume44.png",
+      "boruto__costume47.png",
+      "boruto__costume48.png",
+      "boruto__costume49.png",
+      "boruto__costume50.png",
+      "boruto__costume51.png",
+      "boruto__costume52.png",
+      "boruto__costume53.png",
+      "boruto__costume54.png",
+      "boruto__costume55.png"
+    ],
+    "unused_unknown": []
+  },
+  "stateMap": {
+    "IDLE": [
+      "boruto__costume56.png",
+      "boruto__costume57.png",
+      "boruto__costume58.png",
+      "boruto__costume59.png",
+      "boruto__costume60.png"
+    ],
+    "WALK": [
+      "boruto__costume11.png",
+      "boruto__costume12.png",
+      "boruto__costume13.png",
+      "boruto__costume14.png",
+      "boruto__costume15.png",
+      "boruto__costume16.png"
+    ],
+    "RUN": [
+      "boruto__costume11.png",
+      "boruto__costume12.png",
+      "boruto__costume13.png",
+      "boruto__costume14.png",
+      "boruto__costume15.png",
+      "boruto__costume16.png"
+    ],
+    "JUMP": [
+      "boruto__costume23.png",
+      "boruto__costume11.png",
+      "boruto__costume12.png"
+    ],
+    "CROUCH": [
+      "boruto__costume39.png"
+    ],
+    "CROUCH_WALK": [
+      "boruto__costume39.png"
+    ],
+    "CROUCH_ATTACK": [],
+    "CROUCH_THROW": [],
+    "ATTACK_LIGHT_1": [
+      "boruto__costume17.png",
+      "boruto__costume19.png",
+      "boruto__costume20.png",
+      "boruto__costume21.png",
+      "boruto__costume23.png",
+      "boruto__costume24.png",
+      "boruto__costume25.png",
+      "boruto__costume26.png",
+      "boruto__costume27.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "boruto__costume42.png",
+      "boruto__costume43.png",
+      "boruto__costume47.png",
+      "boruto__costume53.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "boruto__costume17.png",
+      "boruto__costume19.png",
+      "boruto__costume26.png",
+      "boruto__costume21.png",
+      "boruto__costume27.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "boruto__costume55.png",
+      "boruto__costume53.png",
+      "boruto__costume52.png",
+      "boruto__costume51.png",
+      "boruto__costume50.png",
+      "boruto__costume49.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "boruto__costume47.png",
+      "boruto__costume48.png",
+      "boruto__costume49.png",
+      "boruto__costume50.png",
+      "boruto__costume51.png",
+      "boruto__costume52.png",
+      "boruto__costume53.png",
+      "boruto__costume54.png",
+      "boruto__costume43.png"
+    ],
+    "RUN_ATTACK": [
+      "boruto__costume11.png",
+      "boruto__costume12.png",
+      "boruto__costume19.png"
+    ],
+    "THROW": [
+      "boruto__costume26.png"
+    ],
+    "KOMA_SUPPORT": [],
+    "TELEPORT": [
+      "boruto__shadowclonesign.png",
+      "boruto__costume40.png",
+      "boruto__costume41.png"
+    ],
+    "SPECIAL_TRANSFORM": [],
+    "SPECIAL": [],
+    "CHARGE": [],
+    "DASH": [
+      "boruto__costume39.png",
+      "boruto__shadowclonesign.png"
+    ],
+    "BLOCK": [
+      "boruto__costume17.png"
+    ],
+    "HIT": [
+      "boruto__costume28.png",
+      "boruto__costume29.png",
+      "boruto__costume30.png",
+      "boruto__costume31.png",
+      "boruto__costume32.png",
+      "boruto__costume33.png",
+      "boruto__costume34.png",
+      "boruto__costume35.png",
+      "boruto__costume36.png"
+    ],
+    "KO": [
+      "boruto__costume34.png",
+      "boruto__costume35.png",
+      "boruto__costume36.png"
+    ],
+    "ATTACK_LIGHT": [
+      "boruto__costume42.png",
+      "boruto__costume43.png",
+      "boruto__costume44.png",
+      "boruto__costume47.png",
+      "boruto__costume48.png",
+      "boruto__costume49.png",
+      "boruto__costume50.png",
+      "boruto__costume51.png",
+      "boruto__costume52.png",
+      "boruto__costume53.png",
+      "boruto__costume54.png",
+      "boruto__costume55.png"
+    ],
+    "ATTACK_HEAVY": [
+      "boruto__costume39.png",
+      "boruto__costume40.png",
+      "boruto__costume41.png",
+      "boruto__costume42.png",
+      "boruto__costume43.png",
+      "boruto__costume44.png",
+      "boruto__costume47.png",
+      "boruto__costume48.png",
+      "boruto__costume49.png",
+      "boruto__costume50.png",
+      "boruto__costume51.png",
+      "boruto__costume52.png",
+      "boruto__costume53.png",
+      "boruto__costume54.png",
+      "boruto__costume55.png"
+    ],
+    "UNUSED_UNKNOWN": []
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 45,
+      "requireHitForComboRoutes": false,
+      "attackDurationScale": 1.25,
+      "specialTransformDurationScale": 1.45
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 11,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 11,
+          "damageMultiplier": 1.15,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.05
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 14,
+          "damageMultiplier": 1.35,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.35
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 16,
+          "damageMultiplier": 1.2,
+          "rangeMultiplier": 1.08,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 20,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.15,
+          "knockbackMultiplier": 1.5
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL",
+          "duration": 35,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 1
+        }
+      ]
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "neutral": "S_N_1",
+        "up": "S_U_1",
+        "down": "S_D_1",
+        "back": "S_B_1",
+        "forward": "S_F_1",
+        "any": "S_1"
+      }
+    },
+    "actionMap": {
+      "light": "ATTACK_LIGHT_1",
+      "heavy": "ATTACK_HEAVY_1",
+      "special": "SPECIAL",
+      "transform": "SPECIAL_TRANSFORM",
+      "block": "BLOCK",
+      "jump": "JUMP",
+      "run": "RUN",
+      "crouch": "CROUCH",
+      "dash": "DASH"
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "editedByMapper": true,
+    "editedAt": "2026-03-09T19:04:54.745Z",
+    "mappingMode": "manual_editor_modal"
+  },
+  "projectile": {
+    "imagePath": "/assets/organized/characters/projectile_pool/pool/sb3_fullpack/projectile__kunai.png",
+    "kind": "kunai",
+    "speed": 10,
+    "width": 24,
+    "height": 24,
+    "life": 60,
+    "spinSpeed": 0
+  },
+  "projectileByState": {
+    "CROUCH_WALK": {
+      "imagePath": "/assets/organized/characters/projectile_pool/pool/sb3_fullpack/projectile__kunai.png",
+      "kind": "kunai",
+      "speed": 10,
+      "width": 24,
+      "height": 24,
+      "life": 60,
+      "spinSpeed": 0
+    }
+  },
+  "__validationWarnings": [
+    "Etat requis vide: SPECIAL",
+    "WALK/JUMP partagent 2 frame(s): boruto__costume11.png, boruto__costume12.png"
+  ]
+}

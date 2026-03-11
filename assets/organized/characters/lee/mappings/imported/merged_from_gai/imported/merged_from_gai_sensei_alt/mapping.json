@@ -1,0 +1,285 @@
+{
+  "targetName": "Sprite6",
+  "states": [
+    "IDLE",
+    "WALK",
+    "RUN",
+    "JUMP",
+    "CROUCH",
+    "CROUCH_WALK",
+    "CROUCH_ATTACK",
+    "CROUCH_THROW",
+    "ATTACK_LIGHT_1",
+    "ATTACK_LIGHT_2",
+    "ATTACK_LIGHT_3",
+    "ATTACK_HEAVY_1",
+    "ATTACK_HEAVY_2",
+    "RUN_ATTACK",
+    "THROW",
+    "KOMA_SUPPORT",
+    "TELEPORT",
+    "SPECIAL_TRANSFORM",
+    "SPECIAL",
+    "CHARGE",
+    "DASH",
+    "BLOCK",
+    "HIT",
+    "KO",
+    "ATTACK_LIGHT",
+    "ATTACK_HEAVY"
+  ],
+  "stateMap": {
+    "IDLE": [
+      "sprite6__gai.png",
+      "sprite6__gai2.png",
+      "sprite6__gai3.png",
+      "sprite6__gai4.png",
+      "sprite6__gai_2.png",
+      "sprite6__gai5.png",
+      "sprite6__gai6.png",
+      "sprite6__gai_3.png",
+      "sprite6__gai7.png",
+      "sprite6__gai_4.png",
+      "sprite6__gai8.png",
+      "sprite6__gai9.png",
+      "sprite6__gai10.png",
+      "sprite6__gai11.png",
+      "sprite6__gai13.png",
+      "sprite6__gai_5.png"
+    ],
+    "WALK": [
+      "sprite6__gai14.png",
+      "sprite6__gai15.png",
+      "sprite6__gai16.png",
+      "sprite6__gai_6.png",
+      "sprite6__gai17.png",
+      "sprite6__gai18.png",
+      "sprite6__gai19.png",
+      "sprite6__gai_7.png",
+      "sprite6__gai_8.png",
+      "sprite6__gai20.png",
+      "sprite6__gai21.png",
+      "sprite6__gai22.png",
+      "sprite6__gai23.png",
+      "sprite6__gai24.png",
+      "sprite6__gai_9.png",
+      "sprite6__gai25.png",
+      "sprite6__gai26.png",
+      "sprite6__gai27.png",
+      "sprite6__gai28.png"
+    ],
+    "RUN": [
+      "sprite6__gai14.png",
+      "sprite6__gai15.png",
+      "sprite6__gai16.png",
+      "sprite6__gai_6.png",
+      "sprite6__gai17.png",
+      "sprite6__gai18.png"
+    ],
+    "JUMP": [
+      "sprite6__gai29.png",
+      "sprite6__gai30.png",
+      "sprite6__gai31.png",
+      "sprite6__gai32.png",
+      "sprite6__gai33.png",
+      "sprite6__gai34.png",
+      "sprite6__gai35.png",
+      "sprite6__gai36.png",
+      "sprite6__gai37.png",
+      "sprite6__gai38.png",
+      "sprite6__gai39.png",
+      "sprite6__gai40.png",
+      "sprite6__gai41.png",
+      "sprite6__gai42.png",
+      "sprite6__gai43.png",
+      "sprite6__gai44.png",
+      "sprite6__gai45.png"
+    ],
+    "CROUCH": [
+      "sprite6__gai.png"
+    ],
+    "CROUCH_WALK": [
+      "sprite6__gai.png"
+    ],
+    "CROUCH_ATTACK": [
+      "sprite6__gai46.png",
+      "sprite6__gai51.png",
+      "sprite6__gai56.png"
+    ],
+    "CROUCH_THROW": [
+      "sprite6__gai49.png",
+      "sprite6__gai54.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "sprite6__gai46.png",
+      "sprite6__gai51.png",
+      "sprite6__gai56.png",
+      "sprite6__gai61.png",
+      "sprite6__gai66.png",
+      "sprite6__gai71.png",
+      "sprite6__gai76.png",
+      "sprite6__gai81.png",
+      "sprite6__gai86.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "sprite6__gai47.png",
+      "sprite6__gai52.png",
+      "sprite6__gai57.png",
+      "sprite6__gai62.png",
+      "sprite6__gai67.png",
+      "sprite6__gai40.png",
+      "sprite6__gai77.png",
+      "sprite6__gai82.png",
+      "sprite6__gai28.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "sprite6__gai48.png",
+      "sprite6__gai53.png",
+      "sprite6__gai58.png",
+      "sprite6__gai63.png",
+      "sprite6__gai68.png",
+      "sprite6__gai73.png",
+      "sprite6__gai52.png",
+      "sprite6__gai83.png",
+      "sprite6__gai29.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "sprite6__gai49.png",
+      "sprite6__gai54.png",
+      "sprite6__gai59.png",
+      "sprite6__gai64.png",
+      "sprite6__gai69.png",
+      "sprite6__gai74.png",
+      "sprite6__gai79.png",
+      "sprite6__gai84.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "sprite6__gai50.png",
+      "sprite6__gai55.png",
+      "sprite6__gai60.png",
+      "sprite6__gai65.png",
+      "sprite6__gai70.png",
+      "sprite6__gai75.png",
+      "sprite6__gai80.png",
+      "sprite6__gai85.png"
+    ],
+    "RUN_ATTACK": [
+      "sprite6__gai47.png",
+      "sprite6__gai52.png",
+      "sprite6__gai57.png"
+    ],
+    "THROW": [
+      "sprite6__gai49.png",
+      "sprite6__gai54.png"
+    ],
+    "KOMA_SUPPORT": [
+      "sprite6__gai89.png",
+      "sprite6__gai31.png"
+    ],
+    "TELEPORT": [
+      "sprite6__gai89.png",
+      "sprite6__gai31.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "sprite6__gai_8.png",
+      "sprite6__gai20.png",
+      "sprite6__gai21.png"
+    ],
+    "SPECIAL": [
+      "sprite6__gai89.png",
+      "sprite6__gai31.png",
+      "sprite6__gai91.png",
+      "sprite6__gai92.png",
+      "sprite6__gai93.png",
+      "sprite6__gai94.png",
+      "sprite6__gai95.png",
+      "sprite6__gai96.png",
+      "sprite6__gai97.png",
+      "sprite6__gai98.png",
+      "sprite6__gai99.png",
+      "sprite6__gai100.png",
+      "sprite6__gai101.png",
+      "sprite6__gai102.png",
+      "sprite6__gai103.png",
+      "sprite6__gai104.png",
+      "sprite6__gai105.png",
+      "sprite6__gai106.png",
+      "sprite6__gai107.png",
+      "sprite6__gai108.png",
+      "sprite6__gai109.png",
+      "sprite6__gai110.png",
+      "sprite6__gai111.png",
+      "sprite6__gai112.png",
+      "sprite6__gai113.png",
+      "sprite6__gai114.png",
+      "sprite6__gai115.png",
+      "sprite6__gai116.png",
+      "sprite6__gai117.png",
+      "sprite6__gai118.png",
+      "sprite6__gai119.png",
+      "sprite6__gai120.png",
+      "sprite6__gai121.png",
+      "sprite6__gai122.png",
+      "sprite6__gai123.png",
+      "sprite6__gai124.png",
+      "sprite6__gai125.png"
+    ],
+    "CHARGE": [
+      "sprite6__gai.png",
+      "sprite6__gai2.png"
+    ],
+    "DASH": [
+      "sprite6__gai14.png",
+      "sprite6__gai15.png",
+      "sprite6__gai16.png"
+    ],
+    "BLOCK": [
+      "sprite6__gai.png"
+    ],
+    "HIT": [
+      "sprite6__gai126.png",
+      "sprite6__gai127.png",
+      "sprite6__gai128.png",
+      "sprite6__gai129.png",
+      "sprite6__gai130.png",
+      "sprite6__gai131.png",
+      "sprite6__gai132.png",
+      "sprite6__gai133.png",
+      "sprite6__gai134.png",
+      "sprite6__gai135.png",
+      "sprite6__gai136.png",
+      "sprite6__gai138.png",
+      "sprite6__gai139.png",
+      "sprite6__gai140.png",
+      "sprite6__gai141.png"
+    ],
+    "KO": [
+      "sprite6__gai142.png",
+      "sprite6__gai143.png",
+      "sprite6__gai144.png",
+      "sprite6__gai145.png",
+      "sprite6__gai146.png",
+      "sprite6__gai147.png",
+      "sprite6__gai148.png",
+      "sprite6__gai149.png",
+      "sprite6__gai150.png",
+      "sprite6__gai151.png"
+    ],
+    "ATTACK_LIGHT": [
+      "sprite6__gai46.png",
+      "sprite6__gai51.png",
+      "sprite6__gai47.png",
+      "sprite6__gai52.png",
+      "sprite6__gai48.png",
+      "sprite6__gai53.png"
+    ],
+    "ATTACK_HEAVY": [
+      "sprite6__gai49.png",
+      "sprite6__gai54.png",
+      "sprite6__gai59.png",
+      "sprite6__gai50.png",
+      "sprite6__gai55.png",
+      "sprite6__gai60.png"
+    ]
+  }
+}

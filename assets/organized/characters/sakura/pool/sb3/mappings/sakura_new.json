@@ -1,0 +1,131 @@
+{
+  "targetName": "SakuraNew",
+  "version": 1,
+  "categories": {},
+  "stateMap": {
+    "IDLE": [
+      "sakura_new_sakura_new__stance.png",
+      "sakura_new_sakura_new__stance1.png",
+      "sakura_new_sakura_new__stance2.png",
+      "sakura_new_sakura_new__stance3.png",
+      "sakura_new_sakura_new__stance1.png"
+    ],
+    "WALK": [
+      "sakura_new_sakura_new__run.png",
+      "sakura_new_sakura_new__run1.png",
+      "sakura_new_sakura_new__run2.png",
+      "sakura_new_sakura_new__run3.png",
+      "sakura_new_sakura_new__run4.png",
+      "sakura_new_sakura_new__run5.png",
+      "sakura_new_sakura_new__run_attack.png",
+      "sakura_new_sakura_new__run_attack1.png",
+      "sakura_new_sakura_new__run_attack2.png",
+      "sakura_new_sakura_new__run_attack3.png",
+      "sakura_new_sakura_new__run_attack4.png",
+      "sakura_new_sakura_new__run_attack5.png",
+      "sakura_new_sakura_new__run_attack6.png"
+    ],
+    "JUMP": [
+      "sakura_new_sakura_new__jump.png",
+      "sakura_new_sakura_new__jump1.png",
+      "sakura_new_sakura_new__jump2.png",
+      "sakura_new_sakura_new__jump3.png",
+      "sakura_new_sakura_new__jumpattack.png",
+      "sakura_new_sakura_new__jumpattack1.png",
+      "sakura_new_sakura_new__jumpattack2.png",
+      "sakura_new_sakura_new__jumpattack3.png",
+      "sakura_new_sakura_new__jumpattack4.png"
+    ],
+    "BLOCK": [
+      "sakura_new_sakura_new__stance.png"
+    ],
+    "HIT": [
+      "sakura_new_sakura_new__damage.png",
+      "sakura_new_sakura_new__damage1.png",
+      "sakura_new_sakura_new__damage2.png",
+      "sakura_new_sakura_new__damage3.png",
+      "sakura_new_sakura_new__damage4.png",
+      "sakura_new_sakura_new__damage5.png",
+      "sakura_new_sakura_new__damage7.png",
+      "sakura_new_sakura_new__damage8.png",
+      "sakura_new_sakura_new__damage9.png"
+    ],
+    "KO": [
+      "sakura_new_sakura_new__damage9.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "sakura_new_sakura_new__combo1.png",
+      "sakura_new_sakura_new__combo10.png",
+      "sakura_new_sakura_new__combo11.png",
+      "sakura_new_sakura_new__combo12.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "sakura_new_sakura_new__combo2.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "sakura_new_sakura_new__combo3.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "sakura_new_sakura_new__combo6.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "sakura_new_sakura_new__combo7.png"
+    ],
+    "SPECIAL": [
+      "sakura_new_sakura_new__shannaro.png",
+      "sakura_new_sakura_new__shannaro1.png",
+      "sakura_new_sakura_new__shannaro2.png",
+      "sakura_new_sakura_new__shannaro3.png",
+      "sakura_new_sakura_new__shannaro4.png",
+      "sakura_new_sakura_new__shannaro5.png",
+      "sakura_new_sakura_new__shannaro6.png",
+      "sakura_new_sakura_new__shannaro7.png",
+      "sakura_new_sakura_new__shannaro8.png",
+      "sakura_new_sakura_new__shannaro9.png",
+      "sakura_new_sakura_new__shannaro10.png",
+      "sakura_new_sakura_new__shannaro11.png",
+      "sakura_new_sakura_new__shannaro12.png",
+      "sakura_new_sakura_new__shannaro13.png",
+      "sakura_new_sakura_new__shannaro14.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "sakura_new_sakura_new__inner.png",
+      "sakura_new_sakura_new__inner1.png",
+      "sakura_new_sakura_new__inner2.png",
+      "sakura_new_sakura_new__inner3.png",
+      "sakura_new_sakura_new__inner4.png",
+      "sakura_new_sakura_new__inner5.png",
+      "sakura_new_sakura_new__inner6.png",
+      "sakura_new_sakura_new__inner7.png",
+      "sakura_new_sakura_new__inner8.png",
+      "sakura_new_sakura_new__inner9.png",
+      "sakura_new_sakura_new__inner10.png",
+      "sakura_new_sakura_new__inner11.png",
+      "sakura_new_sakura_new__inner12.png",
+      "sakura_new_sakura_new__inner13.png",
+      "sakura_new_sakura_new__inner14.png",
+      "sakura_new_sakura_new__inner15.png",
+      "sakura_new_sakura_new__inner16.png",
+      "sakura_new_sakura_new__inner17.png",
+      "sakura_new_sakura_new__inner18.png",
+      "sakura_new_sakura_new__inner19.png"
+    ]
+  },
+  "meta": {
+    "fixedCounts": {
+      "IDLE": 5,
+      "WALK": 13,
+      "JUMP": 9,
+      "BLOCK": 1,
+      "HIT": 9,
+      "KO": 1,
+      "ATTACK_LIGHT_1": 4,
+      "ATTACK_LIGHT_2": 1,
+      "ATTACK_LIGHT_3": 1,
+      "ATTACK_HEAVY_1": 1,
+      "ATTACK_HEAVY_2": 1,
+      "SPECIAL": 15,
+      "SPECIAL_TRANSFORM": 20
+    }
+  }
+}

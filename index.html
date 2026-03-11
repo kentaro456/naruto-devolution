@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Shinobi Evolution — prototype de jeu de combat 2D navigateur avec roster, modes CPU, combos directionnels et outil de mapping."
+  >
+  <title>Shinobi Evolution — 2D Fighting Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;600;700;900&display=swap"
+    rel="stylesheet"
+  >
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            pixel: ['"Press Start 2P"', 'cursive'],
+            ui: ['Outfit', 'sans-serif'],
+          },
+          keyframes: {
+            drift: {
+              '0%': { backgroundPosition: '0 0' },
+              '100%': { backgroundPosition: '1000px 1000px' },
+            },
+            pulseGlow: {
+              '0%': { filter: 'drop-shadow(0 0 10px rgba(251,146,60,0.45))', transform: 'scale(1)' },
+              '100%': { filter: 'drop-shadow(0 0 26px rgba(251,146,60,0.85))', transform: 'scale(1.04)' },
+            },
+          },
+          animation: {
+            drift: 'drift 120s linear infinite',
+            pulseGlow: 'pulseGlow 2s ease-in-out infinite alternate',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

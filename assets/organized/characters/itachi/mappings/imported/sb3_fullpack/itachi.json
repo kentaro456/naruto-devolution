@@ -1,0 +1,242 @@
+{
+  "targetName": "Itachi",
+  "version": 2,
+  "categories": {},
+  "stateMap": {
+    "IDLE": [
+      "itachi__stance2.png",
+      "itachi__stance3.png",
+      "itachi__stance4.png",
+      "itachi__stance.png"
+    ],
+    "WALK": [
+      "itachi__dash2.png",
+      "itachi__dash3.png",
+      "itachi__dash.png",
+      "itachi__run2.png"
+    ],
+    "RUN": [
+      "itachi__dash2.png",
+      "itachi__dash3.png",
+      "itachi__dash.png",
+      "itachi__run2.png",
+      "itachi__run3.png",
+      "itachi__run4.png"
+    ],
+    "JUMP": [
+      "itachi__fall2.png",
+      "itachi__fall3.png",
+      "itachi__fall.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "itachi__combo_start_up2.png",
+      "itachi__combo_start_up3.png",
+      "itachi__combo_start_up4.png",
+      "itachi__combo_start_up5.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "itachi__combo_start_up11.png",
+      "itachi__combo_start_up12.png",
+      "itachi__combo_start_up13.png",
+      "itachi__combo_start_up14.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "itachi__extra_up_combo4.png",
+      "itachi__extra_up_combo5.png",
+      "itachi__extra_up_combo.png",
+      "itachi__knockback_combo2.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "itachi__extra_knockback_combo.png",
+      "itachi__knockback_combo2.png",
+      "itachi__knockback_combo3.png",
+      "itachi__knockback_combo.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "itachi__ultimate8.png",
+      "itachi__ultimate.png",
+      "itachi__extra_up_combo2.png",
+      "itachi__extra_up_combo3.png"
+    ],
+    "RUN_ATTACK": [
+      "itachi__extra_knockback_combo.png",
+      "itachi__knockback_combo2.png",
+      "itachi__knockback_combo3.png",
+      "itachi__knockback_combo.png"
+    ],
+    "THROW": [
+      "itachi__combo_start_up2.png",
+      "itachi__combo_start_up3.png",
+      "itachi__combo_start_up4.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "itachi__intro2.png",
+      "itachi__intro3.png",
+      "itachi__stance.png",
+      "itachi__intro.png",
+      "itachi__substitute.png"
+    ],
+    "SPECIAL": [
+      "itachi__jutsu2.png",
+      "itachi__jutsu3.png",
+      "itachi__jutsu4.png",
+      "itachi__jutsu5.png",
+      "itachi__jutsu.png",
+      "itachi__intro2.png",
+      "itachi__intro3.png",
+      "itachi__stance.png",
+      "itachi__intro.png",
+      "itachi__substitute.png"
+    ],
+    "BLOCK": [
+      "itachi__gaurd.png"
+    ],
+    "HIT": [
+      "itachi__extra_knockback_combo.png",
+      "itachi__hurt.png",
+      "itachi__knockback.png"
+    ],
+    "KO": [
+      "itachi__fall2.png",
+      "itachi__fall3.png",
+      "itachi__fall.png"
+    ],
+    "ATTACK_LIGHT": [
+      "itachi__combo_start_up2.png",
+      "itachi__combo_start_up3.png",
+      "itachi__combo_start_up4.png",
+      "itachi__combo_start_up5.png"
+    ],
+    "ATTACK_HEAVY": [
+      "itachi__extra_knockback_combo.png",
+      "itachi__knockback_combo2.png",
+      "itachi__knockback_combo3.png",
+      "itachi__knockback_combo.png"
+    ],
+    "DASH": [
+      "itachi__dash2.png",
+      "itachi__dash3.png"
+    ],
+    "ARCHIVE_POOL": [
+      "itachi__combo_start_up6.png",
+      "itachi__combo_start_up7.png",
+      "itachi__combo_start_up8.png",
+      "itachi__combo_start_up9.png",
+      "itachi__combo_start_up10.png",
+      "itachi__combo_start_up15.png",
+      "itachi__combo_start_up.png",
+      "itachi__get_up2.png",
+      "itachi__get_up3.png",
+      "itachi__get_up.png",
+      "itachi__run5.png",
+      "itachi__run6.png",
+      "itachi__run.png",
+      "itachi__ultimate2.png",
+      "itachi__ultimate3.png",
+      "itachi__ultimate4.png",
+      "itachi__ultimate5.png",
+      "itachi__ultimate6.png",
+      "itachi__ultimate7.png",
+      "itachi__up_combo2.png",
+      "itachi__up_combo3.png",
+      "itachi__up_combo.png",
+      "itachi__up_hurt2.png",
+      "itachi__up_hurt3.png",
+      "itachi__up_hurt.png",
+      "itachi__win2.png",
+      "itachi__win3.png",
+      "itachi__win4.png",
+      "itachi__win5.png",
+      "itachi__win.png"
+    ]
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 50,
+      "attackDurationScale": 1.2,
+      "specialTransformDurationScale": 1.35,
+      "requireHitForComboRoutes": false
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 13,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 13,
+          "damageMultiplier": 1.13,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.03
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 15,
+          "damageMultiplier": 1.3,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.24
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 18,
+          "damageMultiplier": 1.22,
+          "rangeMultiplier": 1.1,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 22,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.18,
+          "knockbackMultiplier": 1.45
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL_TRANSFORM",
+          "duration": 18,
+          "noHit": true
+        },
+        {
+          "state": "SPECIAL",
+          "duration": 28,
+          "damageMultiplier": 1.24,
+          "rangeMultiplier": 1.14,
+          "knockbackMultiplier": 1.24
+        }
+      ]
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "polished": true,
+    "fullCoverage": true,
+    "leftoversInArchive": 30
+  }
+}

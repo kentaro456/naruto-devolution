@@ -1,0 +1,126 @@
+{
+  "targetName": "Gai",
+  "states": [
+    "IDLE",
+    "WALK",
+    "JUMP",
+    "ATTACK_LIGHT_1",
+    "ATTACK_LIGHT_2",
+    "ATTACK_LIGHT_3",
+    "ATTACK_HEAVY_1",
+    "ATTACK_HEAVY_2",
+    "SPECIAL_TRANSFORM",
+    "SPECIAL",
+    "BLOCK",
+    "HIT",
+    "KO",
+    "ATTACK_LIGHT",
+    "ATTACK_HEAVY"
+  ],
+  "stateMap": {
+    "IDLE": [
+      "gai__lee_all.png",
+      "gai__lee_fut_1.png",
+      "gai__lee_fut_2.png",
+      "gai__lee_fut_3.png",
+      "gai__lee_fut_4.png"
+    ],
+    "WALK": [
+      "gai__lee_fut_5.png",
+      "gai__lee_fut_6.png",
+      "gai__lee_tmad_1.png",
+      "gai__lee_tmad_2.png",
+      "gai__lee_tmad_3.png",
+      "gai__lee_tmad_4.png",
+      "gai__lee_fel_1.png",
+      "gai__lee_fel_2.png"
+    ],
+    "JUMP": [
+      "gai__lee_fel_3.png",
+      "gai__lee_fel_4.png",
+      "gai__lee_fel_5.png",
+      "gai__lee_fel_6.png",
+      "gai__lee_fel_7.png",
+      "gai__lee_fel_8.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "gai__lee_fel_9.png",
+      "gai__lee_fel_14.png",
+      "gai__lee_ero_1.png",
+      "gai__lee_ero_6.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "gai__lee_fel_10.png",
+      "gai__lee_fel_15.png",
+      "gai__lee_ero_2.png",
+      "gai__lee_ero_7.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "gai__lee_fel_11.png",
+      "gai__lee_fel_16.png",
+      "gai__lee_ero_3.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "gai__lee_fel_12.png",
+      "gai__lee_fel_17.png",
+      "gai__lee_ero_4.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "gai__lee_fel_13.png",
+      "gai__lee_fel_18.png",
+      "gai__lee_ero_5.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "gai__lee_fel_14.png",
+      "gai__lee_ero_1.png",
+      "gai__lee_ero_6.png"
+    ],
+    "SPECIAL": [
+      "gai__lee_ero_8.png",
+      "gai__lee_ero_9.png",
+      "gai__lee_ero_10.png",
+      "gai__lee_ero_11.png",
+      "gai__lee_ero_12.png",
+      "gai__lee_ero_13.png",
+      "gai__lee_ero_14.png",
+      "gai__lee_ero_15.png",
+      "gai__lee_ero_16.png",
+      "gai__lee_ero_17.png",
+      "gai__lee_ero_18.png",
+      "gai__lee_ero_19.png"
+    ],
+    "BLOCK": [
+      "gai__lee_all.png"
+    ],
+    "HIT": [
+      "gai__lee_ero_20.png",
+      "gai__lee_game_over.png",
+      "gaara__apr_1.png",
+      "gaara__apr_2.png",
+      "gaara__apr_3.png",
+      "gaara__apr_4.png"
+    ],
+    "KO": [
+      "gaara__apr_5.png",
+      "gaara__apr_6.png",
+      "gaara__apr_7.png",
+      "gaara__apr_8.png"
+    ],
+    "ATTACK_LIGHT": [
+      "gai__lee_fel_9.png",
+      "gai__lee_fel_14.png",
+      "gai__lee_fel_10.png",
+      "gai__lee_fel_15.png",
+      "gai__lee_fel_11.png",
+      "gai__lee_fel_16.png"
+    ],
+    "ATTACK_HEAVY": [
+      "gai__lee_fel_12.png",
+      "gai__lee_fel_17.png",
+      "gai__lee_ero_4.png",
+      "gai__lee_fel_13.png",
+      "gai__lee_fel_18.png",
+      "gai__lee_ero_5.png"
+    ]
+  }
+}

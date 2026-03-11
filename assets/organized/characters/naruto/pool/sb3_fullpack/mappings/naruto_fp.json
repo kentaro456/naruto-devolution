@@ -1,0 +1,345 @@
+{
+  "targetName": "Naruto",
+  "version": 2,
+  "categories": {},
+  "stateMap": {
+    "IDLE": [
+      "naruto__stand1.png",
+      "naruto__stand2.png",
+      "naruto__stand3.png",
+      "naruto__stand4.png"
+    ],
+    "WALK": [
+      "naruto__walk1.png",
+      "naruto__walk2.png",
+      "naruto__walk3.png",
+      "naruto__walk4.png"
+    ],
+    "RUN": [
+      "naruto__run1.png",
+      "naruto__run2.png",
+      "naruto__run3.png",
+      "naruto__run4.png",
+      "naruto__run5.png",
+      "naruto__run6.png"
+    ],
+    "JUMP": [
+      "naruto__jump1.png",
+      "naruto__jump2.png",
+      "naruto__jump3.png",
+      "naruto__jump4.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "naruto__combo1.png",
+      "naruto__combo2.png",
+      "naruto__combo3.png",
+      "naruto__combo4.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "naruto__combo9.png",
+      "naruto__combo10.png",
+      "naruto__combo11.png",
+      "naruto__combo12.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "naruto__runattack2.png",
+      "naruto__runattack3.png",
+      "naruto__runattack4.png",
+      "naruto__runattack5.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "naruto__combo1.png",
+      "naruto__combo2.png",
+      "naruto__combo3.png",
+      "naruto__combo4.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "naruto__jumpattack2.png",
+      "naruto__jumpattack3.png",
+      "naruto__jumpattack4.png",
+      "naruto__runattack1.png"
+    ],
+    "RUN_ATTACK": [
+      "naruto__combo1.png",
+      "naruto__combo2.png",
+      "naruto__combo3.png",
+      "naruto__combo4.png"
+    ],
+    "THROW": [
+      "naruto__crouchthrow1.png",
+      "naruto__crouchthrow2.png",
+      "naruto__crouchthrow3.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "naruto__teleport1.png",
+      "naruto__teleport2.png",
+      "naruto__teleport3.png",
+      "naruto__teleport4.png",
+      "naruto__teleport5.png"
+    ],
+    "SPECIAL": [
+      "naruto__rasengan1.png",
+      "naruto__rasengan2.png",
+      "naruto__rasengan3.png",
+      "naruto__rasengan4.png",
+      "naruto__rasengan5.png",
+      "naruto__rasengan6.png",
+      "naruto__rasengan7.png",
+      "naruto__rasengan8.png",
+      "naruto__rasengan9.png",
+      "naruto__rasengan10.png"
+    ],
+    "BLOCK": [
+      "naruto__crouch1.png"
+    ],
+    "HIT": [
+      "naruto__damage1.png",
+      "naruto__damage2.png",
+      "naruto__damage3.png"
+    ],
+    "KO": [
+      "naruto__damage1.png",
+      "naruto__damage2.png",
+      "naruto__damage3.png"
+    ],
+    "ATTACK_LIGHT": [
+      "naruto__combo1.png",
+      "naruto__combo2.png",
+      "naruto__combo3.png",
+      "naruto__combo4.png"
+    ],
+    "ATTACK_HEAVY": [
+      "naruto__combo1.png",
+      "naruto__combo2.png",
+      "naruto__combo3.png",
+      "naruto__combo4.png"
+    ],
+    "DASH": [
+      "naruto__teleport1.png",
+      "naruto__teleport2.png"
+    ],
+    "ARCHIVE_POOL": [
+      "naruto__combo5.png",
+      "naruto__combo6.png",
+      "naruto__combo7.png",
+      "naruto__combo8.png",
+      "naruto__crouch2.png",
+      "naruto__land1.png",
+      "naruto__crouchthrow4.png",
+      "naruto__crouchthrow5.png",
+      "naruto__damage4.png",
+      "naruto__damage5.png",
+      "naruto__damage6.png",
+      "naruto__jumpattack1.png",
+      "naruto__jumpthrow1.png",
+      "naruto__jumpthrow2.png",
+      "naruto__jumpthrow3.png",
+      "naruto__land1.png",
+      "naruto__narutorendan1.png",
+      "naruto__narutorendan2.png",
+      "naruto__narutorendan3.png",
+      "naruto__narutorendan4.png",
+      "naruto__narutorendan5.png",
+      "naruto__rasengan11.png",
+      "naruto__rasengan12.png",
+      "naruto__rasengan13.png",
+      "naruto__rasengan14.png",
+      "naruto__rasengan15.png",
+      "naruto__rasengan16.png",
+      "naruto__rasengan17.png",
+      "naruto__rasengan14.png",
+      "naruto__rasengan11.png",
+      "naruto__rasengan12.png",
+      "naruto__rasengan13.png",
+      "naruto__rasengan14.png",
+      "naruto__rasengan15.png",
+      "naruto__rasengan24.png",
+      "naruto__rasengan25.png",
+      "naruto__rasengan26.png",
+      "naruto__rasengan27.png",
+      "naruto__rasengan28.png",
+      "naruto__rasengan29.png",
+      "naruto__rasengan30.png",
+      "naruto__rasengan31.png",
+      "naruto__rasengan27.png",
+      "naruto__rasengan28.png",
+      "naruto__rasengan29.png",
+      "naruto__rasengan30.png",
+      "naruto__rasengan31.png",
+      "naruto__rasengan37.png",
+      "naruto__rasengan38.png",
+      "naruto__rasengan39.png",
+      "naruto__rasengan40.png",
+      "naruto__rasengan41.png",
+      "naruto__rasengan42.png",
+      "naruto__rasengan43.png",
+      "naruto__rasengan44.png",
+      "naruto__rasengan45.png",
+      "naruto__rasengan46.png",
+      "naruto__rasengan47.png",
+      "naruto__rasengan48.png",
+      "naruto__rasengan49.png",
+      "naruto__rasengan50.png",
+      "naruto__rasengan51.png",
+      "naruto__rasengan52.png",
+      "naruto__rasengan53.png",
+      "naruto__rasengan54.png",
+      "naruto__rasengan55.png",
+      "naruto__rasenshuriken1.png",
+      "naruto__rasenshuriken2.png",
+      "naruto__rasenshuriken3.png",
+      "naruto__rasenshuriken4.png",
+      "naruto__rasenshuriken5.png",
+      "naruto__rasenshuriken6.png",
+      "naruto__rasenshuriken7.png",
+      "naruto__rasenshuriken8.png",
+      "naruto__rasenshuriken9.png",
+      "naruto__rasenshuriken9.png",
+      "naruto__rasenshuriken11.png",
+      "naruto__rasenshuriken12.png",
+      "naruto__rasenshuriken13.png",
+      "naruto__rasenshuriken14.png",
+      "naruto__rasenshuriken15.png",
+      "naruto__rasenshuriken16.png",
+      "naruto__rasenshuriken17.png",
+      "naruto__rasenshuriken18.png",
+      "naruto__rasenshuriken19.png",
+      "naruto__rasenshuriken18.png",
+      "naruto__rasenshuriken21.png",
+      "naruto__rasenshuriken22.png",
+      "naruto__rasenshuriken23.png",
+      "naruto__rasenshuriken24.png",
+      "naruto__rasenshuriken25.png",
+      "naruto__rasenshuriken26.png",
+      "naruto__rasenshuriken27.png",
+      "naruto__rasenshuriken28.png",
+      "naruto__rasenshuriken29.png",
+      "naruto__rasenshuriken30.png",
+      "naruto__rasenshuriken31.png",
+      "naruto__rasenshuriken32.png",
+      "naruto__rasenshuriken33.png",
+      "naruto__rasenshuriken34.png",
+      "naruto__rasenshuriken35.png",
+      "naruto__rasenshuriken36.png",
+      "naruto__rasenshuriken37.png",
+      "naruto__rasenshuriken38.png",
+      "naruto__rasenshuriken39.png",
+      "naruto__rasenshuriken40.png",
+      "naruto__rasenshuriken41.png",
+      "naruto__rasenshuriken42.png",
+      "naruto__rasenshuriken43.png",
+      "naruto__rasenshuriken44.png",
+      "naruto__shadowclones.png",
+      "naruto__stand5.png",
+      "naruto__stand6.png",
+      "naruto__upattack1.png",
+      "naruto__upattack2.png",
+      "naruto__upattack3.png",
+      "naruto__upattack4.png",
+      "naruto__upattack5.png",
+      "naruto__walk5.png",
+      "naruto__walk6.png",
+      "naruto__weaponthrow1.png",
+      "naruto__weaponthrow2.png",
+      "naruto__weaponthrow3.png",
+      "naruto__weaponthrow4.png",
+      "naruto__weaponthrow5.png",
+      "naruto__win1.png",
+      "naruto__win2.png",
+      "naruto__win3.png",
+      "naruto__win4.png",
+      "naruto__win5.png",
+      "naruto__win6.png",
+      "naruto__win7.png"
+    ]
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 50,
+      "attackDurationScale": 1.2,
+      "specialTransformDurationScale": 1.35,
+      "requireHitForComboRoutes": false
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 13,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 13,
+          "damageMultiplier": 1.13,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.03
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 15,
+          "damageMultiplier": 1.3,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.24
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 18,
+          "damageMultiplier": 1.22,
+          "rangeMultiplier": 1.1,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 22,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.18,
+          "knockbackMultiplier": 1.45
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL_TRANSFORM",
+          "duration": 18,
+          "noHit": true
+        },
+        {
+          "state": "SPECIAL",
+          "duration": 28,
+          "damageMultiplier": 1.24,
+          "rangeMultiplier": 1.14,
+          "knockbackMultiplier": 1.24
+        }
+      ]
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "polished": true,
+    "fullCoverage": true,
+    "leftoversInArchive": 132
+  }
+}

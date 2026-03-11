@@ -1,0 +1,508 @@
+{
+  "generated_at": "2026-02-23T21:31:14.319Z",
+  "counts": {
+    "IDLE": 4,
+    "WALK": 4,
+    "JUMP": 2,
+    "ATTACK_LIGHT": 3,
+    "ATTACK_HEAVY": 4,
+    "SPECIAL": 5,
+    "BLOCK": 1,
+    "HIT": 2,
+    "KO": 3
+  },
+  "targets": [
+    {
+      "targetName": "Pein",
+      "slug": "pein",
+      "costumes": 51,
+      "genericRatio": 1,
+      "mostlyGeneric": true,
+      "categoryCounts": {
+        "idle": 6,
+        "walk": 10,
+        "jump": 6,
+        "attack_light": 11,
+        "attack_heavy": 10,
+        "special_transform": 8,
+        "block": 1,
+        "hit": 5,
+        "ko": 2
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/pein.json"
+    },
+    {
+      "targetName": "Kimimaro",
+      "slug": "kimimaro",
+      "costumes": 89,
+      "genericRatio": 0,
+      "mostlyGeneric": false,
+      "categoryCounts": {
+        "idle": 8,
+        "walk": 10,
+        "jump": 4,
+        "attack_light": 10,
+        "attack_heavy": 5,
+        "special_transform": 63,
+        "block": 1,
+        "hit": 11,
+        "ko": 3
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/kimimaro.json"
+    },
+    {
+      "targetName": "Kisame",
+      "slug": "kisame",
+      "costumes": 134,
+      "genericRatio": 0,
+      "mostlyGeneric": false,
+      "categoryCounts": {
+        "idle": 4,
+        "walk": 11,
+        "jump": 15,
+        "attack_light": 8,
+        "attack_heavy": 8,
+        "special_transform": 46,
+        "block": 1,
+        "hit": 6,
+        "ko": 25
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/kisame.json"
+    },
+    {
+      "targetName": "Lee",
+      "slug": "lee",
+      "costumes": 58,
+      "genericRatio": 0,
+      "mostlyGeneric": false,
+      "categoryCounts": {
+        "idle": 4,
+        "walk": 6,
+        "jump": 1,
+        "attack_light": 16,
+        "attack_heavy": 21,
+        "special_transform": 3,
+        "block": 4,
+        "hit": 18,
+        "ko": 10
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/lee.json"
+    },
+    {
+      "targetName": "Naruto",
+      "slug": "naruto",
+      "costumes": 204,
+      "genericRatio": 0,
+      "mostlyGeneric": false,
+      "categoryCounts": {
+        "idle": 1,
+        "walk": 6,
+        "jump": 5,
+        "attack_light": 10,
+        "attack_heavy": 10,
+        "special_transform": 56,
+        "block": 1,
+        "hit": 2,
+        "ko": 5
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/naruto.json"
+    },
+    {
+      "targetName": "Naruto Kid",
+      "slug": "naruto_kid",
+      "costumes": 77,
+      "genericRatio": 0,
+      "mostlyGeneric": false,
+      "categoryCounts": {
+        "idle": 1,
+        "walk": 6,
+        "jump": 5,
+        "attack_light": 10,
+        "attack_heavy": 20,
+        "special_transform": 9,
+        "block": 1,
+        "hit": 7,
+        "ko": 5
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/naruto_kid.json"
+    },
+    {
+      "targetName": "Naruto Kid Kyuubi",
+      "slug": "naruto_kid_kyuubi",
+      "costumes": 61,
+      "genericRatio": 0,
+      "mostlyGeneric": false,
+      "categoryCounts": {
+        "idle": 1,
+        "walk": 10,
+        "jump": 2,
+        "attack_light": 12,
+        "attack_heavy": 12,
+        "special_transform": 14,
+        "block": 1,
+        "hit": 6,
+        "ko": 3
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/naruto_kid_kyuubi.json"
+    },
+    {
+      "targetName": "Naruto Shippuden",
+      "slug": "naruto_shippuden",
+      "costumes": 25,
+      "genericRatio": 1,
+      "mostlyGeneric": true,
+      "categoryCounts": {
+        "idle": 3,
+        "walk": 4,
+        "jump": 2,
+        "attack_light": 7,
+        "attack_heavy": 4,
+        "special_transform": 9,
+        "block": 1,
+        "hit": 2,
+        "ko": 1
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/naruto_shippuden.json"
+    },
+    {
+      "targetName": "Naruto Shippuden Kyuubi",
+      "slug": "naruto_shippuden_kyuubi",
+      "costumes": 39,
+      "genericRatio": 1,
+      "mostlyGeneric": true,
+      "categoryCounts": {
+        "idle": 4,
+        "walk": 7,
+        "jump": 4,
+        "attack_light": 10,
+        "attack_heavy": 8,
+        "special_transform": 8,
+        "block": 1,
+        "hit": 3,
+        "ko": 2
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/naruto_shippuden_kyuubi.json"
+    },
+    {
+      "targetName": "Orochimaru",
+      "slug": "orochimaru",
+      "costumes": 55,
+      "genericRatio": 0,
+      "mostlyGeneric": false,
+      "categoryCounts": {
+        "idle": 1,
+        "walk": 6,
+        "jump": 2,
+        "attack_light": 19,
+        "attack_heavy": 19,
+        "special_transform": 24,
+        "block": 1,
+        "hit": 5,
+        "ko": 5
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/orochimaru.json"
+    },
+    {
+      "targetName": "Sasuke",
+      "slug": "sasuke",
+      "costumes": 124,
+      "genericRatio": 0,
+      "mostlyGeneric": false,
+      "categoryCounts": {
+        "idle": 2,
+        "walk": 10,
+        "jump": 4,
+        "attack_light": 54,
+        "attack_heavy": 43,
+        "special_transform": 66,
+        "block": 1,
+        "hit": 12,
+        "ko": 6
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/sasuke.json"
+    },
+    {
+      "targetName": "Sasuke Base",
+      "slug": "sasuke_base",
+      "costumes": 100,
+      "genericRatio": 0,
+      "mostlyGeneric": false,
+      "categoryCounts": {
+        "idle": 1,
+        "walk": 6,
+        "jump": 0,
+        "attack_light": 45,
+        "attack_heavy": 39,
+        "special_transform": 42,
+        "block": 1,
+        "hit": 6,
+        "ko": 6
+      },
+      "fallbackCount": 1,
+      "fallbacks": [
+        {
+          "state": "JUMP",
+          "used": "WALK(first)"
+        }
+      ],
+      "file": "assets/sb3/mappings/sasuke_base.json"
+    },
+    {
+      "targetName": "Sasuke CS2",
+      "slug": "sasuke_cs2",
+      "costumes": 55,
+      "genericRatio": 0,
+      "mostlyGeneric": false,
+      "categoryCounts": {
+        "idle": 1,
+        "walk": 4,
+        "jump": 4,
+        "attack_light": 9,
+        "attack_heavy": 9,
+        "special_transform": 31,
+        "block": 1,
+        "hit": 6,
+        "ko": 3
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/sasuke_cs2.json"
+    },
+    {
+      "targetName": "Sprite1",
+      "slug": "sprite1",
+      "costumes": 50,
+      "genericRatio": 0,
+      "mostlyGeneric": false,
+      "categoryCounts": {
+        "idle": 4,
+        "walk": 12,
+        "jump": 5,
+        "attack_light": 24,
+        "attack_heavy": 12,
+        "special_transform": 5,
+        "block": 1,
+        "hit": 2,
+        "ko": 3
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/sprite1.json"
+    },
+    {
+      "targetName": "Sprite2",
+      "slug": "sprite2",
+      "costumes": 108,
+      "genericRatio": 1,
+      "mostlyGeneric": true,
+      "categoryCounts": {
+        "idle": 13,
+        "walk": 21,
+        "jump": 12,
+        "attack_light": 22,
+        "attack_heavy": 21,
+        "special_transform": 16,
+        "block": 1,
+        "hit": 6,
+        "ko": 4
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/sprite2.json"
+    },
+    {
+      "targetName": "Sprite3",
+      "slug": "sprite3",
+      "costumes": 187,
+      "genericRatio": 1,
+      "mostlyGeneric": true,
+      "categoryCounts": {
+        "idle": 23,
+        "walk": 35,
+        "jump": 19,
+        "attack_light": 39,
+        "attack_heavy": 34,
+        "special_transform": 28,
+        "block": 1,
+        "hit": 10,
+        "ko": 6
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/sprite3.json"
+    },
+    {
+      "targetName": "Sprite4",
+      "slug": "sprite4",
+      "costumes": 41,
+      "genericRatio": 1,
+      "mostlyGeneric": true,
+      "categoryCounts": {
+        "idle": 5,
+        "walk": 9,
+        "jump": 5,
+        "attack_light": 9,
+        "attack_heavy": 8,
+        "special_transform": 7,
+        "block": 1,
+        "hit": 3,
+        "ko": 2
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/sprite4.json"
+    },
+    {
+      "targetName": "Sprite5",
+      "slug": "sprite5",
+      "costumes": 96,
+      "genericRatio": 1,
+      "mostlyGeneric": true,
+      "categoryCounts": {
+        "idle": 12,
+        "walk": 18,
+        "jump": 11,
+        "attack_light": 20,
+        "attack_heavy": 18,
+        "special_transform": 15,
+        "block": 1,
+        "hit": 6,
+        "ko": 3
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/sprite5.json"
+    },
+    {
+      "targetName": "Sprite6",
+      "slug": "sprite6",
+      "costumes": 98,
+      "genericRatio": 1,
+      "mostlyGeneric": true,
+      "categoryCounts": {
+        "idle": 12,
+        "walk": 19,
+        "jump": 11,
+        "attack_light": 20,
+        "attack_heavy": 19,
+        "special_transform": 15,
+        "block": 1,
+        "hit": 6,
+        "ko": 3
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/sprite6.json"
+    },
+    {
+      "targetName": "Sprite7",
+      "slug": "sprite7",
+      "costumes": 46,
+      "genericRatio": 1,
+      "mostlyGeneric": true,
+      "categoryCounts": {
+        "idle": 6,
+        "walk": 9,
+        "jump": 6,
+        "attack_light": 10,
+        "attack_heavy": 9,
+        "special_transform": 8,
+        "block": 1,
+        "hit": 3,
+        "ko": 2
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/sprite7.json"
+    },
+    {
+      "targetName": "Sprite8",
+      "slug": "sprite8",
+      "costumes": 86,
+      "genericRatio": 0,
+      "mostlyGeneric": false,
+      "categoryCounts": {
+        "idle": 6,
+        "walk": 12,
+        "jump": 5,
+        "attack_light": 32,
+        "attack_heavy": 32,
+        "special_transform": 25,
+        "block": 1,
+        "hit": 6,
+        "ko": 3
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/sprite8.json"
+    },
+    {
+      "targetName": "Sprite9",
+      "slug": "sprite9",
+      "costumes": 70,
+      "genericRatio": 1,
+      "mostlyGeneric": true,
+      "categoryCounts": {
+        "idle": 9,
+        "walk": 13,
+        "jump": 7,
+        "attack_light": 14,
+        "attack_heavy": 13,
+        "special_transform": 11,
+        "block": 1,
+        "hit": 4,
+        "ko": 3
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/sprite9.json"
+    },
+    {
+      "targetName": "Sprite10",
+      "slug": "sprite10",
+      "costumes": 120,
+      "genericRatio": 1,
+      "mostlyGeneric": true,
+      "categoryCounts": {
+        "idle": 15,
+        "walk": 22,
+        "jump": 12,
+        "attack_light": 24,
+        "attack_heavy": 22,
+        "special_transform": 18,
+        "block": 1,
+        "hit": 7,
+        "ko": 4
+      },
+      "fallbackCount": 0,
+      "fallbacks": [],
+      "file": "assets/sb3/mappings/sprite10.json"
+    }
+  ],
+  "summary": {
+    "targetCount": 23,
+    "totalFallbacks": 1
+  }
+}

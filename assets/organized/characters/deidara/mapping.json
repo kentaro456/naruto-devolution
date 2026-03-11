@@ -1,0 +1,347 @@
+{
+  "targetName": "clay guy",
+  "version": 5,
+  "categories": {
+    "idle": [
+      "clay_guy__stancer.png",
+      "clay_guy__stancer2.png",
+      "clay_guy__stancer3.png",
+      "clay_guy__stancer4.png"
+    ],
+    "walk": [
+      "clay_guy__runr.png",
+      "clay_guy__runr2.png",
+      "clay_guy__runr3.png",
+      "clay_guy__runr4.png",
+      "clay_guy__runr5.png",
+      "clay_guy__runr6.png"
+    ],
+    "run": [],
+    "jump": [
+      "clay_guy__jump.png",
+      "clay_guy__jump2.png",
+      "clay_guy__jump3.png",
+      "clay_guy__jump4.png",
+      "clay_guy__jump5.png"
+    ],
+    "crouch": [
+      "clay_guy__jump5.png"
+    ],
+    "crouch_walk": [],
+    "crouch_attack": [],
+    "crouch_throw": [],
+    "attack_light_1": [
+      "clay_guy__combo.png",
+      "clay_guy__combo6.png",
+      "clay_guy__combo11.png",
+      "clay_guy__combo16.png",
+      "clay_guy__combo21.png"
+    ],
+    "attack_light_2": [
+      "clay_guy__combo2.png",
+      "clay_guy__combo7.png",
+      "clay_guy__combo12.png",
+      "clay_guy__combo17.png",
+      "clay_guy__combo22.png"
+    ],
+    "attack_light_3": [
+      "clay_guy__combo3.png",
+      "clay_guy__combo8.png",
+      "clay_guy__combo13.png",
+      "clay_guy__combo18.png",
+      "clay_guy__combo23.png"
+    ],
+    "attack_heavy_1": [
+      "clay_guy__combo4.png",
+      "clay_guy__combo9.png",
+      "clay_guy__combo14.png",
+      "clay_guy__combo19.png",
+      "clay_guy__combo24.png"
+    ],
+    "attack_heavy_2": [
+      "clay_guy__combo5.png",
+      "clay_guy__combo10.png",
+      "clay_guy__combo15.png",
+      "clay_guy__combo20.png"
+    ],
+    "run_attack": [],
+    "throw": [],
+    "koma_support": [],
+    "teleport": [],
+    "special_transform": [
+      "clay_guy__jump5.png",
+      "clay_guy__combo.png",
+      "clay_guy__combo6.png"
+    ],
+    "special": [
+      "clay_guy__combo6.png",
+      "clay_guy__combo11.png",
+      "clay_guy__combo16.png",
+      "clay_guy__combo21.png",
+      "clay_guy__combo2.png",
+      "clay_guy__combo7.png",
+      "clay_guy__combo12.png",
+      "clay_guy__combo17.png"
+    ],
+    "charge": [],
+    "dash": [],
+    "block": [
+      "clay_guy__stancer.png"
+    ],
+    "hit": [
+      "clay_guy__combo2.png",
+      "clay_guy__combo7.png",
+      "clay_guy__combo12.png"
+    ],
+    "ko": [
+      "clay_guy__combo21.png",
+      "clay_guy__combo2.png",
+      "clay_guy__combo7.png"
+    ],
+    "attack_light": [
+      "clay_guy__combo13.png",
+      "clay_guy__combo14.png",
+      "clay_guy__combo15.png",
+      "clay_guy__combo16.png",
+      "clay_guy__combo17.png",
+      "clay_guy__combo18.png",
+      "clay_guy__combo19.png",
+      "clay_guy__combo20.png",
+      "clay_guy__combo21.png",
+      "clay_guy__combo22.png",
+      "clay_guy__combo23.png",
+      "clay_guy__combo24.png"
+    ],
+    "attack_heavy": [
+      "clay_guy__combo4.png",
+      "clay_guy__combo9.png",
+      "clay_guy__combo14.png",
+      "clay_guy__combo5.png",
+      "clay_guy__combo10.png",
+      "clay_guy__combo15.png"
+    ],
+    "unused_unknown": []
+  },
+  "stateMap": {
+    "IDLE": [
+      "clay_guy__stancer.png",
+      "clay_guy__stancer2.png",
+      "clay_guy__stancer3.png",
+      "clay_guy__stancer4.png"
+    ],
+    "WALK": [
+      "clay_guy__runr.png",
+      "clay_guy__runr2.png",
+      "clay_guy__runr3.png",
+      "clay_guy__runr4.png",
+      "clay_guy__runr5.png",
+      "clay_guy__runr6.png"
+    ],
+    "RUN": [],
+    "JUMP": [
+      "clay_guy__jump.png",
+      "clay_guy__jump2.png",
+      "clay_guy__jump3.png",
+      "clay_guy__jump4.png",
+      "clay_guy__jump5.png"
+    ],
+    "CROUCH": [
+      "clay_guy__jump5.png"
+    ],
+    "CROUCH_WALK": [],
+    "CROUCH_ATTACK": [],
+    "CROUCH_THROW": [],
+    "ATTACK_LIGHT_1": [
+      "clay_guy__combo.png",
+      "clay_guy__combo6.png",
+      "clay_guy__combo11.png",
+      "clay_guy__combo16.png",
+      "clay_guy__combo21.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "clay_guy__combo2.png",
+      "clay_guy__combo7.png",
+      "clay_guy__combo12.png",
+      "clay_guy__combo17.png",
+      "clay_guy__combo22.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "clay_guy__combo3.png",
+      "clay_guy__combo8.png",
+      "clay_guy__combo13.png",
+      "clay_guy__combo18.png",
+      "clay_guy__combo23.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "clay_guy__combo4.png",
+      "clay_guy__combo9.png",
+      "clay_guy__combo14.png",
+      "clay_guy__combo19.png",
+      "clay_guy__combo24.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "clay_guy__combo5.png",
+      "clay_guy__combo10.png",
+      "clay_guy__combo15.png",
+      "clay_guy__combo20.png"
+    ],
+    "RUN_ATTACK": [],
+    "THROW": [],
+    "KOMA_SUPPORT": [],
+    "TELEPORT": [],
+    "SPECIAL_TRANSFORM": [
+      "clay_guy__jump5.png",
+      "clay_guy__combo.png",
+      "clay_guy__combo6.png"
+    ],
+    "SPECIAL": [
+      "clay_guy__combo6.png",
+      "clay_guy__combo11.png",
+      "clay_guy__combo16.png",
+      "clay_guy__combo21.png",
+      "clay_guy__combo2.png",
+      "clay_guy__combo7.png",
+      "clay_guy__combo12.png",
+      "clay_guy__combo17.png"
+    ],
+    "CHARGE": [],
+    "DASH": [],
+    "BLOCK": [
+      "clay_guy__stancer.png"
+    ],
+    "HIT": [
+      "clay_guy__combo2.png",
+      "clay_guy__combo7.png",
+      "clay_guy__combo12.png"
+    ],
+    "KO": [
+      "clay_guy__combo21.png",
+      "clay_guy__combo2.png",
+      "clay_guy__combo7.png"
+    ],
+    "ATTACK_LIGHT": [
+      "clay_guy__combo13.png",
+      "clay_guy__combo14.png",
+      "clay_guy__combo15.png",
+      "clay_guy__combo16.png",
+      "clay_guy__combo17.png",
+      "clay_guy__combo18.png",
+      "clay_guy__combo19.png",
+      "clay_guy__combo20.png",
+      "clay_guy__combo21.png",
+      "clay_guy__combo22.png",
+      "clay_guy__combo23.png",
+      "clay_guy__combo24.png"
+    ],
+    "ATTACK_HEAVY": [
+      "clay_guy__combo4.png",
+      "clay_guy__combo9.png",
+      "clay_guy__combo14.png",
+      "clay_guy__combo5.png",
+      "clay_guy__combo10.png",
+      "clay_guy__combo15.png"
+    ],
+    "UNUSED_UNKNOWN": []
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 45,
+      "requireHitForComboRoutes": false,
+      "attackDurationScale": 1.25,
+      "specialTransformDurationScale": 1.45
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 11,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 11,
+          "damageMultiplier": 1.15,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.05
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 14,
+          "damageMultiplier": 1.35,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.35
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 16,
+          "damageMultiplier": 1.2,
+          "rangeMultiplier": 1.08,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 20,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.15,
+          "knockbackMultiplier": 1.5
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL",
+          "duration": 35,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 1
+        }
+      ]
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "actionMap": {
+      "light": "ATTACK_LIGHT_1",
+      "heavy": "ATTACK_HEAVY_1",
+      "special": "SPECIAL",
+      "transform": "SPECIAL_TRANSFORM",
+      "block": "BLOCK",
+      "jump": "JUMP",
+      "run": "RUN",
+      "crouch": "CROUCH",
+      "runAttack": "RUN_ATTACK",
+      "throw": "THROW",
+      "teleport": "TELEPORT",
+      "support": "KOMA_SUPPORT",
+      "charge": "CHARGE",
+      "dash": "DASH"
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "editedByMapper": true,
+    "editedAt": "2026-03-08T01:44:38.024Z",
+    "mappingMode": "manual_editor_drag_drop"
+  },
+  "__validationWarnings": []
+}

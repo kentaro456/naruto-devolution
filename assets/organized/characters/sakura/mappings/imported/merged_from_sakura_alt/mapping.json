@@ -1,0 +1,176 @@
+{
+  "targetName": "Sprite9",
+  "states": [
+    "IDLE",
+    "WALK",
+    "RUN",
+    "JUMP",
+    "CROUCH",
+    "CROUCH_WALK",
+    "CROUCH_ATTACK",
+    "CROUCH_THROW",
+    "ATTACK_LIGHT_1",
+    "ATTACK_LIGHT_2",
+    "ATTACK_LIGHT_3",
+    "ATTACK_HEAVY_1",
+    "ATTACK_HEAVY_2",
+    "RUN_ATTACK",
+    "THROW",
+    "KOMA_SUPPORT",
+    "TELEPORT",
+    "SPECIAL_TRANSFORM",
+    "SPECIAL",
+    "CHARGE",
+    "DASH",
+    "BLOCK",
+    "HIT",
+    "KO",
+    "ATTACK_LIGHT",
+    "ATTACK_HEAVY"
+  ],
+  "stateMap": {
+    "IDLE": [
+      "sprite9__costume1.png",
+      "sprite9__costume2.png",
+      "sprite9__costume3.png",
+      "sprite9__costume4.png",
+      "sprite9__costume6.png"
+    ],
+    "WALK": [
+      "sprite9__costume7.png",
+      "sprite9__costume8.png",
+      "sprite9__costume9.png",
+      "sprite9__costume10.png",
+      "sprite9__costume11.png",
+      "sprite9__costume12.png"
+    ],
+    "RUN": [
+      "sprite9__costume7.png",
+      "sprite9__costume8.png",
+      "sprite9__costume9.png",
+      "sprite9__costume10.png",
+      "sprite9__costume11.png",
+      "sprite9__costume12.png"
+    ],
+    "JUMP": [
+      "sprite9__costume13.png",
+      "sprite9__costume14.png",
+      "sprite9__costume15.png",
+      "sprite9__costume16.png",
+      "sprite9__costume17.png"
+    ],
+    "CROUCH": [
+      "sprite9__costume1.png"
+    ],
+    "CROUCH_WALK": [
+      "sprite9__costume1.png"
+    ],
+    "CROUCH_ATTACK": [
+      "sprite9__costume18.png",
+      "sprite9__costume23.png",
+      "sprite9__costume28.png"
+    ],
+    "CROUCH_THROW": [
+      "sprite9__costume21.png",
+      "sprite9__costume26.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "sprite9__costume18.png",
+      "sprite9__costume23.png",
+      "sprite9__costume28.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "sprite9__costume19.png",
+      "sprite9__costume24.png",
+      "sprite9__costume29.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "sprite9__costume20.png",
+      "sprite9__costume25.png",
+      "sprite9__costume30.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "sprite9__costume21.png",
+      "sprite9__costume26.png",
+      "sprite9__costume31.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "sprite9__costume22.png",
+      "sprite9__costume27.png"
+    ],
+    "RUN_ATTACK": [
+      "sprite9__costume19.png",
+      "sprite9__costume24.png",
+      "sprite9__costume29.png"
+    ],
+    "THROW": [
+      "sprite9__costume21.png",
+      "sprite9__costume26.png"
+    ],
+    "KOMA_SUPPORT": [
+      "sprite9__costume32.png",
+      "sprite9__costume33.png"
+    ],
+    "TELEPORT": [
+      "sprite9__costume32.png",
+      "sprite9__costume33.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "sprite9__costume30.png",
+      "sprite9__costume21.png",
+      "sprite9__costume26.png"
+    ],
+    "SPECIAL": [
+      "sprite9__costume32.png",
+      "sprite9__costume33.png",
+      "sprite9__costume34.png",
+      "sprite9__costume35.png",
+      "sprite9__costume36.png",
+      "sprite9__costume37.png",
+      "sprite9__costume38.png",
+      "sprite9__costume40.png",
+      "sprite9__costume41.png",
+      "sprite9__costume42.png",
+      "sprite9__costume43.png"
+    ],
+    "CHARGE": [
+      "sprite9__costume1.png",
+      "sprite9__costume2.png"
+    ],
+    "DASH": [
+      "sprite9__costume7.png",
+      "sprite9__costume8.png",
+      "sprite9__costume9.png"
+    ],
+    "BLOCK": [
+      "sprite9__costume1.png"
+    ],
+    "HIT": [
+      "sprite9__costume44.png",
+      "sprite9__costume41.png",
+      "sprite9__costume42.png",
+      "sprite9__costume43.png"
+    ],
+    "KO": [
+      "sprite9__costume49.png",
+      "sprite9__costume50.png",
+      "sprite9__costume51.png",
+      "sprite9__costume52.png"
+    ],
+    "ATTACK_LIGHT": [
+      "sprite9__costume18.png",
+      "sprite9__costume23.png",
+      "sprite9__costume19.png",
+      "sprite9__costume24.png",
+      "sprite9__costume20.png",
+      "sprite9__costume25.png"
+    ],
+    "ATTACK_HEAVY": [
+      "sprite9__costume21.png",
+      "sprite9__costume26.png",
+      "sprite9__costume31.png",
+      "sprite9__costume22.png",
+      "sprite9__costume27.png"
+    ]
+  }
+}

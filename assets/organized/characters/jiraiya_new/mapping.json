@@ -1,0 +1,499 @@
+{
+  "targetName": "Jiraiya",
+  "version": 2,
+  "categories": {
+    "idle": [
+      "jiraiya__jstd.png",
+      "jiraiya__jstd2.png",
+      "jiraiya__jstd4.png",
+      "jiraiya__jstd5.png"
+    ],
+    "walk": [
+      "jiraiya__jwlk.png",
+      "jiraiya__jwlk2.png",
+      "jiraiya__jwlk3.png",
+      "jiraiya__jwlk4.png",
+      "jiraiya__jwlk5.png",
+      "jiraiya__jwlk6.png"
+    ],
+    "run": [
+      "jiraiya__jrun.png",
+      "jiraiya__jrun2.png",
+      "jiraiya__jrun3.png",
+      "jiraiya__jrun4.png",
+      "jiraiya__jrun5.png",
+      "jiraiya__jrun6.png"
+    ],
+    "jump": [
+      "jiraiya__jjmp.png",
+      "jiraiya__jjmp2.png",
+      "jiraiya__jjmp3.png",
+      "jiraiya__jjmp4.png",
+      "jiraiya__jwlljmp.png",
+      "jiraiya__jwlljmp2.png",
+      "jiraiya__jwlljmp3.png",
+      "jiraiya__jwlljmp4.png"
+    ],
+    "crouch": [
+      "jiraiya__jcrch.png",
+      "jiraiya__jcrch2.png",
+      "jiraiya__jcrch3.png"
+    ],
+    "crouch_walk": [],
+    "crouch_attack": [],
+    "crouch_throw": [],
+    "attack_light_1": [
+      "jiraiya__jxttck.png",
+      "jiraiya__jxttck2.png",
+      "jiraiya__jxttck3.png"
+    ],
+    "attack_light_2": [
+      "jiraiya__jxttck4.png",
+      "jiraiya__jxttck5.png",
+      "jiraiya__jxttck6.png"
+    ],
+    "attack_light_3": [
+      "jiraiya__jxttck7.png",
+      "jiraiya__jxttck8.png",
+      "jiraiya__jxttck9.png"
+    ],
+    "attack_heavy_1": [
+      "jiraiya__jycmbo.png",
+      "jiraiya__jycmbo2.png",
+      "jiraiya__jycmbo3.png",
+      "jiraiya__jycmbo4.png",
+      "jiraiya__jycmbo5.png",
+      "jiraiya__jycmbo6.png"
+    ],
+    "attack_heavy_2": [
+      "jiraiya__jycmbo7.png",
+      "jiraiya__jycmbo8.png",
+      "jiraiya__jycmbo9.png",
+      "jiraiya__jycmbo10.png",
+      "jiraiya__jycmbo11.png"
+    ],
+    "run_attack": [
+      "jiraiya__jyupattk.png",
+      "jiraiya__jyupattk2.png",
+      "jiraiya__jyupattk3.png",
+      "jiraiya__jyupattk4.png",
+      "jiraiya__jyupattk5.png"
+    ],
+    "throw": [
+      "jiraiya__jxthrw.png",
+      "jiraiya__jxthrw2.png",
+      "jiraiya__jxthrw3.png",
+      "jiraiya__jxthrw4.png"
+    ],
+    "koma_support": [],
+    "teleport": [],
+    "special_transform": [
+      "jiraiya__jndlejizo.png",
+      "jiraiya__jndlejizo2.png",
+      "jiraiya__jndlejizo3.png",
+      "jiraiya__jndlejizo4.png",
+      "jiraiya__jndlejizo5.png",
+      "jiraiya__jndlejizo6.png",
+      "jiraiya__jndlejizo7.png",
+      "jiraiya__jndlejizo8.png",
+      "jiraiya__jndlejizo9.png"
+    ],
+    "special": [
+      "jiraiya__jgama.png",
+      "jiraiya__jgama2.png",
+      "jiraiya__jgama3.png",
+      "jiraiya__jgama4.png",
+      "jiraiya__jgama5.png",
+      "jiraiya__jgama6.png",
+      "jiraiya__jgama7.png",
+      "jiraiya__jgama8.png",
+      "jiraiya__jgama9.png",
+      "jiraiya__jgama10.png",
+      "jiraiya__jgama11.png",
+      "jiraiya__jgama12.png",
+      "jiraiya__jgama19.png",
+      "jiraiya__jgama20.png",
+      "jiraiya__jgama21.png",
+      "jiraiya__jgama22.png",
+      "jiraiya__jgama23.png",
+      "jiraiya__jgama29.png",
+      "jiraiya__jgama31.png",
+      "jiraiya__jgama27.png",
+      "jiraiya__jgama33.png",
+      "jiraiya__jgama34.png",
+      "jiraiya__jgama38.png",
+      "jiraiya__jgama39.png",
+      "jiraiya__jgama40.png",
+      "jiraiya__jgama41.png",
+      "jiraiya__jgama42.png",
+      "jiraiya__jgama43.png",
+      "jiraiya__jgama44.png"
+    ],
+    "charge": [],
+    "dash": [
+      "jiraiya__jtlp.png",
+      "jiraiya__jtlp2.png"
+    ],
+    "block": [
+      "jiraiya__jgrd.png"
+    ],
+    "hit": [
+      "jiraiya__jdmg.png",
+      "jiraiya__jdmg2.png",
+      "jiraiya__jdmg3.png"
+    ],
+    "ko": [
+      "jiraiya__jdmg4.png",
+      "jiraiya__jdmg5.png",
+      "jiraiya__jdmg6.png",
+      "jiraiya__jdmg7.png",
+      "jiraiya__jfstgtup.png",
+      "jiraiya__jfstgtup2.png"
+    ],
+    "attack_light": [
+      "jiraiya__jycmbo.png",
+      "jiraiya__jycmbo6.png",
+      "jiraiya__jycmbo2.png",
+      "jiraiya__jycmbo7.png",
+      "jiraiya__jycmbo3.png",
+      "jiraiya__jycmbo8.png",
+      "jiraiya__jgama19.png",
+      "jiraiya__jgama20.png",
+      "jiraiya__jgama21.png",
+      "jiraiya__jgama22.png",
+      "jiraiya__jgama23.png",
+      "jiraiya__jgama24.png",
+      "jiraiya__jgama25.png",
+      "jiraiya__jgama26.png"
+    ],
+    "attack_heavy": [
+      "jiraiya__jycmbo4.png",
+      "jiraiya__jycmbo9.png",
+      "jiraiya__jycmbo14.png",
+      "jiraiya__jycmbo5.png",
+      "jiraiya__jycmbo10.png",
+      "jiraiya__jycmbo15.png"
+    ],
+    "unused_unknown": [],
+    "attack_heavy_3": [
+      "jiraiya__jycmbo12.png",
+      "jiraiya__jycmbo13.png",
+      "jiraiya__jycmbo14.png",
+      "jiraiya__jycmbo15.png",
+      "jiraiya__jycmbo16.png",
+      "jiraiya__jycmbo17.png",
+      "jiraiya__jycmbo18.png"
+    ],
+    "special_air_light": [
+      "jiraiya__jjmpyattk.png",
+      "jiraiya__jjmpyattk2.png",
+      "jiraiya__jjmpyattk3.png",
+      "jiraiya__jjmpyattk4.png"
+    ],
+    "special_air_heavy": [
+      "jiraiya__jjmpdwnyattk.png",
+      "jiraiya__jjmpdwnyattk2.png",
+      "jiraiya__jjmpdwnyattk3.png",
+      "jiraiya__jjmpdwnyattk4.png",
+      "jiraiya__jjmpdwnyattk5.png"
+    ]
+  },
+  "stateMap": {
+    "IDLE": [
+      "jiraiya__jstd.png",
+      "jiraiya__jstd2.png",
+      "jiraiya__jstd4.png",
+      "jiraiya__jstd5.png"
+    ],
+    "WALK": [
+      "jiraiya__jwlk.png",
+      "jiraiya__jwlk2.png",
+      "jiraiya__jwlk3.png",
+      "jiraiya__jwlk4.png",
+      "jiraiya__jwlk5.png",
+      "jiraiya__jwlk6.png"
+    ],
+    "RUN": [
+      "jiraiya__jrun.png",
+      "jiraiya__jrun2.png",
+      "jiraiya__jrun3.png",
+      "jiraiya__jrun4.png",
+      "jiraiya__jrun5.png",
+      "jiraiya__jrun6.png"
+    ],
+    "JUMP": [
+      "jiraiya__jjmp.png",
+      "jiraiya__jjmp2.png",
+      "jiraiya__jjmp3.png",
+      "jiraiya__jjmp4.png",
+      "jiraiya__jwlljmp.png",
+      "jiraiya__jwlljmp2.png",
+      "jiraiya__jwlljmp3.png",
+      "jiraiya__jwlljmp4.png"
+    ],
+    "CROUCH": [
+      "jiraiya__jcrch.png",
+      "jiraiya__jcrch2.png",
+      "jiraiya__jcrch3.png"
+    ],
+    "CROUCH_WALK": [],
+    "CROUCH_ATTACK": [],
+    "CROUCH_THROW": [],
+    "ATTACK_LIGHT_1": [
+      "jiraiya__jxttck.png",
+      "jiraiya__jxttck2.png",
+      "jiraiya__jxttck3.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "jiraiya__jxttck4.png",
+      "jiraiya__jxttck5.png",
+      "jiraiya__jxttck6.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "jiraiya__jxttck7.png",
+      "jiraiya__jxttck8.png",
+      "jiraiya__jxttck9.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "jiraiya__jycmbo.png",
+      "jiraiya__jycmbo2.png",
+      "jiraiya__jycmbo3.png",
+      "jiraiya__jycmbo4.png",
+      "jiraiya__jycmbo5.png",
+      "jiraiya__jycmbo6.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "jiraiya__jycmbo7.png",
+      "jiraiya__jycmbo8.png",
+      "jiraiya__jycmbo9.png",
+      "jiraiya__jycmbo10.png",
+      "jiraiya__jycmbo11.png"
+    ],
+    "RUN_ATTACK": [
+      "jiraiya__jyupattk.png",
+      "jiraiya__jyupattk2.png",
+      "jiraiya__jyupattk3.png",
+      "jiraiya__jyupattk4.png",
+      "jiraiya__jyupattk5.png"
+    ],
+    "THROW": [
+      "jiraiya__jxthrw.png",
+      "jiraiya__jxthrw2.png",
+      "jiraiya__jxthrw3.png",
+      "jiraiya__jxthrw4.png"
+    ],
+    "KOMA_SUPPORT": [],
+    "TELEPORT": [],
+    "SPECIAL_TRANSFORM": [
+      "jiraiya__jndlejizo.png",
+      "jiraiya__jndlejizo2.png",
+      "jiraiya__jndlejizo3.png",
+      "jiraiya__jndlejizo4.png",
+      "jiraiya__jndlejizo5.png",
+      "jiraiya__jndlejizo6.png",
+      "jiraiya__jndlejizo7.png",
+      "jiraiya__jndlejizo8.png",
+      "jiraiya__jndlejizo9.png"
+    ],
+    "SPECIAL": [
+      "jiraiya__jgama.png",
+      "jiraiya__jgama2.png",
+      "jiraiya__jgama3.png",
+      "jiraiya__jgama4.png",
+      "jiraiya__jgama5.png",
+      "jiraiya__jgama6.png",
+      "jiraiya__jgama7.png",
+      "jiraiya__jgama8.png",
+      "jiraiya__jgama9.png",
+      "jiraiya__jgama10.png",
+      "jiraiya__jgama11.png",
+      "jiraiya__jgama12.png",
+      "jiraiya__jgama19.png",
+      "jiraiya__jgama20.png",
+      "jiraiya__jgama21.png",
+      "jiraiya__jgama22.png",
+      "jiraiya__jgama23.png",
+      "jiraiya__jgama29.png",
+      "jiraiya__jgama31.png",
+      "jiraiya__jgama27.png",
+      "jiraiya__jgama33.png",
+      "jiraiya__jgama34.png",
+      "jiraiya__jgama38.png",
+      "jiraiya__jgama39.png",
+      "jiraiya__jgama40.png",
+      "jiraiya__jgama41.png",
+      "jiraiya__jgama42.png",
+      "jiraiya__jgama43.png",
+      "jiraiya__jgama44.png"
+    ],
+    "CHARGE": [],
+    "DASH": [
+      "jiraiya__jtlp.png",
+      "jiraiya__jtlp2.png"
+    ],
+    "BLOCK": [
+      "jiraiya__jgrd.png"
+    ],
+    "HIT": [
+      "jiraiya__jdmg.png",
+      "jiraiya__jdmg2.png",
+      "jiraiya__jdmg3.png"
+    ],
+    "KO": [
+      "jiraiya__jdmg4.png",
+      "jiraiya__jdmg5.png",
+      "jiraiya__jdmg6.png",
+      "jiraiya__jdmg7.png",
+      "jiraiya__jfstgtup.png",
+      "jiraiya__jfstgtup2.png"
+    ],
+    "ATTACK_LIGHT": [
+      "jiraiya__jycmbo.png",
+      "jiraiya__jycmbo6.png",
+      "jiraiya__jycmbo2.png",
+      "jiraiya__jycmbo7.png",
+      "jiraiya__jycmbo3.png",
+      "jiraiya__jycmbo8.png",
+      "jiraiya__jgama19.png",
+      "jiraiya__jgama20.png",
+      "jiraiya__jgama21.png",
+      "jiraiya__jgama22.png",
+      "jiraiya__jgama23.png",
+      "jiraiya__jgama24.png",
+      "jiraiya__jgama25.png",
+      "jiraiya__jgama26.png"
+    ],
+    "ATTACK_HEAVY": [
+      "jiraiya__jycmbo4.png",
+      "jiraiya__jycmbo9.png",
+      "jiraiya__jycmbo14.png",
+      "jiraiya__jycmbo5.png",
+      "jiraiya__jycmbo10.png",
+      "jiraiya__jycmbo15.png"
+    ],
+    "UNUSED_UNKNOWN": [],
+    "ATTACK_HEAVY_3": [
+      "jiraiya__jycmbo12.png",
+      "jiraiya__jycmbo13.png",
+      "jiraiya__jycmbo14.png",
+      "jiraiya__jycmbo15.png",
+      "jiraiya__jycmbo16.png",
+      "jiraiya__jycmbo17.png",
+      "jiraiya__jycmbo18.png"
+    ],
+    "SPECIAL_AIR_LIGHT": [
+      "jiraiya__jjmpyattk.png",
+      "jiraiya__jjmpyattk2.png",
+      "jiraiya__jjmpyattk3.png",
+      "jiraiya__jjmpyattk4.png"
+    ],
+    "SPECIAL_AIR_HEAVY": [
+      "jiraiya__jjmpdwnyattk.png",
+      "jiraiya__jjmpdwnyattk2.png",
+      "jiraiya__jjmpdwnyattk3.png",
+      "jiraiya__jjmpdwnyattk4.png",
+      "jiraiya__jjmpdwnyattk5.png"
+    ]
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 45,
+      "requireHitForComboRoutes": false,
+      "attackDurationScale": 1.25,
+      "specialTransformDurationScale": 1.45
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 11,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 11,
+          "damageMultiplier": 1.15,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.05
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 14,
+          "damageMultiplier": 1.35,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.35
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 16,
+          "damageMultiplier": 1.2,
+          "rangeMultiplier": 1.08,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 20,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.15,
+          "knockbackMultiplier": 1.5
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL",
+          "duration": 35,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 1
+        }
+      ]
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "actionMap": {
+      "light": "ATTACK_LIGHT_1",
+      "heavy": "ATTACK_HEAVY_1",
+      "special": "SPECIAL",
+      "transform": "SPECIAL_TRANSFORM",
+      "block": "BLOCK",
+      "jump": "JUMP",
+      "run": "RUN",
+      "crouch": "CROUCH",
+      "runAttack": "RUN_ATTACK",
+      "throw": "THROW",
+      "teleport": "TELEPORT",
+      "support": "KOMA_SUPPORT",
+      "charge": "CHARGE",
+      "dash": "DASH"
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "editedByMapper": true,
+    "editedAt": "2026-03-08T02:09:01.383Z",
+    "mappingMode": "manual_editor_drag_drop"
+  },
+  "__validationWarnings": []
+}

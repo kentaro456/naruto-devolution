@@ -1,0 +1,185 @@
+{
+  "targetName": "Sprite2",
+  "version": 2,
+  "categories": {},
+  "stateMap": {
+    "IDLE": [
+      "sprite2__adf2.png",
+      "sprite2__adf3.png",
+      "sprite2__adf4.png",
+      "sprite2__adf.png"
+    ],
+    "WALK": [
+      "sprite2__adf2.png",
+      "sprite2__adf3.png",
+      "sprite2__adf4.png",
+      "sprite2__adf.png"
+    ],
+    "RUN": [
+      "sprite2__adf2.png",
+      "sprite2__adf3.png",
+      "sprite2__adf4.png",
+      "sprite2__adf.png"
+    ],
+    "JUMP": [
+      "sprite2__adf2.png",
+      "sprite2__adf3.png",
+      "sprite2__adf4.png",
+      "sprite2__adf.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "sprite2__adf2.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "sprite2__adf3.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "sprite2__adf4.png",
+      "sprite2__adf.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "sprite2__adf2.png",
+      "sprite2__adf3.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "sprite2__adf4.png",
+      "sprite2__adf.png"
+    ],
+    "RUN_ATTACK": [
+      "sprite2__adf2.png",
+      "sprite2__adf3.png",
+      "sprite2__adf4.png",
+      "sprite2__adf.png"
+    ],
+    "THROW": [
+      "sprite2__adf2.png",
+      "sprite2__adf3.png",
+      "sprite2__adf4.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "sprite2__adf2.png",
+      "sprite2__adf3.png",
+      "sprite2__adf4.png",
+      "sprite2__adf.png"
+    ],
+    "SPECIAL": [
+      "sprite2__adf2.png",
+      "sprite2__adf3.png",
+      "sprite2__adf4.png",
+      "sprite2__adf.png"
+    ],
+    "BLOCK": [
+      "sprite2__adf2.png"
+    ],
+    "HIT": [
+      "sprite2__adf2.png",
+      "sprite2__adf3.png",
+      "sprite2__adf4.png"
+    ],
+    "KO": [
+      "sprite2__adf2.png",
+      "sprite2__adf3.png",
+      "sprite2__adf4.png"
+    ],
+    "ATTACK_LIGHT": [
+      "sprite2__adf2.png"
+    ],
+    "ATTACK_HEAVY": [
+      "sprite2__adf2.png",
+      "sprite2__adf3.png"
+    ],
+    "DASH": [
+      "sprite2__adf2.png",
+      "sprite2__adf3.png"
+    ]
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 50,
+      "attackDurationScale": 1.2,
+      "specialTransformDurationScale": 1.35,
+      "requireHitForComboRoutes": false
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 13,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 13,
+          "damageMultiplier": 1.13,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.03
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 15,
+          "damageMultiplier": 1.3,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.24
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 18,
+          "damageMultiplier": 1.22,
+          "rangeMultiplier": 1.1,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 22,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.18,
+          "knockbackMultiplier": 1.45
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL_TRANSFORM",
+          "duration": 18,
+          "noHit": true
+        },
+        {
+          "state": "SPECIAL",
+          "duration": 28,
+          "damageMultiplier": 1.24,
+          "rangeMultiplier": 1.14,
+          "knockbackMultiplier": 1.24
+        }
+      ]
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "polished": true,
+    "fullCoverage": true,
+    "leftoversInArchive": 0
+  }
+}

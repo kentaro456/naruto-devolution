@@ -1,0 +1,483 @@
+{
+  "targetName": "Mashū (Ti)",
+  "version": 2,
+  "categories": {
+    "idle": [
+      "mash_ti__taistd.png",
+      "mash_ti__taistd2.png",
+      "mash_ti__taistd3.png",
+      "mash_ti__taistd4.png",
+      "mash_ti__taistd5.png",
+      "mash_ti__taistd6.png"
+    ],
+    "walk": [
+      "mash_ti__taiwlk.png",
+      "mash_ti__taiwlk2.png",
+      "mash_ti__taiwlk3.png",
+      "mash_ti__taiwlk4.png",
+      "mash_ti__taiwlk5.png",
+      "mash_ti__taiwlk6.png"
+    ],
+    "run": [
+      "mash_ti__tairun.png",
+      "mash_ti__tairun2.png",
+      "mash_ti__tairun3.png",
+      "mash_ti__tairun4.png",
+      "mash_ti__tairun5.png",
+      "mash_ti__tairun6.png",
+      "mash_ti__tairunyattck.png"
+    ],
+    "jump": [
+      "mash_ti__taisjmp.png",
+      "mash_ti__taisjmp2.png",
+      "mash_ti__taisjmp3.png",
+      "mash_ti__taisjmp4.png"
+    ],
+    "crouch": [
+      "mash_ti__taicrouch.png",
+      "mash_ti__taicrouch2.png",
+      "mash_ti__taicrouch3.png"
+    ],
+    "crouch_walk": [
+      "mash_ti__taicrouch.png",
+      "mash_ti__taicrouch2.png"
+    ],
+    "crouch_attack": [
+      "mash_ti__taiycombo.png",
+      "mash_ti__taiycombo6.png",
+      "mash_ti__taiycombo11.png"
+    ],
+    "crouch_throw": [
+      "mash_ti__taiycombo4.png",
+      "mash_ti__taiycombo9.png"
+    ],
+    "attack_light_1": [
+      "mash_ti__tailotus.png",
+      "mash_ti__tailotus2.png",
+      "mash_ti__tailotus3.png",
+      "mash_ti__tailotus4.png"
+    ],
+    "attack_light_2": [],
+    "attack_light_3": [
+      "mash_ti__tailotus17.png",
+      "mash_ti__tailotus18.png",
+      "mash_ti__tailotus19.png",
+      "mash_ti__taiycombo.png",
+      "mash_ti__taiycombo2.png",
+      "mash_ti__taiycombo3.png",
+      "mash_ti__taiycombo4.png",
+      "mash_ti__taiycombo5.png"
+    ],
+    "attack_heavy_1": [
+      "mash_ti__taiycombo6.png",
+      "mash_ti__taiycombo7.png",
+      "mash_ti__taiycombo8.png",
+      "mash_ti__taiycombo9.png",
+      "mash_ti__taiycombo10.png",
+      "mash_ti__taiycombo11.png",
+      "mash_ti__taiycombo12.png",
+      "mash_ti__taiycombo13.png"
+    ],
+    "attack_heavy_2": [
+      "mash_ti__taiycombo14.png",
+      "mash_ti__taiycombo15.png",
+      "mash_ti__taiycombo16.png",
+      "mash_ti__taiycombo17.png",
+      "mash_ti__taiycombo18.png",
+      "mash_ti__taiycombo19.png",
+      "mash_ti__taiycombo20.png",
+      "mash_ti__taiycombo21.png"
+    ],
+    "run_attack": [
+      "mash_ti__taiycombo2.png",
+      "mash_ti__taiycombo7.png",
+      "mash_ti__taiycombo12.png"
+    ],
+    "throw": [
+      "mash_ti__taiycombo4.png",
+      "mash_ti__taiycombo9.png"
+    ],
+    "koma_support": [
+      "mash_ti__tailotus20.png",
+      "mash_ti__taihis.png"
+    ],
+    "teleport": [
+      "mash_ti__tailotus20.png",
+      "mash_ti__taihis.png"
+    ],
+    "special_transform": [],
+    "special": [
+      "mash_ti__tailotus20.png",
+      "mash_ti__taihis.png",
+      "mash_ti__taihis2.png",
+      "mash_ti__tailhis3.png",
+      "mash_ti__taihis3.png",
+      "mash_ti__taihis4.png",
+      "mash_ti__taihis5.png",
+      "mash_ti__taihis6.png",
+      "mash_ti__taihis7.png",
+      "mash_ti__taihis8.png",
+      "mash_ti__taihis9.png",
+      "mash_ti__taihis10.png",
+      "mash_ti__taihis11.png",
+      "mash_ti__taihis12.png",
+      "mash_ti__taihis13.png",
+      "mash_ti__taihis14.png",
+      "mash_ti__taihis15.png",
+      "mash_ti__taihis16.png",
+      "mash_ti__taihis17.png",
+      "mash_ti__taihis18.png",
+      "mash_ti__taihis19.png",
+      "mash_ti__taihis20.png",
+      "mash_ti__taihis21.png",
+      "mash_ti__taihis22.png",
+      "mash_ti__taihis23.png",
+      "mash_ti__taihis24.png",
+      "mash_ti__taihis25.png",
+      "mash_ti__taihis26.png",
+      "mash_ti__taihis27.png",
+      "mash_ti__taihis28.png",
+      "mash_ti__taihis29.png",
+      "mash_ti__taihis30.png"
+    ],
+    "charge": [
+      "mash_ti__taihis52.png"
+    ],
+    "dash": [
+      "mash_ti__taiwlk.png",
+      "mash_ti__taiwlk2.png",
+      "mash_ti__taiwlk3.png"
+    ],
+    "block": [
+      "mash_ti__taihis51.png"
+    ],
+    "hit": [
+      "mash_ti__taidmg.png",
+      "mash_ti__taidmg.png",
+      "mash_ti__taidmg2.png",
+      "mash_ti__taidmg3.png",
+      "mash_ti__taidmg4.png"
+    ],
+    "ko": [
+      "mash_ti__tairunyattck5.png",
+      "mash_ti__taidmg.png",
+      "mash_ti__taidmg2.png",
+      "mash_ti__taidmg3.png",
+      "mash_ti__taidmg4.png"
+    ],
+    "attack_light": [
+      "mash_ti__tairunyattck.png",
+      "mash_ti__tairunyattck2.png",
+      "mash_ti__tairunyattck3.png",
+      "mash_ti__tairunyattck4.png",
+      "mash_ti__tairunyattck5.png",
+      "mash_ti__taicrouch.png",
+      "mash_ti__taicrouch2.png",
+      "mash_ti__taicrouch3.png",
+      "mash_ti__taijmpxattck.png",
+      "mash_ti__taijmpxattck2.png",
+      "mash_ti__taijmpxattck3.png"
+    ],
+    "attack_heavy": [
+      "mash_ti__tailotus5.png",
+      "mash_ti__tailotus6.png",
+      "mash_ti__tailotus7.png",
+      "mash_ti__tailotus8.png",
+      "mash_ti__tailotus9.png",
+      "mash_ti__tailotus10.png",
+      "mash_ti__tailotus11.png",
+      "mash_ti__tailotus16.png"
+    ],
+    "unused_unknown": []
+  },
+  "stateMap": {
+    "IDLE": [
+      "mash_ti__taistd.png",
+      "mash_ti__taistd2.png",
+      "mash_ti__taistd3.png",
+      "mash_ti__taistd4.png",
+      "mash_ti__taistd5.png",
+      "mash_ti__taistd6.png"
+    ],
+    "WALK": [
+      "mash_ti__taiwlk.png",
+      "mash_ti__taiwlk2.png",
+      "mash_ti__taiwlk3.png",
+      "mash_ti__taiwlk4.png",
+      "mash_ti__taiwlk5.png",
+      "mash_ti__taiwlk6.png"
+    ],
+    "RUN": [
+      "mash_ti__tairun.png",
+      "mash_ti__tairun2.png",
+      "mash_ti__tairun3.png",
+      "mash_ti__tairun4.png",
+      "mash_ti__tairun5.png",
+      "mash_ti__tairun6.png",
+      "mash_ti__tairunyattck.png"
+    ],
+    "JUMP": [
+      "mash_ti__taisjmp.png",
+      "mash_ti__taisjmp2.png",
+      "mash_ti__taisjmp3.png",
+      "mash_ti__taisjmp4.png"
+    ],
+    "CROUCH": [
+      "mash_ti__taicrouch.png",
+      "mash_ti__taicrouch2.png",
+      "mash_ti__taicrouch3.png"
+    ],
+    "CROUCH_WALK": [
+      "mash_ti__taicrouch.png",
+      "mash_ti__taicrouch2.png"
+    ],
+    "CROUCH_ATTACK": [
+      "mash_ti__taiycombo.png",
+      "mash_ti__taiycombo6.png",
+      "mash_ti__taiycombo11.png"
+    ],
+    "CROUCH_THROW": [
+      "mash_ti__taiycombo4.png",
+      "mash_ti__taiycombo9.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "mash_ti__tailotus.png",
+      "mash_ti__tailotus2.png",
+      "mash_ti__tailotus3.png",
+      "mash_ti__tailotus4.png"
+    ],
+    "ATTACK_LIGHT_2": [],
+    "ATTACK_LIGHT_3": [
+      "mash_ti__tailotus17.png",
+      "mash_ti__tailotus18.png",
+      "mash_ti__tailotus19.png",
+      "mash_ti__taiycombo.png",
+      "mash_ti__taiycombo2.png",
+      "mash_ti__taiycombo3.png",
+      "mash_ti__taiycombo4.png",
+      "mash_ti__taiycombo5.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "mash_ti__taiycombo6.png",
+      "mash_ti__taiycombo7.png",
+      "mash_ti__taiycombo8.png",
+      "mash_ti__taiycombo9.png",
+      "mash_ti__taiycombo10.png",
+      "mash_ti__taiycombo11.png",
+      "mash_ti__taiycombo12.png",
+      "mash_ti__taiycombo13.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "mash_ti__taiycombo14.png",
+      "mash_ti__taiycombo15.png",
+      "mash_ti__taiycombo16.png",
+      "mash_ti__taiycombo17.png",
+      "mash_ti__taiycombo18.png",
+      "mash_ti__taiycombo19.png",
+      "mash_ti__taiycombo20.png",
+      "mash_ti__taiycombo21.png"
+    ],
+    "RUN_ATTACK": [
+      "mash_ti__taiycombo2.png",
+      "mash_ti__taiycombo7.png",
+      "mash_ti__taiycombo12.png"
+    ],
+    "THROW": [
+      "mash_ti__taiycombo4.png",
+      "mash_ti__taiycombo9.png"
+    ],
+    "KOMA_SUPPORT": [
+      "mash_ti__tailotus20.png",
+      "mash_ti__taihis.png"
+    ],
+    "TELEPORT": [
+      "mash_ti__tailotus20.png",
+      "mash_ti__taihis.png"
+    ],
+    "SPECIAL_TRANSFORM": [],
+    "SPECIAL": [
+      "mash_ti__tailotus20.png",
+      "mash_ti__taihis.png",
+      "mash_ti__taihis2.png",
+      "mash_ti__tailhis3.png",
+      "mash_ti__taihis3.png",
+      "mash_ti__taihis4.png",
+      "mash_ti__taihis5.png",
+      "mash_ti__taihis6.png",
+      "mash_ti__taihis7.png",
+      "mash_ti__taihis8.png",
+      "mash_ti__taihis9.png",
+      "mash_ti__taihis10.png",
+      "mash_ti__taihis11.png",
+      "mash_ti__taihis12.png",
+      "mash_ti__taihis13.png",
+      "mash_ti__taihis14.png",
+      "mash_ti__taihis15.png",
+      "mash_ti__taihis16.png",
+      "mash_ti__taihis17.png",
+      "mash_ti__taihis18.png",
+      "mash_ti__taihis19.png",
+      "mash_ti__taihis20.png",
+      "mash_ti__taihis21.png",
+      "mash_ti__taihis22.png",
+      "mash_ti__taihis23.png",
+      "mash_ti__taihis24.png",
+      "mash_ti__taihis25.png",
+      "mash_ti__taihis26.png",
+      "mash_ti__taihis27.png",
+      "mash_ti__taihis28.png",
+      "mash_ti__taihis29.png",
+      "mash_ti__taihis30.png"
+    ],
+    "CHARGE": [
+      "mash_ti__taihis52.png"
+    ],
+    "DASH": [
+      "mash_ti__taiwlk.png",
+      "mash_ti__taiwlk2.png",
+      "mash_ti__taiwlk3.png"
+    ],
+    "BLOCK": [
+      "mash_ti__taihis51.png"
+    ],
+    "HIT": [
+      "mash_ti__taidmg.png",
+      "mash_ti__taidmg.png",
+      "mash_ti__taidmg2.png",
+      "mash_ti__taidmg3.png",
+      "mash_ti__taidmg4.png"
+    ],
+    "KO": [
+      "mash_ti__tairunyattck5.png",
+      "mash_ti__taidmg.png",
+      "mash_ti__taidmg2.png",
+      "mash_ti__taidmg3.png",
+      "mash_ti__taidmg4.png"
+    ],
+    "ATTACK_LIGHT": [
+      "mash_ti__tairunyattck.png",
+      "mash_ti__tairunyattck2.png",
+      "mash_ti__tairunyattck3.png",
+      "mash_ti__tairunyattck4.png",
+      "mash_ti__tairunyattck5.png",
+      "mash_ti__taicrouch.png",
+      "mash_ti__taicrouch2.png",
+      "mash_ti__taicrouch3.png",
+      "mash_ti__taijmpxattck.png",
+      "mash_ti__taijmpxattck2.png",
+      "mash_ti__taijmpxattck3.png"
+    ],
+    "ATTACK_HEAVY": [
+      "mash_ti__tailotus5.png",
+      "mash_ti__tailotus6.png",
+      "mash_ti__tailotus7.png",
+      "mash_ti__tailotus8.png",
+      "mash_ti__tailotus9.png",
+      "mash_ti__tailotus10.png",
+      "mash_ti__tailotus11.png",
+      "mash_ti__tailotus16.png"
+    ],
+    "UNUSED_UNKNOWN": []
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 45,
+      "requireHitForComboRoutes": false,
+      "attackDurationScale": 1,
+      "specialTransformDurationScale": 1
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 11,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 11,
+          "damageMultiplier": 1.15,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.05
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 14,
+          "damageMultiplier": 1.35,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.35
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 16,
+          "damageMultiplier": 1.2,
+          "rangeMultiplier": 1.08,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 20,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.15,
+          "knockbackMultiplier": 1.5
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL",
+          "duration": 35,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 1
+        }
+      ]
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "neutral": "S_N_1",
+        "up": "S_U_1",
+        "down": "S_D_1",
+        "back": "S_B_1",
+        "forward": "S_F_1",
+        "any": "S_N_1"
+      }
+    },
+    "actionMap": {
+      "light": "ATTACK_LIGHT_1",
+      "heavy": "ATTACK_HEAVY_1",
+      "special": "SPECIAL",
+      "transform": "SPECIAL_TRANSFORM",
+      "block": "BLOCK",
+      "jump": "JUMP",
+      "run": "RUN",
+      "crouch": "CROUCH",
+      "dash": "DASH"
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "editedByMapper": true,
+    "editedAt": "2026-03-11T16:38:00.299Z",
+    "mappingMode": "manual_editor_modal"
+  },
+  "__validationWarnings": []
+}

@@ -1,0 +1,27 @@
+# Temporary working data
+tmp/
+
+# Personal screenshots / local captures
+image.png
+image copy.png
+image copy 2.png
+image copy 3.png
+image copy 4.png
+
+# Generated reports and review sheets
+assets/organized/reports/
+assets/organized/**/review/
+assets/organized/shared/**/reports/
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Netlify local state
+.netlify/
+
+# Node / Vite
+node_modules/
+dist/
+.vite/

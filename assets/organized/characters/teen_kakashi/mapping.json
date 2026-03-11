@@ -1,0 +1,371 @@
+{
+  "targetName": "teen kakashi",
+  "version": 2,
+  "categories": {
+    "idle": [
+      "teen_kakashi__kidkakashi.png",
+      "teen_kakashi__kidkakashi2.png",
+      "teen_kakashi__kidkakashi3.png",
+      "teen_kakashi__kidkakashi4.png"
+    ],
+    "walk": [
+      "teen_kakashi__kidkakashwalk.png",
+      "teen_kakashi__kidkakashwalk2.png",
+      "teen_kakashi__kidkakashwalk3.png",
+      "teen_kakashi__kidkakashwalk4.png",
+      "teen_kakashi__kidkakashcrouch.png"
+    ],
+    "run": [
+      "teen_kakashi__kidkakashrun.png",
+      "teen_kakashi__kidkakashrun2.png",
+      "teen_kakashi__kidkakashrun3.png"
+    ],
+    "jump": [
+      "teen_kakashi__kidkakashjmp.png",
+      "teen_kakashi__kidkakashjmp2.png",
+      "teen_kakashi__kidkakashairthrow.png",
+      "teen_kakashi__kidkakashcrouch2.png"
+    ],
+    "crouch": [
+      "teen_kakashi__kidkakashcrouch2.png"
+    ],
+    "crouch_walk": [
+      "teen_kakashi__kidkakashcrouch.png",
+      "teen_kakashi__kidkakashcrouch2.png"
+    ],
+    "crouch_attack": [
+      "teen_kakashi__kidkakashcrouch.png",
+      "teen_kakashi__kidkakashcrouch2.png",
+      "teen_kakashi__kidkakashattk6.png",
+      "teen_kakashi__kidkakashthrow2.png",
+      "teen_kakashi__kidkakashairthrow2.png"
+    ],
+    "crouch_throw": [
+      "teen_kakashi__kidkakashcrouch2.png",
+      "teen_kakashi__kidkakashattk6.png"
+    ],
+    "attack_light_1": [
+      "sprite4__costume39.png",
+      "sprite4__costume40.png",
+      "teen_kakashi__kidkakashattck.png"
+    ],
+    "attack_light_2": [
+      "teen_kakashi__kidkakashattck2.png",
+      "teen_kakashi__kidkakashattck3.png",
+      "teen_kakashi__kidkakashattk2.png"
+    ],
+    "attack_light_3": [
+      "teen_kakashi__kidkakashattk3.png",
+      "teen_kakashi__kidkakashattk4.png",
+      "teen_kakashi__kidkakashattk5.png"
+    ],
+    "attack_heavy_1": [
+      "teen_kakashi__kidkakashattk6.png",
+      "teen_kakashi__kidkakashattk7.png",
+      "teen_kakashi__kidkakashattk8.png"
+    ],
+    "attack_heavy_2": [
+      "teen_kakashi__kidkakashthrow.png",
+      "teen_kakashi__kidkakashthrow2.png",
+      "teen_kakashi__kidkakashthrow3.png"
+    ],
+    "run_attack": [
+      "teen_kakashi__kidkakashrun.png",
+      "teen_kakashi__kidkakashrun3.png",
+      "teen_kakashi__kidkakashrakirui10.png"
+    ],
+    "throw": [],
+    "koma_support": [],
+    "teleport": [
+      "teen_kakashi__kidkakashdissapear.png",
+      "sprite4__costume39.png",
+      "sprite4__costume40.png"
+    ],
+    "special_transform": [
+      "teen_kakashi__kidkakashdissapear.png"
+    ],
+    "special": [
+      "teen_kakashi__kidkakashrakirui.png",
+      "teen_kakashi__kidkakashrakirui2.png",
+      "teen_kakashi__kidkakashrakirui3.png",
+      "teen_kakashi__kidkakashrakirui4.png",
+      "teen_kakashi__kidkakashrakirui5.png",
+      "teen_kakashi__kidkakashrakirui6.png"
+    ],
+    "charge": [],
+    "dash": [],
+    "block": [
+      "teen_kakashi__kidkakashguard.png"
+    ],
+    "hit": [
+      "teen_kakashi__kidkakashdamage.png",
+      "teen_kakashi__kidkakashdamage2.png",
+      "teen_kakashi__kidkakashdamage3.png",
+      "teen_kakashi__kidkakashdamage4.png",
+      "teen_kakashi__kidkakashdamage5.png"
+    ],
+    "ko": [
+      "teen_kakashi__kidkakashrakirui12.png",
+      "teen_kakashi__kidkakashrakirui13.png",
+      "teen_kakashi__kidkakashrakirui14.png",
+      "teen_kakashi__kidkakashrakirui15.png"
+    ],
+    "attack_light": [
+      "sprite4__costume39.png",
+      "sprite4__costume40.png",
+      "teen_kakashi__kidkakashattck.png",
+      "teen_kakashi__kidkakashattck2.png",
+      "teen_kakashi__kidkakashattck3.png",
+      "teen_kakashi__kidkakashattk2.png",
+      "teen_kakashi__kidkakashattk3.png",
+      "teen_kakashi__kidkakashattk4.png",
+      "teen_kakashi__kidkakashattk5.png"
+    ],
+    "attack_heavy": [
+      "teen_kakashi__kidkakashattk6.png",
+      "teen_kakashi__kidkakashattk7.png",
+      "teen_kakashi__kidkakashattk8.png",
+      "teen_kakashi__kidkakashthrow.png",
+      "teen_kakashi__kidkakashthrow2.png",
+      "teen_kakashi__kidkakashthrow3.png",
+      "teen_kakashi__kidkakashrakirui7.png",
+      "teen_kakashi__kidkakashrakirui9.png",
+      "teen_kakashi__kidkakashrakirui11.png"
+    ],
+    "unused_unknown": []
+  },
+  "stateMap": {
+    "IDLE": [
+      "teen_kakashi__kidkakashi.png",
+      "teen_kakashi__kidkakashi2.png",
+      "teen_kakashi__kidkakashi3.png",
+      "teen_kakashi__kidkakashi4.png"
+    ],
+    "WALK": [
+      "teen_kakashi__kidkakashwalk.png",
+      "teen_kakashi__kidkakashwalk2.png",
+      "teen_kakashi__kidkakashwalk3.png",
+      "teen_kakashi__kidkakashwalk4.png",
+      "teen_kakashi__kidkakashcrouch.png"
+    ],
+    "RUN": [
+      "teen_kakashi__kidkakashrun.png",
+      "teen_kakashi__kidkakashrun2.png",
+      "teen_kakashi__kidkakashrun3.png"
+    ],
+    "JUMP": [
+      "teen_kakashi__kidkakashjmp.png",
+      "teen_kakashi__kidkakashjmp2.png",
+      "teen_kakashi__kidkakashairthrow.png",
+      "teen_kakashi__kidkakashcrouch2.png"
+    ],
+    "CROUCH": [
+      "teen_kakashi__kidkakashcrouch2.png"
+    ],
+    "CROUCH_WALK": [
+      "teen_kakashi__kidkakashcrouch.png",
+      "teen_kakashi__kidkakashcrouch2.png"
+    ],
+    "CROUCH_ATTACK": [
+      "teen_kakashi__kidkakashcrouch.png",
+      "teen_kakashi__kidkakashcrouch2.png",
+      "teen_kakashi__kidkakashattk6.png",
+      "teen_kakashi__kidkakashthrow2.png",
+      "teen_kakashi__kidkakashairthrow2.png"
+    ],
+    "CROUCH_THROW": [
+      "teen_kakashi__kidkakashcrouch2.png",
+      "teen_kakashi__kidkakashattk6.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "sprite4__costume39.png",
+      "sprite4__costume40.png",
+      "teen_kakashi__kidkakashattck.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "teen_kakashi__kidkakashattck2.png",
+      "teen_kakashi__kidkakashattck3.png",
+      "teen_kakashi__kidkakashattk2.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "teen_kakashi__kidkakashattk3.png",
+      "teen_kakashi__kidkakashattk4.png",
+      "teen_kakashi__kidkakashattk5.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "teen_kakashi__kidkakashattk6.png",
+      "teen_kakashi__kidkakashattk7.png",
+      "teen_kakashi__kidkakashattk8.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "teen_kakashi__kidkakashthrow.png",
+      "teen_kakashi__kidkakashthrow2.png",
+      "teen_kakashi__kidkakashthrow3.png"
+    ],
+    "RUN_ATTACK": [
+      "teen_kakashi__kidkakashrun.png",
+      "teen_kakashi__kidkakashrun3.png",
+      "teen_kakashi__kidkakashrakirui10.png"
+    ],
+    "THROW": [],
+    "KOMA_SUPPORT": [],
+    "TELEPORT": [
+      "teen_kakashi__kidkakashdissapear.png",
+      "sprite4__costume39.png",
+      "sprite4__costume40.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "teen_kakashi__kidkakashdissapear.png"
+    ],
+    "SPECIAL": [
+      "teen_kakashi__kidkakashrakirui.png",
+      "teen_kakashi__kidkakashrakirui2.png",
+      "teen_kakashi__kidkakashrakirui3.png",
+      "teen_kakashi__kidkakashrakirui4.png",
+      "teen_kakashi__kidkakashrakirui5.png",
+      "teen_kakashi__kidkakashrakirui6.png"
+    ],
+    "CHARGE": [],
+    "DASH": [],
+    "BLOCK": [
+      "teen_kakashi__kidkakashguard.png"
+    ],
+    "HIT": [
+      "teen_kakashi__kidkakashdamage.png",
+      "teen_kakashi__kidkakashdamage2.png",
+      "teen_kakashi__kidkakashdamage3.png",
+      "teen_kakashi__kidkakashdamage4.png",
+      "teen_kakashi__kidkakashdamage5.png"
+    ],
+    "KO": [
+      "teen_kakashi__kidkakashrakirui12.png",
+      "teen_kakashi__kidkakashrakirui13.png",
+      "teen_kakashi__kidkakashrakirui14.png",
+      "teen_kakashi__kidkakashrakirui15.png"
+    ],
+    "ATTACK_LIGHT": [
+      "sprite4__costume39.png",
+      "sprite4__costume40.png",
+      "teen_kakashi__kidkakashattck.png",
+      "teen_kakashi__kidkakashattck2.png",
+      "teen_kakashi__kidkakashattck3.png",
+      "teen_kakashi__kidkakashattk2.png",
+      "teen_kakashi__kidkakashattk3.png",
+      "teen_kakashi__kidkakashattk4.png",
+      "teen_kakashi__kidkakashattk5.png"
+    ],
+    "ATTACK_HEAVY": [
+      "teen_kakashi__kidkakashattk6.png",
+      "teen_kakashi__kidkakashattk7.png",
+      "teen_kakashi__kidkakashattk8.png",
+      "teen_kakashi__kidkakashthrow.png",
+      "teen_kakashi__kidkakashthrow2.png",
+      "teen_kakashi__kidkakashthrow3.png",
+      "teen_kakashi__kidkakashrakirui7.png",
+      "teen_kakashi__kidkakashrakirui9.png",
+      "teen_kakashi__kidkakashrakirui11.png"
+    ],
+    "UNUSED_UNKNOWN": []
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 45,
+      "requireHitForComboRoutes": false,
+      "attackDurationScale": 1.25,
+      "specialTransformDurationScale": 1.45
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 11,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 11,
+          "damageMultiplier": 1.15,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.05
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 14,
+          "damageMultiplier": 1.35,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.35
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 16,
+          "damageMultiplier": 1.2,
+          "rangeMultiplier": 1.08,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 20,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.15,
+          "knockbackMultiplier": 1.5
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL",
+          "duration": 35,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 1
+        }
+      ]
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "actionMap": {
+      "light": "ATTACK_LIGHT_1",
+      "heavy": "ATTACK_HEAVY_1",
+      "special": "SPECIAL",
+      "transform": "SPECIAL_TRANSFORM",
+      "block": "BLOCK",
+      "jump": "JUMP",
+      "run": "RUN",
+      "crouch": "CROUCH",
+      "runAttack": "RUN_ATTACK",
+      "throw": "THROW",
+      "teleport": "TELEPORT",
+      "support": "KOMA_SUPPORT",
+      "charge": "CHARGE",
+      "dash": "DASH"
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "editedByMapper": true,
+    "editedAt": "2026-03-08T02:16:27.780Z",
+    "mappingMode": "manual_editor_drag_drop"
+  },
+  "__validationWarnings": []
+}

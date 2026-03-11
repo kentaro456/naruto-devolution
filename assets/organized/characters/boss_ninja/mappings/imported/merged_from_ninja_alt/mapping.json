@@ -1,0 +1,292 @@
+{
+  "targetName": "Sprite3",
+  "states": [
+    "IDLE",
+    "WALK",
+    "RUN",
+    "JUMP",
+    "CROUCH",
+    "CROUCH_WALK",
+    "CROUCH_ATTACK",
+    "CROUCH_THROW",
+    "ATTACK_LIGHT_1",
+    "ATTACK_LIGHT_2",
+    "ATTACK_LIGHT_3",
+    "ATTACK_HEAVY_1",
+    "ATTACK_HEAVY_2",
+    "RUN_ATTACK",
+    "THROW",
+    "KOMA_SUPPORT",
+    "TELEPORT",
+    "SPECIAL_TRANSFORM",
+    "SPECIAL",
+    "CHARGE",
+    "DASH",
+    "BLOCK",
+    "HIT",
+    "KO",
+    "ATTACK_LIGHT",
+    "ATTACK_HEAVY"
+  ],
+  "stateMap": {
+    "IDLE": [
+      "sprite3__stand.png",
+      "sprite3__stand2.png",
+      "sprite3__stand3.png",
+      "sprite3__stand4.png",
+      "sprite3__stand5.png",
+      "sprite3__stand6.png",
+      "sprite3__costume7.png",
+      "sprite3__costume8.png",
+      "sprite3__costume9.png",
+      "sprite3__costume10.png",
+      "sprite3__costume11.png",
+      "sprite3__costume12.png"
+    ],
+    "WALK": [
+      "sprite3__run.png",
+      "sprite3__run2.png",
+      "sprite3__run3.png",
+      "sprite3__run4.png",
+      "sprite3__run5.png",
+      "sprite3__run6.png",
+      "sprite3__costume19.png",
+      "sprite3__costume20.png",
+      "sprite3__costume21.png",
+      "sprite3__costume22.png",
+      "sprite3__costume37.png",
+      "sprite3__costume28.png",
+      "sprite3__costume29.png",
+      "sprite3__costume30.png",
+      "sprite3__costume31.png",
+      "sprite3__costume32.png",
+      "sprite3__costume33.png",
+      "sprite3__costume34.png",
+      "sprite3__costume35.png",
+      "sprite3__costume36.png"
+    ],
+    "RUN": [
+      "sprite3__run.png",
+      "sprite3__run2.png",
+      "sprite3__run3.png",
+      "sprite3__run4.png",
+      "sprite3__run5.png",
+      "sprite3__run6.png"
+    ],
+    "JUMP": [
+      "sprite3__jump.png",
+      "sprite3__jump2.png",
+      "sprite3__jump3.png",
+      "sprite3__jump4.png",
+      "sprite3__costume37.png",
+      "sprite3__costume38.png"
+    ],
+    "CROUCH": [
+      "sprite3__stand.png"
+    ],
+    "CROUCH_WALK": [
+      "sprite3__stand.png"
+    ],
+    "CROUCH_ATTACK": [
+      "sprite3__costume69.png",
+      "sprite3__kunai_barrage5.png",
+      "sprite3__kunai_barrage10.png"
+    ],
+    "CROUCH_THROW": [
+      "sprite3__kunai_barrage3.png",
+      "sprite3__kunai_barrage8.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "sprite3__costume69.png",
+      "sprite3__kunai_barrage5.png",
+      "sprite3__kunai_barrage10.png",
+      "sprite3__kunai_barrage15.png",
+      "sprite3__rotation4.png",
+      "sprite3__rotation9.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "sprite3__kunai_barrage.png",
+      "sprite3__kunai_barrage6.png",
+      "sprite3__kunai_barrage11.png",
+      "sprite3__kunai_barrage16.png",
+      "sprite3__rotation5.png",
+      "sprite3__rotation10.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "sprite3__kunai_barrage2.png",
+      "sprite3__kunai_barrage7.png",
+      "sprite3__kunai_barrage12.png",
+      "sprite3__rotation.png",
+      "sprite3__rotation6.png",
+      "sprite3__rotation11.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "sprite3__kunai_barrage3.png",
+      "sprite3__kunai_barrage8.png",
+      "sprite3__kunai_barrage13.png",
+      "sprite3__rotation2.png",
+      "sprite3__rotation7.png",
+      "sprite3__rotation12.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "sprite3__kunai_barrage4.png",
+      "sprite3__kunai_barrage9.png",
+      "sprite3__kunai_barrage14.png",
+      "sprite3__rotation3.png",
+      "sprite3__rotation8.png",
+      "sprite3__rotation13.png"
+    ],
+    "RUN_ATTACK": [
+      "sprite3__kunai_barrage.png",
+      "sprite3__kunai_barrage6.png",
+      "sprite3__kunai_barrage11.png"
+    ],
+    "THROW": [
+      "sprite3__kunai_barrage3.png",
+      "sprite3__kunai_barrage8.png"
+    ],
+    "KOMA_SUPPORT": [
+      "sprite3__rasengan.png",
+      "sprite3__rasengan2.png"
+    ],
+    "TELEPORT": [
+      "sprite3__rasengan.png",
+      "sprite3__rasengan2.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "sprite3__costume29.png",
+      "sprite3__costume30.png",
+      "sprite3__costume31.png"
+    ],
+    "SPECIAL": [
+      "sprite3__rasengan.png",
+      "sprite3__rasengan2.png",
+      "sprite3__rasengan3.png",
+      "sprite3__rasengan4.png",
+      "sprite3__rasengan5.png",
+      "sprite3__rasengan6.png",
+      "sprite3__rasengan7.png",
+      "sprite3__rasengan8.png",
+      "sprite3__rasengan9.png",
+      "sprite3__rasengan10.png",
+      "sprite3__rasengan11.png",
+      "sprite3__rasengan12.png",
+      "sprite3__rasengan13.png",
+      "sprite3__rasengan14.png",
+      "sprite3__rasengan15.png",
+      "sprite3__rasengan16.png",
+      "sprite3__rasengan17.png",
+      "sprite3__rasengan18.png",
+      "sprite3__rasengan19.png",
+      "sprite3__rasengan20.png",
+      "sprite3__rasengan21.png",
+      "sprite3__rasengan22.png",
+      "sprite3__rasengan23.png",
+      "sprite3__rasengan24.png",
+      "sprite3__rasengan25.png",
+      "sprite3__rasengan26.png",
+      "sprite3__rasengan27.png",
+      "sprite3__rasengan28.png",
+      "sprite3__rasengan29.png",
+      "sprite3__rasengan30.png",
+      "sprite3__fire_ball.png",
+      "sprite3__fire_ball2.png",
+      "sprite3__fire_ball3.png",
+      "sprite3__fire_ball4.png",
+      "sprite3__fire_ball5.png",
+      "sprite3__fire_ball6.png",
+      "sprite3__fire_ball7.png",
+      "sprite3__fire_ball8.png",
+      "sprite3__fire_ball9.png",
+      "sprite3__fire_ball10.png",
+      "sprite3__fire_ball11.png",
+      "sprite3__fire_ball12.png",
+      "sprite3__fire_ball13.png",
+      "sprite3__fire_ball14.png",
+      "sprite3__fire_ball15.png",
+      "sprite3__fire_ball16.png",
+      "sprite3__fire_ball17.png",
+      "sprite3__fire_ball18.png",
+      "sprite3__fire_ball19.png",
+      "sprite3__fire_ball20.png",
+      "sprite3__fire_ball21.png",
+      "sprite3__special10.png",
+      "sprite3__special11.png",
+      "sprite3__special12.png",
+      "sprite3__special13.png",
+      "sprite3__special14.png",
+      "sprite3__special15.png",
+      "sprite3__special16.png",
+      "sprite3__special17.png",
+      "sprite3__special18.png",
+      "sprite3__special19.png",
+      "sprite3__special20.png",
+      "sprite3__special2.png",
+      "sprite3__special3.png",
+      "sprite3__special4.png",
+      "sprite3__special5.png",
+      "sprite3__special6.png",
+      "sprite3__special7.png",
+      "sprite3__special8.png",
+      "sprite3__special9.png",
+      "sprite3__special21.png",
+      "sprite3__rotation14.png",
+      "sprite3__rotation15.png",
+      "sprite3__rotation16.png",
+      "sprite3__rotation17.png",
+      "sprite3__rotation18.png",
+      "sprite3__costume106.png",
+      "sprite3__costume107.png",
+      "sprite3__costume108.png",
+      "sprite3__charge.png",
+      "sprite3__charge2.png",
+      "sprite3__charge3.png",
+      "sprite3__charge4.png",
+      "sprite3__charge5.png",
+      "sprite3__charge6.png",
+      "sprite3__charge7.png",
+      "sprite3__charge8.png",
+      "sprite3__costume138.png",
+      "sprite3__costume139.png"
+    ],
+    "CHARGE": [
+      "sprite3__stand.png",
+      "sprite3__stand2.png"
+    ],
+    "DASH": [
+      "sprite3__run.png",
+      "sprite3__run2.png",
+      "sprite3__run3.png"
+    ],
+    "BLOCK": [
+      "sprite3__stand.png"
+    ],
+    "HIT": [
+      "sprite3__costume140.png",
+      "sprite3__costume141.png",
+      "sprite3__costume142.png",
+      "sprite3__costume143.png"
+    ],
+    "KO": [
+      "sprite3__costume2.png",
+      "sprite3__costume3.png",
+      "sprite3__costume4.png"
+    ],
+    "ATTACK_LIGHT": [
+      "sprite3__costume69.png",
+      "sprite3__kunai_barrage5.png",
+      "sprite3__kunai_barrage.png",
+      "sprite3__kunai_barrage6.png",
+      "sprite3__kunai_barrage2.png",
+      "sprite3__kunai_barrage7.png"
+    ],
+    "ATTACK_HEAVY": [
+      "sprite3__kunai_barrage3.png",
+      "sprite3__kunai_barrage8.png",
+      "sprite3__kunai_barrage13.png",
+      "sprite3__kunai_barrage4.png",
+      "sprite3__kunai_barrage9.png",
+      "sprite3__kunai_barrage14.png"
+    ]
+  }
+}

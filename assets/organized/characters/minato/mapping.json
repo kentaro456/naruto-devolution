@@ -1,0 +1,155 @@
+{
+  "targetName": "Minato",
+  "states": [
+    "IDLE",
+    "WALK",
+    "JUMP",
+    "ATTACK_LIGHT_1",
+    "ATTACK_LIGHT_2",
+    "ATTACK_LIGHT_3",
+    "ATTACK_HEAVY_1",
+    "ATTACK_HEAVY_2",
+    "SPECIAL_TRANSFORM",
+    "SPECIAL",
+    "BLOCK",
+    "HIT",
+    "KO",
+    "ATTACK_LIGHT",
+    "ATTACK_HEAVY"
+  ],
+  "stateMap": {
+    "IDLE": [
+      "minato__stand1.png"
+    ],
+    "WALK": [
+      "minato__run1.png",
+      "minato__run2.png",
+      "minato__run3.png",
+      "minato__run4.png",
+      "minato__run5.png"
+    ],
+    "JUMP": [
+      "minato__jump1.png",
+      "minato__jump2.png",
+      "minato__jumpattack1.png",
+      "minato__jumpattack2.png",
+      "minato__jumpattack3.png",
+      "minato__jumpattack4.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "minato__combo1.png",
+      "minato__combo2.png",
+      "minato__combo3.png",
+      "minato__combo4.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "minato__combo5.png",
+      "minato__combo6.png",
+      "minato__combo7.png",
+      "minato__combo8.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "minato__combo9.png",
+      "minato__combo10.png",
+      "minato__combo11.png",
+      "minato__combo12.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "minato__combo13.png",
+      "minato__combo14.png",
+      "minato__runattack1.png",
+      "minato__runattack2.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "minato__runattack3.png",
+      "minato__upattack1.png",
+      "minato__upattack2.png",
+      "minato__upattack3.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "minato__teleport.png"
+    ],
+    "SPECIAL": [
+      "minato__katongamayu1.png",
+      "minato__katongamayu2.png",
+      "minato__katongamayu3.png",
+      "minato__katongamayu4.png",
+      "minato__katongamayu5.png",
+      "minato__katongamayu6.png",
+      "minato__katongamayu7.png",
+      "minato__katongamayu8.png",
+      "minato__katongamayu9.png",
+      "minato__katongamayu10.png",
+      "minato__katongamayu11.png",
+      "minato__katongamayu12.png",
+      "minato__katongamayu13.png",
+      "minato__flyingthnrgod1.png",
+      "minato__flyingthnrgod2.png",
+      "minato__flyingthnrgod3.png",
+      "minato__flyingthnrgod4.png",
+      "minato__flyingthnrgod5.png",
+      "minato__flyingthnrgod6.png",
+      "minato__flyingthnrgod7.png",
+      "minato__flyingthnrgod8.png",
+      "minato__flyingthnrgod9.png",
+      "minato__flyingthnrgod10.png",
+      "minato__flyingthnrgod11.png",
+      "minato__rasengan1.png",
+      "minato__rasengan2.png",
+      "minato__rasengan3.png",
+      "minato__rasengan4.png",
+      "minato__rasengan5.png",
+      "minato__rasengan6.png",
+      "minato__rasengan7.png",
+      "minato__rasengan8.png",
+      "minato__rasengan9.png",
+      "minato__rasengan10.png",
+      "minato__rasengan11.png",
+      "minato__rasengan12.png",
+      "minato__rasengan13.png",
+      "minato__rasengan14.png",
+      "minato__rasengan15.png",
+      "minato__rasengan16.png"
+    ],
+    "BLOCK": [
+      "minato__crouchblock.png"
+    ],
+    "HIT": [
+      "minato__damage1.png",
+      "minato__damage2.png",
+      "minato__damage3.png",
+      "minato__damage4.png",
+      "minato__damage5.png"
+    ],
+    "KO": [
+      "minato__costume4.png",
+      "minato__costume3.png",
+      "minato__costume2.png",
+      "minato__costume5.png"
+    ],
+    "ATTACK_LIGHT": [
+      "minato__combo1.png",
+      "minato__combo2.png",
+      "minato__combo3.png",
+      "minato__combo4.png",
+      "minato__combo5.png",
+      "minato__combo6.png",
+      "minato__combo7.png",
+      "minato__combo8.png",
+      "minato__combo9.png",
+      "minato__combo10.png",
+      "minato__combo11.png",
+      "minato__combo12.png"
+    ],
+    "ATTACK_HEAVY": [
+      "minato__combo13.png",
+      "minato__combo14.png",
+      "minato__runattack1.png",
+      "minato__runattack2.png",
+      "minato__runattack3.png",
+      "minato__upattack1.png",
+      "minato__upattack2.png",
+      "minato__upattack3.png"
+    ]
+  }
+}

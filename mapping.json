@@ -1,0 +1,290 @@
+{
+  "targetName": "Naruto",
+  "version": 2,
+  "categories": {
+    "idle": [
+      "naruto__costume_058__kyubistd.png"
+    ],
+    "walk": [
+      "naruto__costume_059__kyubiwlk.png",
+      "naruto__costume_060__kyubiwlk2.png",
+      "naruto__costume_061__kyubiwlk3.png",
+      "naruto__costume_062__kyubiwlk4.png",
+      "naruto__costume_063__kyubiwlk5.png",
+      "naruto__costume_064__kyubiwlk6.png",
+      "naruto__costume_130__kyuubi_run_2.png",
+      "naruto__costume_131__kyuubi_run_3.png",
+      "naruto__costume_132__kyuubi_run_4.png",
+      "naruto__costume_129__kyuubi_run_1.png"
+    ],
+    "run": [],
+    "jump": [
+      "naruto__costume_065__narutojmp.png",
+      "naruto__costume_066__narutojmp13.png",
+      "naruto__costume_067__narutojmp14.png",
+      "naruto__costume_133__kyuubi_jump_1.png",
+      "naruto__costume_134__kyuubi_jump_2.png"
+    ],
+    "crouch": [],
+    "crouch_walk": [],
+    "crouch_attack": [],
+    "crouch_throw": [],
+    "attack_light_1": [],
+    "attack_light_2": [],
+    "attack_light_3": [],
+    "attack_heavy_1": [
+      "naruto__costume_069__kyubiatk2.png",
+      "naruto__costume_070__kyubiatk3.png",
+      "naruto__costume_071__kyubiatk4.png",
+      "naruto__costume_072__kyubiatk5.png",
+      "naruto__costume_073__kyubiatk6.png",
+      "naruto__costume_074__kyubiatk7.png",
+      "naruto__costume_075__kyubiatk8.png"
+    ],
+    "attack_heavy_2": [
+      "naruto__costume_076__kyubiatk9.png",
+      "naruto__costume_077__kyubiatk10.png",
+      "naruto__costume_078__kyubiatk11.png",
+      "naruto__costume_079__kyubiatk12.png",
+      "naruto__costume_080__kyubiatk13.png"
+    ],
+    "run_attack": [],
+    "throw": [],
+    "koma_support": [],
+    "teleport": [],
+    "special_transform": [
+      "naruto__costume_109__narutoappear.png",
+      "naruto__costume_110__narutoappear2.png",
+      "naruto__costume_111__narutoappear3.png",
+      "naruto__costume_112__narutoappear4.png",
+      "naruto__costume_126__transformation_1.png",
+      "naruto__costume_127__transformation_2.png",
+      "naruto__costume_128__transformation_3.png"
+    ],
+    "special": [],
+    "charge": [],
+    "dash": [],
+    "block": [],
+    "hit": [
+      "naruto__costume_135__kyuubi_damage_1.png",
+      "naruto__costume_136__kyuubi_damage_2.png",
+      "naruto__costume_137__kyuubi_damage_4.png",
+      "naruto__costume_137__kyuubi_damage_4.png",
+      "naruto__costume_139__kyuubi_damage_5.png",
+      "naruto__costume_140__kyuubi_damage_6.png",
+      "naruto__costume_141__kyuubi_damage_7.png"
+    ],
+    "ko": [],
+    "attack_light": [],
+    "attack_heavy": [
+      "naruto__costume_069__kyubiatk2.png",
+      "naruto__costume_070__kyubiatk3.png",
+      "naruto__costume_071__kyubiatk4.png",
+      "naruto__costume_072__kyubiatk5.png",
+      "naruto__costume_073__kyubiatk6.png",
+      "naruto__costume_074__kyubiatk7.png",
+      "naruto__costume_075__kyubiatk8.png",
+      "naruto__costume_076__kyubiatk9.png",
+      "naruto__costume_077__kyubiatk10.png",
+      "naruto__costume_078__kyubiatk11.png",
+      "naruto__costume_079__kyubiatk12.png",
+      "naruto__costume_080__kyubiatk13.png"
+    ],
+    "unused_unknown": []
+  },
+  "stateMap": {
+    "IDLE": [
+      "naruto__costume_058__kyubistd.png"
+    ],
+    "WALK": [
+      "naruto__costume_059__kyubiwlk.png",
+      "naruto__costume_060__kyubiwlk2.png",
+      "naruto__costume_061__kyubiwlk3.png",
+      "naruto__costume_062__kyubiwlk4.png",
+      "naruto__costume_063__kyubiwlk5.png",
+      "naruto__costume_064__kyubiwlk6.png",
+      "naruto__costume_130__kyuubi_run_2.png",
+      "naruto__costume_131__kyuubi_run_3.png",
+      "naruto__costume_132__kyuubi_run_4.png",
+      "naruto__costume_129__kyuubi_run_1.png"
+    ],
+    "RUN": [],
+    "JUMP": [
+      "naruto__costume_065__narutojmp.png",
+      "naruto__costume_066__narutojmp13.png",
+      "naruto__costume_067__narutojmp14.png",
+      "naruto__costume_133__kyuubi_jump_1.png",
+      "naruto__costume_134__kyuubi_jump_2.png"
+    ],
+    "CROUCH": [],
+    "CROUCH_WALK": [],
+    "CROUCH_ATTACK": [],
+    "CROUCH_THROW": [],
+    "ATTACK_LIGHT_1": [],
+    "ATTACK_LIGHT_2": [],
+    "ATTACK_LIGHT_3": [],
+    "ATTACK_HEAVY_1": [
+      "naruto__costume_069__kyubiatk2.png",
+      "naruto__costume_070__kyubiatk3.png",
+      "naruto__costume_071__kyubiatk4.png",
+      "naruto__costume_072__kyubiatk5.png",
+      "naruto__costume_073__kyubiatk6.png",
+      "naruto__costume_074__kyubiatk7.png",
+      "naruto__costume_075__kyubiatk8.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "naruto__costume_076__kyubiatk9.png",
+      "naruto__costume_077__kyubiatk10.png",
+      "naruto__costume_078__kyubiatk11.png",
+      "naruto__costume_079__kyubiatk12.png",
+      "naruto__costume_080__kyubiatk13.png"
+    ],
+    "RUN_ATTACK": [],
+    "THROW": [],
+    "KOMA_SUPPORT": [],
+    "TELEPORT": [],
+    "SPECIAL_TRANSFORM": [
+      "naruto__costume_109__narutoappear.png",
+      "naruto__costume_110__narutoappear2.png",
+      "naruto__costume_111__narutoappear3.png",
+      "naruto__costume_112__narutoappear4.png",
+      "naruto__costume_126__transformation_1.png",
+      "naruto__costume_127__transformation_2.png",
+      "naruto__costume_128__transformation_3.png"
+    ],
+    "SPECIAL": [],
+    "CHARGE": [],
+    "DASH": [],
+    "BLOCK": [],
+    "HIT": [
+      "naruto__costume_135__kyuubi_damage_1.png",
+      "naruto__costume_136__kyuubi_damage_2.png",
+      "naruto__costume_137__kyuubi_damage_4.png",
+      "naruto__costume_137__kyuubi_damage_4.png",
+      "naruto__costume_139__kyuubi_damage_5.png",
+      "naruto__costume_140__kyuubi_damage_6.png",
+      "naruto__costume_141__kyuubi_damage_7.png"
+    ],
+    "KO": [],
+    "ATTACK_LIGHT": [],
+    "ATTACK_HEAVY": [
+      "naruto__costume_069__kyubiatk2.png",
+      "naruto__costume_070__kyubiatk3.png",
+      "naruto__costume_071__kyubiatk4.png",
+      "naruto__costume_072__kyubiatk5.png",
+      "naruto__costume_073__kyubiatk6.png",
+      "naruto__costume_074__kyubiatk7.png",
+      "naruto__costume_075__kyubiatk8.png",
+      "naruto__costume_076__kyubiatk9.png",
+      "naruto__costume_077__kyubiatk10.png",
+      "naruto__costume_078__kyubiatk11.png",
+      "naruto__costume_079__kyubiatk12.png",
+      "naruto__costume_080__kyubiatk13.png"
+    ],
+    "UNUSED_UNKNOWN": []
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 45,
+      "requireHitForComboRoutes": false,
+      "attackDurationScale": 1,
+      "specialTransformDurationScale": 1
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 11,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 11,
+          "damageMultiplier": 1.15,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.05
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 14,
+          "damageMultiplier": 1.35,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.35
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 16,
+          "damageMultiplier": 1.2,
+          "rangeMultiplier": 1.08,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 20,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.15,
+          "knockbackMultiplier": 1.5
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL",
+          "duration": 35,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 1
+        }
+      ]
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "neutral": "S_N_1",
+        "up": "S_U_1",
+        "down": "S_D_1",
+        "back": "S_B_1",
+        "forward": "S_F_1",
+        "any": "S_N_1"
+      }
+    },
+    "actionMap": {
+      "light": "ATTACK_LIGHT_1",
+      "heavy": "ATTACK_HEAVY_1",
+      "special": "SPECIAL",
+      "transform": "SPECIAL_TRANSFORM",
+      "block": "BLOCK",
+      "jump": "JUMP",
+      "run": "RUN",
+      "crouch": "CROUCH",
+      "dash": "DASH"
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "editedByMapper": true,
+    "editedAt": "2026-03-11T00:57:46.482Z",
+    "mappingMode": "manual_editor_modal"
+  },
+  "__validationWarnings": [
+    "Etat requis vide: SPECIAL",
+    "Aucune animation light configuree."
+  ]
+}

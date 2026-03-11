@@ -1,0 +1,272 @@
+{
+  "targetName": "Sakura",
+  "version": 2,
+  "categories": {},
+  "stateMap": {
+    "IDLE": [
+      "sakura__stance1.png",
+      "sakura__stance2.png",
+      "sakura__stance3.png",
+      "sakura__stance.png"
+    ],
+    "WALK": [
+      "sakura__walk1.png",
+      "sakura__walk2.png",
+      "sakura__walk3.png",
+      "sakura__walk4.png"
+    ],
+    "RUN": [
+      "sakura__run1.png",
+      "sakura__run2.png",
+      "sakura__run3.png",
+      "sakura__run4.png",
+      "sakura__run5.png",
+      "sakura__run.png"
+    ],
+    "JUMP": [
+      "sakura__jump1.png",
+      "sakura__jump2.png",
+      "sakura__jump3.png",
+      "sakura__jump.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "sakura__combo1.png",
+      "sakura__combo2.png",
+      "sakura__combo3.png",
+      "sakura__combo4.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "sakura__combo10.png",
+      "sakura__combo11.png",
+      "sakura__combo12.png",
+      "sakura__combo.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "sakura__run_attack2.png",
+      "sakura__run_attack3.png",
+      "sakura__run_attack4.png",
+      "sakura__run_attack5.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "sakura__up_attack1.png",
+      "sakura__up_attack2.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "sakura__up_attack3.png",
+      "sakura__up_attack.png"
+    ],
+    "RUN_ATTACK": [
+      "sakura__run_attack1.png",
+      "sakura__run_attack2.png",
+      "sakura__run_attack3.png",
+      "sakura__run_attack4.png"
+    ],
+    "THROW": [
+      "sakura__throw1.png",
+      "sakura__throw2.png",
+      "sakura__throw3.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "sakura__sign1.png",
+      "sakura__sign2.png",
+      "sakura__sign.png",
+      "sakura__teleport1.png",
+      "sakura__teleport.png"
+    ],
+    "SPECIAL": [
+      "sakura__sign1.png",
+      "sakura__sign2.png",
+      "sakura__sign.png",
+      "sakura__teleport1.png",
+      "sakura__teleport.png"
+    ],
+    "BLOCK": [
+      "sakura__stance1.png"
+    ],
+    "HIT": [
+      "sakura__damage1.png",
+      "sakura__damage2.png",
+      "sakura__damage3.png"
+    ],
+    "KO": [
+      "sakura__damage1.png",
+      "sakura__damage2.png",
+      "sakura__damage3.png"
+    ],
+    "ATTACK_LIGHT": [
+      "sakura__combo1.png",
+      "sakura__combo2.png",
+      "sakura__combo3.png",
+      "sakura__combo4.png"
+    ],
+    "ATTACK_HEAVY": [
+      "sakura__up_attack1.png",
+      "sakura__up_attack2.png"
+    ],
+    "DASH": [
+      "sakura__teleport1.png",
+      "sakura__teleport.png"
+    ],
+    "ARCHIVE_POOL": [
+      "sakura__combo5.png",
+      "sakura__combo6.png",
+      "sakura__combo7.png",
+      "sakura__combo8.png",
+      "sakura__combo9.png",
+      "sakura__damage4.png",
+      "sakura__damage5.png",
+      "sakura__damage.png",
+      "sakura__inner1.png",
+      "sakura__inner2.png",
+      "sakura__inner3.png",
+      "sakura__inner4.png",
+      "sakura__inner5.png",
+      "sakura__inner6.png",
+      "sakura__inner7.png",
+      "sakura__inner8.png",
+      "sakura__inner9.png",
+      "sakura__inner10.png",
+      "sakura__inner11.png",
+      "sakura__inner12.png",
+      "sakura__inner13.png",
+      "sakura__inner14.png",
+      "sakura__inner15.png",
+      "sakura__inner16.png",
+      "sakura__inner17.png",
+      "sakura__inner18.png",
+      "sakura__inner19.png",
+      "sakura__inner.png",
+      "sakura__jumpattack1.png",
+      "sakura__jumpattack2.png",
+      "sakura__jumpattack3.png",
+      "sakura__jumpattack4.png",
+      "sakura__jumpattack.png",
+      "sakura__land.png",
+      "sakura__rage1.png",
+      "sakura__rage2.png",
+      "sakura__rage3.png",
+      "sakura__rage4.png",
+      "sakura__rage5.png",
+      "sakura__rage.png",
+      "sakura__run_attack6.png",
+      "sakura__run_attack.png",
+      "sakura__shannaro1.png",
+      "sakura__shannaro2.png",
+      "sakura__shannaro3.png",
+      "sakura__shannaro4.png",
+      "sakura__shannaro5.png",
+      "sakura__shannaro6.png",
+      "sakura__shannaro7.png",
+      "sakura__shannaro8.png",
+      "sakura__shannaro9.png",
+      "sakura__shannaro10.png",
+      "sakura__shannaro11.png",
+      "sakura__shannaro12.png",
+      "sakura__shannaro13.png",
+      "sakura__shannaro14.png",
+      "sakura__shannaro.png",
+      "sakura__shousen1.png",
+      "sakura__shousen2.png",
+      "sakura__shousen3.png",
+      "sakura__shousen4.png",
+      "sakura__shousen5.png",
+      "sakura__shousen6.png",
+      "sakura__shousen7.png",
+      "sakura__shousen8.png",
+      "sakura__shousen9.png",
+      "sakura__shousen.png",
+      "sakura__throw.png",
+      "sakura__walk5.png",
+      "sakura__walk.png"
+    ]
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 50,
+      "attackDurationScale": 1.2,
+      "specialTransformDurationScale": 1.35,
+      "requireHitForComboRoutes": false
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 13,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 13,
+          "damageMultiplier": 1.13,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.03
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 15,
+          "damageMultiplier": 1.3,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.24
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 18,
+          "damageMultiplier": 1.22,
+          "rangeMultiplier": 1.1,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 22,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.18,
+          "knockbackMultiplier": 1.45
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL_TRANSFORM",
+          "duration": 18,
+          "noHit": true
+        },
+        {
+          "state": "SPECIAL",
+          "duration": 28,
+          "damageMultiplier": 1.24,
+          "rangeMultiplier": 1.14,
+          "knockbackMultiplier": 1.24
+        }
+      ]
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "polished": true,
+    "fullCoverage": true,
+    "leftoversInArchive": 70
+  }
+}

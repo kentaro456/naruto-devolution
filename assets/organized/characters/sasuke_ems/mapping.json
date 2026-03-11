@@ -1,0 +1,525 @@
+{
+  "targetName": "Sasuke Eternal",
+  "version": 2,
+  "categories": {
+    "idle": [
+      "sasuke_eternal__amaterasu10.png",
+      "sasuke_eternal__stance2.png",
+      "sasuke_eternal__stance3.png",
+      "sasuke_eternal__stance2.png",
+      "sasuke_eternal__duck.png"
+    ],
+    "walk": [
+      "sasuke_eternal__walk1.png",
+      "sasuke_eternal__walk2.png",
+      "sasuke_eternal__walk3.png",
+      "sasuke_eternal__walk5.png",
+      "sasuke_eternal__walk5.png",
+      "sasuke_eternal__sharomgam_power.png",
+      "sasuke_eternal__sharomgam_power1.png",
+      "sasuke_eternal__sharomgam_power2.png"
+    ],
+    "run": [
+      "sasuke_eternal__run1.png",
+      "sasuke_eternal__run2.png",
+      "sasuke_eternal__run3.png"
+    ],
+    "jump": [
+      "sasuke_eternal__jump1.png",
+      "sasuke_eternal__jumpdown.png",
+      "sasuke_eternal__katonair.png"
+    ],
+    "crouch": [],
+    "crouch_walk": [],
+    "crouch_attack": [],
+    "crouch_throw": [],
+    "attack_light_1": [
+      "sasuke_eternal__combo1.png",
+      "sasuke_eternal__combo2-1.png",
+      "sasuke_eternal__combo2-2.png",
+      "sasuke_eternal__combo2-3.png",
+      "sasuke_eternal__combo2-4.png",
+      "sasuke_eternal__combo2-5.png",
+      "sasuke_eternal__combo2.png"
+    ],
+    "attack_light_2": [
+      "sasuke_eternal__combo3-1.png",
+      "sasuke_eternal__combo3-2.png",
+      "sasuke_eternal__combo3-3.png",
+      "sasuke_eternal__combo3-4.png",
+      "sasuke_eternal__combo3-5.png",
+      "sasuke_eternal__combo3.png",
+      "sasuke_eternal__combo4-1.png"
+    ],
+    "attack_light_3": [
+      "sasuke_eternal__combo4-2.png",
+      "sasuke_eternal__combo4-3.png",
+      "sasuke_eternal__combo4-4.png",
+      "sasuke_eternal__combo4-5.png",
+      "sasuke_eternal__combo4-6.png",
+      "sasuke_eternal__combo4.png",
+      "sasuke_eternal__throw1.png"
+    ],
+    "attack_heavy_1": [
+      "sasuke_eternal__throw2.png",
+      "sasuke_eternal__throw3.png",
+      "sasuke_eternal__thunder_sword.png",
+      "sasuke_eternal__thunder_sword1.png",
+      "sasuke_eternal__thunder_sword2.png",
+      "sasuke_eternal__thunder_sword3.png",
+      "sasuke_eternal__thunder_sword4.png"
+    ],
+    "attack_heavy_2": [
+      "sasuke_eternal__thunder_sword5.png",
+      "sasuke_eternal__thunder_sword6.png",
+      "sasuke_eternal__thunder_sword7.png",
+      "sasuke_eternal__thunder_sword8.png",
+      "sasuke_eternal__thunder_sword9.png"
+    ],
+    "run_attack": [],
+    "throw": [],
+    "koma_support": [],
+    "teleport": [],
+    "special_transform": [
+      "sasuke_eternal__telepot1.png",
+      "sasuke_eternal__telepot2.png",
+      "sasuke_eternal__teleport.png",
+      "sasuke_eternal__teleport2.png"
+    ],
+    "special": [
+      "sasuke_eternal__chidori1.png",
+      "sasuke_eternal__chidori2.png",
+      "sasuke_eternal__chidori3.png",
+      "sasuke_eternal__chidori4.png",
+      "sasuke_eternal__chidori5.png",
+      "sasuke_eternal__chidori6.png",
+      "sasuke_eternal__chidori7.png",
+      "sasuke_eternal__chidori8.png",
+      "sasuke_eternal__chidori9.png",
+      "sasuke_eternal__chidori10.png",
+      "sasuke_eternal__chidori11.png",
+      "sasuke_eternal__amaterasu1.png",
+      "sasuke_eternal__amaterasu2.png",
+      "sasuke_eternal__amaterasu3.png",
+      "sasuke_eternal__amaterasu4.png",
+      "sasuke_eternal__amaterasu5.png",
+      "sasuke_eternal__amaterasu6.png",
+      "sasuke_eternal__amaterasu7.png",
+      "sasuke_eternal__amaterasu8.png",
+      "sasuke_eternal__amaterasu9.png",
+      "sasuke_eternal__amaterasu10.png",
+      "sasuke_eternal__jutsu1.png",
+      "sasuke_eternal__jutsu2.png",
+      "sasuke_eternal__katon1.png",
+      "sasuke_eternal__kirin1.png",
+      "sasuke_eternal__kirin2.png",
+      "sasuke_eternal__kirin3.png",
+      "sasuke_eternal__kirin4.png",
+      "sasuke_eternal__kirin5.png",
+      "sasuke_eternal__kirin6.png",
+      "sasuke_eternal__kirin7.png",
+      "sasuke_eternal__kirin8.png",
+      "sasuke_eternal__kirin9.png",
+      "sasuke_eternal__kirin10.png",
+      "sasuke_eternal__kirin11.png",
+      "sasuke_eternal__kirin12.png",
+      "sasuke_eternal__kirin13.png",
+      "sasuke_eternal__sasuke_susanoo_e_sasuke_akatsuki_sprite_by_prodijiu-d60ikb5.png",
+      "sasuke_eternal__katon6.png",
+      "sasuke_eternal__katon2.png",
+      "sasuke_eternal__katon3.png",
+      "sasuke_eternal__katon4.png",
+      "sasuke_eternal__katon5.png",
+      "sasuke_eternal__katon7.png",
+      "sasuke_eternal__katon8.png",
+      "sasuke_eternal__katon11.png",
+      "sasuke_eternal__katon12.png",
+      "sasuke_eternal__katon11.png",
+      "sasuke_eternal__katon12.png",
+      "sasuke_eternal__katon13.png",
+      "sasuke_eternal__katon14.png",
+      "sasuke_eternal__katon15.png",
+      "sasuke_eternal__katon16.png",
+      "sasuke_eternal__katon1.png",
+      "sasuke_eternal__susanoo.png",
+      "sasuke_eternal__susanoo2.png",
+      "sasuke_eternal__amaterasu10.png",
+      "sasuke_eternal__throw1.png",
+      "sasuke_eternal__intro5.png",
+      "sasuke_eternal__intro6.png",
+      "sasuke_eternal__thunder_sword10.png",
+      "sasuke_eternal__thunder_sword11.png",
+      "sasuke_eternal__thunder_sword12.png",
+      "sasuke_eternal__retreat.png",
+      "sasuke_eternal__intro1.png",
+      "sasuke_eternal__intro2.png",
+      "sasuke_eternal__intro3.png",
+      "sasuke_eternal__intro4.png",
+      "sasuke_eternal__intro5.png",
+      "sasuke_eternal__intro6.png"
+    ],
+    "charge": [],
+    "dash": [],
+    "block": [
+      "sasuke_eternal__guard.png"
+    ],
+    "hit": [
+      "sasuke_eternal__damage2.png",
+      "sasuke_eternal__damage1.png",
+      "sasuke_eternal__damage3.png",
+      "sasuke_eternal__kirin13.png"
+    ],
+    "ko": [
+      "sasuke_eternal__rinnegan.png"
+    ],
+    "attack_light": [
+      "sasuke_eternal__combo1.png",
+      "sasuke_eternal__combo2-1.png",
+      "sasuke_eternal__combo2-2.png",
+      "sasuke_eternal__combo2-3.png",
+      "sasuke_eternal__combo2-4.png",
+      "sasuke_eternal__combo2-5.png",
+      "sasuke_eternal__combo2.png",
+      "sasuke_eternal__combo3-1.png",
+      "sasuke_eternal__combo3-2.png",
+      "sasuke_eternal__combo3-3.png",
+      "sasuke_eternal__combo3-4.png",
+      "sasuke_eternal__combo3-5.png",
+      "sasuke_eternal__combo3.png",
+      "sasuke_eternal__combo4-1.png",
+      "sasuke_eternal__combo4-2.png",
+      "sasuke_eternal__combo4-3.png",
+      "sasuke_eternal__combo4-4.png",
+      "sasuke_eternal__combo4-5.png",
+      "sasuke_eternal__combo4-6.png",
+      "sasuke_eternal__combo4.png",
+      "sasuke_eternal__throw1.png"
+    ],
+    "attack_heavy": [
+      "sasuke_eternal__throw2.png",
+      "sasuke_eternal__throw3.png",
+      "sasuke_eternal__thunder_sword.png",
+      "sasuke_eternal__thunder_sword1.png",
+      "sasuke_eternal__thunder_sword2.png",
+      "sasuke_eternal__thunder_sword3.png",
+      "sasuke_eternal__thunder_sword4.png",
+      "sasuke_eternal__thunder_sword5.png",
+      "sasuke_eternal__thunder_sword6.png",
+      "sasuke_eternal__thunder_sword7.png",
+      "sasuke_eternal__thunder_sword8.png",
+      "sasuke_eternal__thunder_sword9.png"
+    ],
+    "unused_unknown": []
+  },
+  "stateMap": {
+    "IDLE": [
+      "sasuke_eternal__amaterasu10.png",
+      "sasuke_eternal__stance2.png",
+      "sasuke_eternal__stance3.png",
+      "sasuke_eternal__stance2.png",
+      "sasuke_eternal__duck.png"
+    ],
+    "WALK": [
+      "sasuke_eternal__walk1.png",
+      "sasuke_eternal__walk2.png",
+      "sasuke_eternal__walk3.png",
+      "sasuke_eternal__walk5.png",
+      "sasuke_eternal__walk5.png",
+      "sasuke_eternal__sharomgam_power.png",
+      "sasuke_eternal__sharomgam_power1.png",
+      "sasuke_eternal__sharomgam_power2.png"
+    ],
+    "RUN": [
+      "sasuke_eternal__run1.png",
+      "sasuke_eternal__run2.png",
+      "sasuke_eternal__run3.png"
+    ],
+    "JUMP": [
+      "sasuke_eternal__jump1.png",
+      "sasuke_eternal__jumpdown.png",
+      "sasuke_eternal__katonair.png"
+    ],
+    "CROUCH": [],
+    "CROUCH_WALK": [],
+    "CROUCH_ATTACK": [],
+    "CROUCH_THROW": [],
+    "ATTACK_LIGHT_1": [
+      "sasuke_eternal__combo1.png",
+      "sasuke_eternal__combo2-1.png",
+      "sasuke_eternal__combo2-2.png",
+      "sasuke_eternal__combo2-3.png",
+      "sasuke_eternal__combo2-4.png",
+      "sasuke_eternal__combo2-5.png",
+      "sasuke_eternal__combo2.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "sasuke_eternal__combo3-1.png",
+      "sasuke_eternal__combo3-2.png",
+      "sasuke_eternal__combo3-3.png",
+      "sasuke_eternal__combo3-4.png",
+      "sasuke_eternal__combo3-5.png",
+      "sasuke_eternal__combo3.png",
+      "sasuke_eternal__combo4-1.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "sasuke_eternal__combo4-2.png",
+      "sasuke_eternal__combo4-3.png",
+      "sasuke_eternal__combo4-4.png",
+      "sasuke_eternal__combo4-5.png",
+      "sasuke_eternal__combo4-6.png",
+      "sasuke_eternal__combo4.png",
+      "sasuke_eternal__throw1.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "sasuke_eternal__throw2.png",
+      "sasuke_eternal__throw3.png",
+      "sasuke_eternal__thunder_sword.png",
+      "sasuke_eternal__thunder_sword1.png",
+      "sasuke_eternal__thunder_sword2.png",
+      "sasuke_eternal__thunder_sword3.png",
+      "sasuke_eternal__thunder_sword4.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "sasuke_eternal__thunder_sword5.png",
+      "sasuke_eternal__thunder_sword6.png",
+      "sasuke_eternal__thunder_sword7.png",
+      "sasuke_eternal__thunder_sword8.png",
+      "sasuke_eternal__thunder_sword9.png"
+    ],
+    "RUN_ATTACK": [],
+    "THROW": [],
+    "KOMA_SUPPORT": [],
+    "TELEPORT": [],
+    "SPECIAL_TRANSFORM": [
+      "sasuke_eternal__telepot1.png",
+      "sasuke_eternal__telepot2.png",
+      "sasuke_eternal__teleport.png",
+      "sasuke_eternal__teleport2.png"
+    ],
+    "SPECIAL": [
+      "sasuke_eternal__chidori1.png",
+      "sasuke_eternal__chidori2.png",
+      "sasuke_eternal__chidori3.png",
+      "sasuke_eternal__chidori4.png",
+      "sasuke_eternal__chidori5.png",
+      "sasuke_eternal__chidori6.png",
+      "sasuke_eternal__chidori7.png",
+      "sasuke_eternal__chidori8.png",
+      "sasuke_eternal__chidori9.png",
+      "sasuke_eternal__chidori10.png",
+      "sasuke_eternal__chidori11.png",
+      "sasuke_eternal__amaterasu1.png",
+      "sasuke_eternal__amaterasu2.png",
+      "sasuke_eternal__amaterasu3.png",
+      "sasuke_eternal__amaterasu4.png",
+      "sasuke_eternal__amaterasu5.png",
+      "sasuke_eternal__amaterasu6.png",
+      "sasuke_eternal__amaterasu7.png",
+      "sasuke_eternal__amaterasu8.png",
+      "sasuke_eternal__amaterasu9.png",
+      "sasuke_eternal__amaterasu10.png",
+      "sasuke_eternal__jutsu1.png",
+      "sasuke_eternal__jutsu2.png",
+      "sasuke_eternal__katon1.png",
+      "sasuke_eternal__kirin1.png",
+      "sasuke_eternal__kirin2.png",
+      "sasuke_eternal__kirin3.png",
+      "sasuke_eternal__kirin4.png",
+      "sasuke_eternal__kirin5.png",
+      "sasuke_eternal__kirin6.png",
+      "sasuke_eternal__kirin7.png",
+      "sasuke_eternal__kirin8.png",
+      "sasuke_eternal__kirin9.png",
+      "sasuke_eternal__kirin10.png",
+      "sasuke_eternal__kirin11.png",
+      "sasuke_eternal__kirin12.png",
+      "sasuke_eternal__kirin13.png",
+      "sasuke_eternal__sasuke_susanoo_e_sasuke_akatsuki_sprite_by_prodijiu-d60ikb5.png",
+      "sasuke_eternal__katon6.png",
+      "sasuke_eternal__katon2.png",
+      "sasuke_eternal__katon3.png",
+      "sasuke_eternal__katon4.png",
+      "sasuke_eternal__katon5.png",
+      "sasuke_eternal__katon7.png",
+      "sasuke_eternal__katon8.png",
+      "sasuke_eternal__katon11.png",
+      "sasuke_eternal__katon12.png",
+      "sasuke_eternal__katon11.png",
+      "sasuke_eternal__katon12.png",
+      "sasuke_eternal__katon13.png",
+      "sasuke_eternal__katon14.png",
+      "sasuke_eternal__katon15.png",
+      "sasuke_eternal__katon16.png",
+      "sasuke_eternal__katon1.png",
+      "sasuke_eternal__susanoo.png",
+      "sasuke_eternal__susanoo2.png",
+      "sasuke_eternal__amaterasu10.png",
+      "sasuke_eternal__throw1.png",
+      "sasuke_eternal__intro5.png",
+      "sasuke_eternal__intro6.png",
+      "sasuke_eternal__thunder_sword10.png",
+      "sasuke_eternal__thunder_sword11.png",
+      "sasuke_eternal__thunder_sword12.png",
+      "sasuke_eternal__retreat.png",
+      "sasuke_eternal__intro1.png",
+      "sasuke_eternal__intro2.png",
+      "sasuke_eternal__intro3.png",
+      "sasuke_eternal__intro4.png",
+      "sasuke_eternal__intro5.png",
+      "sasuke_eternal__intro6.png"
+    ],
+    "CHARGE": [],
+    "DASH": [],
+    "BLOCK": [
+      "sasuke_eternal__guard.png"
+    ],
+    "HIT": [
+      "sasuke_eternal__damage2.png",
+      "sasuke_eternal__damage1.png",
+      "sasuke_eternal__damage3.png",
+      "sasuke_eternal__kirin13.png"
+    ],
+    "KO": [
+      "sasuke_eternal__rinnegan.png"
+    ],
+    "ATTACK_LIGHT": [
+      "sasuke_eternal__combo1.png",
+      "sasuke_eternal__combo2-1.png",
+      "sasuke_eternal__combo2-2.png",
+      "sasuke_eternal__combo2-3.png",
+      "sasuke_eternal__combo2-4.png",
+      "sasuke_eternal__combo2-5.png",
+      "sasuke_eternal__combo2.png",
+      "sasuke_eternal__combo3-1.png",
+      "sasuke_eternal__combo3-2.png",
+      "sasuke_eternal__combo3-3.png",
+      "sasuke_eternal__combo3-4.png",
+      "sasuke_eternal__combo3-5.png",
+      "sasuke_eternal__combo3.png",
+      "sasuke_eternal__combo4-1.png",
+      "sasuke_eternal__combo4-2.png",
+      "sasuke_eternal__combo4-3.png",
+      "sasuke_eternal__combo4-4.png",
+      "sasuke_eternal__combo4-5.png",
+      "sasuke_eternal__combo4-6.png",
+      "sasuke_eternal__combo4.png",
+      "sasuke_eternal__throw1.png"
+    ],
+    "ATTACK_HEAVY": [
+      "sasuke_eternal__throw2.png",
+      "sasuke_eternal__throw3.png",
+      "sasuke_eternal__thunder_sword.png",
+      "sasuke_eternal__thunder_sword1.png",
+      "sasuke_eternal__thunder_sword2.png",
+      "sasuke_eternal__thunder_sword3.png",
+      "sasuke_eternal__thunder_sword4.png",
+      "sasuke_eternal__thunder_sword5.png",
+      "sasuke_eternal__thunder_sword6.png",
+      "sasuke_eternal__thunder_sword7.png",
+      "sasuke_eternal__thunder_sword8.png",
+      "sasuke_eternal__thunder_sword9.png"
+    ],
+    "UNUSED_UNKNOWN": []
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 45,
+      "requireHitForComboRoutes": false,
+      "attackDurationScale": 1,
+      "specialTransformDurationScale": 1
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 11,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 11,
+          "damageMultiplier": 1.15,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.05
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 14,
+          "damageMultiplier": 1.35,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.35
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 16,
+          "damageMultiplier": 1.2,
+          "rangeMultiplier": 1.08,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 20,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.15,
+          "knockbackMultiplier": 1.5
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL",
+          "duration": 35,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 1
+        }
+      ]
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "neutral": "S_N_1",
+        "up": "S_U_1",
+        "down": "S_D_1",
+        "back": "S_B_1",
+        "forward": "S_F_1",
+        "any": "S_N_1"
+      }
+    },
+    "actionMap": {
+      "light": "ATTACK_LIGHT_1",
+      "heavy": "ATTACK_HEAVY_1",
+      "special": "SPECIAL",
+      "transform": "SPECIAL_TRANSFORM",
+      "block": "BLOCK",
+      "jump": "JUMP",
+      "run": "RUN",
+      "crouch": "CROUCH",
+      "dash": "DASH"
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "editedByMapper": true,
+    "editedAt": "2026-03-11T01:26:32.168Z",
+    "mappingMode": "manual_editor_modal"
+  },
+  "__validationWarnings": []
+}

@@ -1,0 +1,305 @@
+{
+  "targetName": "Sprite5",
+  "version": 2,
+  "categories": {
+    "idle": [
+      "sprite5__sstd.png",
+      "sprite5__sstd2.png",
+      "sprite5__sstd3.png"
+    ],
+    "walk": [
+      "sprite5__swlk.png",
+      "sprite5__swlk2.png",
+      "sprite5__swlk3.png",
+      "sprite5__swlk4.png",
+      "sprite5__swlk3.png",
+      "sprite5__swlk4.png"
+    ],
+    "run": [
+      "sprite5__srn.png",
+      "sprite5__srn2.png",
+      "sprite5__srn3.png"
+    ],
+    "jump": [
+      "sprite5__sjmp.png",
+      "sprite5__sjmp2.png"
+    ],
+    "crouch": [
+      "sprite5__scrch.png",
+      "sprite5__scrch2.png"
+    ],
+    "crouch_walk": [
+      "sprite5__scrch.png",
+      "sprite5__scrch2.png"
+    ],
+    "crouch_attack": [
+      "sprite5__sattk1.png",
+      "sprite5__sattck2a2.png"
+    ],
+    "crouch_throw": [
+      "sprite5__sattk4.png",
+      "sprite5__sattck2a5.png"
+    ],
+    "attack_light_1": [
+      "sprite5__sattck2a.png",
+      "sprite5__sattck2a2.png",
+      "sprite5__sattck2a3.png"
+    ],
+    "attack_light_2": [
+      "sprite5__sattck2a4.png",
+      "sprite5__sattck2a5.png",
+      "sprite5__sattk1.png"
+    ],
+    "attack_light_3": [
+      "sprite5__sattk2.png",
+      "sprite5__sattk3.png",
+      "sprite5__sattk4.png"
+    ],
+    "attack_heavy_1": [],
+    "attack_heavy_2": [],
+    "run_attack": [
+      "sprite5__sattk2.png",
+      "sprite5__sattck2a3.png",
+      "sprite5__swpnthrw.png"
+    ],
+    "throw": [
+      "sprite5__sattk4.png",
+      "sprite5__sattck2a5.png"
+    ],
+    "koma_support": [
+      "sprite5__schakra.png",
+      "sprite5__schakra2.png"
+    ],
+    "teleport": [],
+    "special_transform": [],
+    "special": [
+      "sprite5__schakra.png",
+      "sprite5__schakra2.png",
+      "sprite5__schakra3.png",
+      "sprite5__swpnthrw2.png",
+      "sprite5__swpnthrw3.png",
+      "sprite5__skagemane4.png",
+      "sprite5__skagemane5.png",
+      "sprite5__skagemane6.png"
+    ],
+    "charge": [
+      "sprite5__sstd.png",
+      "sprite5__sstd2.png"
+    ],
+    "dash": [],
+    "block": [
+      "sprite5__sguard.png",
+      "sprite5__sguard2.png"
+    ],
+    "hit": [],
+    "ko": [],
+    "attack_light": [
+      "sprite5__sairthw.png",
+      "sprite5__sairthw2.png"
+    ],
+    "attack_heavy": [],
+    "unused_unknown": []
+  },
+  "stateMap": {
+    "IDLE": [
+      "sprite5__sstd.png",
+      "sprite5__sstd2.png",
+      "sprite5__sstd3.png"
+    ],
+    "WALK": [
+      "sprite5__swlk.png",
+      "sprite5__swlk2.png",
+      "sprite5__swlk3.png",
+      "sprite5__swlk4.png",
+      "sprite5__swlk3.png",
+      "sprite5__swlk4.png"
+    ],
+    "RUN": [
+      "sprite5__srn.png",
+      "sprite5__srn2.png",
+      "sprite5__srn3.png"
+    ],
+    "JUMP": [
+      "sprite5__sjmp.png",
+      "sprite5__sjmp2.png"
+    ],
+    "CROUCH": [
+      "sprite5__scrch.png",
+      "sprite5__scrch2.png"
+    ],
+    "CROUCH_WALK": [
+      "sprite5__scrch.png",
+      "sprite5__scrch2.png"
+    ],
+    "CROUCH_ATTACK": [
+      "sprite5__sattk1.png",
+      "sprite5__sattck2a2.png"
+    ],
+    "CROUCH_THROW": [
+      "sprite5__sattk4.png",
+      "sprite5__sattck2a5.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "sprite5__sattck2a.png",
+      "sprite5__sattck2a2.png",
+      "sprite5__sattck2a3.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "sprite5__sattck2a4.png",
+      "sprite5__sattck2a5.png",
+      "sprite5__sattk1.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "sprite5__sattk2.png",
+      "sprite5__sattk3.png",
+      "sprite5__sattk4.png"
+    ],
+    "ATTACK_HEAVY_1": [],
+    "ATTACK_HEAVY_2": [],
+    "RUN_ATTACK": [
+      "sprite5__sattk2.png",
+      "sprite5__sattck2a3.png",
+      "sprite5__swpnthrw.png"
+    ],
+    "THROW": [
+      "sprite5__sattk4.png",
+      "sprite5__sattck2a5.png"
+    ],
+    "KOMA_SUPPORT": [
+      "sprite5__schakra.png",
+      "sprite5__schakra2.png"
+    ],
+    "TELEPORT": [],
+    "SPECIAL_TRANSFORM": [],
+    "SPECIAL": [
+      "sprite5__schakra.png",
+      "sprite5__schakra2.png",
+      "sprite5__schakra3.png",
+      "sprite5__swpnthrw2.png",
+      "sprite5__swpnthrw3.png",
+      "sprite5__skagemane4.png",
+      "sprite5__skagemane5.png",
+      "sprite5__skagemane6.png"
+    ],
+    "CHARGE": [
+      "sprite5__sstd.png",
+      "sprite5__sstd2.png"
+    ],
+    "DASH": [],
+    "BLOCK": [
+      "sprite5__sguard.png",
+      "sprite5__sguard2.png"
+    ],
+    "HIT": [],
+    "KO": [],
+    "ATTACK_LIGHT": [
+      "sprite5__sairthw.png",
+      "sprite5__sairthw2.png"
+    ],
+    "ATTACK_HEAVY": [],
+    "UNUSED_UNKNOWN": []
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 45,
+      "requireHitForComboRoutes": false,
+      "attackDurationScale": 1,
+      "specialTransformDurationScale": 1
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 11,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 11,
+          "damageMultiplier": 1.15,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.05
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 14,
+          "damageMultiplier": 1.35,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.35
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 16,
+          "damageMultiplier": 1.2,
+          "rangeMultiplier": 1.08,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 20,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.15,
+          "knockbackMultiplier": 1.5
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL",
+          "duration": 35,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 1
+        }
+      ]
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "neutral": "S_N_1",
+        "up": "S_U_1",
+        "down": "S_D_1",
+        "back": "S_B_1",
+        "forward": "S_F_1",
+        "any": "S_N_1"
+      }
+    },
+    "actionMap": {
+      "light": "ATTACK_LIGHT_1",
+      "heavy": "ATTACK_HEAVY_1",
+      "special": "SPECIAL",
+      "transform": "SPECIAL_TRANSFORM",
+      "block": "BLOCK",
+      "jump": "JUMP",
+      "run": "RUN",
+      "crouch": "CROUCH",
+      "dash": "DASH"
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "editedByMapper": true,
+    "editedAt": "2026-03-11T01:25:10.305Z",
+    "mappingMode": "manual_editor_modal"
+  },
+  "__validationWarnings": [
+    "Aucune animation heavy configuree."
+  ]
+}

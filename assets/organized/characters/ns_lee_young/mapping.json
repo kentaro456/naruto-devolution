@@ -1,0 +1,194 @@
+{
+  "targetName": "Lee (young)",
+  "states": [
+    "IDLE",
+    "WALK",
+    "RUN",
+    "JUMP",
+    "CROUCH",
+    "CROUCH_WALK",
+    "CROUCH_ATTACK",
+    "CROUCH_THROW",
+    "ATTACK_LIGHT_1",
+    "ATTACK_LIGHT_2",
+    "ATTACK_LIGHT_3",
+    "ATTACK_HEAVY_1",
+    "ATTACK_HEAVY_2",
+    "RUN_ATTACK",
+    "THROW",
+    "KOMA_SUPPORT",
+    "TELEPORT",
+    "SPECIAL_TRANSFORM",
+    "SPECIAL",
+    "CHARGE",
+    "DASH",
+    "BLOCK",
+    "HIT",
+    "KO",
+    "ATTACK_LIGHT",
+    "ATTACK_HEAVY"
+  ],
+  "stateMap": {
+    "IDLE": [
+      "lee_young__s1.png",
+      "lee_young__s2.png",
+      "lee_young__s3.png",
+      "lee_young__s4.png"
+    ],
+    "WALK": [
+      "lee_young__lee_run1.png",
+      "lee_young__lee_run2.png",
+      "lee_young__lee_run3.png",
+      "lee_young__lee_run4.png",
+      "lee_young__lee_run5.png",
+      "lee_young__lee_run6.png",
+      "lee_young__a1.png",
+      "lee_young__a2.png",
+      "lee_young__a3.png",
+      "lee_young__a4.png",
+      "lee_young__a5.png",
+      "lee_young__a6.png",
+      "lee_young__a7.png"
+    ],
+    "RUN": [
+      "lee_young__lee_run1.png",
+      "lee_young__lee_run2.png",
+      "lee_young__lee_run3.png",
+      "lee_young__lee_run4.png",
+      "lee_young__lee_run5.png",
+      "lee_young__lee_run6.png"
+    ],
+    "JUMP": [
+      "lee_young__rock_lee_inair1.png",
+      "lee_young__a8.png",
+      "lee_young__k1.png",
+      "lee_young__k2.png",
+      "lee_young__k3.png",
+      "lee_young__k4.png",
+      "lee_young__k5.png",
+      "lee_young__b1.png"
+    ],
+    "CROUCH": [
+      "lee_young__s1.png"
+    ],
+    "CROUCH_WALK": [
+      "lee_young__s1.png"
+    ],
+    "CROUCH_ATTACK": [
+      "lee_young__rock_lee_up_kick1.png",
+      "lee_young__rock_lee_behind_kick3.png",
+      "lee_young__b4.png"
+    ],
+    "CROUCH_THROW": [
+      "lee_young__rock_lee_behind_kick1.png",
+      "lee_young__b2.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "lee_young__rock_lee_up_kick1.png",
+      "lee_young__rock_lee_behind_kick3.png",
+      "lee_young__b4.png",
+      "lee_young__d5.png",
+      "lee_young__rock_lee_awaken3.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "lee_young__rock_lee_up_kick2.png",
+      "lee_young__rock_lee_behind_kick4.png",
+      "lee_young__d1.png",
+      "lee_young__d6.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "lee_young__rock_lee_up_kick3.png",
+      "lee_young__rock_lee_behind_kick5.png",
+      "lee_young__d2.png",
+      "lee_young__d7.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "lee_young__rock_lee_behind_kick1.png",
+      "lee_young__b2.png",
+      "lee_young__d3.png",
+      "lee_young__rock_lee_awaken1.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "lee_young__rock_lee_behind_kick2.png",
+      "lee_young__b3.png",
+      "lee_young__d4.png",
+      "lee_young__rock_lee_awaken2.png"
+    ],
+    "RUN_ATTACK": [
+      "lee_young__rock_lee_up_kick2.png",
+      "lee_young__rock_lee_behind_kick4.png",
+      "lee_young__d1.png"
+    ],
+    "THROW": [
+      "lee_young__rock_lee_behind_kick1.png",
+      "lee_young__b2.png"
+    ],
+    "KOMA_SUPPORT": [
+      "lee_young__s1.png",
+      "lee_young__s2.png"
+    ],
+    "TELEPORT": [],
+    "SPECIAL_TRANSFORM": [
+      "lee_young__b1.png",
+      "lee_young__rock_lee_up_kick1.png",
+      "lee_young__rock_lee_behind_kick3.png"
+    ],
+    "SPECIAL": [
+      "lee_young__rock_lee_behind_kick3.png",
+      "lee_young__b4.png",
+      "lee_young__d5.png",
+      "lee_young__rock_lee_awaken3.png",
+      "lee_young__rock_lee_up_kick2.png",
+      "lee_young__rock_lee_behind_kick4.png",
+      "lee_young__d1.png",
+      "lee_young__d6.png"
+    ],
+    "CHARGE": [
+      "lee_young__s1.png",
+      "lee_young__s2.png"
+    ],
+    "DASH": [
+      "lee_young__lee_run1.png",
+      "lee_young__lee_run2.png",
+      "lee_young__lee_run3.png"
+    ],
+    "BLOCK": [
+      "lee_young__s1.png"
+    ],
+    "HIT": [
+      "lee_young__lee_fall1.png",
+      "lee_young__lee_fall2.png",
+      "lee_young__lee_fall3.png",
+      "lee_young__lee_fall4.png",
+      "lee_young__lee_fall5.png",
+      "lee_young__lee_fall6.png",
+      "lee_young__lee_fall7.png",
+      "lee_young__lee_fall8.png",
+      "lee_young__lee_fall9.png",
+      "lee_young__lee_fall10.png",
+      "lee_young__lee_hurt.png",
+      "lee_young__lee_g-up.png"
+    ],
+    "KO": [
+      "lee_young__lee_fall1.png",
+      "lee_young__lee_fall2.png",
+      "lee_young__lee_fall3.png"
+    ],
+    "ATTACK_LIGHT": [
+      "lee_young__rock_lee_up_kick1.png",
+      "lee_young__rock_lee_behind_kick3.png",
+      "lee_young__rock_lee_up_kick2.png",
+      "lee_young__rock_lee_behind_kick4.png",
+      "lee_young__rock_lee_up_kick3.png",
+      "lee_young__rock_lee_behind_kick5.png"
+    ],
+    "ATTACK_HEAVY": [
+      "lee_young__rock_lee_behind_kick1.png",
+      "lee_young__b2.png",
+      "lee_young__d3.png",
+      "lee_young__rock_lee_behind_kick2.png",
+      "lee_young__b3.png",
+      "lee_young__d4.png"
+    ]
+  }
+}

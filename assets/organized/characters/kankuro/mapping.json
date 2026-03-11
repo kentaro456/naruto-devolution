@@ -1,0 +1,102 @@
+{
+  "targetName": "Kankuro",
+  "states": [
+    "IDLE",
+    "WALK",
+    "JUMP",
+    "ATTACK_LIGHT_1",
+    "ATTACK_LIGHT_2",
+    "ATTACK_LIGHT_3",
+    "ATTACK_HEAVY_1",
+    "ATTACK_HEAVY_2",
+    "SPECIAL_TRANSFORM",
+    "SPECIAL",
+    "BLOCK",
+    "HIT",
+    "KO",
+    "ATTACK_LIGHT",
+    "ATTACK_HEAVY"
+  ],
+  "stateMap": {
+    "IDLE": [
+      "kankuro__costume1.png"
+    ],
+    "WALK": [
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png"
+    ],
+    "JUMP": [
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png"
+    ],
+    "SPECIAL": [
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png"
+    ],
+    "BLOCK": [
+      "kankuro__costume1.png"
+    ],
+    "HIT": [
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png"
+    ],
+    "KO": [
+      "kankuro__costume1.png",
+      "kankuro__costume1.png",
+      "kankuro__costume1.png"
+    ],
+    "ATTACK_LIGHT": [
+      "kankuro__costume1.png"
+    ],
+    "ATTACK_HEAVY": [
+      "kankuro__costume1.png"
+    ]
+  }
+}

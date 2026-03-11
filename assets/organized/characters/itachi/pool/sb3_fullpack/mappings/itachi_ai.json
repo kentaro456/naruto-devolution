@@ -1,0 +1,273 @@
+{
+  "targetName": "Itachi(AI)",
+  "version": 2,
+  "categories": {},
+  "stateMap": {
+    "IDLE": [
+      "itachiai__stance1.png",
+      "itachiai__stance2.png",
+      "itachiai__stance3.png",
+      "itachiai__stance.png"
+    ],
+    "WALK": [
+      "itachiai__walk1.png",
+      "itachiai__walk2.png",
+      "itachiai__walk3.png",
+      "itachiai__walk4.png"
+    ],
+    "RUN": [
+      "itachiai__run1.png",
+      "itachiai__run2.png",
+      "itachiai__run3.png",
+      "itachiai__run4.png",
+      "itachiai__run5.png",
+      "itachiai__run.png"
+    ],
+    "JUMP": [
+      "itachiai__jump1.png",
+      "itachiai__jump2.png",
+      "itachiai__jump3.png",
+      "itachiai__jump.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "itachiai__attack1.png",
+      "itachiai__attack2.png",
+      "itachiai__attack3.png",
+      "itachiai__attack4.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "itachiai__combo8.png",
+      "itachiai__combo9.png",
+      "itachiai__combo10.png",
+      "itachiai__combo11.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "itachiai__run_attack4.png",
+      "itachiai__run_attack.png",
+      "itachiai__up_attack1.png",
+      "itachiai__up_attack2.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "itachiai__up_attack1.png",
+      "itachiai__up_attack2.png",
+      "itachiai__up_attack3.png",
+      "itachiai__up_attack.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "itachiai__x_attack2.png",
+      "itachiai__x_attack3.png",
+      "itachiai__x_attack4.png",
+      "itachiai__x_attack5.png"
+    ],
+    "RUN_ATTACK": [
+      "itachiai__run_attack1.png",
+      "itachiai__run_attack2.png",
+      "itachiai__run_attack3.png",
+      "itachiai__run_attack4.png"
+    ],
+    "THROW": [
+      "itachiai__throw1.png",
+      "itachiai__throw2.png",
+      "itachiai__throw.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "itachiai__disappear1.png",
+      "itachiai__disappear2.png",
+      "itachiai__disappear3.png",
+      "itachiai__disappear4.png",
+      "itachiai__disappear.png"
+    ],
+    "SPECIAL": [
+      "itachiai__katon1.png",
+      "itachiai__katon2.png",
+      "itachiai__katon3.png",
+      "itachiai__katon4.png",
+      "itachiai__katon5.png",
+      "itachiai__katon6.png",
+      "itachiai__katon7.png",
+      "itachiai__katon8.png",
+      "itachiai__katon9.png",
+      "itachiai__katon10.png"
+    ],
+    "BLOCK": [
+      "itachiai__duck1.png"
+    ],
+    "HIT": [
+      "itachiai__damage1.png",
+      "itachiai__damage2.png",
+      "itachiai__damage3.png"
+    ],
+    "KO": [
+      "itachiai__damage1.png",
+      "itachiai__damage2.png",
+      "itachiai__damage3.png"
+    ],
+    "ATTACK_LIGHT": [
+      "itachiai__attack1.png",
+      "itachiai__attack2.png",
+      "itachiai__attack3.png",
+      "itachiai__attack4.png"
+    ],
+    "ATTACK_HEAVY": [
+      "itachiai__up_attack1.png",
+      "itachiai__up_attack2.png",
+      "itachiai__up_attack3.png",
+      "itachiai__up_attack.png"
+    ],
+    "DASH": [
+      "itachiai__teleport1.png",
+      "itachiai__teleport.png"
+    ],
+    "ARCHIVE_POOL": [
+      "itachiai__attack.png",
+      "itachiai__combo1.png",
+      "itachiai__combo2.png",
+      "itachiai__combo3.png",
+      "itachiai__combo4.png",
+      "itachiai__combo5.png",
+      "itachiai__combo6.png",
+      "itachiai__combo7.png",
+      "itachiai__combo12.png",
+      "itachiai__combo.png",
+      "itachiai__damage4.png",
+      "itachiai__damage5.png",
+      "itachiai__duck2.png",
+      "itachiai__damage7.png",
+      "itachiai__damage.png",
+      "itachiai__duck2.png",
+      "itachiai__duck.png",
+      "itachiai__jump_attack1.png",
+      "itachiai__jump_attack2.png",
+      "itachiai__jump_attack.png",
+      "itachiai__jump_attack1.png",
+      "itachiai__jump_attack2.png",
+      "itachiai__jump_attack.png",
+      "itachiai__katon11.png",
+      "itachiai__katon12.png",
+      "itachiai__katon13.png",
+      "itachiai__katon14.png",
+      "itachiai__katon15.png",
+      "itachiai__katon16.png",
+      "itachiai__katon17.png",
+      "itachiai__katon18.png",
+      "itachiai__katon19.png",
+      "itachiai__katon20.png",
+      "itachiai__katon.png",
+      "itachiai__x_attack6.png",
+      "itachiai__retreat.png",
+      "itachiai__sign1.png",
+      "itachiai__sign2.png",
+      "itachiai__sign3.png",
+      "itachiai__sign4.png",
+      "itachiai__sign2.png",
+      "itachiai__sign.png",
+      "itachiai__walk5.png",
+      "itachiai__walk.png",
+      "itachiai__win1.png",
+      "itachiai__win2.png",
+      "itachiai__win3.png",
+      "itachiai__win4.png",
+      "itachiai__win5.png",
+      "itachiai__win6.png",
+      "itachiai__win7.png",
+      "itachiai__win8.png",
+      "itachiai__win9.png",
+      "itachiai__win10.png",
+      "itachiai__win11.png",
+      "itachiai__win12.png",
+      "itachiai__win.png",
+      "itachiai__x_attack1.png",
+      "itachiai__x_attack6.png",
+      "itachiai__x_attack.png"
+    ]
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 50,
+      "attackDurationScale": 1.2,
+      "specialTransformDurationScale": 1.35,
+      "requireHitForComboRoutes": false
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 13,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 13,
+          "damageMultiplier": 1.13,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.03
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 15,
+          "damageMultiplier": 1.3,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.24
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 18,
+          "damageMultiplier": 1.22,
+          "rangeMultiplier": 1.1,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 22,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.18,
+          "knockbackMultiplier": 1.45
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL_TRANSFORM",
+          "duration": 18,
+          "noHit": true
+        },
+        {
+          "state": "SPECIAL",
+          "duration": 28,
+          "damageMultiplier": 1.24,
+          "rangeMultiplier": 1.14,
+          "knockbackMultiplier": 1.24
+        }
+      ]
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "polished": true,
+    "fullCoverage": true,
+    "leftoversInArchive": 60
+  }
+}

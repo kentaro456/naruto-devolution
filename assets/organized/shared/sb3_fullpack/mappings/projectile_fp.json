@@ -1,0 +1,266 @@
+{
+  "targetName": "Projectile",
+  "version": 2,
+  "categories": {},
+  "stateMap": {
+    "IDLE": [
+      "projectile__c1.png",
+      "projectile__c2.png",
+      "projectile__c3.png",
+      "projectile__c4.png"
+    ],
+    "WALK": [
+      "projectile__c1.png",
+      "projectile__c2.png",
+      "projectile__c3.png",
+      "projectile__c4.png"
+    ],
+    "RUN": [
+      "projectile__c1.png",
+      "projectile__c2.png",
+      "projectile__c3.png",
+      "projectile__c4.png",
+      "projectile__c5.png",
+      "projectile__c6.png"
+    ],
+    "JUMP": [
+      "projectile__c1.png",
+      "projectile__c2.png",
+      "projectile__c3.png",
+      "projectile__c4.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "projectile__windattack1.png",
+      "projectile__windattack2.png",
+      "projectile__windattack3.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "projectile__windattack4.png",
+      "projectile__windattack5.png",
+      "projectile__windattack6.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "projectile__windattack7.png",
+      "projectile__windattack8.png",
+      "projectile__windattack9.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "projectile__windattack1.png",
+      "projectile__windattack2.png",
+      "projectile__windattack3.png",
+      "projectile__windattack4.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "projectile__windattack5.png",
+      "projectile__windattack6.png",
+      "projectile__windattack7.png",
+      "projectile__windattack8.png"
+    ],
+    "RUN_ATTACK": [
+      "projectile__windattack1.png",
+      "projectile__windattack2.png",
+      "projectile__windattack3.png",
+      "projectile__windattack4.png"
+    ],
+    "THROW": [
+      "projectile__windattack1.png",
+      "projectile__windattack2.png",
+      "projectile__windattack3.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "projectile__earthjutsu1.png",
+      "projectile__earthjutsu2.png",
+      "projectile__earthjutsu3.png",
+      "projectile__earthjutsu4.png",
+      "projectile__earthjutsu5.png"
+    ],
+    "SPECIAL": [
+      "projectile__earthjutsu1.png",
+      "projectile__earthjutsu2.png",
+      "projectile__earthjutsu3.png",
+      "projectile__earthjutsu4.png",
+      "projectile__earthjutsu5.png",
+      "projectile__earthjutsu6.png",
+      "projectile__earthjutsu7.png",
+      "projectile__earthjutsu8.png",
+      "projectile__earthjutsu9.png",
+      "projectile__earthjutsu10.png"
+    ],
+    "BLOCK": [
+      "projectile__c1.png"
+    ],
+    "HIT": [
+      "projectile__windattack1.png",
+      "projectile__windattack2.png",
+      "projectile__windattack3.png"
+    ],
+    "KO": [
+      "projectile__c1.png",
+      "projectile__c2.png",
+      "projectile__c3.png"
+    ],
+    "ATTACK_LIGHT": [
+      "projectile__windattack1.png",
+      "projectile__windattack2.png",
+      "projectile__windattack3.png"
+    ],
+    "ATTACK_HEAVY": [
+      "projectile__windattack1.png",
+      "projectile__windattack2.png",
+      "projectile__windattack3.png",
+      "projectile__windattack4.png"
+    ],
+    "DASH": [
+      "projectile__c1.png",
+      "projectile__c2.png"
+    ],
+    "ARCHIVE_POOL": [
+      "projectile__c7.png",
+      "projectile__c8.png",
+      "projectile__c9.png",
+      "projectile__costume17.png",
+      "projectile__costume18.png",
+      "projectile__costume19.png",
+      "projectile__costume20.png",
+      "projectile__costume21.png",
+      "projectile__costume22.png",
+      "projectile__costume23.png",
+      "projectile__earthjutsu11.png",
+      "projectile__earthjutsu12.png",
+      "projectile__earthjutsu.png",
+      "projectile__kunai.png",
+      "projectile__phoenixflame1.png",
+      "projectile__phoenixflame2.png",
+      "projectile__phoenixflame3.png",
+      "projectile__phoenixflame4.png",
+      "projectile__rasenshuriken1.png",
+      "projectile__rasenshuriken2.png",
+      "projectile__rasenshuriken3.png",
+      "projectile__rasenshuriken4.png",
+      "projectile__rasenshuriken6.png",
+      "projectile__rasenshuriken7.png",
+      "projectile__rasenshuriken8.png",
+      "projectile__rasenshuriken9.png",
+      "projectile__rasenshuriken10.png",
+      "projectile__rasenshuriken.png",
+      "projectile__sandburial1.png",
+      "projectile__sandburial2.png",
+      "projectile__sandburial3.png",
+      "projectile__sandburial4.png",
+      "projectile__sandburial5.png",
+      "projectile__sandburial6.png",
+      "projectile__sandburial7.png",
+      "projectile__sandburial8.png",
+      "projectile__sandburial9.png",
+      "projectile__sandburial10.png",
+      "projectile__sandburial11.png",
+      "projectile__sandburial12.png",
+      "projectile__sandburial13.png",
+      "projectile__sandburial14.png",
+      "projectile__sandburial15.png",
+      "projectile__sandburial16.png",
+      "projectile__shadowclones1.png",
+      "projectile__shadowclones2.png",
+      "projectile__shadowclones3.png",
+      "projectile__shadowclones4.png",
+      "projectile__shadowclones5.png",
+      "projectile__shadowclones6.png",
+      "projectile__shadowclones7.png",
+      "projectile__shadowclones8.png",
+      "projectile__shadowclones9.png",
+      "projectile__shadowclones10.png",
+      "projectile__shuriken1.png",
+      "projectile__shuriken2.png",
+      "projectile__shuriken3.png"
+    ]
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 50,
+      "attackDurationScale": 1.2,
+      "specialTransformDurationScale": 1.35,
+      "requireHitForComboRoutes": false
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 13,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 13,
+          "damageMultiplier": 1.13,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.03
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 15,
+          "damageMultiplier": 1.3,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.24
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 18,
+          "damageMultiplier": 1.22,
+          "rangeMultiplier": 1.1,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 22,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.18,
+          "knockbackMultiplier": 1.45
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL_TRANSFORM",
+          "duration": 18,
+          "noHit": true
+        },
+        {
+          "state": "SPECIAL",
+          "duration": 28,
+          "damageMultiplier": 1.24,
+          "rangeMultiplier": 1.14,
+          "knockbackMultiplier": 1.24
+        }
+      ]
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "polished": true,
+    "fullCoverage": true,
+    "leftoversInArchive": 57
+  }
+}

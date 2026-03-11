@@ -1,0 +1,192 @@
+{
+  "targetName": "Ninja",
+  "version": 2,
+  "categories": {},
+  "stateMap": {
+    "IDLE": [
+      "ninja__stance1.png",
+      "ninja__stance2.png",
+      "ninja__stance3.png",
+      "ninja__stance4.png"
+    ],
+    "WALK": [
+      "ninja__run1.png",
+      "ninja__run2.png",
+      "ninja__run3.png"
+    ],
+    "RUN": [
+      "ninja__run1.png",
+      "ninja__run2.png",
+      "ninja__run3.png"
+    ],
+    "JUMP": [
+      "ninja__jump1.png",
+      "ninja__jump2.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "ninja__combo1.png",
+      "ninja__combo2.png",
+      "ninja__combo3.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "ninja__combo4.png",
+      "ninja__combo5.png",
+      "ninja__combo6.png",
+      "ninja__combo7.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "ninja__combo8.png",
+      "ninja__combo9.png",
+      "ninja__combo10.png",
+      "ninja__combo11.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "ninja__slidekick1.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "ninja__slidekick2.png"
+    ],
+    "RUN_ATTACK": [
+      "ninja__slidekick1.png",
+      "ninja__slidekick2.png"
+    ],
+    "THROW": [
+      "ninja__combo1.png",
+      "ninja__combo2.png",
+      "ninja__combo3.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "ninja__block.png",
+      "ninja__combo1.png",
+      "ninja__combo2.png",
+      "ninja__combo3.png",
+      "ninja__combo4.png"
+    ],
+    "SPECIAL": [
+      "ninja__slidekick1.png",
+      "ninja__slidekick2.png"
+    ],
+    "BLOCK": [
+      "ninja__block.png"
+    ],
+    "HIT": [
+      "ninja__damage1.png",
+      "ninja__damage2.png",
+      "ninja__damage3.png"
+    ],
+    "KO": [
+      "ninja__damage1.png",
+      "ninja__damage2.png",
+      "ninja__damage3.png"
+    ],
+    "ATTACK_LIGHT": [
+      "ninja__combo1.png",
+      "ninja__combo2.png",
+      "ninja__combo3.png"
+    ],
+    "ATTACK_HEAVY": [
+      "ninja__slidekick1.png"
+    ],
+    "DASH": [
+      "ninja__run1.png",
+      "ninja__run2.png"
+    ],
+    "ARCHIVE_POOL": [
+      "ninja__crouch1.png",
+      "ninja__crouch2.png",
+      "ninja__damage4.png",
+      "ninja__damage5.png",
+      "ninja__damage6.png",
+      "ninja__retreat.png"
+    ]
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 50,
+      "attackDurationScale": 1.2,
+      "specialTransformDurationScale": 1.35,
+      "requireHitForComboRoutes": false
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 13,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 13,
+          "damageMultiplier": 1.13,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.03
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 15,
+          "damageMultiplier": 1.3,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.24
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 18,
+          "damageMultiplier": 1.22,
+          "rangeMultiplier": 1.1,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 22,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.18,
+          "knockbackMultiplier": 1.45
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL_TRANSFORM",
+          "duration": 18,
+          "noHit": true
+        },
+        {
+          "state": "SPECIAL",
+          "duration": 28,
+          "damageMultiplier": 1.24,
+          "rangeMultiplier": 1.14,
+          "knockbackMultiplier": 1.24
+        }
+      ]
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "polished": true,
+    "fullCoverage": true,
+    "leftoversInArchive": 6
+  }
+}

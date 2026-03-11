@@ -1,0 +1,102 @@
+{
+  "targetName": "Jirobo",
+  "states": [
+    "IDLE",
+    "WALK",
+    "JUMP",
+    "ATTACK_LIGHT_1",
+    "ATTACK_LIGHT_2",
+    "ATTACK_LIGHT_3",
+    "ATTACK_HEAVY_1",
+    "ATTACK_HEAVY_2",
+    "SPECIAL_TRANSFORM",
+    "SPECIAL",
+    "BLOCK",
+    "HIT",
+    "KO",
+    "ATTACK_LIGHT",
+    "ATTACK_HEAVY"
+  ],
+  "stateMap": {
+    "IDLE": [
+      "jirobo__jirobo.png"
+    ],
+    "WALK": [
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png"
+    ],
+    "JUMP": [
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png"
+    ],
+    "SPECIAL": [
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png"
+    ],
+    "BLOCK": [
+      "jirobo__jirobo.png"
+    ],
+    "HIT": [
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png"
+    ],
+    "KO": [
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png",
+      "jirobo__jirobo.png"
+    ],
+    "ATTACK_LIGHT": [
+      "jirobo__jirobo.png"
+    ],
+    "ATTACK_HEAVY": [
+      "jirobo__jirobo.png"
+    ]
+  }
+}

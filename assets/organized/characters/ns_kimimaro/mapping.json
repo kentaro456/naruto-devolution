@@ -1,0 +1,215 @@
+{
+  "targetName": "kimimaro",
+  "states": [
+    "IDLE",
+    "WALK",
+    "RUN",
+    "JUMP",
+    "CROUCH",
+    "CROUCH_WALK",
+    "CROUCH_ATTACK",
+    "CROUCH_THROW",
+    "ATTACK_LIGHT_1",
+    "ATTACK_LIGHT_2",
+    "ATTACK_LIGHT_3",
+    "ATTACK_HEAVY_1",
+    "ATTACK_HEAVY_2",
+    "RUN_ATTACK",
+    "THROW",
+    "KOMA_SUPPORT",
+    "TELEPORT",
+    "SPECIAL_TRANSFORM",
+    "SPECIAL",
+    "CHARGE",
+    "DASH",
+    "BLOCK",
+    "HIT",
+    "KO",
+    "ATTACK_LIGHT",
+    "ATTACK_HEAVY"
+  ],
+  "stateMap": {
+    "IDLE": [
+      "kimimaro__kimimaro_stance.png",
+      "kimimaro__kimimaro_stance2.png",
+      "kimimaro__kimimaro_stance3.png",
+      "kimimaro__kimimaro_stance4.png"
+    ],
+    "WALK": [
+      "kimimaro__kimimaro_run_1.png",
+      "kimimaro__kimimaro_run_2.png",
+      "kimimaro__kimimaro_run_3.png",
+      "kimimaro__kimimaro_run_4.png",
+      "kimimaro__kimimaro_run_6.png",
+      "kimimaro__kiminarocs2_stan5.png",
+      "kimimaro__kiminarocs2_run2.png",
+      "kimimaro__kiminarocs2_run4.png",
+      "kimimaro__kiminarocs2_run5.png",
+      "kimimaro__kiminarocs2_run6.png"
+    ],
+    "RUN": [
+      "kimimaro__kimimaro_run_1.png",
+      "kimimaro__kimimaro_run_2.png",
+      "kimimaro__kimimaro_run_3.png",
+      "kimimaro__kimimaro_run_4.png",
+      "kimimaro__kimimaro_run_6.png",
+      "kimimaro__kiminarocs2_stan5.png"
+    ],
+    "JUMP": [
+      "kimimaro__kimimaro_jump_1.png",
+      "kimimaro__kimimaro_jump_2.png",
+      "kimimaro__kiminarocs2_jump.png",
+      "kimimaro__kiminarocs2_jump2.png"
+    ],
+    "CROUCH": [
+      "kimimaro__kimimaro_stance.png"
+    ],
+    "CROUCH_WALK": [
+      "kimimaro__kimimaro_stance.png"
+    ],
+    "CROUCH_ATTACK": [
+      "kimimaro__kimimaro_combo_1.png",
+      "kimimaro__kimimaro_combo_7.png",
+      "kimimaro__kiminarocs2_stan.png"
+    ],
+    "CROUCH_THROW": [
+      "kimimaro__kimimaro_combo_5.png",
+      "kimimaro__kimimaro_combo2.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "kimimaro__kimimaro_combo_1.png",
+      "kimimaro__kimimaro_combo_7.png",
+      "kimimaro__kiminarocs2_stan.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "kimimaro__kimimaro_combo_2.png",
+      "kimimaro__kimimaro_combo_8.png",
+      "kimimaro__kiminarocs2_stan2.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "kimimaro__kimimaro_combo_4.png",
+      "kimimaro__kimimaro_combo_9.png",
+      "kimimaro__kiminarocs2_stan3.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "kimimaro__kimimaro_combo_5.png",
+      "kimimaro__kimimaro_combo2.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "kimimaro__kimimaro_combo_6.png",
+      "kimimaro__kimimaro_combo3.png"
+    ],
+    "RUN_ATTACK": [
+      "kimimaro__kimimaro_combo_2.png",
+      "kimimaro__kimimaro_combo_8.png",
+      "kimimaro__kiminarocs2_stan2.png"
+    ],
+    "THROW": [
+      "kimimaro__kimimaro_combo_5.png",
+      "kimimaro__kimimaro_combo2.png"
+    ],
+    "KOMA_SUPPORT": [
+      "kimimaro__kimimaro_special.png",
+      "kimimaro__kimimaro_special2.png"
+    ],
+    "TELEPORT": [
+      "kimimaro__transformations.png",
+      "kimimaro__transformations2.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "kimimaro__transformations.png",
+      "kimimaro__transformations2.png",
+      "kimimaro__transformations3.png",
+      "kimimaro__transformations4.png",
+      "kimimaro__transformations5.png",
+      "kimimaro__transformations6.png",
+      "kimimaro__transformations7.png"
+    ],
+    "SPECIAL": [
+      "kimimaro__kimimaro_special.png",
+      "kimimaro__kimimaro_special2.png",
+      "kimimaro__kimimaro_special3.png",
+      "kimimaro__kimimaro_special4.png",
+      "kimimaro__kimimaro_special5.png",
+      "kimimaro__kimimaro_special6.png",
+      "kimimaro__kimimaro_special7.png",
+      "kimimaro__kimimaro_special8.png",
+      "kimimaro__kimimaro_special10.png",
+      "kimimaro__kimimaro_special11.png",
+      "kimimaro__kimimaro_special12.png",
+      "kimimaro__kimimaro_damage.png",
+      "kimimaro__kimimaro_special14.png",
+      "kimimaro__kimimaro_damage2.png",
+      "kimimaro__kimimaro_special17.png",
+      "kimimaro__kimimaro_special18.png",
+      "kimimaro__kimimaro_special19.png",
+      "kimimaro__kiminarocs2_stan4.png",
+      "kimimaro__kiminarocs2_stan5.png",
+      "kimimaro__kiminarocs2_dama.png",
+      "kimimaro__kiminarocs2_dama2.png",
+      "kimimaro__kiminarocs2_dama3.png",
+      "kimimaro__kiminarocs2_dama4.png",
+      "kimimaro__kiminarocs2_dama5.png",
+      "kimimaro__kiminarocs2_dama6.png",
+      "kimimaro__kiminarocs2_comb.png",
+      "kimimaro__kiminarocs2_comb2.png",
+      "kimimaro__kiminarocs2_comb3.png",
+      "kimimaro__kiminarocs2_comb4.png",
+      "kimimaro__kiminarocs2_comb5.png",
+      "kimimaro__kiminarocs2_comb6.png",
+      "kimimaro__kiminarocs2_comb7.png"
+    ],
+    "CHARGE": [
+      "kimimaro__kimimaro_stance.png",
+      "kimimaro__kimimaro_stance2.png"
+    ],
+    "DASH": [
+      "kimimaro__kimimaro_run_1.png",
+      "kimimaro__kimimaro_run_2.png",
+      "kimimaro__kimimaro_run_3.png"
+    ],
+    "BLOCK": [
+      "kimimaro__kimimaro_stance.png"
+    ],
+    "HIT": [
+      "kimimaro__kimimaro_damage.png",
+      "kimimaro__kimimaro_damage2.png",
+      "kimimaro__kimimaro_damage3.png",
+      "kimimaro__kimimaro_damage4.png",
+      "kimimaro__kimimaro_damage5.png",
+      "kimimaro__kimimaro_damage6.png",
+      "kimimaro__kiminarocs2_comb8.png",
+      "kimimaro__kiminarocs2_comb9.png",
+      "kimimaro__kiminarocs2_comb10.png",
+      "kimimaro__kiminarocs2_spec.png",
+      "kimimaro__kiminarocs2_spec2.png",
+      "kimimaro__kiminarocs2_spec3.png",
+      "kimimaro__kiminarocs2_spec4.png",
+      "kimimaro__kiminarocs2_spec5.png",
+      "kimimaro__kiminarocs2_spec6.png",
+      "kimimaro__kiminarocs2_spec7.png"
+    ],
+    "KO": [
+      "kimimaro__kiminarocs2_spec8.png",
+      "kimimaro__kiminarocs2_spec9.png",
+      "kimimaro__kiminarocs2_spec10.png",
+      "kimimaro__kiminarocs2_spec11.png",
+      "kimimaro__kiminarocs2_spec12.png",
+      "kimimaro__kiminarocs2_spec13.png"
+    ],
+    "ATTACK_LIGHT": [
+      "kimimaro__kimimaro_combo_1.png",
+      "kimimaro__kimimaro_combo_7.png",
+      "kimimaro__kimimaro_combo_2.png",
+      "kimimaro__kimimaro_combo_8.png",
+      "kimimaro__kimimaro_combo_4.png",
+      "kimimaro__kimimaro_combo_9.png"
+    ],
+    "ATTACK_HEAVY": [
+      "kimimaro__kimimaro_combo_5.png",
+      "kimimaro__kimimaro_combo2.png",
+      "kimimaro__kimimaro_combo_6.png",
+      "kimimaro__kimimaro_combo3.png"
+    ]
+  }
+}

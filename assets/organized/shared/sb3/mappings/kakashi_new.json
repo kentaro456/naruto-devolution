@@ -1,0 +1,325 @@
+{
+  "targetName": "KakashiNew",
+  "version": 1,
+  "categories": {},
+  "stateMap": {
+    "IDLE": [
+      "kakashi_new_kakashi__stance.png",
+      "kakashi_new_kakashi__stance1.png",
+      "kakashi_new_kakashi__stance2.png",
+      "kakashi_new_kakashi__stance3.png",
+      "kakashi_new_kakashi__stance4.png",
+      "kakashi_new_kakashi__stance5.png"
+    ],
+    "WALK": [
+      "kakashi_new_kakashi__walk.png",
+      "kakashi_new_kakashi__walk1.png",
+      "kakashi_new_kakashi__walk2.png",
+      "kakashi_new_kakashi__walk3.png",
+      "kakashi_new_kakashi__walk4.png",
+      "kakashi_new_kakashi__walk5.png"
+    ],
+    "JUMP": [
+      "kakashi_new_kakashi__jump.png",
+      "kakashi_new_kakashi__jump1.png",
+      "kakashi_new_kakashi__jump2.png",
+      "kakashi_new_kakashi__jump3.png"
+    ],
+    "BLOCK": [
+      "kakashi_new_kakashi__stance.png"
+    ],
+    "HIT": [
+      "kakashi_new_kakashi__stance.png"
+    ],
+    "KO": [
+      "kakashi_new_kakashi__stance.png"
+    ],
+    "DASH": [
+      "kakashi_new_kakashi__dash.png",
+      "kakashi_new_kakashi__dash1.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "kakashi_new_kakashi__combo.png",
+      "kakashi_new_kakashi__combo1.png",
+      "kakashi_new_kakashi__combo2.png",
+      "kakashi_new_kakashi__combo3.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "kakashi_new_kakashi__combo4.png",
+      "kakashi_new_kakashi__combo5.png",
+      "kakashi_new_kakashi__combo6.png",
+      "kakashi_new_kakashi__combo7.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "kakashi_new_kakashi__combo8.png",
+      "kakashi_new_kakashi__combo9.png",
+      "kakashi_new_kakashi__combo10.png",
+      "kakashi_new_kakashi__combo11.png",
+      "kakashi_new_kakashi__combo12.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "kakashi_new_kakashi__up_attack.png",
+      "kakashi_new_kakashi__up_attack1.png",
+      "kakashi_new_kakashi__up_attack2.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "kakashi_new_kakashi__up_attack3.png",
+      "kakashi_new_kakashi__up_attack4.png"
+    ],
+    "SPECIAL": [
+      "kakashi_new_kakashi__raikiri.png",
+      "kakashi_new_kakashi__raikiri1.png",
+      "kakashi_new_kakashi__raikiri2.png",
+      "kakashi_new_kakashi__raikiri3.png",
+      "kakashi_new_kakashi__raikiri4.png",
+      "kakashi_new_kakashi__raikiri5.png",
+      "kakashi_new_kakashi__raikiri6.png",
+      "kakashi_new_kakashi__raikiri7.png",
+      "kakashi_new_kakashi__raikiri8.png",
+      "kakashi_new_kakashi__raikiri9.png",
+      "kakashi_new_kakashi__raikiri10.png",
+      "kakashi_new_kakashi__raikiri11.png",
+      "kakashi_new_kakashi__raikiri12.png",
+      "kakashi_new_kakashi__raikiri13.png",
+      "kakashi_new_kakashi__raikiri14.png",
+      "kakashi_new_kakashi__raikiri15.png",
+      "kakashi_new_kakashi__raikiri16.png",
+      "kakashi_new_kakashi__raikiri17.png",
+      "kakashi_new_kakashi__raikiri18.png",
+      "kakashi_new_kakashi__raikiri19.png",
+      "kakashi_new_kakashi__raikiri20.png",
+      "kakashi_new_kakashi__raikiri21.png",
+      "kakashi_new_kakashi__raikiri22.png",
+      "kakashi_new_kakashi__raikiri23.png",
+      "kakashi_new_kakashi__raikiri24.png",
+      "kakashi_new_kakashi__raikiri25.png",
+      "kakashi_new_kakashi__raikiri26.png",
+      "kakashi_new_kakashi__raikiri27.png",
+      "kakashi_new_kakashi__raikiri28.png",
+      "kakashi_new_kakashi__raikiri29.png",
+      "kakashi_new_kakashi__raikiri30.png",
+      "kakashi_new_kakashi__raikiri31.png",
+      "kakashi_new_kakashi__raikiri32.png",
+      "kakashi_new_kakashi__raikiri33.png",
+      "kakashi_new_kakashi__raikiri34.png",
+      "kakashi_new_kakashi__raikiri35.png",
+      "kakashi_new_kakashi__raikiri36.png",
+      "kakashi_new_kakashi__raikiri37.png"
+    ],
+    "KAMUI": [
+      "kakashi_new_kakashi__mangekyou.png",
+      "kakashi_new_kakashi__mangekyou1.png",
+      "kakashi_new_kakashi__mangekyou2.png",
+      "kakashi_new_kakashi__mangekyou3.png",
+      "kakashi_new_kakashi__mangekyou4.png",
+      "kakashi_new_kakashi__mangekyou11.png",
+      "kakashi_new_kakashi__mangekyou12.png",
+      "kakashi_new_kakashi__mangekyou13.png",
+      "kakashi_new_kakashi__mangekyou14.png",
+      "kakashi_new_kakashi__mangekyou15.png"
+    ],
+    "TSUKUYOMI": [
+      "kakashi_new_kakashi__mangekyou.png",
+      "kakashi_new_kakashi__mangekyou1.png",
+      "kakashi_new_kakashi__mangekyou2.png",
+      "kakashi_new_kakashi__mangekyou3.png",
+      "kakashi_new_kakashi__mangekyou4.png",
+      "kakashi_new_kakashi__mangekyou5.png",
+      "kakashi_new_kakashi__mangekyou6.png",
+      "kakashi_new_kakashi__mangekyou7.png",
+      "kakashi_new_kakashi__mangekyou10.png",
+      "kakashi_new_kakashi__mangekyou11.png",
+      "kakashi_new_kakashi__mangekyou12.png",
+      "kakashi_new_kakashi__mangekyou13.png",
+      "kakashi_new_kakashi__mangekyou14.png",
+      "kakashi_new_kakashi__mangekyou15.png"
+    ],
+    "AMATERASU": [
+      "kakashi_new_kakashi__mangekyou.png",
+      "kakashi_new_kakashi__mangekyou1.png",
+      "kakashi_new_kakashi__mangekyou2.png",
+      "kakashi_new_kakashi__mangekyou3.png",
+      "kakashi_new_kakashi__mangekyou4.png",
+      "kakashi_new_kakashi__mangekyou5.png",
+      "kakashi_new_kakashi__mangekyou6.png",
+      "kakashi_new_kakashi__mangekyou7.png",
+      "kakashi_new_kakashi__mangekyou8.png",
+      "kakashi_new_kakashi__mangekyou9.png",
+      "kakashi_new_kakashi__mangekyou10.png",
+      "kakashi_new_kakashi__mangekyou11.png",
+      "kakashi_new_kakashi__mangekyou12.png",
+      "kakashi_new_kakashi__mangekyou13.png",
+      "kakashi_new_kakashi__mangekyou14.png",
+      "kakashi_new_kakashi__mangekyou15.png",
+      "kakashi_new_kakashi__mangekyou16.png",
+      "kakashi_new_kakashi__mangekyou17.png",
+      "kakashi_new_kakashi__mangekyou18.png",
+      "kakashi_new_kakashi__mangekyou19.png"
+    ],
+    "EFFECT_KUNAI": [
+      "kakashi_new_kunai__itachi_kunai.png"
+    ],
+    "EFFECT_SHURIKEN": [
+      "kakashi_new_kunai_kunai__shuriken.png"
+    ],
+    "EFFECT_KAMUI": [
+      "kakashi_new_kamui_kamui__kamui.png",
+      "kakashi_new_kamui_kamui__kamui1.png",
+      "kakashi_new_kamui_kamui__kamui2.png",
+      "kakashi_new_kamui_kamui__kamui3.png",
+      "kakashi_new_kamui_kamui__kamui4.png",
+      "kakashi_new_kamui_kamui__kamui5.png",
+      "kakashi_new_kamui_kamui__kamui.png",
+      "kakashi_new_kamui_kamui__kamui_turn1.png",
+      "kakashi_new_kamui_kamui__kamui_turn2.png",
+      "kakashi_new_kamui_kamui__kamui_turn3.png"
+    ],
+    "EFFECT_TSUKUYOMI": [
+      "kakashi_new_tsukuyomi_tsukuyomi__tsukuyomi.png",
+      "kakashi_new_tsukuyomi_tsukuyomi__tsukuyomi1.png",
+      "kakashi_new_tsukuyomi_tsukuyomi__tsukuyomi2.png",
+      "kakashi_new_tsukuyomi_tsukuyomi__tsukuyomi3.png"
+    ],
+    "EFFECT_AMATERASU": [
+      "kakashi_new_amaterasu_amaterasu__amaterasu.png",
+      "kakashi_new_amaterasu_amaterasu__amaterasu1.png",
+      "kakashi_new_amaterasu_amaterasu__amaterasu2.png",
+      "kakashi_new_amaterasu_amaterasu__amaterasu3.png",
+      "kakashi_new_amaterasu_amaterasu__amaterasu4.png",
+      "kakashi_new_amaterasu_amaterasu__amaterasu5.png",
+      "kakashi_new_amaterasu_amaterasu__amaterasu6.png",
+      "kakashi_new_amaterasu_tsukuyomi__tsukuyomi.png",
+      "kakashi_new_amaterasu_tsukuyomi__tsukuyomi3.png",
+      "kakashi_new_amaterasu_tsukuyomi__tsukuyomi2.png",
+      "kakashi_new_amaterasu_tsukuyomi__tsukuyomi1.png"
+    ],
+    "CROUCH": [
+      "kakashi_new_kakashi__crouch.png",
+      "kakashi_new_kakashi__land.png"
+    ],
+    "CROUCH_WALK": [
+      "kakashi_new_kakashi__crouch_walk.png",
+      "kakashi_new_kakashi__crouch_walk1.png",
+      "kakashi_new_kakashi__crouch_walk2.png",
+      "kakashi_new_kakashi__crouch_walk3.png",
+      "kakashi_new_kakashi__crouch_walk4.png",
+      "kakashi_new_kakashi__crouch_walk5.png"
+    ],
+    "CROUCH_ATTACK": [
+      "kakashi_new_kakashi__crouch_attack.png",
+      "kakashi_new_kakashi__crouch_attack1.png",
+      "kakashi_new_kakashi__crouch_attack2.png",
+      "kakashi_new_kakashi__crouch_attack3.png",
+      "kakashi_new_kakashi__crouch_attack.png"
+    ],
+    "RUN_ATTACK": [
+      "kakashi_new_kakashi__run_attack.png",
+      "kakashi_new_kakashi__run_attack1.png",
+      "kakashi_new_kakashi__run_attack2.png",
+      "kakashi_new_kakashi__run_attack3.png",
+      "kakashi_new_kakashi__run_attack4.png",
+      "kakashi_new_kakashi__run_attack5.png"
+    ],
+    "THROW": [
+      "kakashi_new_kakashi__throw.png",
+      "kakashi_new_kakashi__throw1.png",
+      "kakashi_new_kakashi__throw2.png"
+    ],
+    "RUN": [
+      "kakashi_new_kakashi__run.png",
+      "kakashi_new_kakashi__run1.png",
+      "kakashi_new_kakashi__run2.png",
+      "kakashi_new_kakashi__run3.png",
+      "kakashi_new_kakashi__run4.png",
+      "kakashi_new_kakashi__run5.png"
+    ],
+    "CHIDORI_LONG": [
+      "kakashi_new_kakashi__chidori.png",
+      "kakashi_new_kakashi__chidori1.png",
+      "kakashi_new_kakashi__chidori2.png",
+      "kakashi_new_kakashi__chidori3.png",
+      "kakashi_new_kakashi__chidori4.png",
+      "kakashi_new_kakashi__chidori5.png",
+      "kakashi_new_kakashi__chidori6.png",
+      "kakashi_new_kakashi__chidori7.png",
+      "kakashi_new_kakashi__chidori8.png",
+      "kakashi_new_kakashi__chidori9.png",
+      "kakashi_new_kakashi__chidori10.png",
+      "kakashi_new_kakashi__chidori11.png",
+      "kakashi_new_kakashi__chidori12.png",
+      "kakashi_new_kakashi__chidori13.png",
+      "kakashi_new_kakashi__chidori14.png",
+      "kakashi_new_kakashi__chidori15.png",
+      "kakashi_new_kakashi__chidori16.png",
+      "kakashi_new_kakashi__chidori17.png",
+      "kakashi_new_kakashi__chidori18.png",
+      "kakashi_new_kakashi__chidori19.png",
+      "kakashi_new_kakashi__chidori20.png",
+      "kakashi_new_kakashi__chidori21.png",
+      "kakashi_new_kakashi__chidori22.png",
+      "kakashi_new_kakashi__chidori23.png",
+      "kakashi_new_kakashi__chidori24.png",
+      "kakashi_new_kakashi__chidori25.png"
+    ],
+    "CROUCH_THROW": [
+      "kakashi_new_kakashi__crouch_throw.png",
+      "kakashi_new_kakashi__crouch_throw1.png",
+      "kakashi_new_kakashi__crouch_throw2.png",
+      "kakashi_new_kakashi__crouch_throw3.png"
+    ],
+    "KOMA_SUPPORT": [
+      "kakashi_new_kakashi__koma_support.png",
+      "kakashi_new_kakashi__koma_support1.png",
+      "kakashi_new_kakashi__koma_support2.png"
+    ],
+    "TELEPORT": [
+      "kakashi_new_kakashi__teleport.png",
+      "kakashi_new_kakashi__teleport1.png",
+      "kakashi_new_kakashi__teleport2.png"
+    ]
+  },
+  "meta": {
+    "fixedCounts": {
+      "IDLE": 6,
+      "WALK": 6,
+      "JUMP": 4,
+      "BLOCK": 1,
+      "HIT": 1,
+      "KO": 1,
+      "DASH": 2,
+      "ATTACK_LIGHT_1": 4,
+      "ATTACK_LIGHT_2": 4,
+      "ATTACK_LIGHT_3": 5,
+      "ATTACK_HEAVY_1": 3,
+      "ATTACK_HEAVY_2": 2,
+      "SPECIAL": 38,
+      "KAMUI": 10,
+      "TSUKUYOMI": 14,
+      "AMATERASU": 20,
+      "EFFECT_KUNAI": 1,
+      "EFFECT_SHURIKEN": 1,
+      "EFFECT_KAMUI": 10,
+      "EFFECT_TSUKUYOMI": 4,
+      "EFFECT_AMATERASU": 11,
+      "CROUCH": 2,
+      "CROUCH_WALK": 6,
+      "CROUCH_ATTACK": 5,
+      "RUN_ATTACK": 6,
+      "THROW": 3,
+      "RUN": 6,
+      "CHIDORI_LONG": 26,
+      "CROUCH_THROW": 4,
+      "KOMA_SUPPORT": 3,
+      "TELEPORT": 3
+    }
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.56,
+      "comboHitResetFrames": 52,
+      "attackDurationScale": 1.42,
+      "specialTransformDurationScale": 1.62,
+      "requireHitForComboRoutes": false
+    }
+  }
+}

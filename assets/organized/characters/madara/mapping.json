@@ -1,0 +1,131 @@
+{
+  "targetName": "Madara",
+  "states": [
+    "IDLE",
+    "WALK",
+    "JUMP",
+    "ATTACK_LIGHT_1",
+    "ATTACK_LIGHT_2",
+    "ATTACK_LIGHT_3",
+    "ATTACK_HEAVY_1",
+    "ATTACK_HEAVY_2",
+    "SPECIAL_TRANSFORM",
+    "SPECIAL",
+    "BLOCK",
+    "HIT",
+    "KO",
+    "ATTACK_LIGHT",
+    "ATTACK_HEAVY"
+  ],
+  "stateMap": {
+    "IDLE": [
+      "madara__stance.png",
+      "madara__stance2.png",
+      "madara__stance3.png"
+    ],
+    "WALK": [
+      "madara__run.png",
+      "madara__run2.png",
+      "madara__run3.png",
+      "madara__run4.png",
+      "madara__run5.png",
+      "madara__run6.png"
+    ],
+    "JUMP": [
+      "madara__dash.png",
+      "madara__dash2.png",
+      "madara__dash3.png",
+      "madara__fall.png",
+      "madara__fall2.png",
+      "madara__fall3.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "madara__combo_start_up.png",
+      "madara__combo_start_up2.png",
+      "madara__combo_start_up4.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "madara__combo_start_up5.png",
+      "madara__combo_start_up6.png",
+      "madara__combo_start_up7.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "madara__up_combo.png",
+      "madara__up_combo2.png",
+      "madara__up_combo3.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "madara__knockback_combo.png",
+      "madara__knockback_combo2.png",
+      "madara__knockback_combo3.png",
+      "madara__knockback_combo4.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "madara__extra_knockback_combo.png",
+      "madara__extra_knockback_combo2.png",
+      "madara__extra_knockback_combo3.png",
+      "madara__extra_knockback_combo4.png",
+      "madara__knockback_combo5.png",
+      "madara__knockback_combo6.png",
+      "madara__knockback_combo7.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "madara__combo_start_up8.png",
+      "madara__combo_start_up9.png",
+      "madara__combo_start_up10.png",
+      "madara__combo_start_up11.png",
+      "madara__substitute.png"
+    ],
+    "SPECIAL": [
+      "madara__jutsu.png",
+      "madara__jutsu2.png",
+      "madara__jutsu3.png",
+      "madara__jutsu4.png",
+      "madara__ultimate.png",
+      "madara__ultimate2.png",
+      "madara__ultimate3.png",
+      "madara__ultimate4.png",
+      "madara__ultimate5.png",
+      "madara__ultimate6.png",
+      "madara__ultimate7.png",
+      "madara__ultimate8.png",
+      "madara__ultimate9.png",
+      "madara__ultimate11.png",
+      "madara__ultimate12.png",
+      "madara__ultimate13.png",
+      "madara__ultimate14.png"
+    ],
+    "BLOCK": [
+      "madara__gaurd.png"
+    ],
+    "HIT": [
+      "madara__hurt.png",
+      "madara__up_hurt.png",
+      "madara__up_hurt2.png",
+      "madara__up_hurt3.png",
+      "madara__knockback.png"
+    ],
+    "KO": [
+      "madara__get_up.png",
+      "madara__win.png",
+      "madara__win2.png",
+      "madara__win3.png"
+    ],
+    "ATTACK_LIGHT": [
+      "madara__combo_start_up.png",
+      "madara__combo_start_up2.png",
+      "madara__combo_start_up4.png",
+      "madara__combo_start_up5.png",
+      "madara__combo_start_up6.png",
+      "madara__combo_start_up7.png"
+    ],
+    "ATTACK_HEAVY": [
+      "madara__knockback_combo.png",
+      "madara__knockback_combo2.png",
+      "madara__knockback_combo3.png",
+      "madara__knockback_combo4.png",
+      "madara__extra_knockback_combo.png",
+      "madara__extra_knockback_combo2.png"
+    ]
+  }
+}

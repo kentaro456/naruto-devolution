@@ -1,0 +1,183 @@
+{
+  "targetName": "Sprite1",
+  "states": [
+    "IDLE",
+    "WALK",
+    "RUN",
+    "JUMP",
+    "CROUCH",
+    "CROUCH_WALK",
+    "CROUCH_ATTACK",
+    "CROUCH_THROW",
+    "ATTACK_LIGHT_1",
+    "ATTACK_LIGHT_2",
+    "ATTACK_LIGHT_3",
+    "ATTACK_HEAVY_1",
+    "ATTACK_HEAVY_2",
+    "RUN_ATTACK",
+    "THROW",
+    "KOMA_SUPPORT",
+    "TELEPORT",
+    "SPECIAL_TRANSFORM",
+    "SPECIAL",
+    "CHARGE",
+    "DASH",
+    "BLOCK",
+    "HIT",
+    "KO",
+    "ATTACK_LIGHT",
+    "ATTACK_HEAVY"
+  ],
+  "stateMap": {
+    "IDLE": [
+      "sprite1__stancer.png",
+      "sprite1__stancer2.png",
+      "sprite1__stancer3.png",
+      "sprite1__stancer4.png"
+    ],
+    "WALK": [
+      "sprite1__runr.png",
+      "sprite1__runr2.png",
+      "sprite1__runr3.png",
+      "sprite1__runr4.png",
+      "sprite1__runr5.png",
+      "sprite1__runr6.png",
+      "sprite1__runl.png",
+      "sprite1__runl2.png",
+      "sprite1__runl3.png",
+      "sprite1__runl4.png",
+      "sprite1__runl5.png",
+      "sprite1__runl6.png"
+    ],
+    "RUN": [
+      "sprite1__runr.png",
+      "sprite1__runr2.png",
+      "sprite1__runr3.png",
+      "sprite1__runr4.png",
+      "sprite1__runr5.png",
+      "sprite1__runr6.png"
+    ],
+    "JUMP": [
+      "sprite1__jump.png",
+      "sprite1__jump2.png",
+      "sprite1__jump3.png",
+      "sprite1__jump4.png",
+      "sprite1__jump5.png"
+    ],
+    "CROUCH": [
+      "sprite1__stancer.png"
+    ],
+    "CROUCH_WALK": [
+      "sprite1__stancer.png"
+    ],
+    "CROUCH_ATTACK": [
+      "sprite1__combo.png",
+      "sprite1__combo6.png",
+      "sprite1__combo11.png"
+    ],
+    "CROUCH_THROW": [
+      "sprite1__combo4.png",
+      "sprite1__combo9.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "sprite1__combo.png",
+      "sprite1__combo6.png",
+      "sprite1__combo11.png",
+      "sprite1__combo16.png",
+      "sprite1__combo21.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "sprite1__combo2.png",
+      "sprite1__combo7.png",
+      "sprite1__combo12.png",
+      "sprite1__combo17.png",
+      "sprite1__combo22.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "sprite1__combo3.png",
+      "sprite1__combo8.png",
+      "sprite1__combo13.png",
+      "sprite1__combo18.png",
+      "sprite1__combo23.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "sprite1__combo4.png",
+      "sprite1__combo9.png",
+      "sprite1__combo14.png",
+      "sprite1__combo19.png",
+      "sprite1__combo24.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "sprite1__combo5.png",
+      "sprite1__combo10.png",
+      "sprite1__combo15.png",
+      "sprite1__combo20.png"
+    ],
+    "RUN_ATTACK": [
+      "sprite1__combo2.png",
+      "sprite1__combo7.png",
+      "sprite1__combo12.png"
+    ],
+    "THROW": [
+      "sprite1__combo4.png",
+      "sprite1__combo9.png"
+    ],
+    "KOMA_SUPPORT": [
+      "sprite1__stancer.png",
+      "sprite1__stancer2.png"
+    ],
+    "TELEPORT": [],
+    "SPECIAL_TRANSFORM": [
+      "sprite1__combo16.png",
+      "sprite1__combo21.png",
+      "sprite1__combo2.png"
+    ],
+    "SPECIAL": [
+      "sprite1__combo2.png",
+      "sprite1__combo7.png",
+      "sprite1__combo12.png",
+      "sprite1__combo17.png",
+      "sprite1__combo22.png",
+      "sprite1__combo3.png",
+      "sprite1__combo8.png",
+      "sprite1__combo13.png"
+    ],
+    "CHARGE": [
+      "sprite1__stancer.png",
+      "sprite1__stancer2.png"
+    ],
+    "DASH": [
+      "sprite1__runr.png",
+      "sprite1__runr2.png",
+      "sprite1__runr3.png"
+    ],
+    "BLOCK": [
+      "sprite1__stancer.png"
+    ],
+    "HIT": [
+      "sprite1__11.png",
+      "sprite1__12.png"
+    ],
+    "KO": [
+      "sprite1__13.png",
+      "sprite1__14.png",
+      "sprite1__15.png"
+    ],
+    "ATTACK_LIGHT": [
+      "sprite1__combo.png",
+      "sprite1__combo6.png",
+      "sprite1__combo2.png",
+      "sprite1__combo7.png",
+      "sprite1__combo3.png",
+      "sprite1__combo8.png"
+    ],
+    "ATTACK_HEAVY": [
+      "sprite1__combo4.png",
+      "sprite1__combo9.png",
+      "sprite1__combo14.png",
+      "sprite1__combo5.png",
+      "sprite1__combo10.png",
+      "sprite1__combo15.png"
+    ]
+  }
+}

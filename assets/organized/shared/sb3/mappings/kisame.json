@@ -1,0 +1,502 @@
+{
+  "targetName": "Kisame",
+  "version": 2,
+  "categories": {
+    "idle": [
+      "kisame__costume_002__kis_stance2.png",
+      "kisame__costume_003__kis_stance3.png",
+      "kisame__costume_004__kis_stance4.png",
+      "kisame__costume_001__kis_stance.png"
+    ],
+    "walk": [
+      "kisame__costume_006__kis_walk2.png",
+      "kisame__costume_007__kis_walk3.png",
+      "kisame__costume_008__kis_walk4.png",
+      "kisame__costume_009__kis_walk5.png",
+      "kisame__costume_005__kis_walk.png",
+      "kisame__costume_010__kis_walk6.png",
+      "kisame__costume_011__kis_run.png",
+      "kisame__costume_012__kis_run2.png",
+      "kisame__costume_013__kis_run3.png",
+      "kisame__costume_014__kis_run4.png",
+      "kisame__costume_015__kis_run5.png",
+      "kisame__costume_038__kis_walljump3.png",
+      "kisame__costume_039__kis_walljump4.png"
+    ],
+    "jump": [
+      "kisame__costume_018__kis_jump2.png",
+      "kisame__costume_019__kis_jump3.png",
+      "kisame__costume_017__kis_jump.png",
+      "kisame__costume_020__kis_jump4.png",
+      "kisame__costume_021__kis_jump5.png",
+      "kisame__costume_022__kis_retreat.png",
+      "kisame__costume_025__kis_duck.png",
+      "kisame__costume_026__kis_duck2.png",
+      "kisame__costume_027__kis_duck3.png",
+      "kisame__costume_034__kis_fastgetup.png",
+      "kisame__costume_035__kis_fastgetup2.png",
+      "kisame__costume_042__kis_throw3.png",
+      "kisame__costume_036__kis_walljump.png",
+      "kisame__costume_037__kis_walljump2.png"
+    ],
+    "attack_light_1": [
+      "kisame__costume_040__kis_throw.png",
+      "kisame__costume_041__kis_throw2.png",
+      "kisame__costume_043__kis_throw4.png",
+      "kisame__costume_044__kis_x.png",
+      "kisame__costume_045__kis_x2.png",
+      "kisame__costume_046__kis_x3.png",
+      "kisame__costume_047__kis_x4.png",
+      "kisame__costume_048__kis_x5.png"
+    ],
+    "attack_light_2": [
+      "kisame__costume_049__kis_spinatk.png",
+      "kisame__costume_053__kis_spinatk5.png",
+      "kisame__costume_054__kis_spinatk6.png",
+      "kisame__costume_055__kis_spinatk7.png",
+      "kisame__costume_115__kis_suikoudan7.png",
+      "kisame__costume_116__kis_suikoudan8.png",
+      "kisame__costume_117__kis_suikoudan9.png",
+      "kisame__costume_118__kis_suikoudan10.png",
+      "kisame__costume_119__kis_suikoudan11.png",
+      "kisame__costume_120__kis_suikoudan12.png",
+      "kisame__costume_121__kis_suikoudan13.png",
+      "kisame__costume_122__kis_suikoudan14.png",
+      "kisame__costume_123__kis_suikoudan15.png",
+      "kisame__costume_124__kis_suikoudan16.png",
+      "kisame__costume_125__kis_suikoudan17.png",
+      "kisame__costume_127__kis_suikoudan19.png"
+    ],
+    "attack_light_3": [
+      "kisame__costume_056__kis_spinatk8.png",
+      "kisame__costume_057__kis_y.png",
+      "kisame__costume_058__kis_y2.png",
+      "kisame__costume_059__kis_y3.png",
+      "kisame__costume_060__kis_y4.png"
+    ],
+    "attack_heavy_1": [
+      "kisame__costume_061__kis_y5.png",
+      "kisame__costume_062__kis_y6.png",
+      "kisame__costume_063__kis_y7.png",
+      "kisame__costume_128__kis_win.png",
+      "kisame__costume_129__kis_win2.png",
+      "kisame__costume_130__kis_win3.png",
+      "kisame__costume_131__kis_win4.png",
+      "kisame__costume_132__kis_win5.png",
+      "kisame__costume_133__kis_win6.png",
+      "kisame__costume_134__kis_win7.png",
+      "kisame__costume_135__kis_win8.png",
+      "kisame__costume_136__kis_win9.png"
+    ],
+    "attack_heavy_2": [
+      "kisame__costume_064__kis_y8.png",
+      "kisame__costume_065__kis_y9.png",
+      "kisame__costume_066__kis_y10.png",
+      "kisame__costume_067__kis_y11.png",
+      "kisame__costume_068__kis_y12.png"
+    ],
+    "special_transform": [
+      "kisame__costume_023__kis_teleport.png",
+      "kisame__costume_024__kis_teleport2.png"
+    ],
+    "special": [
+      "kisame__costume_081__kis_goshokuzame.png",
+      "kisame__costume_082__kis_goshokuzame2.png",
+      "kisame__costume_083__kis_goshokuzame3.png",
+      "kisame__costume_084__kis_goshokuzame4.png",
+      "kisame__costume_085__kis_goshokuzame5.png",
+      "kisame__costume_086__kis_goshokuzame6.png",
+      "kisame__costume_087__kis_goshokuzame7.png",
+      "kisame__costume_088__kis_goshokuzame8.png",
+      "kisame__costume_089__kis_goshokuzame9.png",
+      "kisame__costume_090__kis_goshokuzame1.png",
+      "kisame__costume_091__kis_goshokuzame10.png",
+      "kisame__costume_092__kis_goshokuzame11.png",
+      "kisame__costume_093__kis_goshokuzame12.png",
+      "kisame__costume_094__kis_goshokuzame13.png",
+      "kisame__costume_095__kis_goshokuzame14.png",
+      "kisame__costume_096__kis_goshokuzame15.png",
+      "kisame__costume_097__kis_goshokuzame16.png",
+      "kisame__costume_098__kis_goshokuzame17.png",
+      "kisame__costume_099__kis_goshokuzame18.png",
+      "kisame__costume_100__kis_goshokuzame19.png",
+      "kisame__costume_101__kis_goshokuzame20.png",
+      "kisame__costume_102__kis_goshokuzame21.png",
+      "kisame__costume_103__kis_goshokuzame22.png",
+      "kisame__costume_104__kis_goshokuzame23.png",
+      "kisame__costume_105__kis_goshokuzame24.png",
+      "kisame__costume_106__kis_goshokuzame25.png",
+      "kisame__costume_107__kis_goshokuzame26.png",
+      "kisame__costume_108__kis_goshokuzame27.png"
+    ],
+    "block": ["kisame__costume_016__kis_guard.png"],
+    "hit": [
+      "kisame__costume_031__kis_fall2.png",
+      "kisame__costume_032__kis_fall3.png",
+      "kisame__costume_030__kis_fall.png"
+    ],
+    "ko": [
+      "kisame__costume_110__kis_suikoudan2.png",
+      "kisame__costume_111__kis_suikoudan3.png",
+      "kisame__costume_112__kis_suikoudan4.png",
+      "kisame__costume_028__kis_damage.png",
+      "kisame__costume_029__kis_damage2.png"
+    ],
+    "attack_light": [
+      "kisame__costume_040__kis_throw.png",
+      "kisame__costume_041__kis_throw2.png",
+      "kisame__costume_043__kis_throw4.png",
+      "kisame__costume_044__kis_x.png",
+      "kisame__costume_045__kis_x2.png",
+      "kisame__costume_046__kis_x3.png",
+      "kisame__costume_047__kis_x4.png",
+      "kisame__costume_048__kis_x5.png",
+      "kisame__costume_049__kis_spinatk.png",
+      "kisame__costume_053__kis_spinatk5.png",
+      "kisame__costume_054__kis_spinatk6.png",
+      "kisame__costume_055__kis_spinatk7.png",
+      "kisame__costume_115__kis_suikoudan7.png",
+      "kisame__costume_116__kis_suikoudan8.png",
+      "kisame__costume_117__kis_suikoudan9.png",
+      "kisame__costume_118__kis_suikoudan10.png",
+      "kisame__costume_119__kis_suikoudan11.png",
+      "kisame__costume_120__kis_suikoudan12.png",
+      "kisame__costume_121__kis_suikoudan13.png",
+      "kisame__costume_122__kis_suikoudan14.png",
+      "kisame__costume_123__kis_suikoudan15.png",
+      "kisame__costume_124__kis_suikoudan16.png",
+      "kisame__costume_125__kis_suikoudan17.png",
+      "kisame__costume_127__kis_suikoudan19.png",
+      "kisame__costume_056__kis_spinatk8.png",
+      "kisame__costume_057__kis_y.png",
+      "kisame__costume_058__kis_y2.png",
+      "kisame__costume_059__kis_y3.png",
+      "kisame__costume_060__kis_y4.png",
+      "kisame__costume_050__kis_spinatk2.png",
+      "kisame__costume_051__kis_spinatk3.png",
+      "kisame__costume_052__kis_spinatk4.png"
+    ],
+    "attack_heavy": [
+      "kisame__costume_061__kis_y5.png",
+      "kisame__costume_062__kis_y6.png",
+      "kisame__costume_063__kis_y7.png",
+      "kisame__costume_128__kis_win.png",
+      "kisame__costume_129__kis_win2.png",
+      "kisame__costume_130__kis_win3.png",
+      "kisame__costume_131__kis_win4.png",
+      "kisame__costume_132__kis_win5.png",
+      "kisame__costume_133__kis_win6.png",
+      "kisame__costume_134__kis_win7.png",
+      "kisame__costume_135__kis_win8.png",
+      "kisame__costume_136__kis_win9.png",
+      "kisame__costume_064__kis_y8.png",
+      "kisame__costume_065__kis_y9.png",
+      "kisame__costume_066__kis_y10.png",
+      "kisame__costume_067__kis_y11.png",
+      "kisame__costume_068__kis_y12.png",
+      "kisame__costume_069__kis_y13.png",
+      "kisame__costume_070__kis_y_jump.png",
+      "kisame__costume_071__kis_y_jump2.png",
+      "kisame__costume_072__kis_y_jump3.png",
+      "kisame__costume_073__kis_y_jump4.png",
+      "kisame__costume_074__kis_y_up.png",
+      "kisame__costume_075__kis_y_up2.png",
+      "kisame__costume_076__kis_y_up3.png",
+      "kisame__costume_077__kis_y_up4.png",
+      "kisame__costume_078__kis_y_jump_down.png",
+      "kisame__costume_079__kis_y_jump_down2.png",
+      "kisame__costume_080__y_jump_down3.png",
+      "kisame__costume_109__kis_suikoudan.png",
+      "kisame__costume_113__kis_suikoudan5.png",
+      "kisame__costume_114__kis_suikoudan6.png"
+    ]
+  },
+  "stateMap": {
+    "IDLE": [
+      "kisame__costume_002__kis_stance2.png",
+      "kisame__costume_003__kis_stance3.png",
+      "kisame__costume_004__kis_stance4.png",
+      "kisame__costume_001__kis_stance.png"
+    ],
+    "WALK": [
+      "kisame__costume_006__kis_walk2.png",
+      "kisame__costume_007__kis_walk3.png",
+      "kisame__costume_008__kis_walk4.png",
+      "kisame__costume_009__kis_walk5.png",
+      "kisame__costume_005__kis_walk.png",
+      "kisame__costume_010__kis_walk6.png",
+      "kisame__costume_011__kis_run.png",
+      "kisame__costume_012__kis_run2.png",
+      "kisame__costume_013__kis_run3.png",
+      "kisame__costume_014__kis_run4.png",
+      "kisame__costume_015__kis_run5.png",
+      "kisame__costume_038__kis_walljump3.png",
+      "kisame__costume_039__kis_walljump4.png"
+    ],
+    "JUMP": [
+      "kisame__costume_018__kis_jump2.png",
+      "kisame__costume_019__kis_jump3.png",
+      "kisame__costume_017__kis_jump.png",
+      "kisame__costume_020__kis_jump4.png",
+      "kisame__costume_021__kis_jump5.png",
+      "kisame__costume_022__kis_retreat.png",
+      "kisame__costume_025__kis_duck.png",
+      "kisame__costume_026__kis_duck2.png",
+      "kisame__costume_027__kis_duck3.png",
+      "kisame__costume_034__kis_fastgetup.png",
+      "kisame__costume_035__kis_fastgetup2.png",
+      "kisame__costume_042__kis_throw3.png",
+      "kisame__costume_036__kis_walljump.png",
+      "kisame__costume_037__kis_walljump2.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "kisame__costume_040__kis_throw.png",
+      "kisame__costume_041__kis_throw2.png",
+      "kisame__costume_043__kis_throw4.png",
+      "kisame__costume_044__kis_x.png",
+      "kisame__costume_045__kis_x2.png",
+      "kisame__costume_046__kis_x3.png",
+      "kisame__costume_047__kis_x4.png",
+      "kisame__costume_048__kis_x5.png",
+      "kisame__costume_049__kis_spinatk.png",
+      "kisame__costume_050__kis_spinatk2.png",
+      "kisame__costume_051__kis_spinatk3.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "kisame__costume_052__kis_spinatk4.png",
+      "kisame__costume_053__kis_spinatk5.png",
+      "kisame__costume_054__kis_spinatk6.png",
+      "kisame__costume_055__kis_spinatk7.png",
+      "kisame__costume_056__kis_spinatk8.png",
+      "kisame__costume_057__kis_y.png",
+      "kisame__costume_058__kis_y2.png",
+      "kisame__costume_059__kis_y3.png",
+      "kisame__costume_060__kis_y4.png",
+      "kisame__costume_115__kis_suikoudan7.png",
+      "kisame__costume_116__kis_suikoudan8.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "kisame__costume_117__kis_suikoudan9.png",
+      "kisame__costume_118__kis_suikoudan10.png",
+      "kisame__costume_119__kis_suikoudan11.png",
+      "kisame__costume_120__kis_suikoudan12.png",
+      "kisame__costume_121__kis_suikoudan13.png",
+      "kisame__costume_122__kis_suikoudan14.png",
+      "kisame__costume_123__kis_suikoudan15.png",
+      "kisame__costume_124__kis_suikoudan16.png",
+      "kisame__costume_125__kis_suikoudan17.png",
+      "kisame__costume_127__kis_suikoudan19.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "kisame__costume_061__kis_y5.png",
+      "kisame__costume_062__kis_y6.png",
+      "kisame__costume_063__kis_y7.png",
+      "kisame__costume_064__kis_y8.png",
+      "kisame__costume_065__kis_y9.png",
+      "kisame__costume_066__kis_y10.png",
+      "kisame__costume_067__kis_y11.png",
+      "kisame__costume_068__kis_y12.png",
+      "kisame__costume_069__kis_y13.png",
+      "kisame__costume_070__kis_y_jump.png",
+      "kisame__costume_071__kis_y_jump2.png",
+      "kisame__costume_072__kis_y_jump3.png",
+      "kisame__costume_073__kis_y_jump4.png",
+      "kisame__costume_074__kis_y_up.png",
+      "kisame__costume_075__kis_y_up2.png",
+      "kisame__costume_076__kis_y_up3.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "kisame__costume_077__kis_y_up4.png",
+      "kisame__costume_078__kis_y_jump_down.png",
+      "kisame__costume_079__kis_y_jump_down2.png",
+      "kisame__costume_080__y_jump_down3.png",
+      "kisame__costume_109__kis_suikoudan.png",
+      "kisame__costume_113__kis_suikoudan5.png",
+      "kisame__costume_114__kis_suikoudan6.png",
+      "kisame__costume_128__kis_win.png",
+      "kisame__costume_129__kis_win2.png",
+      "kisame__costume_130__kis_win3.png",
+      "kisame__costume_131__kis_win4.png",
+      "kisame__costume_132__kis_win5.png",
+      "kisame__costume_133__kis_win6.png",
+      "kisame__costume_134__kis_win7.png",
+      "kisame__costume_135__kis_win8.png",
+      "kisame__costume_136__kis_win9.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "kisame__costume_023__kis_teleport.png",
+      "kisame__costume_024__kis_teleport2.png"
+    ],
+    "SPECIAL": [
+      "kisame__costume_081__kis_goshokuzame.png",
+      "kisame__costume_082__kis_goshokuzame2.png",
+      "kisame__costume_083__kis_goshokuzame3.png",
+      "kisame__costume_084__kis_goshokuzame4.png",
+      "kisame__costume_085__kis_goshokuzame5.png",
+      "kisame__costume_086__kis_goshokuzame6.png",
+      "kisame__costume_087__kis_goshokuzame7.png",
+      "kisame__costume_088__kis_goshokuzame8.png",
+      "kisame__costume_089__kis_goshokuzame9.png",
+      "kisame__costume_090__kis_goshokuzame1.png",
+      "kisame__costume_091__kis_goshokuzame10.png",
+      "kisame__costume_092__kis_goshokuzame11.png",
+      "kisame__costume_093__kis_goshokuzame12.png",
+      "kisame__costume_094__kis_goshokuzame13.png",
+      "kisame__costume_095__kis_goshokuzame14.png",
+      "kisame__costume_096__kis_goshokuzame15.png",
+      "kisame__costume_097__kis_goshokuzame16.png",
+      "kisame__costume_098__kis_goshokuzame17.png",
+      "kisame__costume_099__kis_goshokuzame18.png",
+      "kisame__costume_100__kis_goshokuzame19.png",
+      "kisame__costume_101__kis_goshokuzame20.png",
+      "kisame__costume_102__kis_goshokuzame21.png",
+      "kisame__costume_103__kis_goshokuzame22.png",
+      "kisame__costume_104__kis_goshokuzame23.png",
+      "kisame__costume_105__kis_goshokuzame24.png",
+      "kisame__costume_106__kis_goshokuzame25.png",
+      "kisame__costume_107__kis_goshokuzame26.png",
+      "kisame__costume_108__kis_goshokuzame27.png"
+    ],
+    "BLOCK": ["kisame__costume_016__kis_guard.png"],
+    "HIT": [
+      "kisame__costume_031__kis_fall2.png",
+      "kisame__costume_032__kis_fall3.png",
+      "kisame__costume_030__kis_fall.png"
+    ],
+    "KO": [
+      "kisame__costume_110__kis_suikoudan2.png",
+      "kisame__costume_111__kis_suikoudan3.png",
+      "kisame__costume_112__kis_suikoudan4.png",
+      "kisame__costume_028__kis_damage.png",
+      "kisame__costume_029__kis_damage2.png"
+    ],
+    "ATTACK_LIGHT": [
+      "kisame__costume_050__kis_spinatk2.png",
+      "kisame__costume_051__kis_spinatk3.png",
+      "kisame__costume_052__kis_spinatk4.png"
+    ],
+    "ATTACK_HEAVY": [
+      "kisame__costume_069__kis_y13.png",
+      "kisame__costume_070__kis_y_jump.png",
+      "kisame__costume_071__kis_y_jump2.png",
+      "kisame__costume_072__kis_y_jump3.png",
+      "kisame__costume_073__kis_y_jump4.png",
+      "kisame__costume_074__kis_y_up.png",
+      "kisame__costume_075__kis_y_up2.png",
+      "kisame__costume_076__kis_y_up3.png",
+      "kisame__costume_077__kis_y_up4.png",
+      "kisame__costume_078__kis_y_jump_down.png",
+      "kisame__costume_079__kis_y_jump_down2.png",
+      "kisame__costume_080__y_jump_down3.png",
+      "kisame__costume_109__kis_suikoudan.png",
+      "kisame__costume_113__kis_suikoudan5.png",
+      "kisame__costume_114__kis_suikoudan6.png"
+    ]
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 45,
+      "requireHitForComboRoutes": false,
+      "attackDurationScale": 1.25,
+      "specialTransformDurationScale": 1.45
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 11,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 11,
+          "damageMultiplier": 1.15,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.05
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 14,
+          "damageMultiplier": 1.35,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.35
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 16,
+          "damageMultiplier": 1.2,
+          "rangeMultiplier": 1.08,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 20,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.15,
+          "knockbackMultiplier": 1.5
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL",
+          "duration": 35,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 1
+        }
+      ]
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "fixedCounts": {
+      "IDLE": 4,
+      "WALK": 13,
+      "JUMP": 14,
+      "ATTACK_LIGHT": 3,
+      "ATTACK_HEAVY": 15,
+      "SPECIAL": 28,
+      "BLOCK": 1,
+      "HIT": 3,
+      "KO": 5,
+      "ATTACK_LIGHT_1": 8,
+      "ATTACK_LIGHT_2": 16,
+      "ATTACK_LIGHT_3": 5,
+      "ATTACK_HEAVY_1": 12,
+      "ATTACK_HEAVY_2": 5,
+      "SPECIAL_TRANSFORM": 2
+    },
+    "fallbacks": [],
+    "genericRatio": 0,
+    "mostlyGeneric": false,
+    "editedByMapper": true,
+    "editedAt": "2026-02-23T23:27:16.994Z",
+    "mappingMode": "manual_editor_drag_drop",
+    "autoAssignedAt": "2026-02-24T01:14:08.039Z",
+    "autoAssignedCount": 0
+  }
+}

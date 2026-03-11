@@ -1,0 +1,142 @@
+{
+  "targetName": "Gaara",
+  "states": [
+    "IDLE",
+    "WALK",
+    "JUMP",
+    "ATTACK_LIGHT",
+    "ATTACK_HEAVY",
+    "SPECIAL_TRANSFORM",
+    "SPECIAL",
+    "BLOCK",
+    "HIT",
+    "KO",
+    "RUN",
+    "THROW",
+    "ATTACK_LIGHT_1",
+    "ATTACK_LIGHT_2",
+    "ATTACK_LIGHT_3",
+    "ATTACK_HEAVY_1",
+    "ATTACK_HEAVY_2"
+  ],
+  "stateMap": {
+    "IDLE": [
+      "gaara__gaara_ll.png"
+    ],
+    "WALK": [
+      "gaara__gaara_fut_1.png",
+      "gaara__gaara_fut_2.png",
+      "gaara__gaara_fut_3.png",
+      "gaara__gaara_fut_4.png",
+      "gaara__gaara_fut_5.png",
+      "gaara__gaara_fut_6.png"
+    ],
+    "RUN": [
+      "gaara__gaara_fut_1.png",
+      "gaara__gaara_fut_2.png",
+      "gaara__gaara_fut_3.png",
+      "gaara__gaara_fut_4.png",
+      "gaara__gaara_fut_5.png",
+      "gaara__gaara_fut_6.png"
+    ],
+    "JUMP": [
+      "gaara__gaara_fut_5.png",
+      "gaara__gaara_tmad_3.png"
+    ],
+    "ATTACK_LIGHT": [
+      "gaara__gaara_tmad_1.png",
+      "gaara__gaara_tmad_2.png",
+      "gaara__gaara_tmad_3.png",
+      "gaara__gaara_tmad_4.png",
+      "gaara__gaara_tmad_5.png",
+      "gaara__gaara_tmad_6.png",
+      "gaara__gaara_tmad_7.png",
+      "gaara__gaara_tmad_9.png",
+      "gaara__gaara_tmad_10.png"
+    ],
+    "ATTACK_HEAVY": [
+      "gaara__gaara_homok_1.png",
+      "gaara__gaara_homok_2.png",
+      "gaara__gaara_homok_3.png",
+      "gaara__gaara_homok_4.png",
+      "gaara__gaara_homok_5.png",
+      "gaara__gaara_homok_6.png",
+      "gaara__gaara_homok_7.png",
+      "gaara__gaara_homok_8.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "gaara__gaara_homok_tma.png",
+      "gaara__gaara_homok_tma1.png",
+      "gaara__gaara_homok_tma2.png",
+      "gaara__gaara_homok_tma3.png",
+      "gaara__gaara_homok_tma4.png",
+      "gaara__gaara_homok_tma5.png",
+      "gaara__gaara_homok_tma6.png",
+      "gaara__gaara_homok_tma7.png"
+    ],
+    "SPECIAL": [
+      "gaara__gaara_chakra.png",
+      "gaara__gaara_chakra_2.png",
+      "gaara__gaara_chakra_3.png",
+      "gaara__gaara_chakra_4.png",
+      "gaara__gaara_homok_tma8.png",
+      "gaara__gaara_homok_tma9.png",
+      "gaara__gaara_homok_tma10.png",
+      "gaara__gaara_homok_tma11.png",
+      "gaara__gaara_homok_tma12.png",
+      "gaara__gaara_homok_tma13.png"
+    ],
+    "BLOCK": [
+      "gaara__gaara_chakra.png",
+      "gaara__gaara_chakra_2.png"
+    ],
+    "HIT": [
+      "gaara__gaara_fut_1.png",
+      "gaara__gaara_ll.png"
+    ],
+    "KO": [
+      "gaara__gaara_game_over.png"
+    ],
+    "THROW": [
+      "gaara__gaara_homok_1.png",
+      "gaara__gaara_homok_2.png",
+      "gaara__gaara_homok_3.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "gaara__apr_1.png",
+      "gaara__apr_6.png",
+      "gaara__gaara_tmad_4.png",
+      "gaara__gaara_tmad_9.png",
+      "gaara__gaara_homok_tma2.png",
+      "gaara__gaara_homok_tma7.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "gaara__apr_2.png",
+      "gaara__apr_7.png",
+      "gaara__gaara_tmad_5.png",
+      "gaara__gaara_tmad_10.png",
+      "gaara__gaara_homok_tma3.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "gaara__apr_3.png",
+      "gaara__apr_8.png",
+      "gaara__gaara_tmad_6.png",
+      "gaara__gaara_tmad_1.png",
+      "gaara__gaara_homok_tma4.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "gaara__apr_4.png",
+      "gaara__o_apr.png",
+      "gaara__gaara_tmad_7.png",
+      "gaara__gaara_homok_tma.png",
+      "gaara__gaara_homok_tma5.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "gaara__apr_5.png",
+      "gaara__o_apr2.png",
+      "gaara__gaara_tmad_3.png",
+      "gaara__gaara_homok_tma1.png",
+      "gaara__gaara_homok_tma6.png"
+    ]
+  }
+}

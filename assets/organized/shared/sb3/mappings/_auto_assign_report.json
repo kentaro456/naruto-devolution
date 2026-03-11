@@ -1,0 +1,145 @@
+{
+  "generated_at": "2026-02-24T01:14:08.377Z",
+  "changed_mappings": 0,
+  "total_auto_assigned": 0,
+  "items": [
+    {
+      "slug": "kimimaro",
+      "scopedFrames": 98,
+      "autoAssigned": 0,
+      "totalUsed": 89
+    },
+    {
+      "slug": "kisame",
+      "scopedFrames": 136,
+      "autoAssigned": 0,
+      "totalUsed": 134
+    },
+    {
+      "slug": "lee",
+      "scopedFrames": 60,
+      "autoAssigned": 0,
+      "totalUsed": 58
+    },
+    {
+      "slug": "naruto",
+      "scopedFrames": 222,
+      "autoAssigned": 0,
+      "totalUsed": 204
+    },
+    {
+      "slug": "naruto_kid",
+      "scopedFrames": 80,
+      "autoAssigned": 0,
+      "totalUsed": 80
+    },
+    {
+      "slug": "naruto_kid_kyuubi",
+      "scopedFrames": 68,
+      "autoAssigned": 0,
+      "totalUsed": 67
+    },
+    {
+      "slug": "naruto_shippuden",
+      "scopedFrames": 38,
+      "autoAssigned": 0,
+      "totalUsed": 71
+    },
+    {
+      "slug": "naruto_shippuden_kyuubi",
+      "scopedFrames": 57,
+      "autoAssigned": 0,
+      "totalUsed": 46
+    },
+    {
+      "slug": "orochimaru",
+      "scopedFrames": 55,
+      "autoAssigned": 0,
+      "totalUsed": 55
+    },
+    {
+      "slug": "pein",
+      "scopedFrames": 71,
+      "autoAssigned": 0,
+      "totalUsed": 51
+    },
+    {
+      "slug": "sasuke",
+      "scopedFrames": 102,
+      "autoAssigned": 0,
+      "totalUsed": 124
+    },
+    {
+      "slug": "sasuke_base",
+      "scopedFrames": 102,
+      "autoAssigned": 0,
+      "totalUsed": 100
+    },
+    {
+      "slug": "sasuke_cs2",
+      "scopedFrames": 69,
+      "autoAssigned": 0,
+      "totalUsed": 66
+    },
+    {
+      "slug": "sprite1",
+      "scopedFrames": 50,
+      "autoAssigned": 0,
+      "totalUsed": 50
+    },
+    {
+      "slug": "sprite10",
+      "scopedFrames": 144,
+      "autoAssigned": 0,
+      "totalUsed": 120
+    },
+    {
+      "slug": "sprite2",
+      "scopedFrames": 141,
+      "autoAssigned": 0,
+      "totalUsed": 108
+    },
+    {
+      "slug": "sprite3",
+      "scopedFrames": 204,
+      "autoAssigned": 0,
+      "totalUsed": 187
+    },
+    {
+      "slug": "sprite4",
+      "scopedFrames": 41,
+      "autoAssigned": 0,
+      "totalUsed": 41
+    },
+    {
+      "slug": "sprite5",
+      "scopedFrames": 96,
+      "autoAssigned": 0,
+      "totalUsed": 96
+    },
+    {
+      "slug": "sprite6",
+      "scopedFrames": 111,
+      "autoAssigned": 0,
+      "totalUsed": 98
+    },
+    {
+      "slug": "sprite7",
+      "scopedFrames": 52,
+      "autoAssigned": 0,
+      "totalUsed": 46
+    },
+    {
+      "slug": "sprite8",
+      "scopedFrames": 86,
+      "autoAssigned": 0,
+      "totalUsed": 86
+    },
+    {
+      "slug": "sprite9",
+      "scopedFrames": 78,
+      "autoAssigned": 0,
+      "totalUsed": 70
+    }
+  ]
+}

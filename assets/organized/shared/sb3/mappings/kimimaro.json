@@ -1,0 +1,265 @@
+{
+  "targetName": "Kimimaro",
+  "version": 1,
+  "categories": {
+    "idle": [
+      "kimimaro__costume_045__kimimaro_stance2.png",
+      "kimimaro__costume_046__kimimaro_stance3.png",
+      "kimimaro__costume_047__kimimaro_stance4.png",
+      "kimimaro__costume_044__kimimaro_stance.png",
+      "kimimaro__costume_057__kiminaro_cs2_stan.png",
+      "kimimaro__costume_058__kiminaro_cs2_stan2.png",
+      "kimimaro__costume_059__kiminaro_cs2_stan3.png",
+      "kimimaro__costume_060__kiminaro_cs2_stan4.png",
+      "kimimaro__costume_061__kiminaro_cs2_stan5.png"
+    ],
+    "walk": [
+      "kimimaro__costume_019__kimimaro_run_1.png",
+      "kimimaro__costume_020__kimimaro_run_2.png",
+      "kimimaro__costume_021__kimimaro_run_3.png",
+      "kimimaro__costume_022__kimimaro_run_4.png",
+      "kimimaro__costume_024__kimimaro_run_6.png",
+      "kimimaro__costume_063__kiminaro_cs2_run2.png",
+      "kimimaro__costume_065__kiminaro_cs2_run4.png",
+      "kimimaro__costume_066__kiminaro_cs2_run5.png",
+      "kimimaro__costume_067__kiminaro_cs2_run6.png"
+    ],
+    "jump": [
+      "kimimaro__costume_017__kimimaro_jump_1.png",
+      "kimimaro__costume_018__kimimaro_jump_2.png",
+      "kimimaro__costume_068__kiminaro_cs2_jump.png",
+      "kimimaro__costume_069__kiminaro_cs2_jump2.png"
+    ],
+    "attack_light": [
+      "kimimaro__costume_003__kimimaro_combo_4.png",
+      "kimimaro__costume_008__kimimaro_combo_9.png",
+      "kimimaro__costume_010__kimimaro_combo3.png",
+      "kimimaro__costume_050__transformations.png",
+      "kimimaro__costume_051__transformations2.png",
+      "kimimaro__costume_052__transformations3.png",
+      "kimimaro__costume_053__transformations4.png",
+      "kimimaro__costume_054__transformations5.png",
+      "kimimaro__costume_055__transformations6.png",
+      "kimimaro__costume_056__transformations7.png",
+      "kimimaro__costume_076__kiminaro_cs2_comb.png",
+      "kimimaro__costume_077__kiminaro_cs2_comb2.png",
+      "kimimaro__costume_078__kiminaro_cs2_comb3.png",
+      "kimimaro__costume_079__kiminaro_cs2_comb4.png",
+      "kimimaro__costume_080__kiminaro_cs2_comb5.png",
+      "kimimaro__costume_081__kiminaro_cs2_comb6.png",
+      "kimimaro__costume_082__kiminaro_cs2_comb7.png",
+      "kimimaro__costume_083__kiminaro_cs2_comb8.png",
+      "kimimaro__costume_084__kiminaro_cs2_comb9.png",
+      "kimimaro__costume_085__kiminaro_cs2_comb10.png",
+      "kimimaro__costume_001__kimimaro_combo_1.png",
+      "kimimaro__costume_002__kimimaro_combo_2.png",
+      "kimimaro__costume_009__kimimaro_combo2.png"
+    ],
+    "attack_heavy": [
+      "kimimaro__costume_010__kimimaro_combo3.png",
+      "kimimaro__costume_004__kimimaro_combo_5.png",
+      "kimimaro__costume_005__kimimaro_combo_6.png",
+      "kimimaro__costume_006__kimimaro_combo_7.png",
+      "kimimaro__costume_007__kimimaro_combo_8.png"
+    ],
+    "special_transform": ["kimimaro__costume_050__transformations.png"],
+    "block": ["kimimaro__costume_045__kimimaro_stance2.png"],
+    "hit": [
+      "kimimaro__costume_070__kiminaro_cs2_dama.png",
+      "kimimaro__costume_071__kiminaro_cs2_dama2.png",
+      "kimimaro__costume_011__kimimaro_damage.png",
+      "kimimaro__costume_012__kimimaro_damage2.png",
+      "kimimaro__costume_013__kimimaro_damage3.png",
+      "kimimaro__costume_014__kimimaro_damage4.png",
+      "kimimaro__costume_015__kimimaro_damage5.png",
+      "kimimaro__costume_016__kimimaro_damage6.png",
+      "kimimaro__costume_072__kiminaro_cs2_dama3.png",
+      "kimimaro__costume_073__kiminaro_cs2_dama4.png"
+    ],
+    "ko": [
+      "kimimaro__costume_074__kiminaro_cs2_dama5.png",
+      "kimimaro__costume_075__kiminaro_cs2_dama6.png"
+    ],
+    "special": [
+      "kimimaro__costume_026__kimimaro_special2.png",
+      "kimimaro__costume_027__kimimaro_special3.png",
+      "kimimaro__costume_028__kimimaro_special4.png",
+      "kimimaro__costume_029__kimimaro_special5.png",
+      "kimimaro__costume_030__kimimaro_special6.png",
+      "kimimaro__costume_025__kimimaro_special.png",
+      "kimimaro__costume_031__kimimaro_special7.png",
+      "kimimaro__costume_032__kimimaro_special8.png",
+      "kimimaro__costume_034__kimimaro_special10.png",
+      "kimimaro__costume_035__kimimaro_special11.png",
+      "kimimaro__costume_036__kimimaro_special12.png",
+      "kimimaro__costume_038__kimimaro_special14.png",
+      "kimimaro__costume_041__kimimaro_special17.png",
+      "kimimaro__costume_042__kimimaro_special18.png",
+      "kimimaro__costume_043__kimimaro_special19.png",
+      "kimimaro__costume_086__kiminaro_cs2_spec.png",
+      "kimimaro__costume_087__kiminaro_cs2_spec2.png",
+      "kimimaro__costume_088__kiminaro_cs2_spec3.png",
+      "kimimaro__costume_089__kiminaro_cs2_spec4.png",
+      "kimimaro__costume_090__kiminaro_cs2_spec5.png",
+      "kimimaro__costume_091__kiminaro_cs2_spec6.png",
+      "kimimaro__costume_092__kiminaro_cs2_spec7.png",
+      "kimimaro__costume_093__kiminaro_cs2_spec8.png",
+      "kimimaro__costume_094__kiminaro_cs2_spec9.png",
+      "kimimaro__costume_095__kiminaro_cs2_spec10.png",
+      "kimimaro__costume_096__kiminaro_cs2_spec11.png",
+      "kimimaro__costume_097__kiminaro_cs2_spec12.png",
+      "kimimaro__costume_098__kiminaro_cs2_spec13.png"
+    ]
+  },
+  "stateMap": {
+    "IDLE": [
+      "kimimaro__costume_045__kimimaro_stance2.png",
+      "kimimaro__costume_046__kimimaro_stance3.png",
+      "kimimaro__costume_047__kimimaro_stance4.png",
+      "kimimaro__costume_044__kimimaro_stance.png",
+      "kimimaro__costume_057__kiminaro_cs2_stan.png",
+      "kimimaro__costume_058__kiminaro_cs2_stan2.png",
+      "kimimaro__costume_059__kiminaro_cs2_stan3.png",
+      "kimimaro__costume_060__kiminaro_cs2_stan4.png",
+      "kimimaro__costume_061__kiminaro_cs2_stan5.png"
+    ],
+    "WALK": [
+      "kimimaro__costume_019__kimimaro_run_1.png",
+      "kimimaro__costume_020__kimimaro_run_2.png",
+      "kimimaro__costume_021__kimimaro_run_3.png",
+      "kimimaro__costume_022__kimimaro_run_4.png",
+      "kimimaro__costume_024__kimimaro_run_6.png",
+      "kimimaro__costume_063__kiminaro_cs2_run2.png",
+      "kimimaro__costume_065__kiminaro_cs2_run4.png",
+      "kimimaro__costume_066__kiminaro_cs2_run5.png",
+      "kimimaro__costume_067__kiminaro_cs2_run6.png"
+    ],
+    "JUMP": [
+      "kimimaro__costume_017__kimimaro_jump_1.png",
+      "kimimaro__costume_018__kimimaro_jump_2.png",
+      "kimimaro__costume_068__kiminaro_cs2_jump.png",
+      "kimimaro__costume_069__kiminaro_cs2_jump2.png"
+    ],
+    "ATTACK_LIGHT": [
+      "kimimaro__costume_001__kimimaro_combo_1.png",
+      "kimimaro__costume_002__kimimaro_combo_2.png",
+      "kimimaro__costume_009__kimimaro_combo2.png"
+    ],
+    "ATTACK_HEAVY": [
+      "kimimaro__costume_004__kimimaro_combo_5.png",
+      "kimimaro__costume_005__kimimaro_combo_6.png",
+      "kimimaro__costume_006__kimimaro_combo_7.png",
+      "kimimaro__costume_007__kimimaro_combo_8.png"
+    ],
+    "SPECIAL": [
+      "kimimaro__costume_026__kimimaro_special2.png",
+      "kimimaro__costume_027__kimimaro_special3.png",
+      "kimimaro__costume_028__kimimaro_special4.png",
+      "kimimaro__costume_029__kimimaro_special5.png",
+      "kimimaro__costume_030__kimimaro_special6.png",
+      "kimimaro__costume_025__kimimaro_special.png",
+      "kimimaro__costume_031__kimimaro_special7.png",
+      "kimimaro__costume_032__kimimaro_special8.png",
+      "kimimaro__costume_034__kimimaro_special10.png",
+      "kimimaro__costume_035__kimimaro_special11.png",
+      "kimimaro__costume_036__kimimaro_special12.png",
+      "kimimaro__costume_038__kimimaro_special14.png",
+      "kimimaro__costume_041__kimimaro_special17.png",
+      "kimimaro__costume_042__kimimaro_special18.png",
+      "kimimaro__costume_043__kimimaro_special19.png",
+      "kimimaro__costume_086__kiminaro_cs2_spec.png",
+      "kimimaro__costume_087__kiminaro_cs2_spec2.png",
+      "kimimaro__costume_088__kiminaro_cs2_spec3.png",
+      "kimimaro__costume_089__kiminaro_cs2_spec4.png",
+      "kimimaro__costume_090__kiminaro_cs2_spec5.png",
+      "kimimaro__costume_091__kiminaro_cs2_spec6.png",
+      "kimimaro__costume_092__kiminaro_cs2_spec7.png",
+      "kimimaro__costume_093__kiminaro_cs2_spec8.png",
+      "kimimaro__costume_094__kiminaro_cs2_spec9.png",
+      "kimimaro__costume_095__kiminaro_cs2_spec10.png",
+      "kimimaro__costume_096__kiminaro_cs2_spec11.png",
+      "kimimaro__costume_097__kiminaro_cs2_spec12.png",
+      "kimimaro__costume_098__kiminaro_cs2_spec13.png"
+    ],
+    "BLOCK": ["kimimaro__costume_045__kimimaro_stance2.png"],
+    "HIT": [
+      "kimimaro__costume_070__kiminaro_cs2_dama.png",
+      "kimimaro__costume_071__kiminaro_cs2_dama2.png",
+      "kimimaro__costume_011__kimimaro_damage.png",
+      "kimimaro__costume_012__kimimaro_damage2.png",
+      "kimimaro__costume_013__kimimaro_damage3.png",
+      "kimimaro__costume_014__kimimaro_damage4.png",
+      "kimimaro__costume_015__kimimaro_damage5.png",
+      "kimimaro__costume_016__kimimaro_damage6.png",
+      "kimimaro__costume_072__kiminaro_cs2_dama3.png",
+      "kimimaro__costume_073__kiminaro_cs2_dama4.png"
+    ],
+    "KO": [
+      "kimimaro__costume_074__kiminaro_cs2_dama5.png",
+      "kimimaro__costume_075__kiminaro_cs2_dama6.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "kimimaro__costume_001__kimimaro_combo_1.png",
+      "kimimaro__costume_002__kimimaro_combo_2.png",
+      "kimimaro__costume_003__kimimaro_combo_4.png",
+      "kimimaro__costume_008__kimimaro_combo_9.png",
+      "kimimaro__costume_009__kimimaro_combo2.png",
+      "kimimaro__costume_010__kimimaro_combo3.png",
+      "kimimaro__costume_050__transformations.png",
+      "kimimaro__costume_051__transformations2.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "kimimaro__costume_052__transformations3.png",
+      "kimimaro__costume_053__transformations4.png",
+      "kimimaro__costume_054__transformations5.png",
+      "kimimaro__costume_055__transformations6.png",
+      "kimimaro__costume_056__transformations7.png",
+      "kimimaro__costume_076__kiminaro_cs2_comb.png",
+      "kimimaro__costume_077__kiminaro_cs2_comb2.png",
+      "kimimaro__costume_078__kiminaro_cs2_comb3.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "kimimaro__costume_079__kiminaro_cs2_comb4.png",
+      "kimimaro__costume_080__kiminaro_cs2_comb5.png",
+      "kimimaro__costume_081__kiminaro_cs2_comb6.png",
+      "kimimaro__costume_082__kiminaro_cs2_comb7.png",
+      "kimimaro__costume_083__kiminaro_cs2_comb8.png",
+      "kimimaro__costume_084__kiminaro_cs2_comb9.png",
+      "kimimaro__costume_085__kiminaro_cs2_comb10.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "kimimaro__costume_004__kimimaro_combo_5.png",
+      "kimimaro__costume_005__kimimaro_combo_6.png",
+      "kimimaro__costume_006__kimimaro_combo_7.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "kimimaro__costume_007__kimimaro_combo_8.png",
+      "kimimaro__costume_010__kimimaro_combo3.png"
+    ],
+    "SPECIAL_TRANSFORM": ["kimimaro__costume_050__transformations.png"]
+  },
+  "meta": {
+    "fixedCounts": {
+      "IDLE": 9,
+      "WALK": 9,
+      "JUMP": 4,
+      "ATTACK_LIGHT": 3,
+      "ATTACK_HEAVY": 4,
+      "SPECIAL": 28,
+      "BLOCK": 1,
+      "HIT": 10,
+      "KO": 2,
+      "ATTACK_LIGHT_1": 1,
+      "ATTACK_LIGHT_2": 1,
+      "ATTACK_LIGHT_3": 18,
+      "ATTACK_HEAVY_1": 1,
+      "ATTACK_HEAVY_2": 1,
+      "SPECIAL_TRANSFORM": 1
+    },
+    "fallbacks": [],
+    "genericRatio": 0,
+    "mostlyGeneric": false,
+    "autoAssignedAt": "2026-02-24T01:14:08.019Z",
+    "autoAssignedCount": 0
+  }
+}

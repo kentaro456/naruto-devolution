@@ -1,0 +1,268 @@
+{
+  "targetName": "Sasuke",
+  "version": 2,
+  "categories": {},
+  "stateMap": {
+    "IDLE": [
+      "sasuke__stand1.png",
+      "sasuke__stand2.png",
+      "sasuke__stand3.png"
+    ],
+    "WALK": [
+      "sasuke__walk1.png",
+      "sasuke__walk2.png",
+      "sasuke__walk3.png"
+    ],
+    "RUN": [
+      "sasuke__run1.png",
+      "sasuke__run2.png",
+      "sasuke__run3.png"
+    ],
+    "JUMP": [
+      "sasuke__fall.png",
+      "sasuke__jump.png",
+      "sasuke__jumpattack1.png",
+      "sasuke__jumpattack2.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "sasuke__jumpattack1.png",
+      "sasuke__jumpattack2.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "sasuke__jumpattack3.png",
+      "sasuke__upattack1.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "sasuke__upattack2.png",
+      "sasuke__upattack3.png",
+      "sasuke__upattack4.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "sasuke__jumpattack1.png",
+      "sasuke__jumpattack2.png",
+      "sasuke__jumpattack3.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "sasuke__upattack1.png",
+      "sasuke__upattack2.png",
+      "sasuke__upattack3.png",
+      "sasuke__upattack4.png"
+    ],
+    "RUN_ATTACK": [
+      "sasuke__jumpattack1.png",
+      "sasuke__jumpattack2.png",
+      "sasuke__jumpattack3.png",
+      "sasuke__upattack1.png"
+    ],
+    "THROW": [
+      "sasuke__weaponthrow1.png",
+      "sasuke__handsigns2.png",
+      "sasuke__weaponthrow3.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "sasuke__handsigns1.png",
+      "sasuke__handsigns2.png",
+      "sasuke__handsigns3.png",
+      "sasuke__teleport1.png",
+      "sasuke__teleport2.png"
+    ],
+    "SPECIAL": [
+      "sasuke__chidori1.png",
+      "sasuke__chidori2.png",
+      "sasuke__chidori3.png",
+      "sasuke__chidori4.png",
+      "sasuke__chidori5.png",
+      "sasuke__chidori6.png",
+      "sasuke__chidori7.png",
+      "sasuke__chidori8.png",
+      "sasuke__chidori9.png",
+      "sasuke__chidori10.png"
+    ],
+    "BLOCK": [
+      "sasuke__land2crouch.png"
+    ],
+    "HIT": [
+      "sasuke__damage1.png",
+      "sasuke__damage2.png",
+      "sasuke__damage3.png"
+    ],
+    "KO": [
+      "sasuke__fall.png"
+    ],
+    "ATTACK_LIGHT": [
+      "sasuke__jumpattack1.png",
+      "sasuke__jumpattack2.png"
+    ],
+    "ATTACK_HEAVY": [
+      "sasuke__jumpattack1.png",
+      "sasuke__jumpattack2.png",
+      "sasuke__jumpattack3.png"
+    ],
+    "DASH": [
+      "sasuke__teleport1.png",
+      "sasuke__teleport2.png"
+    ],
+    "ARCHIVE_POOL": [
+      "sasuke__chidori11.png",
+      "sasuke__chidori12.png",
+      "sasuke__chidori13.png",
+      "sasuke__chidori14.png",
+      "sasuke__chidori15.png",
+      "sasuke__chidori16.png",
+      "sasuke__chidori17.png",
+      "sasuke__chidori18.png",
+      "sasuke__chidori19.png",
+      "sasuke__chidori20.png",
+      "sasuke__chidori21.png",
+      "sasuke__chidori22.png",
+      "sasuke__chidoritousen1.png",
+      "sasuke__chidoritousen2.png",
+      "sasuke__chidoritousen3.png",
+      "sasuke__chidoritousen4.png",
+      "sasuke__chidoritousen5.png",
+      "sasuke__damage5.png",
+      "sasuke__katon1.png",
+      "sasuke__katon2.png",
+      "sasuke__katon3.png",
+      "sasuke__katon4.png",
+      "sasuke__katon5.png",
+      "sasuke__katon6.png",
+      "sasuke__katon7.png",
+      "sasuke__katon8.png",
+      "sasuke__katon9.png",
+      "sasuke__katon10.png",
+      "sasuke__katon11.png",
+      "sasuke__katon12.png",
+      "sasuke__katon13.png",
+      "sasuke__katon14.png",
+      "sasuke__katon15.png",
+      "sasuke__katon16.png",
+      "sasuke__katon17.png",
+      "sasuke__kirin1.png",
+      "sasuke__kirin2.png",
+      "sasuke__kirin3.png",
+      "sasuke__kirin4.png",
+      "sasuke__kirin5.png",
+      "sasuke__kirin6.png",
+      "sasuke__kirin7.png",
+      "sasuke__kirin8.png",
+      "sasuke__kirin9.png",
+      "sasuke__kirin10.png",
+      "sasuke__kirin9.png",
+      "sasuke__kirin8.png",
+      "sasuke__kirin13.png",
+      "sasuke__land1.png",
+      "sasuke__snakefist1.png",
+      "sasuke__snakefist2.png",
+      "sasuke__snakefist3.png",
+      "sasuke__snakefist4.png",
+      "sasuke__snakefist5.png",
+      "sasuke__snakefist6.png",
+      "sasuke__sword1.png",
+      "sasuke__sword3.png",
+      "sasuke__sword4.png",
+      "sasuke__sword5.png",
+      "sasuke__sword6.png",
+      "sasuke__sword7.png",
+      "sasuke__sword8.png",
+      "sasuke__sword9.png",
+      "sasuke__sword10.png",
+      "sasuke__sword11.png",
+      "sasuke__sword12.png",
+      "sasuke__sword13.png",
+      "sasuke__sword14.png",
+      "sasuke__sword15.png",
+      "sasuke__sword16.png",
+      "sasuke__sword17.png"
+    ]
+  },
+  "combo": {
+    "settings": {
+      "comboCancelRatio": 0.45,
+      "comboHitResetFrames": 50,
+      "attackDurationScale": 1.2,
+      "specialTransformDurationScale": 1.35,
+      "requireHitForComboRoutes": false
+    },
+    "rootRoutes": {
+      "light": {
+        "neutral": "L_N_1",
+        "forward": "L_F_1",
+        "down": "L_D_1",
+        "air": "L_A_1",
+        "back": "L_N_1"
+      },
+      "heavy": {
+        "neutral": "H_N_1",
+        "forward": "H_F_1",
+        "down": "H_D_1",
+        "air": "H_A_1",
+        "back": "H_N_1"
+      },
+      "special": {
+        "any": "S_1"
+      }
+    },
+    "chains": {
+      "light": [
+        {
+          "state": "ATTACK_LIGHT_1",
+          "duration": 13,
+          "damageMultiplier": 1,
+          "rangeMultiplier": 1,
+          "knockbackMultiplier": 0.9
+        },
+        {
+          "state": "ATTACK_LIGHT_2",
+          "duration": 13,
+          "damageMultiplier": 1.13,
+          "rangeMultiplier": 1.06,
+          "knockbackMultiplier": 1.03
+        },
+        {
+          "state": "ATTACK_LIGHT_3",
+          "duration": 15,
+          "damageMultiplier": 1.3,
+          "rangeMultiplier": 1.12,
+          "knockbackMultiplier": 1.24
+        }
+      ],
+      "heavy": [
+        {
+          "state": "ATTACK_HEAVY_1",
+          "duration": 18,
+          "damageMultiplier": 1.22,
+          "rangeMultiplier": 1.1,
+          "knockbackMultiplier": 1.15
+        },
+        {
+          "state": "ATTACK_HEAVY_2",
+          "duration": 22,
+          "damageMultiplier": 1.45,
+          "rangeMultiplier": 1.18,
+          "knockbackMultiplier": 1.45
+        }
+      ],
+      "special": [
+        {
+          "state": "SPECIAL_TRANSFORM",
+          "duration": 18,
+          "noHit": true
+        },
+        {
+          "state": "SPECIAL",
+          "duration": 28,
+          "damageMultiplier": 1.24,
+          "rangeMultiplier": 1.14,
+          "knockbackMultiplier": 1.24
+        }
+      ]
+    },
+    "nodePatches": {}
+  },
+  "meta": {
+    "polished": true,
+    "fullCoverage": true,
+    "leftoversInArchive": 71
+  }
+}

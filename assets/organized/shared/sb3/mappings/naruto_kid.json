@@ -1,0 +1,247 @@
+{
+  "targetName": "Naruto Kid",
+  "version": 1,
+  "categories": {
+    "idle": ["naruto__costume_001__narutostd.png"],
+    "walk": [
+      "naruto__costume_119__naruto_run_1.png",
+      "naruto__costume_120__naruto_run_2.png",
+      "naruto__costume_121__naruto_run_3.png",
+      "naruto__costume_122__naruto_run_4.png",
+      "naruto__costume_123__naruto_run_5.png",
+      "naruto__costume_124__naruto_run_6.png"
+    ],
+    "jump": [
+      "naruto__costume_002__narutojmp6.png",
+      "naruto__costume_003__narutojmp12.png",
+      "naruto__costume_065__narutojmp.png",
+      "naruto__costume_066__narutojmp13.png",
+      "naruto__costume_067__narutojmp14.png"
+    ],
+    "attack_light": [
+      "naruto__costume_004__narutoatk3.png",
+      "naruto__costume_005__narutoatk6.png",
+      "naruto__costume_006__narutoatk9.png",
+      "naruto__costume_007__narutoatk11.png",
+      "naruto__costume_008__narutoatk15.png",
+      "naruto__costume_009__narutoatk18.png",
+      "naruto__costume_010__narutoatk21.png",
+      "naruto__costume_011__narutoatk24.png",
+      "naruto__costume_012__narutoatk30.png",
+      "naruto__costume_013__narutoatk33.png"
+    ],
+    "attack_heavy": [
+      "naruto__costume_014__narutorenden3.png",
+      "naruto__costume_015__narutorenden6.png",
+      "naruto__costume_016__narutorenden9.png",
+      "naruto__costume_017__narutorenden12.png",
+      "naruto__costume_018__narutorenden14.png",
+      "naruto__costume_019__narutorenden18.png",
+      "naruto__costume_020__narutorenden24.png",
+      "naruto__costume_021__narutorenden27.png",
+      "naruto__costume_022__narutorenden30.png",
+      "naruto__costume_023__narutorenden33.png"
+    ],
+    "special_transform": [
+      "naruto__costume_109__narutoappear.png",
+      "naruto__costume_110__narutoappear2.png",
+      "naruto__costume_111__narutoappear3.png",
+      "naruto__costume_112__narutoappear4.png",
+      "naruto__costume_126__transformation_1.png",
+      "naruto__costume_127__transformation_2.png",
+      "naruto__costume_128__transformation_3.png"
+    ],
+    "block": ["naruto__costume_001__narutostd.png"],
+    "hit": [
+      "naruto__costume_114__naruto_fall1.png",
+      "naruto__costume_115__naruto_fall2.png",
+      "naruto__costume_113__narutoblood.png",
+      "naruto__costume_125__naruto_damage_1.png"
+    ],
+    "ko": [
+      "naruto__costume_114__naruto_fall1.png",
+      "naruto__costume_115__naruto_fall2.png",
+      "naruto__costume_116__naruto_fall3.png",
+      "naruto__costume_117__naruto_fall4.png",
+      "naruto__costume_118__naruto_fall5.png"
+    ],
+    "special": [
+      "naruto__costume_024__narutorasengan.png",
+      "naruto__costume_025__narutorasengan2.png",
+      "naruto__costume_026__narutorasengan3.png",
+      "naruto__costume_027__narutorasengan4.png",
+      "naruto__costume_028__narutorasengan5.png",
+      "naruto__costume_029__narutorasengan6.png",
+      "naruto__costume_030__narutorasengan7.png",
+      "naruto__costume_031__narutorasengan8.png",
+      "naruto__costume_032__narutorasengan9.png",
+      "naruto__costume_033__narutorasengan10.png",
+      "naruto__costume_034__narutorasengan11.png",
+      "naruto__costume_035__narutorasengan12.png",
+      "naruto__costume_036__narutorasengan13.png",
+      "naruto__costume_037__narutorasengan14.png",
+      "naruto__costume_038__narutorasengan15.png",
+      "naruto__costume_039__narutorasengan16.png",
+      "naruto__costume_040__narutorasengan17.png",
+      "naruto__costume_041__narutorasengan18.png",
+      "naruto__costume_042__narutorasengan19.png",
+      "naruto__costume_043__narutorasengan20.png",
+      "naruto__costume_044__narutorasengan21.png",
+      "naruto__costume_045__narutorasengan22.png",
+      "naruto__costume_046__narutorasengan23.png",
+      "naruto__costume_047__narutorasengan24.png",
+      "naruto__costume_048__narutorasengan25.png",
+      "naruto__costume_049__narutorasengan26.png",
+      "naruto__costume_050__narutorasengan27.png",
+      "naruto__costume_051__narutorasengan28.png",
+      "naruto__costume_052__narutorasengan29.png",
+      "naruto__costume_053__narutorasengan30.png",
+      "naruto__costume_054__narutorasengan31.png",
+      "naruto__costume_055__narutorasengan32.png",
+      "naruto__costume_056__narutorasengan33.png",
+      "naruto__costume_057__narutorasengan34.png"
+    ]
+  },
+  "stateMap": {
+    "IDLE": ["naruto__costume_001__narutostd.png"],
+    "WALK": [
+      "naruto__costume_119__naruto_run_1.png",
+      "naruto__costume_120__naruto_run_2.png",
+      "naruto__costume_121__naruto_run_3.png",
+      "naruto__costume_122__naruto_run_4.png",
+      "naruto__costume_123__naruto_run_5.png",
+      "naruto__costume_124__naruto_run_6.png"
+    ],
+    "JUMP": [
+      "naruto__costume_002__narutojmp6.png",
+      "naruto__costume_003__narutojmp12.png",
+      "naruto__costume_065__narutojmp.png",
+      "naruto__costume_066__narutojmp13.png",
+      "naruto__costume_067__narutojmp14.png"
+    ],
+    "ATTACK_LIGHT": [
+      "naruto__costume_004__narutoatk3.png",
+      "naruto__costume_005__narutoatk6.png",
+      "naruto__costume_006__narutoatk9.png"
+    ],
+    "ATTACK_HEAVY": [
+      "naruto__costume_014__narutorenden3.png",
+      "naruto__costume_015__narutorenden6.png",
+      "naruto__costume_016__narutorenden9.png",
+      "naruto__costume_017__narutorenden12.png"
+    ],
+    "SPECIAL": [
+      "naruto__costume_024__narutorasengan.png",
+      "naruto__costume_025__narutorasengan2.png",
+      "naruto__costume_026__narutorasengan3.png",
+      "naruto__costume_027__narutorasengan4.png",
+      "naruto__costume_028__narutorasengan5.png",
+      "naruto__costume_029__narutorasengan6.png",
+      "naruto__costume_030__narutorasengan7.png",
+      "naruto__costume_031__narutorasengan8.png",
+      "naruto__costume_032__narutorasengan9.png",
+      "naruto__costume_033__narutorasengan10.png",
+      "naruto__costume_034__narutorasengan11.png",
+      "naruto__costume_035__narutorasengan12.png",
+      "naruto__costume_036__narutorasengan13.png",
+      "naruto__costume_037__narutorasengan14.png",
+      "naruto__costume_038__narutorasengan15.png",
+      "naruto__costume_039__narutorasengan16.png",
+      "naruto__costume_040__narutorasengan17.png",
+      "naruto__costume_041__narutorasengan18.png",
+      "naruto__costume_042__narutorasengan19.png",
+      "naruto__costume_043__narutorasengan20.png",
+      "naruto__costume_044__narutorasengan21.png",
+      "naruto__costume_045__narutorasengan22.png",
+      "naruto__costume_046__narutorasengan23.png",
+      "naruto__costume_047__narutorasengan24.png",
+      "naruto__costume_048__narutorasengan25.png",
+      "naruto__costume_049__narutorasengan26.png",
+      "naruto__costume_050__narutorasengan27.png",
+      "naruto__costume_051__narutorasengan28.png",
+      "naruto__costume_052__narutorasengan29.png",
+      "naruto__costume_053__narutorasengan30.png",
+      "naruto__costume_054__narutorasengan31.png",
+      "naruto__costume_055__narutorasengan32.png",
+      "naruto__costume_056__narutorasengan33.png",
+      "naruto__costume_057__narutorasengan34.png"
+    ],
+    "BLOCK": ["naruto__costume_001__narutostd.png"],
+    "HIT": [
+      "naruto__costume_114__naruto_fall1.png",
+      "naruto__costume_115__naruto_fall2.png",
+      "naruto__costume_113__narutoblood.png",
+      "naruto__costume_125__naruto_damage_1.png"
+    ],
+    "KO": [
+      "naruto__costume_114__naruto_fall1.png",
+      "naruto__costume_115__naruto_fall2.png",
+      "naruto__costume_116__naruto_fall3.png",
+      "naruto__costume_117__naruto_fall4.png",
+      "naruto__costume_118__naruto_fall5.png"
+    ],
+    "ATTACK_LIGHT_1": [
+      "naruto__costume_004__narutoatk3.png",
+      "naruto__costume_005__narutoatk6.png",
+      "naruto__costume_006__narutoatk9.png"
+    ],
+    "ATTACK_LIGHT_2": [
+      "naruto__costume_007__narutoatk11.png",
+      "naruto__costume_008__narutoatk15.png",
+      "naruto__costume_009__narutoatk18.png"
+    ],
+    "ATTACK_LIGHT_3": [
+      "naruto__costume_010__narutoatk21.png",
+      "naruto__costume_011__narutoatk24.png",
+      "naruto__costume_012__narutoatk30.png",
+      "naruto__costume_013__narutoatk33.png"
+    ],
+    "ATTACK_HEAVY_1": [
+      "naruto__costume_014__narutorenden3.png",
+      "naruto__costume_015__narutorenden6.png",
+      "naruto__costume_016__narutorenden9.png",
+      "naruto__costume_017__narutorenden12.png",
+      "naruto__costume_018__narutorenden14.png"
+    ],
+    "ATTACK_HEAVY_2": [
+      "naruto__costume_019__narutorenden18.png",
+      "naruto__costume_020__narutorenden24.png",
+      "naruto__costume_021__narutorenden27.png",
+      "naruto__costume_022__narutorenden30.png",
+      "naruto__costume_023__narutorenden33.png"
+    ],
+    "SPECIAL_TRANSFORM": [
+      "naruto__costume_109__narutoappear.png",
+      "naruto__costume_110__narutoappear2.png",
+      "naruto__costume_111__narutoappear3.png",
+      "naruto__costume_112__narutoappear4.png",
+      "naruto__costume_126__transformation_1.png",
+      "naruto__costume_127__transformation_2.png",
+      "naruto__costume_128__transformation_3.png"
+    ]
+  },
+  "meta": {
+    "fixedCounts": {
+      "IDLE": 1,
+      "WALK": 6,
+      "JUMP": 5,
+      "ATTACK_LIGHT": 3,
+      "ATTACK_HEAVY": 4,
+      "SPECIAL": 34,
+      "BLOCK": 1,
+      "HIT": 4,
+      "KO": 5,
+      "ATTACK_LIGHT_1": 3,
+      "ATTACK_LIGHT_2": 3,
+      "ATTACK_LIGHT_3": 4,
+      "ATTACK_HEAVY_1": 5,
+      "ATTACK_HEAVY_2": 5,
+      "SPECIAL_TRANSFORM": 7
+    },
+    "fallbacks": [],
+    "genericRatio": 0,
+    "mostlyGeneric": false,
+    "autoAssignedAt": "2026-02-24T01:14:08.090Z",
+    "autoAssignedCount": 0
+  }
+}
