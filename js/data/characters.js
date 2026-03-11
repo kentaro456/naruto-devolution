@@ -106,62 +106,62 @@ const KAKASHI_EXTENDED_PLAN = [
     ['EFFECT_AMATERASU', 11, 4],
 ];
 
-function sb3SpriteConfig(targetName, mappingSlug = null, plan = null) {
+function sb3SpriteConfig(targetName, mappingSlug = null, plan = null, cellSize = 64) {
     const slug = (mappingSlug || targetName).trim().toLowerCase().replace(/[^a-z0-9]+/g, '_');
     const cfg = {
         mode: 'sb3-target-mapped',
         targetName,
         assetsBasePath: SB3_ASSETS_BASE,
         mappingPath: `${SB3_MAPPINGS_BASE}/${slug}.json`,
-        cellSize: 64,
     };
+    if (cellSize !== null) cfg.cellSize = cellSize;
     if (plan) cfg.plan = plan;
     return cfg;
 }
 
-function sb3FullpackSpriteConfig(targetName, plan = null) {
+function sb3FullpackSpriteConfig(targetName, plan = null, cellSize = 64) {
     const cfg = {
         mode: 'sb3-target',
         targetName,
         assetsBasePath: SB3_FULLPACK_ASSETS_BASE,
-        cellSize: 64,
     };
+    if (cellSize !== null) cfg.cellSize = cellSize;
     if (plan) cfg.plan = plan;
     return cfg;
 }
 
-function sb3FullpackMappedSpriteConfig(targetName, mappingSlug, plan = null) {
+function sb3FullpackMappedSpriteConfig(targetName, mappingSlug, plan = null, cellSize = 64) {
     const cfg = {
         mode: 'sb3-target-mapped',
         targetName,
         assetsBasePath: SB3_FULLPACK_ASSETS_BASE,
         mappingPath: `assets/organized/shared/sb3_fullpack/mappings/${mappingSlug}.json`,
-        cellSize: 64,
     };
+    if (cellSize !== null) cfg.cellSize = cellSize;
     if (plan) cfg.plan = plan;
     return cfg;
 }
 
-function wholeLotMappedSpriteConfig(targetName, mappingSlug, plan = null) {
+function wholeLotMappedSpriteConfig(targetName, mappingSlug, plan = null, cellSize = 64) {
   const cfg = {
     mode: 'sb3-target-mapped',
     targetName,
     assetsBasePath: SB3_FULLPACK_ASSETS_BASE,
     mappingPath: `assets/organized/shared/sb3_fullpack/mappings/${mappingSlug}.json`,
-    cellSize: 64,
   };
+  if (cellSize !== null) cfg.cellSize = cellSize;
     if (plan) cfg.plan = plan;
     return cfg;
 }
 
-function superMappedSpriteConfig(targetName, mappingSlug, plan = null) {
+function superMappedSpriteConfig(targetName, mappingSlug, plan = null, cellSize = 64) {
   const cfg = {
     mode: 'sb3-target-mapped',
     targetName,
     assetsBasePath: SB3_FULLPACK_ASSETS_BASE,
     mappingPath: `assets/organized/shared/sb3_fullpack/mappings/${mappingSlug}.json`,
-    cellSize: 64,
   };
+  if (cellSize !== null) cfg.cellSize = cellSize;
     if (plan) cfg.plan = plan;
     return cfg;
 }
@@ -609,7 +609,7 @@ const CHARACTER_ROSTER = [
         color: '#5B1E1E',
         thumbnail: 'assets/organized/shared/sb3_fullpack/madara__stance.png',
         sprite: SB3_FULLPACK_MANIFEST,
-        spriteConfig: sb3FullpackMappedSpriteConfig('Madara', 'madara', FULLPACK_EXTENDED_PLAN),
+        spriteConfig: sb3FullpackMappedSpriteConfig('Madara', 'madara', FULLPACK_EXTENDED_PLAN, null),
         stats: { speed: 7, power: 10, defense: 6, chakra: 9 },
     },
 
