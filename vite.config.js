@@ -5,14 +5,21 @@ import react from '@vitejs/plugin-react';
 
 function copyAssetsPlugin() {
   return {
-    name: 'copy-app-assets',
+    name: 'copy-app-assets-and-legacy-runtime',
     apply: 'build',
     async writeBundle() {
       const root = process.cwd();
-      const sourcePath = resolve(root, 'assets');
-      const targetPath = resolve(root, 'dist/assets');
-      await mkdir(dirname(targetPath), { recursive: true });
-      await cp(sourcePath, targetPath, { recursive: true, force: true });
+      const copies = [
+        ['assets', 'dist/assets'],
+        ['js', 'dist/js'],
+      ];
+
+      for (const [sourceDir, targetDir] of copies) {
+        const sourcePath = resolve(root, sourceDir);
+        const targetPath = resolve(root, targetDir);
+        await mkdir(dirname(targetPath), { recursive: true });
+        await cp(sourcePath, targetPath, { recursive: true, force: true });
+      }
     },
   };
 }
