@@ -120,6 +120,15 @@ class KankuroFighter extends Fighter {
       rotation,
       scaleX,
       scaleY,
+      pixiEffects: {
+        kind: 'kankuro',
+        stringReach,
+        puppetScale,
+        puppetState,
+        specialState: state === 'SPECIAL' || state === 'SPECIAL_TRANSFORM',
+        stringBob: Math.sin(this._getLoopPhase(18) * Math.PI * 2),
+        puppetBob: Math.sin(this._getLoopPhase(22) * Math.PI * 2),
+      },
       underlay: (ctx, info) => {
         this._renderPuppetShadow(ctx, info, 0.74 + stringReach * 0.12);
         if (stringReach > 0.08) this._renderChakraStrings(ctx, info, stringReach, puppetScale, puppetState);

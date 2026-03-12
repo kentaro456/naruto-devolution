@@ -1,41 +1,18 @@
-import { cp, lstat, mkdir, rm, writeFile } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { cp, mkdir, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-function copyRuntimeStatic(copyEntries, cleanEntries = copyEntries) {
+function copyAssetsPlugin() {
   return {
-    name: 'copy-runtime-static',
+    name: 'copy-app-assets',
     apply: 'build',
-    async buildStart() {
-      const root = process.cwd();
-      const distDir = resolve(root, 'dist');
-
-      await Promise.all(
-        cleanEntries.map(async (entry) => {
-          const targetPath = resolve(distDir, entry);
-          await rm(targetPath, { force: true, recursive: true });
-        })
-      );
-    },
     async writeBundle() {
       const root = process.cwd();
-      const distDir = resolve(root, 'dist');
-
-      for (const entry of copyEntries) {
-        const sourcePath = resolve(root, entry);
-        const targetPath = resolve(distDir, entry);
-
-        if (!existsSync(sourcePath)) continue;
-        const sourceStats = await lstat(sourcePath);
-
-        await mkdir(dirname(targetPath), { recursive: true });
-        await cp(sourcePath, targetPath, {
-          force: true,
-          recursive: sourceStats.isDirectory(),
-        });
-      }
+      const sourcePath = resolve(root, 'assets');
+      const targetPath = resolve(root, 'dist/assets');
+      await mkdir(dirname(targetPath), { recursive: true });
+      await cp(sourcePath, targetPath, { recursive: true, force: true });
     },
   };
 }
@@ -80,12 +57,9 @@ function localApiPlugin() {
 export default defineConfig({
   plugins: [
     react(),
-    copyRuntimeStatic(['assets', 'js'], ['assets', 'js', 'css', 'mapper.html']),
+    copyAssetsPlugin(),
     localApiPlugin(),
   ],
-  build: {
-    emptyOutDir: false,
-  },
   server: {
     port: 5173,
   },

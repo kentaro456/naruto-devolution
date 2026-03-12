@@ -8,6 +8,7 @@ class Renderer {
         this.ctx = canvas.getContext('2d');
         this.backgroundCache = new Map();
         this.projectileImageCache = new Map();
+        this.pixiCharacterLayer = window.LegacyPixiCharacters || null;
         this.resize();
         window.addEventListener('resize', () => this.resize());
     }
@@ -37,12 +38,68 @@ class Renderer {
         this.ctx.imageSmoothingEnabled = false;
     }
 
+    _getLegacyVisualScaleOverride(fighter) {
+        const key = String(fighter?.charId || fighter?.id || fighter?.name || '')
+            .trim()
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '_')
+            .replace(/^_+|_+$/g, '');
+        const overrides = {
+            gaara: 1.12,
+            gaara_grand_alt: 2.35,
+            madara: 1.75,
+            kisame: 1.14,
+            itachi: 1.08,
+            minato: 1.06,
+            kakashi: 1.05,
+            teen_kakashi: 1.05,
+        };
+        if (overrides[key]) return overrides[key];
+
+        const displayScale = Number(fighter?.displayScale);
+        if (!Number.isFinite(displayScale)) return 1;
+        if (displayScale <= 0.35) return 1.7;
+        if (displayScale <= 0.45) return 1.32;
+        if (displayScale <= 0.68) return 1.12;
+        return 1;
+    }
+
+    beginFrame(scenePayload = null) {
+        this.pixiCharacterLayer = window.LegacyPixiCharacters || null;
+        if (this.pixiCharacterLayer && typeof this.pixiCharacterLayer.updateScene === 'function') {
+            this.pixiCharacterLayer.updateScene(scenePayload || {});
+        }
+        if (this.pixiCharacterLayer && typeof this.pixiCharacterLayer.beginFrame === 'function') {
+            this.pixiCharacterLayer.beginFrame(this.canvas);
+        }
+    }
+
+    handlesPixiSceneFx() {
+        return !!(this.pixiCharacterLayer && typeof this.pixiCharacterLayer.updateScene === 'function');
+    }
+
+    endFrame() {
+        if (this.pixiCharacterLayer && typeof this.pixiCharacterLayer.endFrame === 'function') {
+            this.pixiCharacterLayer.endFrame();
+        }
+    }
+
     clear() {
         this.ctx.clearRect(0, 0, this.gameWidth, this.gameHeight);
     }
 
     // Draw a stage background
     drawBackground(stage, camera) {
+        if (this.pixiCharacterLayer && typeof this.pixiCharacterLayer.drawBackground === 'function') {
+            const handledByPixi = this.pixiCharacterLayer.drawBackground({
+                stage,
+                camera,
+                gameWidth: this.gameWidth,
+                gameHeight: this.gameHeight,
+            });
+            if (handledByPixi) return;
+        }
+
         const ctx = this.ctx;
         let hasBackgroundImage = false;
 
@@ -209,7 +266,7 @@ class Renderer {
         if (fighter.directSpritePath) {
             const entry = this._getProjectileImage(fighter.directSpritePath);
             if (entry && entry.loaded && entry.image.width > 0 && entry.image.height > 0) {
-                const dScale = fighter.displayScale * zoom;
+                const dScale = fighter.displayScale * zoom * this._getLegacyVisualScaleOverride(fighter);
                 return {
                     kind: 'direct',
                     zoom,
@@ -227,7 +284,7 @@ class Renderer {
             && fighter.spriteSheet.complete !== false;
         if (!spriteReady) return placeholder;
 
-        const dScale = fighter.displayScale * zoom;
+        const dScale = fighter.displayScale * zoom * this._getLegacyVisualScaleOverride(fighter);
         if (fighter.useFullSprite) {
             return {
                 kind: 'full',
@@ -282,8 +339,55 @@ class Renderer {
             zoom: spriteInfo.zoom || (Number.isFinite(camera?.zoom) ? camera.zoom : 1),
             dir: fighter.facingRight ? 1 : -1,
         };
+        const pixiCanHandlePoseFx = !!(
+            pose &&
+            pose.pixiEffects &&
+            this.pixiCharacterLayer &&
+            typeof this.pixiCharacterLayer.drawFighter === 'function'
+        );
 
-        if (pose && typeof pose.underlay === 'function') {
+        if (pose && typeof pose.underlay === 'function' && !pixiCanHandlePoseFx) {
+            pose.underlay(ctx, poseInfo);
+        }
+
+        if (this.pixiCharacterLayer && typeof this.pixiCharacterLayer.drawFighter === 'function') {
+            const handledByPixi = this.pixiCharacterLayer.drawFighter({
+                fighter: {
+                    id: fighter.id || fighter.charId,
+                    charId: fighter.charId,
+                    name: fighter.name,
+                    spriteSheet: fighter.spriteSheet,
+                    animations: fighter.animations,
+                    frameWidth: fighter.frameWidth,
+                    frameHeight: fighter.frameHeight,
+                    animFrame: fighter.animFrame,
+                    animationKey: typeof fighter._resolveAnimationStateKey === 'function'
+                        ? fighter._resolveAnimationStateKey(fighter.state)
+                        : fighter.state,
+                    facingRight: fighter.facingRight,
+                    hitFlash: fighter.hitFlash,
+                    state: fighter.state,
+                    dashTimer: fighter.dashTimer,
+                    stateTimer: fighter.stateTimer,
+                    currentAttackType: fighter.currentAttackType,
+                    vx: fighter.vx,
+                    vy: fighter.vy,
+                    grounded: fighter.grounded
+                },
+                spriteInfo,
+                pose,
+                screenX,
+                screenY,
+            });
+            if (handledByPixi) {
+                if (pose && typeof pose.overlay === 'function' && !pixiCanHandlePoseFx) {
+                    pose.overlay(ctx, poseInfo);
+                }
+                return;
+            }
+        }
+
+        if (pose && typeof pose.underlay === 'function' && pixiCanHandlePoseFx) {
             pose.underlay(ctx, poseInfo);
         }
 
@@ -413,6 +517,17 @@ class Renderer {
         if (!Number.isFinite(drawX) || !Number.isFinite(drawY)) return;
         const screenX = this._worldToScreenX(drawX, camera) + shake.x;
         const screenY = this._worldToScreenY(drawY, camera) + shake.y;
+        if (this.pixiCharacterLayer && typeof this.pixiCharacterLayer.drawProjectile === 'function') {
+            const handledByPixi = this.pixiCharacterLayer.drawProjectile({
+                projectile,
+                screenX,
+                screenY,
+                zoom: camera.zoom,
+            });
+            if (handledByPixi) {
+                return;
+            }
+        }
         // No rotation — projectiles fly straight; flip for direction
         const facingLeft = (projectile.vx || 0) < 0;
 
@@ -503,9 +618,22 @@ class Renderer {
 
     // Draw hit effects / particles
     drawParticle(particle, camera) {
+        const shake = camera?.getShakeOffset ? camera.getShakeOffset() : { x: 0, y: 0 };
+        const screenX = this._worldToScreenX(particle.x, camera) + shake.x;
+        const screenY = this._worldToScreenY(particle.y, camera) + shake.y;
+        if (this.pixiCharacterLayer && typeof this.pixiCharacterLayer.drawParticle === 'function') {
+            const handledByPixi = this.pixiCharacterLayer.drawParticle({
+                particle,
+                screenX,
+                screenY,
+                zoom: camera.zoom,
+            });
+            if (handledByPixi) {
+                return true;
+            }
+        }
+
         const ctx = this.ctx;
-        const screenX = this._worldToScreenX(particle.x, camera);
-        const screenY = this._worldToScreenY(particle.y, camera);
 
         ctx.globalAlpha = particle.alpha;
         ctx.fillStyle = particle.color;
@@ -513,14 +641,34 @@ class Renderer {
         ctx.arc(screenX, screenY, particle.radius * camera.zoom, 0, Math.PI * 2);
         ctx.fill();
         ctx.globalAlpha = 1;
+        return true;
     }
 
     // Draw combo / special text
     drawComboText(text, x, y, camera) {
-        const ctx = this.ctx;
         const screenX = this._worldToScreenX(x, camera);
         const screenY = this._worldToScreenY(y, camera);
+        if (this.pixiCharacterLayer && typeof this.pixiCharacterLayer.drawCombatText === 'function') {
+            const handledByPixi = this.pixiCharacterLayer.drawCombatText({
+                id: `special-label:${text}:${Math.round(screenX)}:${Math.round(screenY)}`,
+                text,
+                screenX,
+                screenY,
+                alpha: 1,
+                size: Math.max(8, 12 * camera.zoom),
+                scale: 1,
+                color: '#FFD93D',
+                align: 'center',
+                style: 'special',
+                screenSpace: true,
+                zIndex: 10950,
+            });
+            if (handledByPixi) {
+                return true;
+            }
+        }
 
+        const ctx = this.ctx;
         const fontSize = Math.max(8, 12 * camera.zoom);
         ctx.font = `${fontSize}px "Press Start 2P"`;
         ctx.fillStyle = '#FFD93D';
@@ -529,6 +677,203 @@ class Renderer {
         ctx.lineWidth = 3;
         ctx.strokeText(text, screenX, screenY);
         ctx.fillText(text, screenX, screenY);
+        return true;
+    }
+
+    drawComboCounter(side, comboState) {
+        if (!(this.pixiCharacterLayer && typeof this.pixiCharacterLayer.drawCombatText === 'function')) {
+            return false;
+        }
+
+        const count = comboState?.isActive ? comboState.count : (comboState?.displayTimer > 0 ? comboState.maxCount : 0);
+        const damage = comboState?.isActive ? comboState.damage : (comboState?.displayTimer > 0 ? comboState.maxDamage : 0);
+        if (count < 2) return false;
+
+        const isLeft = side === 'p1';
+        const alpha = comboState?.isActive ? 1 : Math.min(1, comboState.displayTimer / 30);
+        const x = isLeft ? 30 : this.gameWidth - 30;
+        const y = 120;
+        const align = isLeft ? 'left' : 'right';
+        const fontSize = Math.min(28, 18 + count);
+        let comboColor = '#FFF';
+        if (count >= 15) comboColor = '#FFD700';
+        else if (count >= 10) comboColor = '#FF1744';
+        else if (count >= 7) comboColor = '#FF9800';
+        else if (count >= 5) comboColor = '#2196F3';
+        else if (count >= 3) comboColor = '#4CAF50';
+
+        const baseId = `combo-counter:${side}`;
+        const countHandled = this.pixiCharacterLayer.drawCombatText({
+            id: `${baseId}:count`,
+            text: `${count}`,
+            screenX: x,
+            screenY: y,
+            alpha,
+            size: fontSize,
+            scale: 1,
+            color: comboColor,
+            align,
+            style: 'combo',
+            screenSpace: true,
+            zIndex: 11800,
+        });
+        this.pixiCharacterLayer.drawCombatText({
+            id: `${baseId}:hits`,
+            text: 'HITS',
+            screenX: x,
+            screenY: y + 16,
+            alpha,
+            size: 10,
+            scale: 1,
+            color: '#AAAAAA',
+            align,
+            style: 'popup',
+            screenSpace: true,
+            zIndex: 11800,
+        });
+        this.pixiCharacterLayer.drawCombatText({
+            id: `${baseId}:dmg`,
+            text: `${damage} DMG`,
+            screenX: x,
+            screenY: y + 30,
+            alpha,
+            size: 11,
+            scale: 1,
+            color: '#FF8A80',
+            align,
+            style: 'popup',
+            screenSpace: true,
+            zIndex: 11800,
+        });
+        if (comboState?.isActive && Number.isFinite(comboState.scalePercent) && count >= 3) {
+            this.pixiCharacterLayer.drawCombatText({
+                id: `${baseId}:scale`,
+                text: `${comboState.scalePercent}%`,
+                screenX: x,
+                screenY: y + 42,
+                alpha: alpha * 0.6,
+                size: 9,
+                scale: 1,
+                color: comboState.scalePercent <= 50 ? '#FF5252' : '#FFFFFF',
+                align,
+                style: 'popup',
+                screenSpace: true,
+                zIndex: 11800,
+            });
+        }
+        return !!countHandled;
+    }
+
+    drawFloatingText(popup, camera) {
+        if (!(this.pixiCharacterLayer && typeof this.pixiCharacterLayer.drawCombatText === 'function')) {
+            return false;
+        }
+
+        const screenX = this._worldToScreenX(popup.x, camera);
+        const screenY = this._worldToScreenY(popup.y, camera);
+        return !!this.pixiCharacterLayer.drawCombatText({
+            source: popup,
+            text: popup.text,
+            subtext: popup.subtext,
+            screenX,
+            screenY,
+            alpha: popup.alpha,
+            size: popup.size,
+            scale: popup.scale,
+            color: popup.color,
+            align: 'center',
+            style: popup.type === 'combo' ? 'combo' : 'popup',
+            screenSpace: true,
+            zIndex: 10800,
+        });
+    }
+
+    drawAnnouncerText(announcer) {
+        if (!(this.pixiCharacterLayer && typeof this.pixiCharacterLayer.drawCombatText === 'function')) {
+            return false;
+        }
+        const progress = Math.min(1, Number(announcer.scale) || 1);
+        const eased = progress === 0
+            ? 0.2
+            : Math.pow(2, -10 * progress) * Math.sin((progress * 10 - 0.75) * ((2 * Math.PI) / 3)) + 1;
+        return !!this.pixiCharacterLayer.drawCombatText({
+            id: 'announcer',
+            text: announcer.text,
+            screenX: this.gameWidth / 2,
+            screenY: this.gameHeight * 0.35,
+            alpha: Math.min(1, announcer.timer / 15),
+            size: announcer.text.length > 12 ? 22 : 28,
+            scale: Math.max(0.2, eased),
+            color: announcer.color,
+            align: 'center',
+            style: 'announcer',
+            screenSpace: true,
+            zIndex: 11950,
+        });
+    }
+
+    drawRoundIndicators(p1Wins, p2Wins, maxRounds) {
+        if (!(this.pixiCharacterLayer && typeof this.pixiCharacterLayer.drawRoundIndicators === 'function')) {
+            return false;
+        }
+        return !!this.pixiCharacterLayer.drawRoundIndicators({
+            p1Wins,
+            p2Wins,
+            maxRounds,
+            gameWidth: this.gameWidth,
+        });
+    }
+
+    drawTrainingHud(payload) {
+        if (!(this.pixiCharacterLayer && typeof this.pixiCharacterLayer.drawTrainingHud === 'function')) {
+            return false;
+        }
+        return !!this.pixiCharacterLayer.drawTrainingHud({
+            gameWidth: this.gameWidth,
+            gameHeight: this.gameHeight,
+            ...payload,
+        });
+    }
+
+    drawControlsOverlay(lines) {
+        if (!(this.pixiCharacterLayer && typeof this.pixiCharacterLayer.drawControlsOverlay === 'function')) {
+            return false;
+        }
+        return !!this.pixiCharacterLayer.drawControlsOverlay({
+            gameWidth: this.gameWidth,
+            lines: Array.isArray(lines) ? lines : [],
+        });
+    }
+
+    drawFpsCounter(fps) {
+        if (!(this.pixiCharacterLayer && typeof this.pixiCharacterLayer.drawFpsCounter === 'function')) {
+            return false;
+        }
+        return !!this.pixiCharacterLayer.drawFpsCounter({
+            gameWidth: this.gameWidth,
+            fps,
+        });
+    }
+
+    drawSlowMotionFrame() {
+        if (!(this.pixiCharacterLayer && typeof this.pixiCharacterLayer.drawSlowMotionFrame === 'function')) {
+            return false;
+        }
+        return !!this.pixiCharacterLayer.drawSlowMotionFrame({
+            gameWidth: this.gameWidth,
+            gameHeight: this.gameHeight,
+        });
+    }
+
+    drawCinematicBars(height) {
+        if (!(this.pixiCharacterLayer && typeof this.pixiCharacterLayer.drawCinematicBars === 'function')) {
+            return false;
+        }
+        return !!this.pixiCharacterLayer.drawCinematicBars({
+            gameWidth: this.gameWidth,
+            gameHeight: this.gameHeight,
+            height,
+        });
     }
 
     _drawWorldRect(rect, camera, strokeStyle, fillStyle = null, lineWidth = 1) {

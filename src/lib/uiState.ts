@@ -1,4 +1,6 @@
-export const FALLBACK_UI = {
+import type { GameUIState } from '../types/game-ui';
+
+export const FALLBACK_UI: GameUIState = {
   menuVisible: true,
   charSelectVisible: false,
   hudVisible: false,
@@ -9,7 +11,7 @@ export const FALLBACK_UI = {
   splashVisible: false,
   fightMode: 'player-vs-cpu',
   soundEnabled: true,
-  selectTitle: 'SÉLECTION DU NINJA',
+  selectTitle: 'SELECTION DU NINJA',
   p1Label: 'NINJA 1',
   p2Label: 'RIVAL',
   selectedPlayerId: null,

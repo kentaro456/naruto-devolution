@@ -118,6 +118,14 @@ class NejiFighter extends Fighter {
       rotation,
       scaleX,
       scaleY,
+      pixiEffects: {
+        kind: 'neji',
+        auraPulse,
+        ringPulse,
+        specialState,
+        heavyState: specialState || state.startsWith('ATTACK_HEAVY'),
+        orbitOffset: this._getLoopPhase(32) * 0.12,
+      },
       underlay: (ctx, info) => {
         this._renderTrigramBase(ctx, info, 0.18 + ringPulse * 0.32, specialState);
       },

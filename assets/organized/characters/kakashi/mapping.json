@@ -272,5 +272,13 @@
       "kakashi__combo10.png",
       "kakashi__upattack1-2.png"
     ]
+  },
+  "combo": {
+    "hotkeys": {}
+  },
+  "meta": {
+    "editedByMapper": true,
+    "editedAt": "2026-03-12T01:02:36.866Z",
+    "mappingMode": "react_mapper"
   }
 }

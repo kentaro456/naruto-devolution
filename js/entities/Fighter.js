@@ -893,13 +893,31 @@ class Fighter {
     return true;
   }
 
-  bufferInput(input, dtScale = 1) {
-    Object.keys(this.inputBuffer).forEach((action) => {
-      this.inputBuffer[action] = Math.max(
-        0,
-        this.inputBuffer[action] - dtScale,
-      );
+  /**
+   * Captures and stores inputs in a buffer to make combos more responsive.
+   * If the fighter is currently in an animation that doesn't allow immediate action,
+   * the input is saved for a few frames.
+   */
+  _updateInputBuffer(input, dtScale = 1) {
+    const threshold = 0.5; // Input sensitivity threshold
+    
+    if (input.light) this.inputBuffer.light = this.inputBufferFrames;
+    if (input.heavy) this.inputBuffer.heavy = this.inputBufferFrames;
+    if (input.special) this.inputBuffer.special = this.inputBufferFrames;
+    if (input.transform) this.inputBuffer.transform = this.inputBufferFrames;
+    if (input.dash) this.inputBuffer.dash = this.inputBufferFrames;
+    if (input.jump || input.up) this.inputBuffer.jump = this.inputBufferFrames;
+
+    // Decay buffer
+    Object.keys(this.inputBuffer).forEach(key => {
+      if (this.inputBuffer[key] > 0) {
+        this.inputBuffer[key] -= dtScale;
+      }
     });
+  }
+
+  bufferInput(input, dtScale = 1) {
+    this._updateInputBuffer(input, dtScale);
 
     const nextInput = { ...(input || {}) };
 
@@ -1039,24 +1057,74 @@ class Fighter {
     return true;
   }
 
+  applyMappingRuntimeConfig(mappingConfig) {
+    return this.applyMappingConfig(mappingConfig);
+  }
+
+  async loadMappingConfig(path) {
+    if (!path) return null;
+    const response = await fetch(path);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    return response.json();
+  }
+
+  async loadComboConfigFromMapping(path) {
+    const mapping = await this.loadMappingConfig(path);
+    return mapping?.combo || null;
+  }
+
   applyComboConfig(comboConfig) {
     if (!comboConfig) return;
     if (comboConfig.chains) {
-      this.attacks.light.chain = comboConfig.chains.light || [];
-      this.attacks.heavy.chain = comboConfig.chains.heavy || [];
-      this.attacks.special.chain = comboConfig.chains.special || [];
+      this.comboChains = {
+        ...this.comboChains,
+        light: Array.isArray(comboConfig.chains.light)
+          ? comboConfig.chains.light
+          : this.comboChains.light,
+        heavy: Array.isArray(comboConfig.chains.heavy)
+          ? comboConfig.chains.heavy
+          : this.comboChains.heavy,
+        special: Array.isArray(comboConfig.chains.special)
+          ? comboConfig.chains.special
+          : this.comboChains.special,
+      };
     }
-    if (comboConfig.routes) {
+
+    const hasExplicitRoutes =
+      comboConfig.routes && typeof comboConfig.routes === "object";
+    if (hasExplicitRoutes) {
       this.comboTree = comboConfig.routes;
+      this.currentComboNodeId = null;
+      this.currentComboNode = null;
     } else {
       this._refreshComboTree();
+      const rootRoutes = comboConfig.rootRoutes;
+      if (rootRoutes && typeof rootRoutes === "object") {
+        if (rootRoutes.light) {
+          this._setComboRootRoute("light", rootRoutes.light);
+        }
+        if (rootRoutes.heavy) {
+          this._setComboRootRoute("heavy", rootRoutes.heavy);
+        }
+        if (rootRoutes.special) {
+          this._setComboRootRoute("special", rootRoutes.special);
+        }
+      }
+
+      const nodePatches = comboConfig.nodePatches;
+      if (nodePatches && typeof nodePatches === "object") {
+        Object.entries(nodePatches).forEach(([nodeId, patch]) => {
+          this._patchComboNode(nodeId, patch);
+        });
+      }
     }
-    
-    // Load custom hotkeys if they exist in the config
+
     if (comboConfig.hotkeys) {
       this.hotkeys = {
         ...this.hotkeys,
-        ...comboConfig.hotkeys
+        ...comboConfig.hotkeys,
       };
     }
   }
@@ -2502,6 +2570,29 @@ class Fighter {
       ...(projConfig.fxProfileId ? { fxProfileId: projConfig.fxProfileId } : {}),
     });
     this.spawnedProjectiles.push(projectile);
+  }
+
+  emitSound(id, volume = 1.0) {
+    if (!id) return false;
+    this.spawnedSounds.push({
+      id: String(id),
+      volume: Number.isFinite(Number(volume)) ? Number(volume) : 1.0,
+    });
+    return true;
+  }
+
+  consumeSpawnedSounds() {
+    if (!Array.isArray(this.spawnedSounds) || !this.spawnedSounds.length) return [];
+    const queued = this.spawnedSounds.slice();
+    this.spawnedSounds.length = 0;
+    return queued;
+  }
+
+  consumeSpawnedProjectiles() {
+    if (!Array.isArray(this.spawnedProjectiles) || !this.spawnedProjectiles.length) return [];
+    const queued = this.spawnedProjectiles.slice();
+    this.spawnedProjectiles.length = 0;
+    return queued;
   }
 
   isAttacking() {

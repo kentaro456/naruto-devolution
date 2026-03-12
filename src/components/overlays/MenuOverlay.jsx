@@ -9,14 +9,14 @@ export function MenuOverlay({ ui }) {
   const modeLabel = ui.fightMode === 'cpu-vs-cpu' ? 'Mode Spectateur' : ui.fightMode === 'training-solo' ? 'Entrainement Libre' : 'Combat Libre';
 
   return (
-    <div className="absolute inset-0 z-20 flex items-center bg-slate-950/20 px-12 py-12 backdrop-blur-sm">
+    <div className="absolute inset-0 z-20 overflow-y-auto bg-slate-950/20 px-4 py-4 backdrop-blur-sm sm:px-6 sm:py-6 lg:px-12 lg:py-12">
       {/* Top Left: Game Title & Version Info */}
-      <div className="absolute left-12 top-12 flex flex-col gap-2">
-        <h1 className="font-pixel text-5xl uppercase tracking-[0.1em] text-white drop-shadow-[0_4px_16px_rgba(251,146,60,0.5)] sm:text-7xl">
+      <div className="flex flex-col gap-4 lg:absolute lg:left-12 lg:top-12">
+        <h1 className="font-pixel text-3xl uppercase tracking-[0.08em] text-white drop-shadow-[0_4px_16px_rgba(251,146,60,0.5)] sm:text-5xl lg:text-7xl">
           SHINOBI
-          <span className="block text-4xl text-orange-400 sm:text-6xl">EVOLUTION</span>
+          <span className="block text-2xl text-orange-400 sm:text-4xl lg:text-6xl">EVOLUTION</span>
         </h1>
-        <div className="mt-4 flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <InfoPill tone="orange">Version Arena</InfoPill>
           <InfoPill tone={modeTone}>
             {modeLabel}
@@ -25,7 +25,7 @@ export function MenuOverlay({ ui }) {
       </div>
 
       {/* Center Left: Vertical Menu List */}
-      <div className="mt-48 flex w-80 flex-col gap-4">
+      <div className="mt-8 flex w-full max-w-xl flex-col gap-3 sm:mt-10 lg:mt-48 lg:w-80">
         <MenuButton
           onClick={actions.startVsMode}
           label="Combat Libre"
@@ -56,9 +56,9 @@ export function MenuOverlay({ ui }) {
       </div>
 
       {/* Bottom Right: Quick Controls Legend */}
-      <div className="absolute bottom-12 right-12 rounded-2xl bg-black/40 p-4 backdrop-blur-md border border-white/5">
+      <div className="mt-6 rounded-2xl border border-white/5 bg-black/40 p-4 backdrop-blur-md lg:absolute lg:bottom-12 lg:right-12 lg:mt-0 lg:max-w-xl">
         <div className="mb-2 font-pixel text-[10px] uppercase tracking-[0.2em] text-slate-400">Commandes Ninja</div>
-        <div className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm text-slate-300">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-3 text-sm text-slate-300 sm:grid-cols-2">
           <div className="flex items-center gap-3"><Keycap>Q</Keycap><span>Garde / Chakra</span></div>
           <div className="flex items-center gap-3"><Keycap>S</Keycap><span>Attaque rapide</span></div>
           <div className="flex items-center gap-3"><Keycap>D</Keycap><span>Attaque puissante</span></div>
@@ -78,14 +78,14 @@ function MenuButton({ onClick, label, subtitle, active = false }) {
   return (
     <button
       onClick={onClick}
-      className={`group relative flex flex-col items-start overflow-hidden rounded-xl border border-white/10 px-6 py-4 transition-all duration-300 ease-out hover:scale-105 hover:border-orange-400/50 hover:bg-gradient-to-r hover:from-orange-950/80 hover:to-transparent ${active ? 'bg-gradient-to-r from-slate-900/80 to-transparent shadow-[0_0_20px_rgba(251,146,60,0.15)]' : 'bg-black/40'
+      className={`group relative flex flex-col items-start overflow-hidden rounded-xl border border-white/10 px-4 py-4 text-left transition-all duration-300 ease-out hover:border-orange-400/50 hover:bg-gradient-to-r hover:from-orange-950/80 hover:to-transparent sm:px-6 ${active ? 'bg-gradient-to-r from-slate-900/80 to-transparent shadow-[0_0_20px_rgba(251,146,60,0.15)]' : 'bg-black/40'
         }`}
     >
       <div className="relative z-10 flex flex-col items-start gap-1">
-        <span className="font-pixel text-lg uppercase tracking-wider text-white group-hover:text-orange-300">
+        <span className="font-pixel text-sm uppercase tracking-wider text-white group-hover:text-orange-300 sm:text-lg">
           {label}
         </span>
-        <span className="text-sm text-slate-400 transition-colors group-hover:text-orange-100/70">
+        <span className="text-xs text-slate-400 transition-colors group-hover:text-orange-100/70 sm:text-sm">
           {subtitle}
         </span>
       </div>

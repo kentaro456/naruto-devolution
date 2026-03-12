@@ -40,24 +40,25 @@ const LEGACY_RUNTIME_SCRIPTS = [
   '/js/entities/TentenFighter.js',
   '/js/engine/SoundManager.js',
   '/js/engine/Game.js',
-];
+] as const;
 
-const scriptPromises = new Map();
+const scriptPromises = new Map<string, Promise<void>>();
+let runtimePromise: Promise<typeof window.Game> | null = null;
 
-function ensureRuntimeScript(src) {
+function ensureRuntimeScript(src: string): Promise<void> {
   if (typeof document === 'undefined') {
     return Promise.reject(new Error('Runtime scripts require a browser environment.'));
   }
 
-  const existing = document.querySelector(`script[data-shinobi-runtime="${src}"]`);
+  const existing = document.querySelector<HTMLScriptElement>(`script[data-shinobi-runtime="${src}"]`);
   if (existing?.dataset.loaded === 'true') {
     return Promise.resolve();
   }
   if (scriptPromises.has(src)) {
-    return scriptPromises.get(src);
+    return scriptPromises.get(src)!;
   }
 
-  const promise = new Promise((resolve, reject) => {
+  const promise = new Promise<void>((resolve, reject) => {
     const script = existing || document.createElement('script');
 
     const cleanup = () => {
@@ -90,9 +91,7 @@ function ensureRuntimeScript(src) {
   return promise;
 }
 
-let runtimePromise = null;
-
-export function loadLegacyRuntime() {
+export function loadLegacyRuntime(): Promise<typeof window.Game> {
   if (typeof window !== 'undefined' && typeof window.Game === 'function') {
     return Promise.resolve(window.Game);
   }
@@ -101,7 +100,7 @@ export function loadLegacyRuntime() {
     return runtimePromise;
   }
 
-  runtimePromise = LEGACY_RUNTIME_SCRIPTS.reduce(
+  runtimePromise = LEGACY_RUNTIME_SCRIPTS.reduce<Promise<void>>(
     (chain, src) => chain.then(() => ensureRuntimeScript(src)),
     Promise.resolve(),
   )

@@ -12,28 +12,50 @@ export function HudPanel({ side, data }) {
   const staminaStyle = alignRight
     ? { width: `${(data?.staminaPercent || 0) * 100}%`, right: 0 }
     : { width: `${(data?.staminaPercent || 0) * 100}%`, left: 0 };
+  const comboCount = Math.max(0, Number(data?.comboCount) || 0);
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-4 shadow-[0_14px_34px_rgba(2,6,23,0.45)]">
+    <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-3 shadow-[0_14px_34px_rgba(2,6,23,0.45)] sm:p-4">
       <div className={`font-pixel text-[11px] uppercase tracking-[0.22em] ${alignRight ? 'text-right text-rose-300' : 'text-orange-300'}`}>
         {data?.name || (alignRight ? 'CPU' : 'PLAYER')}
       </div>
-      <div className={`mt-2 flex items-center gap-2 text-xs text-slate-300 ${alignRight ? 'flex-row-reverse' : 'justify-between'}`}>
+      <div className={`mt-2 flex flex-wrap items-center gap-2 text-[11px] text-slate-300 sm:text-xs ${alignRight ? 'flex-row-reverse' : 'justify-between'}`}>
         <span>{data?.healthText || '100 / 100'}</span>
         <span className="rounded-md border border-white/10 bg-white/5 px-2 py-1 font-pixel text-[9px] uppercase tracking-[0.18em] text-slate-200">
           {data?.stateText || 'PRÊT'}
         </span>
       </div>
       <div className="relative mt-3 h-5 overflow-hidden rounded-full border border-white/10 bg-black/60">
-        <div className="absolute inset-y-0 bg-rose-400/30" style={bufferedStyle} />
-        <div className={`absolute inset-y-0 bg-gradient-to-r from-emerald-500 to-emerald-300 ${alignRight ? 'bg-gradient-to-l' : ''}`} style={healthStyle} />
+        <div
+          className="absolute inset-y-0 bg-rose-400/30 transition-all duration-1000 ease-out delay-200"
+          style={bufferedStyle}
+        />
+        <div
+          className={`absolute inset-y-0 transition-all duration-100 bg-gradient-to-r from-emerald-500 to-emerald-300 ${alignRight ? 'bg-gradient-to-l' : ''}`}
+          style={healthStyle}
+        />
       </div>
       <div className="relative mt-2 h-2.5 overflow-hidden rounded-full border border-white/10 bg-black/60">
-        <div className={`absolute inset-y-0 bg-gradient-to-r from-amber-500 to-orange-300 ${alignRight ? 'bg-gradient-to-l' : ''}`} style={chakraStyle} />
+        <div
+          className={`absolute inset-y-0 transition-all duration-150 bg-gradient-to-r from-amber-500 to-orange-300 ${alignRight ? 'bg-gradient-to-l' : ''}`}
+          style={chakraStyle}
+        />
       </div>
       <div className="relative mt-2 h-2.5 overflow-hidden rounded-full border border-white/10 bg-black/60">
-        <div className={`absolute inset-y-0 bg-gradient-to-r from-amber-500 to-yellow-300 ${alignRight ? 'bg-gradient-to-l' : ''}`} style={staminaStyle} />
+        <div
+          className={`absolute inset-y-0 transition-all duration-150 bg-gradient-to-r from-amber-500 to-yellow-300 ${alignRight ? 'bg-gradient-to-l' : ''}`}
+          style={staminaStyle}
+        />
       </div>
+      {comboCount > 1 ? (
+        <div className={`mt-3 flex ${alignRight ? 'justify-end' : 'justify-start'}`}>
+          <div className="animate-bounce rounded-xl border border-amber-200/25 bg-black/45 px-3 py-1.5 shadow-[0_0_22px_rgba(251,191,36,0.28)]">
+            <div className="font-pixel text-[10px] uppercase tracking-[0.28em] text-amber-200">
+              {comboCount} Hits
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

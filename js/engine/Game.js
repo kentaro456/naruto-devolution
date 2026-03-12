@@ -587,6 +587,7 @@ class Game {
                     staminaPercent: fighter1.getStaminaPercent(),
                     healthText: this._formatHp(fighter1),
                     stateText: this._resolveHudStateText(fighter1),
+                    comboCount: Math.max(0, Number(fighter1.comboHitCount) || 0),
                 },
                 p2: hasP2
                     ? {
@@ -597,6 +598,7 @@ class Game {
                         staminaPercent: fighter2.getStaminaPercent(),
                         healthText: this._formatHp(fighter2),
                         stateText: this._resolveHudStateText(fighter2),
+                        comboCount: Math.max(0, Number(fighter2.comboHitCount) || 0),
                     }
                     : null,
                 timer: Math.ceil(timer),
@@ -3130,7 +3132,35 @@ class Game {
        RENDERING
        ═══════════════════════════════════════════ */
     render() {
-        if (this.state === 'MENU' || this.state === 'CHARACTER_SELECT' || this.state === 'BOSS_SELECT') return;
+        const pixiScenePayload = {
+            stage: this.currentStage ? { id: this.currentStage.id } : undefined,
+            camera: this.camera ? {
+                zoom: this.camera.zoom,
+                shakeIntensity: this.camera._shakeIntensity,
+                shakeFrames: this.camera._shakeFrames,
+                shakeMaxFrames: this.camera._shakeMaxFrames,
+            } : undefined,
+            screenFlash: this.screenFlash ? {
+                active: this.screenFlash.active,
+                color: this.screenFlash.color,
+                alpha: this.screenFlash.alpha,
+            } : undefined,
+            slowMotion: {
+                active: this.slowMotionTimer > 0,
+                scale: this.slowMotionScale,
+                timer: this.slowMotionTimer,
+            },
+        };
+
+        if (this.state === 'MENU' || this.state === 'CHARACTER_SELECT' || this.state === 'BOSS_SELECT') {
+            if (typeof this.renderer.beginFrame === 'function') {
+                this.renderer.beginFrame(pixiScenePayload);
+            }
+            if (typeof this.renderer.endFrame === 'function') {
+                this.renderer.endFrame();
+            }
+            return;
+        }
 
         const ctx = this.renderer.ctx || this.canvas.getContext('2d');
         const gw = this.renderer.gameWidth;
@@ -3144,13 +3174,21 @@ class Game {
         }
 
         this.renderer.clear();
+        if (typeof this.renderer.beginFrame === 'function') {
+            this.renderer.beginFrame(pixiScenePayload);
+        }
 
         /* ─── Background ─── */
         if (this.currentStage) {
             this.renderer.drawBackground(this.currentStage, this.camera);
         }
 
-        if (!this.fighter1) return;
+        if (!this.fighter1) {
+            if (typeof this.renderer.endFrame === 'function') {
+                this.renderer.endFrame();
+            }
+            return;
+        }
         const showSecondFighter = !!this.fighter2 && !this.isSoloTrainingMode();
 
         /* ─── Screen darken ─── */
@@ -3213,6 +3251,10 @@ class Game {
         /* ─── Announcer ─── */
         this._drawAnnouncer(ctx);
 
+        if (typeof this.renderer.endFrame === 'function') {
+            this.renderer.endFrame();
+        }
+
         /* ─── Training overlay ─── */
         if (this.trainingMode) {
             this._drawTraining(ctx);
@@ -3222,7 +3264,8 @@ class Game {
         }
 
         /* ─── Screen flash ─── */
-        if (this.screenFlash.active && this.screenFlash.alpha > 0) {
+        if ((!this.renderer || typeof this.renderer.handlesPixiSceneFx !== 'function' || !this.renderer.handlesPixiSceneFx())
+            && this.screenFlash.active && this.screenFlash.alpha > 0) {
             ctx.save();
             ctx.globalAlpha = this.screenFlash.alpha;
             ctx.fillStyle = this.screenFlash.color;
@@ -3232,11 +3275,16 @@ class Game {
 
         /* ─── Cinematic bars ─── */
         if (this.cinematicBars.height > 0.5) {
-            ctx.save();
-            ctx.fillStyle = '#000';
-            ctx.fillRect(0, 0, gw, this.cinematicBars.height);
-            ctx.fillRect(0, gh - this.cinematicBars.height, gw, this.cinematicBars.height);
-            ctx.restore();
+            const handledByRenderer = this.renderer
+                && typeof this.renderer.drawCinematicBars === 'function'
+                && this.renderer.drawCinematicBars(this.cinematicBars.height);
+            if (!handledByRenderer) {
+                ctx.save();
+                ctx.fillStyle = '#000';
+                ctx.fillRect(0, 0, gw, this.cinematicBars.height);
+                ctx.fillRect(0, gh - this.cinematicBars.height, gw, this.cinematicBars.height);
+                ctx.restore();
+            }
         }
 
         /* ─── Round win indicators ─── */
@@ -3244,31 +3292,47 @@ class Game {
 
         /* ─── FPS counter (training only) ─── */
         if (this.trainingMode) {
-            ctx.save();
-            ctx.globalAlpha = 0.6;
-            ctx.font = 'bold 10px monospace';
-            ctx.fillStyle = this.currentFPS < 45 ? '#FF5252' :
-                this.currentFPS < 55 ? '#FF9800' : '#4CAF50';
-            ctx.textAlign = 'right';
-            ctx.fillText(`${this.currentFPS} FPS`, gw - 10, 16);
-            ctx.restore();
+            const handledByRenderer = this.renderer
+                && typeof this.renderer.drawFpsCounter === 'function'
+                && this.renderer.drawFpsCounter(this.currentFPS);
+            if (!handledByRenderer) {
+                ctx.save();
+                ctx.globalAlpha = 0.6;
+                ctx.font = 'bold 10px monospace';
+                ctx.fillStyle = this.currentFPS < 45 ? '#FF5252' :
+                    this.currentFPS < 55 ? '#FF9800' : '#4CAF50';
+                ctx.textAlign = 'right';
+                ctx.fillText(`${this.currentFPS} FPS`, gw - 10, 16);
+                ctx.restore();
+            }
         }
 
         /* ─── Slow-motion indicator ─── */
         if (this.slowMotionTimer > 0) {
-            ctx.save();
-            ctx.globalAlpha = 0.3;
-            ctx.strokeStyle = '#FFD700';
-            ctx.lineWidth = 2;
-            ctx.setLineDash([4, 4]);
-            ctx.strokeRect(2, 2, gw - 4, gh - 4);
-            ctx.restore();
+            const handledByRenderer = this.renderer
+                && typeof this.renderer.drawSlowMotionFrame === 'function'
+                && this.renderer.drawSlowMotionFrame();
+            if (!handledByRenderer) {
+                ctx.save();
+                ctx.globalAlpha = 0.3;
+                ctx.strokeStyle = '#FFD700';
+                ctx.lineWidth = 2;
+                ctx.setLineDash([4, 4]);
+                ctx.strokeRect(2, 2, gw - 4, gh - 4);
+                ctx.restore();
+            }
         }
     }
 
     /* ─── Particle renderer ─── */
     _drawParticles(ctx) {
         if (!this.particles.length) return;
+        if (this.renderer && typeof this.renderer.drawParticle === 'function') {
+            for (const p of this.particles) {
+                this.renderer.drawParticle(p, this.camera);
+            }
+            return;
+        }
         ctx.save();
         const cx = this.camera.x || 0;
         const cy = this.camera.y || 0;
@@ -3405,11 +3469,20 @@ class Game {
     /* ─── Text popups renderer ─── */
     _drawTextPopups(ctx) {
         if (!this.textPopups.length) return;
-        ctx.save();
         const cx = this.camera.x || 0;
         const cy = this.camera.y || 0;
+        let usingCanvas = false;
 
         for (const p of this.textPopups) {
+            if (this.renderer && typeof this.renderer.drawFloatingText === 'function') {
+                const handledByRenderer = this.renderer.drawFloatingText(p, this.camera);
+                if (handledByRenderer) continue;
+            }
+
+            if (!usingCanvas) {
+                ctx.save();
+                usingCanvas = true;
+            }
             const sx = p.x - cx;
             const sy = p.y - cy;
             const alpha = Math.max(0, Math.min(1, p.alpha));
@@ -3448,11 +3521,13 @@ class Game {
             }
         }
 
-        ctx.shadowColor = 'transparent';
-        ctx.shadowBlur = 0;
-        ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = 0;
-        ctx.restore();
+        if (usingCanvas) {
+            ctx.shadowColor = 'transparent';
+            ctx.shadowBlur = 0;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
+            ctx.restore();
+        }
     }
 
     /* ─── Combo counters ─── */
@@ -3465,6 +3540,14 @@ class Game {
             const dmg = c.isActive ? c.damage : (c.displayTimer > 0 ? c.maxDamage : 0);
 
             if (count < 2) return;
+
+            if (this.renderer && typeof this.renderer.drawComboCounter === 'function') {
+                const handledByRenderer = this.renderer.drawComboCounter(key, {
+                    ...c,
+                    scalePercent: c.isActive && count >= 3 ? Math.round(this._comboScale(count) * 100) : null,
+                });
+                if (handledByRenderer) return;
+            }
 
             ctx.save();
             const x = idx === 0 ? 30 : gw - 30;
@@ -3529,6 +3612,10 @@ class Game {
     /* ─── Announcer renderer ─── */
     _drawAnnouncer(ctx) {
         if (!this.announcer.text || this.announcer.timer <= 0) return;
+        if (this.renderer && typeof this.renderer.drawAnnouncerText === 'function') {
+            const handledByRenderer = this.renderer.drawAnnouncerText(this.announcer);
+            if (handledByRenderer) return;
+        }
 
         const gw = this.renderer.gameWidth;
         const gh = this.renderer.gameHeight;
@@ -3577,6 +3664,10 @@ class Game {
 
     /* ─── Round indicators ─── */
     _drawRoundIndicators(ctx) {
+        if (this.renderer && typeof this.renderer.drawRoundIndicators === 'function') {
+            const handledByRenderer = this.renderer.drawRoundIndicators(this.p1Wins, this.p2Wins, this.maxRounds);
+            if (handledByRenderer) return;
+        }
         const gw = this.renderer.gameWidth;
         const winsNeeded = Math.ceil(this.maxRounds / 2);
 
@@ -3630,6 +3721,24 @@ class Game {
         const gh = this.renderer.gameHeight;
         const f1 = this.fighter1, f2 = this.fighter2;
         const cx = this.camera.x || 0, cy = this.camera.y || 0;
+
+        if (this.renderer && typeof this.renderer.drawTrainingHud === 'function') {
+            const handledByRenderer = this.renderer.drawTrainingHud({
+                camera: this.camera,
+                fighter1: f1,
+                fighter2: f2,
+                projectiles: this.projectiles,
+                combo: {
+                    p1: this.combo.p1 ? { ...this.combo.p1, scalePercent: Math.round(this._comboScale(this.combo.p1.count || 1) * 100) } : null,
+                    p2: this.combo.p2 ? { ...this.combo.p2, scalePercent: Math.round(this._comboScale(this.combo.p2.count || 1) * 100) } : null,
+                },
+                inputHistory: this.inputHistory,
+                trainingConfig: this.trainingConfig,
+                aiEnabled: this.aiEnabled,
+                aiDifficulty: this.aiDifficulty,
+            });
+            if (handledByRenderer) return;
+        }
 
         ctx.save();
 
@@ -3782,6 +3891,11 @@ class Game {
                 'Chaque perso lit la meme grammaire de commandes, puis route vers ses propres animations',
                 '[F3] Touches | [F4] Difficulte IA',
             ];
+
+        if (this.renderer && typeof this.renderer.drawControlsOverlay === 'function') {
+            const handledByRenderer = this.renderer.drawControlsOverlay(lines);
+            if (handledByRenderer) return;
+        }
 
         ctx.save();
         ctx.font = '8px monospace';

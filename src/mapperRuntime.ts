@@ -6,25 +6,25 @@ const MAPPER_RUNTIME_SCRIPTS = [
   '/js/editor/MapperStore.js',
   '/js/editor/MapperPreview.js',
   '/js/editor/MapperApp.js',
-];
+] as const;
 
-const scriptPromises = new Map();
-let mapperRuntimePromise = null;
+const scriptPromises = new Map<string, Promise<void>>();
+let mapperRuntimePromise: Promise<typeof window.MapperApp> | null = null;
 
-function ensureRuntimeScript(src) {
+function ensureRuntimeScript(src: string): Promise<void> {
   if (typeof document === 'undefined') {
     return Promise.reject(new Error('Mapper runtime requires a browser environment.'));
   }
 
-  const existing = document.querySelector(`script[data-shinobi-mapper="${src}"]`);
+  const existing = document.querySelector<HTMLScriptElement>(`script[data-shinobi-mapper="${src}"]`);
   if (existing?.dataset.loaded === 'true') {
     return Promise.resolve();
   }
   if (scriptPromises.has(src)) {
-    return scriptPromises.get(src);
+    return scriptPromises.get(src)!;
   }
 
-  const promise = new Promise((resolve, reject) => {
+  const promise = new Promise<void>((resolve, reject) => {
     const script = existing || document.createElement('script');
 
     const cleanup = () => {
@@ -57,7 +57,7 @@ function ensureRuntimeScript(src) {
   return promise;
 }
 
-export function loadMapperRuntime() {
+export function loadMapperRuntime(): Promise<typeof window.MapperApp> {
   if (typeof window !== 'undefined' && typeof window.MapperApp === 'function') {
     return Promise.resolve(window.MapperApp);
   }
@@ -66,7 +66,7 @@ export function loadMapperRuntime() {
     return mapperRuntimePromise;
   }
 
-  mapperRuntimePromise = MAPPER_RUNTIME_SCRIPTS.reduce(
+  mapperRuntimePromise = MAPPER_RUNTIME_SCRIPTS.reduce<Promise<void>>(
     (chain, src) => chain.then(() => ensureRuntimeScript(src)),
     Promise.resolve(),
   )

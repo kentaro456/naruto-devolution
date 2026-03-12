@@ -9,7 +9,7 @@ export function ActionButton({ onClick, children, accent = 'orange', className =
     <button
       {...props}
       onClick={onClick}
-      className={`inline-flex min-w-56 items-center justify-center rounded-2xl border bg-slate-900/72 px-5 py-4 font-pixel text-xs uppercase tracking-[0.2em] transition hover:-translate-y-0.5 ${accents[accent]} ${className}`}
+      className={`inline-flex min-w-0 w-full items-center justify-center rounded-2xl border bg-slate-900/72 px-4 py-3 text-center font-pixel text-[10px] uppercase tracking-[0.16em] transition hover:-translate-y-0.5 sm:min-w-56 sm:px-5 sm:py-4 sm:text-xs sm:tracking-[0.2em] ${accents[accent]} ${className}`}
     >
       {children}
     </button>

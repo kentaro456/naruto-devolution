@@ -108,3 +108,7 @@ const STAGES = [
     },
 
 ];
+
+if (typeof window !== 'undefined') {
+    window.STAGES = STAGES;
+}

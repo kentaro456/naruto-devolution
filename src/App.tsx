@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { CharacterSelectOverlay } from './components/overlays/CharacterSelectOverlay';
 import { ComboGuideOverlay } from './components/overlays/ComboGuideOverlay';
 import { ErrorOverlay } from './components/overlays/ErrorOverlay';
@@ -8,18 +8,24 @@ import { MenuOverlay } from './components/overlays/MenuOverlay';
 import { PauseOverlay } from './components/overlays/PauseOverlay';
 import { ResultOverlay } from './components/overlays/ResultOverlay';
 import { SplashOverlay } from './components/overlays/SplashOverlay';
-import { MapperPage } from './components/mapper/MapperPage';
+import { MapperPage } from './components/mapper/MapperPage.jsx';
 import { useGameUI } from './context/GameUIContext';
-import { FALLBACK_UI } from './lib/uiState';
-import { bootLegacyGame, destroyLegacyGame } from './lib/runtimeBridge';
+import { attachLegacyPixiCharacters, destroyLegacyPixiCharacters } from './engine/legacyPixiCharacters';
 import { loadLegacyRuntime } from './legacyRuntime';
+import { bootLegacyGame, destroyLegacyGame } from './lib/runtimeBridge';
+import { ensureUIBridge } from './lib/uiBridge';
+import { FALLBACK_UI } from './lib/uiState';
+
+type RuntimeStatus = 'loading' | 'ready' | 'error';
 
 export default function App() {
   const ui = useGameUI();
-  const pathname = typeof window !== 'undefined' ? window.location.pathname.replace(/\/+$/, '') || '/' : '/';
+  const pathname =
+    typeof window !== 'undefined' ? window.location.pathname.replace(/\/+$/, '') || '/' : '/';
   const isMapperRoute = pathname === '/mapper';
-  const [runtimeStatus, setRuntimeStatus] = useState('loading');
+  const [runtimeStatus, setRuntimeStatus] = useState<RuntimeStatus>('loading');
   const [runtimeError, setRuntimeError] = useState('');
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     if (isMapperRoute) {
@@ -30,27 +36,38 @@ export default function App() {
     document.body.style.overflow = 'hidden';
     document.body.style.background = '#020617';
     document.body.style.color = '#e2e8f0';
-
+    ensureUIBridge();
     let cancelled = false;
     setRuntimeStatus('loading');
     setRuntimeError('');
 
+    const canvas = canvasRef.current;
+    if (!canvas) {
+      setRuntimeError('Canvas host not found.');
+      setRuntimeStatus('error');
+      return undefined;
+    }
+
     loadLegacyRuntime()
       .then(() => {
         if (cancelled) return;
-        bootLegacyGame();
-        setRuntimeStatus('ready');
+        return attachLegacyPixiCharacters(canvas).then(() => {
+          if (cancelled) return;
+          bootLegacyGame();
+          setRuntimeStatus('ready');
+        });
       })
-      .catch((error) => {
+      .catch((error: unknown) => {
         if (cancelled) return;
         console.error('Runtime boot failed:', error);
-        setRuntimeError(error?.message || 'Unknown runtime loading error.');
+        setRuntimeError(error instanceof Error ? error.message : 'Unknown runtime loading error.');
         setRuntimeStatus('error');
       });
 
     return () => {
       cancelled = true;
       destroyLegacyGame();
+      destroyLegacyPixiCharacters();
     };
   }, [isMapperRoute]);
 
@@ -70,12 +87,12 @@ export default function App() {
   const selectedPlayer = roster.find((char) => char.id === ui.selectedPlayerId) || null;
   const selectedCpu = roster.find((char) => char.id === ui.selectedCpuId) || null;
   const showLoadingOverlay = runtimeStatus === 'loading' || ui.stageLoadingVisible;
-  const loadingTitle = runtimeStatus === 'loading'
-    ? 'Ouverture du jeu'
-    : (ui.loadingTitle || 'Préparation du combat');
-  const loadingMessage = runtimeStatus === 'loading'
-    ? 'Le moteur, le canvas et l’interface se mettent en place.'
-    : (ui.loadingMessage || 'L’arène et les combattants se mettent en place avant le round.');
+  const loadingTitle =
+    runtimeStatus === 'loading' ? 'Ouverture du jeu' : ui.loadingTitle || 'Preparation du combat';
+  const loadingMessage =
+    runtimeStatus === 'loading'
+      ? 'Le moteur, le canvas et l’interface se mettent en place.'
+      : ui.loadingMessage || 'L’arene et les combattants se mettent en place avant le round.';
 
   const inFight = showShell && ui.hudVisible && !ui.menuVisible && !ui.charSelectVisible;
 
@@ -84,8 +101,14 @@ export default function App() {
       className={`relative flex h-screen w-screen items-center justify-center overflow-hidden text-slate-100 ${inFight ? 'bg-black' : 'bg-slate-950 bg-cover bg-center'}`}
       style={inFight ? undefined : { backgroundImage: `url('/assets/home-bg.png')` }}
     >
-      {!inFight && <div className="pointer-events-none absolute inset-0 bg-black/60 bg-[radial-gradient(circle_at_top,rgba(251,146,60,0.15),transparent_32%),radial-gradient(circle_at_bottom,rgba(244,63,94,0.15),transparent_30%)]" />}
-      <canvas id="game-canvas" className="relative z-0 block bg-transparent shadow-[0_0_50px_rgba(2,6,23,0.65)] [image-rendering:pixelated]" />
+      {!inFight && (
+        <div className="pointer-events-none absolute inset-0 bg-black/60 bg-[radial-gradient(circle_at_top,rgba(251,146,60,0.15),transparent_32%),radial-gradient(circle_at_bottom,rgba(244,63,94,0.15),transparent_30%)]" />
+      )}
+      <canvas
+        id="game-canvas"
+        ref={canvasRef}
+        className="relative z-0 block bg-transparent shadow-[0_0_50px_rgba(2,6,23,0.65)] [image-rendering:pixelated]"
+      />
 
       {showLoadingOverlay && (
         <LoadingOverlay
@@ -98,11 +121,7 @@ export default function App() {
 
       {showShell && ui.menuVisible && <MenuOverlay ui={ui} />}
       {showShell && ui.charSelectVisible && (
-        <CharacterSelectOverlay
-          ui={ui}
-          selectedPlayer={selectedPlayer}
-          selectedCpu={selectedCpu}
-        />
+        <CharacterSelectOverlay ui={ui} selectedPlayer={selectedPlayer} selectedCpu={selectedCpu} />
       )}
       {showShell && ui.hudVisible && <HudOverlay ui={ui} />}
       {showShell && ui.splashVisible && <SplashOverlay text={ui.splashText} />}

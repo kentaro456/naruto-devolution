@@ -8,9 +8,9 @@ export function PauseOverlay() {
 
   return (
     <div className="absolute inset-0 z-20 flex items-center justify-center bg-slate-950/76 px-4 py-6 backdrop-blur-md">
-      <SurfacePanel className="w-full max-w-3xl p-8">
-        <div className="flex items-center justify-between">
-          <div className="font-pixel text-2xl uppercase tracking-[0.2em] text-orange-300">PAUSE</div>
+      <SurfacePanel className="w-full max-w-3xl p-4 sm:p-6 lg:p-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="font-pixel text-xl uppercase tracking-[0.16em] text-orange-300 sm:text-2xl">PAUSE</div>
           <InfoPill tone="slate">Affrontement interrompu</InfoPill>
         </div>
         <p className="mt-3 text-sm leading-7 text-slate-300">Rassemble ton chakra et choisis la suite.</p>

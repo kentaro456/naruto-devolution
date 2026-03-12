@@ -114,6 +114,12 @@ class JiroboFighter extends Fighter {
       rotation,
       scaleX,
       scaleY,
+      pixiEffects: {
+        kind: 'jirobo',
+        earthPulse,
+        specialState,
+        strideIntensity: Math.abs(pulse) * (state === 'RUN' ? 0.85 : 0.45),
+      },
       underlay: (ctx, info) => {
         this._renderGroundShadow(ctx, info, 0.8 + earthPulse * 0.35);
       },
