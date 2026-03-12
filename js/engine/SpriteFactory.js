@@ -91,6 +91,26 @@ class SpriteFactory {
         return promise;
     }
 
+    static async _mapWithConcurrency(items, limit, iteratee) {
+        const maxConcurrency = Math.max(1, Number(limit) || 1);
+        const results = new Array(items.length);
+        let cursor = 0;
+
+        const worker = async () => {
+            while (cursor < items.length) {
+                const index = cursor++;
+                results[index] = await iteratee(items[index], index);
+            }
+        };
+
+        const workers = Array.from(
+            { length: Math.min(maxConcurrency, Math.max(1, items.length)) },
+            () => worker()
+        );
+        await Promise.all(workers);
+        return results;
+    }
+
     static _dirOf(path) {
         const idx = path.lastIndexOf('/');
         return idx >= 0 ? path.slice(0, idx) : '.';
@@ -218,26 +238,31 @@ class SpriteFactory {
         ];
 
         const imageMap = new Map();
-        for (const fileName of uniqueFiles) {
-            let loadedImage = null;
-            // Try each base path until we find the image
-            for (const base of tryBases) {
-                const imagePath = `${base}/${fileName}`;
-                try {
-                    // eslint-disable-next-line no-await-in-loop
-                    loadedImage = await this._loadImage(imagePath);
-                    if (loadedImage) break;
-                } catch (err) {
-                    // Ignore, try next path
+        const resolvedImages = await this._mapWithConcurrency(
+            uniqueFiles,
+            12,
+            async (fileName) => {
+                let loadedImage = null;
+                for (const base of tryBases) {
+                    const imagePath = `${base}/${fileName}`;
+                    try {
+                        loadedImage = await this._loadImage(imagePath);
+                        if (loadedImage) break;
+                    } catch (err) {
+                        // Try next base.
+                    }
                 }
+                return { fileName, loadedImage };
             }
+        );
 
+        resolvedImages.forEach(({ fileName, loadedImage }) => {
             if (loadedImage) {
                 imageMap.set(fileName, loadedImage);
             } else {
                 console.warn(`Could not resolve image ${fileName} across all asset bases`);
             }
-        }
+        });
 
         let maxW = 0;
         let maxH = 0;

@@ -530,6 +530,49 @@ class Game {
         });
     }
 
+    async _resolveFighterAssetTimeoutMs(data, fighterId = 'unknown') {
+        const baseTimeoutMs = 12000;
+        const mode = data?.spriteConfig?.mode;
+        const mappingPath = data?.spriteConfig?.mappingPath;
+
+        if (mode === 'sb3-target' || mode === 'auto-magenta-atlas') {
+            return 16000;
+        }
+        if (mode !== 'sb3-target-mapped' || !mappingPath) {
+            return baseTimeoutMs;
+        }
+
+        try {
+            const mapping = await this._loadMappingConfig(mappingPath);
+            const stateMap = mapping?.stateMap;
+            const totalFrames = stateMap && typeof stateMap === 'object'
+                ? Object.values(stateMap).reduce((sum, files) => (
+                    sum + (Array.isArray(files) ? files.length : 0)
+                ), 0)
+                : 0;
+            const adaptiveTimeoutMs = Math.max(
+                baseTimeoutMs,
+                Math.min(22000, baseTimeoutMs + Math.max(0, totalFrames - 24) * 110)
+            );
+            if (totalFrames >= 60) {
+                console.info(
+                    `[perf] adaptive fighter timeout ${fighterId}: ${adaptiveTimeoutMs}ms for ${totalFrames} mapped frames`
+                );
+            }
+            return adaptiveTimeoutMs;
+        } catch (error) {
+            console.warn(`[perf] adaptive timeout fallback for ${fighterId}:`, error);
+            return 16000;
+        }
+    }
+
+    _queueFighterAssetJob(fighter, data, setupToken, fighterId) {
+        const assetPromise = this._loadFighterAssets(fighter, data, setupToken, fighterId);
+        return this._resolveFighterAssetTimeoutMs(data, fighterId).then((timeoutMs) => (
+            this._withTimeout(assetPromise, timeoutMs, `fighter assets ${fighterId}`)
+        ));
+    }
+
     _clamp01(value) {
         return Math.max(0, Math.min(1, Number(value) || 0));
     }
@@ -808,19 +851,11 @@ class Game {
         const setupToken = (this._fightSetupToken || 0) + 1;
         this._fightSetupToken = setupToken;
         const assetJobs = [
-            this._withTimeout(
-                this._loadFighterAssets(this.fighter1, p1Data, setupToken, p1CharId),
-                12000,
-                `fighter assets ${p1CharId}`
-            )
+            this._queueFighterAssetJob(this.fighter1, p1Data, setupToken, p1CharId)
         ];
         if (this.fighter2) {
             assetJobs.push(
-                this._withTimeout(
-                    this._loadFighterAssets(this.fighter2, p2Data, setupToken, this._p2CharId),
-                    12000,
-                    `fighter assets ${this._p2CharId}`
-                )
+                this._queueFighterAssetJob(this.fighter2, p2Data, setupToken, this._p2CharId)
             );
         }
 
