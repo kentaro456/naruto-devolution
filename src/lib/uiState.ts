@@ -1,4 +1,6 @@
 import type { GameUIState } from '../types/game-ui';
+import { ROSTER } from '../data/roster';
+import { STAGES } from '../data/stages';
 
 export const FALLBACK_UI: GameUIState = {
   menuVisible: true,
@@ -11,20 +13,20 @@ export const FALLBACK_UI: GameUIState = {
   splashVisible: false,
   fightMode: 'player-vs-cpu',
   soundEnabled: true,
-  selectTitle: 'SELECTION DU NINJA',
-  p1Label: 'NINJA 1',
-  p2Label: 'RIVAL',
+  selectTitle: 'CHOISIS TON SHINOBI',
+  p1Label: 'P1',
+  p2Label: 'CPU',
   selectedPlayerId: null,
   selectedCpuId: null,
   selectedStageId: null,
   stageSelectVisible: false,
   p1Name: '???',
   p2Name: '???',
-  roster: [],
-  stages: [],
+  roster: ROSTER,
+  stages: STAGES,
   hud: { p1: null, p2: null, timer: 99, round: 1 },
-  loadingTitle: 'Ouverture du jeu',
-  loadingMessage: 'Le moteur, le canvas et l’interface se mettent en place.',
+  loadingTitle: "Ouverture de l'arene",
+  loadingMessage: "Les portes du duel s'ouvrent.",
   splashText: 'MANCHE 1',
   resultText: 'VICTOIRE !',
   resultWinner: '',

@@ -6,6 +6,7 @@ class SpriteFactory {
     static _cache = new Map();
     static _jsonCache = new Map();
     static _imageCache = new Map();
+    static _maxTextureSize = null;
 
     static async build(path, options = {}) {
         const mode = options.mode || 'raw';
@@ -114,6 +115,27 @@ class SpriteFactory {
     static _dirOf(path) {
         const idx = path.lastIndexOf('/');
         return idx >= 0 ? path.slice(0, idx) : '.';
+    }
+
+    static _resolveMaxTextureSize() {
+        if (Number.isFinite(this._maxTextureSize) && this._maxTextureSize > 0) {
+            return this._maxTextureSize;
+        }
+
+        const fallback = 4096;
+        try {
+            const canvas = document.createElement('canvas');
+            const gl =
+                canvas.getContext('webgl') ||
+                canvas.getContext('experimental-webgl') ||
+                canvas.getContext('webgl2');
+            const maxTextureSize = Number(gl?.getParameter?.(gl.MAX_TEXTURE_SIZE)) || fallback;
+            this._maxTextureSize = Math.max(2048, Math.min(16384, maxTextureSize));
+        } catch (_error) {
+            this._maxTextureSize = fallback;
+        }
+
+        return this._maxTextureSize;
     }
 
     static _defaultSb3Plan() {
@@ -289,12 +311,27 @@ class SpriteFactory {
         }
 
         const maxCols = Math.max(...dynamicPlan.map(([, count]) => count));
-        const frameWidth = cellSizeOption || Math.max(48, Math.min(480, maxW + 8));
-        const frameHeight = cellSizeOption || Math.max(48, Math.min(480, maxH + 8));
+        const rowCount = dynamicPlan.length;
+        const desiredFrameWidth = cellSizeOption || Math.max(48, Math.min(480, maxW + 8));
+        const desiredFrameHeight = cellSizeOption || Math.max(48, Math.min(480, maxH + 8));
+        const maxTextureSize = this._resolveMaxTextureSize();
+        const widthRatio = maxCols > 0 ? maxTextureSize / (maxCols * desiredFrameWidth) : 1;
+        const heightRatio = rowCount > 0 ? maxTextureSize / (rowCount * desiredFrameHeight) : 1;
+        const atlasScale = Math.min(1, widthRatio, heightRatio);
+        const frameWidth = Math.max(24, Math.floor(desiredFrameWidth * atlasScale));
+        const frameHeight = Math.max(24, Math.floor(desiredFrameHeight * atlasScale));
+
+        if (atlasScale < 1) {
+            console.warn(
+                `[SpriteFactory] downscaling atlas to fit GPU limit (${maxTextureSize}px): ` +
+                `${desiredFrameWidth}x${desiredFrameHeight} -> ${frameWidth}x${frameHeight} ` +
+                `for ${maxCols} cols x ${rowCount} rows`
+            );
+        }
 
         const sheet = document.createElement('canvas');
         sheet.width = frameWidth * maxCols;
-        sheet.height = frameHeight * dynamicPlan.length;
+        sheet.height = frameHeight * rowCount;
 
         const ctx = sheet.getContext('2d');
         ctx.imageSmoothingEnabled = false;

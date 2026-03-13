@@ -329,10 +329,10 @@ class Game {
         const cpuVsCpu = this._isCpuControlled('p1');
         this._setUIState({
             selectTitle: soloTraining
-                ? 'ENTRAINEMENT LIBRE'
-                : (cpuVsCpu ? 'SÉLECTION DES COMBATTANTS' : 'SÉLECTION DU NINJA'),
-            p1Label: cpuVsCpu ? 'CPU A' : 'NINJA 1',
-            p2Label: soloTraining ? '---' : (cpuVsCpu ? 'CPU B' : 'RIVAL'),
+                ? 'DOJO LIBRE'
+                : (cpuVsCpu ? 'TABLEAU DES COMBATTANTS' : 'CHOISIS TON SHINOBI'),
+            p1Label: cpuVsCpu ? 'CPU A' : 'P1',
+            p2Label: soloTraining ? '---' : (cpuVsCpu ? 'CPU B' : 'CPU'),
             fightMode: this.fightMode || 'player-vs-cpu',
         });
     }
@@ -345,8 +345,8 @@ class Game {
     }
 
     _resetHudState() {
-        this.hudName1 = 'NINJA 1';
-        this.hudName2 = 'NINJA 2';
+        this.hudName1 = 'P1';
+        this.hudName2 = 'P2';
         this.p1BufferedHp = null;
         this.p2BufferedHp = null;
     }
@@ -491,10 +491,10 @@ class Game {
         const stageName = stage?.name || 'Arène';
         this._setUIState({
             stageLoadingVisible: !!visible,
-            loadingTitle: visible ? 'Préparation du combat' : 'Chargement',
+            loadingTitle: visible ? 'Annonce de la manche' : "Ouverture de l'arene",
             loadingMessage: visible
-                ? `${stageName} est prêt. Chargement des combattants et finalisation du duel.`
-                : 'React charge maintenant le runtime du jeu. Le HTML reste limite au bootstrap Vite.',
+                ? `${stageName} s'ouvre. Les combattants prennent position.`
+                : "Les portes du duel s'ouvrent.",
         });
     }
 
@@ -1170,7 +1170,7 @@ class Game {
         const name = winner === 1 ? this.fighter1.name : this.fighter2.name;
         this._setUIState({
             resultVisible: true,
-            resultText: 'VICTOIRE !',
+            resultText: 'VICTOIRE',
             resultWinner: name,
             resultStats: this._buildResultStats(),
         });
@@ -3920,10 +3920,10 @@ class Game {
                 'Reviens au duel classique via le menu principal',
             ]
             : [
-                'Ninja: Flèches déplacer | Q garde / charge | S rapide | D puissante | E technique | G éveil',
-                'Routes de technique: E neutre | ↑+E | ↓+E | Arrière+E | Avant+E',
-                'Dash: double tap ← ou →',
-                'Chaque perso lit la meme grammaire de commandes, puis route vers ses propres animations',
+                'P1: Flèches pour bouger | Q garde / charge | S rapide | D puissante | F jutsu',
+                'Techniques: F neutre | ↑+F | ↓+F | Arrière+F | Avant+F',
+                'Outils: E projectile | R teleportation | G eveil | double tap ← ou → pour le pas eclair',
+                'Chaque shinobi garde la meme base de commandes mais enchaine avec sa propre signature',
                 '[F3] Touches | [F4] Difficulte IA',
             ];
 

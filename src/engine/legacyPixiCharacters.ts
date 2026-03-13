@@ -607,7 +607,7 @@ class LegacyPixiCharacters implements LegacyPixiCharactersApi {
     const fighterId = String(fighter.id || fighter.charId || fighter.name || '').toLowerCase();
     const renderScaleOverride = FIGHTER_RENDER_SCALE_OVERRIDES[fighterId] || 1;
 
-    const isHit = fighter.hitFlash > 0;
+    const isHit = (Number(fighter.hitFlash) || 0) > 0;
 
     // Filters setup
     node.hitFilter.alpha = isHit ? 1 : 0;
@@ -1527,14 +1527,14 @@ class LegacyPixiCharacters implements LegacyPixiCharactersApi {
     spriteInfo: LegacySpriteInfo,
   ): Texture | null {
     if (spriteInfo.kind === 'direct') {
-      return spriteInfo.entry?.image ? Texture.from(spriteInfo.entry.image) : null;
+      return spriteInfo.entry?.image ? this.safeTextureFrom(spriteInfo.entry.image) : null;
     }
 
     const source = fighter.spriteSheet;
     if (!source) return null;
 
     if (spriteInfo.kind === 'full') {
-      return Texture.from(source);
+      return this.safeTextureFrom(source);
     }
 
     if (spriteInfo.kind !== 'atlas' || !spriteInfo.frame) {
@@ -1555,7 +1555,8 @@ class LegacyPixiCharacters implements LegacyPixiCharactersApi {
     const cached = sourceCache.get(cacheKey);
     if (cached) return cached;
 
-    const baseTexture = Texture.from(source);
+    const baseTexture = this.safeTextureFrom(source);
+    if (!baseTexture) return null;
     const texture = new Texture({
       source: baseTexture.source,
       frame: new Rectangle(spriteInfo.frame.x, spriteInfo.frame.y, frameWidth, frameHeight),
@@ -1590,7 +1591,8 @@ class LegacyPixiCharacters implements LegacyPixiCharactersApi {
     const cacheKey = `${animationKey}:${row}:${frameWidth}:${frameHeight}:${frameCount}`;
     let textures = sourceCache.get(cacheKey);
     if (!textures) {
-      const baseTexture = Texture.from(source);
+      const baseTexture = this.safeTextureFrom(source);
+      if (!baseTexture) return null;
       textures = Array.from({ length: frameCount }, (_, idx) => new Texture({
         source: baseTexture.source,
         frame: new Rectangle(idx * frameWidth, row * frameHeight, frameWidth, frameHeight),
@@ -2329,22 +2331,26 @@ class LegacyPixiCharacters implements LegacyPixiCharactersApi {
 
   private applyWeatherPreset(): void {
     this.colorGradeFilter.reset();
+    this.colorGradeFilter.alpha = 1;
     switch (this.weatherPreset) {
       case 'sunset':
         this.colorGradeFilter.brightness(1.05, false);
         this.colorGradeFilter.contrast(1.02, true);
         this.colorGradeFilter.saturate(0.18, true);
-        this.colorGradeFilter.tint(0xffb16e, 0.18, true);
+        this.colorGradeFilter.alpha = 0.18;
+        this.colorGradeFilter.tint(0xffb16e, true);
         break;
       case 'night':
         this.colorGradeFilter.brightness(0.82, false);
         this.colorGradeFilter.saturate(-0.22, true);
-        this.colorGradeFilter.tint(0x7aa2ff, 0.24, true);
+        this.colorGradeFilter.alpha = 0.24;
+        this.colorGradeFilter.tint(0x7aa2ff, true);
         break;
       case 'rain':
         this.colorGradeFilter.brightness(0.92, false);
         this.colorGradeFilter.saturate(-0.08, true);
-        this.colorGradeFilter.tint(0x8ab4ff, 0.16, true);
+        this.colorGradeFilter.alpha = 0.16;
+        this.colorGradeFilter.tint(0x8ab4ff, true);
         break;
       default:
         this.colorGradeFilter.brightness(1, false);

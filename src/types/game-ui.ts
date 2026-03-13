@@ -1,5 +1,12 @@
 export type FightMode = 'player-vs-cpu' | 'training-solo' | 'cpu-vs-cpu';
 
+export interface CharacterCombatStats {
+  speed: number;
+  power: number;
+  defense: number;
+  chakra: number;
+}
+
 export interface CharacterSummary {
   id: string;
   name: string;
@@ -8,6 +15,8 @@ export interface CharacterSummary {
   selectable?: boolean;
   color?: string;
   description?: string;
+  special?: string;
+  stats?: Partial<CharacterCombatStats>;
   [key: string]: unknown;
 }
 
@@ -30,6 +39,7 @@ export interface HudFighterState {
   chakraPercent?: number;
   staminaPercent?: number;
   healthText?: string;
+  comboCount?: number;
 }
 
 export interface HudState {

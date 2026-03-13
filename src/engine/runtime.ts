@@ -1,5 +1,6 @@
 import { FALLBACK_UI } from '../lib/uiState';
 import type {
+  CharacterCombatStats,
   CharacterSummary,
   FightMode,
   GameUIActions,
@@ -77,6 +78,59 @@ interface ResolvedAttackTimings {
   recoveryAt: number;
 }
 
+interface RuntimeCombatProfile {
+  speedRating: number;
+  powerRating: number;
+  defenseRating: number;
+  chakraRating: number;
+  maxHealth: number;
+  maxChakra: number;
+  maxStamina: number;
+  moveSpeed: number;
+  dashSpeed: number;
+  meleeDamageScale: number;
+  specialDamageScale: number;
+  projectileDamageScale: number;
+  damageTakenScale: number;
+  chakraRegenRate: number;
+  guardChakraGainRate: number;
+  staminaRegenRate: number;
+  guardStaminaDrainRate: number;
+  attackStaminaCostScale: number;
+  specialChakraCostScale: number;
+  guardCostScale: number;
+  projectileChakraCost: number;
+  projectileCooldown: number;
+  teleportStaminaCost: number;
+  teleportCooldown: number;
+  awakenChakraCost: number;
+  awakenDuration: number;
+}
+
+interface RuntimeCpuStyleBias {
+  aggression?: number;
+  zoning?: number;
+  guardDiscipline?: number;
+  idealRange?: number;
+  retreatRange?: number;
+  pressureBias?: number;
+  projectileBias?: number;
+  specialBias?: number;
+  teleportBias?: number;
+}
+
+interface RuntimeCpuMatchupPlan {
+  aggression: number;
+  zoning: number;
+  guardDiscipline: number;
+  idealRange: number;
+  retreatRange: number;
+  pressureBias: number;
+  projectileBias: number;
+  specialBias: number;
+  teleportBias: number;
+}
+
 interface RuntimeFighter {
   id: string;
   name: string;
@@ -88,6 +142,7 @@ interface RuntimeFighter {
   vy: number;
   facingRight: boolean;
   health: number;
+  displayHealth: number;
   maxHealth: number;
   chakra: number;
   maxChakra: number;
@@ -105,8 +160,11 @@ interface RuntimeFighter {
   currentComboNodeId: string | null;
   bufferedAttack: BufferedAttack | null;
   lastAttackConnected: boolean;
+  comboCount: number;
   comboChainTimer: number;
+  comboTimer: number;
   guardTimer: number;
+  guardBreakTimer: number;
   hitstunTimer: number;
   hitFlashTimer: number;
   hitShakeTimer: number;
@@ -115,6 +173,9 @@ interface RuntimeFighter {
   teleportCharges: number;
   teleportCooldown: number;
   awakenTimer: number;
+  aiDecisionTimer: number;
+  aiBurstTimer: number;
+  combatProfile: RuntimeCombatProfile;
   comboConfig: RuntimeComboConfig;
   isCpu: boolean;
 }
@@ -160,6 +221,11 @@ const JUMP_VELOCITY = -520;
 const GRAVITY = 1600;
 const PROJECTILE_SPEED = 420;
 const COMBO_CHAIN_RESET = 0.7;
+const COMBO_DISPLAY_WINDOW = 1.1;
+const BUFFERED_HEALTH_LERP_PER_SECOND = 84;
+const PASSIVE_GUARD_STAMINA_DRAIN = 8;
+const MELEE_GUARD_STAMINA_COST = 16;
+const PROJECTILE_GUARD_STAMINA_COST = 12;
 const ATTACK_CONFIG = {
   light1: { damage: 6, range: 92, chakra: 0, stamina: 3, duration: 0.34, activeAt: 0.12, recoveryAt: 0.24, animation: 'ATTACK_LIGHT_1', label: 'LIGHT 1' },
   light2: { damage: 7, range: 98, chakra: 0, stamina: 4, duration: 0.38, activeAt: 0.14, recoveryAt: 0.27, animation: 'ATTACK_LIGHT_2', label: 'LIGHT 2' },
@@ -206,6 +272,31 @@ const DEFAULT_PROJECTILE_CONFIG: RuntimeProjectileConfig = {
   life: 60,
   spinSpeed: 0.35,
 };
+const DEFAULT_CHARACTER_STATS: CharacterCombatStats = {
+  speed: 7,
+  power: 7,
+  defense: 7,
+  chakra: 7,
+};
+const CPU_STYLE_OVERRIDES: Record<string, RuntimeCpuStyleBias> = {
+  naruto: { aggression: 0.08, pressureBias: 0.12, specialBias: 0.06, idealRange: -10 },
+  sasuke: { aggression: 0.06, pressureBias: 0.08, specialBias: 0.1, teleportBias: 0.06 },
+  kakashi: { aggression: 0.02, zoning: 0.06, guardDiscipline: 0.04, specialBias: 0.08 },
+  itachi: { zoning: 0.12, guardDiscipline: 0.08, projectileBias: 0.08, specialBias: 0.14 },
+  kisame: { aggression: 0.06, guardDiscipline: 0.08, pressureBias: 0.1, idealRange: -8 },
+  lee: { aggression: 0.16, zoning: -0.14, idealRange: -24, pressureBias: 0.2, teleportBias: 0.06 },
+  sakura: { aggression: 0.08, guardDiscipline: 0.04, pressureBias: 0.1, idealRange: -10 },
+  hinata: { aggression: 0.06, guardDiscipline: 0.08, pressureBias: 0.08, idealRange: -14 },
+  gaara: { aggression: -0.06, zoning: 0.18, guardDiscipline: 0.1, idealRange: 30, retreatRange: 12, projectileBias: 0.16, specialBias: 0.1 },
+  minato: { aggression: 0.1, zoning: -0.1, idealRange: -22, pressureBias: 0.18, teleportBias: 0.22 },
+  pein: { aggression: 0.02, zoning: 0.14, guardDiscipline: 0.06, idealRange: 18, projectileBias: 0.08, specialBias: 0.14 },
+  kankuro: { aggression: -0.08, zoning: 0.2, guardDiscipline: 0.08, idealRange: 28, retreatRange: 14, projectileBias: 0.2 },
+  jirobo: { aggression: 0.04, zoning: -0.16, guardDiscipline: 0.12, idealRange: -18, pressureBias: 0.12 },
+};
+
+function clampNumber(value: number, min: number, max: number): number {
+  return Math.min(max, Math.max(min, value));
+}
 
 function directionToComboCode(direction: ComboRouteDirection, group: 'L' | 'H' | 'S'): string {
   if (group === 'S') {
@@ -501,7 +592,206 @@ export class ShinobiGameRuntime {
     }
   }
 
+  private normalizeCharacterStats(character: CharacterSummary): CharacterCombatStats {
+    const rawStats = character.stats || {};
+    const readStat = (key: keyof CharacterCombatStats): number => {
+      const value = Number(rawStats[key]);
+      const fallback = DEFAULT_CHARACTER_STATS[key];
+      return clampNumber(Number.isFinite(value) ? Math.round(value) : fallback, 4, 10);
+    };
+
+    return {
+      speed: readStat('speed'),
+      power: readStat('power'),
+      defense: readStat('defense'),
+      chakra: readStat('chakra'),
+    };
+  }
+
+  private buildCombatProfile(character: CharacterSummary): RuntimeCombatProfile {
+    const stats = this.normalizeCharacterStats(character);
+    const speedBias = stats.speed - 7;
+    const powerBias = stats.power - 7;
+    const defenseBias = stats.defense - 7;
+    const chakraBias = stats.chakra - 7;
+    const specialBias = stats.power * 0.45 + stats.chakra * 0.55 - 7;
+
+    return {
+      speedRating: stats.speed,
+      powerRating: stats.power,
+      defenseRating: stats.defense,
+      chakraRating: stats.chakra,
+      maxHealth: Math.round(MAX_HEALTH + defenseBias * 12 + powerBias * 1.5),
+      maxChakra: Math.round(MAX_CHAKRA + chakraBias * 12),
+      maxStamina: Math.round(MAX_STAMINA + speedBias * 10 + defenseBias * 3),
+      moveSpeed: PLAYER_SPEED * clampNumber(1 + speedBias * 0.045, 0.84, 1.16),
+      dashSpeed: PLAYER_SPEED * 2.15 * clampNumber(1 + speedBias * 0.05, 0.82, 1.2),
+      meleeDamageScale: clampNumber(1 + powerBias * 0.05, 0.86, 1.16),
+      specialDamageScale: clampNumber(1 + specialBias * 0.045, 0.86, 1.18),
+      projectileDamageScale: clampNumber(1 + chakraBias * 0.05, 0.86, 1.18),
+      damageTakenScale: clampNumber(1 - defenseBias * 0.05, 0.82, 1.16),
+      chakraRegenRate: 4 + chakraBias * 0.55,
+      guardChakraGainRate: 6 + chakraBias * 0.6,
+      staminaRegenRate: 9 + speedBias * 0.75 + defenseBias * 0.45,
+      guardStaminaDrainRate: PASSIVE_GUARD_STAMINA_DRAIN * clampNumber(1.08 - defenseBias * 0.05, 0.74, 1.18),
+      attackStaminaCostScale: clampNumber(1.02 - speedBias * 0.03 - powerBias * 0.01, 0.86, 1.14),
+      specialChakraCostScale: clampNumber(1.04 - chakraBias * 0.05, 0.72, 1.2),
+      guardCostScale: clampNumber(1.05 - defenseBias * 0.05 - chakraBias * 0.02, 0.74, 1.22),
+      projectileChakraCost: Math.max(4, Math.round(8 * clampNumber(1.06 - chakraBias * 0.05, 0.72, 1.22))),
+      projectileCooldown: 0.9 * clampNumber(1.04 - chakraBias * 0.04 - speedBias * 0.01, 0.72, 1.14),
+      teleportStaminaCost: Math.max(10, Math.round(16 * clampNumber(1.04 - speedBias * 0.04 - chakraBias * 0.015, 0.72, 1.15))),
+      teleportCooldown: 4.5 * clampNumber(1.06 - speedBias * 0.04, 0.74, 1.18),
+      awakenChakraCost: Math.max(20, Math.round(30 * clampNumber(1.04 - chakraBias * 0.05, 0.72, 1.18))),
+      awakenDuration: clampNumber(8 + chakraBias * 0.35 + powerBias * 0.25, 6.8, 9.8),
+    };
+  }
+
+  private resolveCpuStyleBias(fighterId: string): RuntimeCpuStyleBias {
+    return CPU_STYLE_OVERRIDES[fighterId] || {};
+  }
+
+  private buildCpuMatchupPlan(
+    fighter: RuntimeFighter,
+    opponent: RuntimeFighter,
+    baseAggression: number,
+    baseZoning: number,
+    baseGuardDiscipline: number,
+    baseIdealRange: number,
+    baseRetreatRange: number,
+  ): RuntimeCpuMatchupPlan {
+    const style = this.resolveCpuStyleBias(fighter.id);
+    const speedEdge = fighter.combatProfile.speedRating - opponent.combatProfile.speedRating;
+    const chakraEdge = fighter.combatProfile.chakraRating - opponent.combatProfile.chakraRating;
+    const opponentCloseThreat = clampNumber(
+      0.26
+        + (opponent.combatProfile.speedRating - fighter.combatProfile.defenseRating) * 0.08
+        + (opponent.combatProfile.powerRating - fighter.combatProfile.powerRating) * 0.05,
+      0,
+      1,
+    );
+    const opponentRangeThreat = clampNumber(
+      0.18
+        + (opponent.combatProfile.chakraRating - fighter.combatProfile.speedRating) * 0.08
+        + (opponent.combatProfile.projectileDamageScale - fighter.combatProfile.damageTakenScale) * 0.22,
+      0,
+      1,
+    );
+    const breakPotential = clampNumber(
+      0.22
+        + (fighter.combatProfile.powerRating - opponent.combatProfile.defenseRating) * 0.08
+        + (fighter.combatProfile.speedRating - opponent.combatProfile.speedRating) * 0.03,
+      0,
+      1,
+    );
+    const zoneAdvantage = clampNumber(
+      0.18
+        + (fighter.combatProfile.chakraRating - opponent.combatProfile.speedRating) * 0.08
+        + (fighter.combatProfile.projectileDamageScale - opponent.combatProfile.damageTakenScale) * 0.22,
+      0,
+      1,
+    );
+    const teleportWindow = clampNumber(
+      0.14
+        + Math.max(0, speedEdge) * 0.07
+        + opponentRangeThreat * 0.22
+        + (opponent.guardTimer > 0 ? 0.12 : 0)
+        + (opponent.attackVariant ? 0.08 : 0),
+      0,
+      1,
+    );
+
+    const aggression = clampNumber(
+      baseAggression
+        + (style.aggression ?? 0)
+        + breakPotential * 0.14
+        - opponentCloseThreat * 0.08
+        - zoneAdvantage * 0.04
+        + Math.max(0, speedEdge) * 0.02,
+      0.18,
+      0.94,
+    );
+    const zoning = clampNumber(
+      baseZoning
+        + (style.zoning ?? 0)
+        + zoneAdvantage * 0.18
+        + opponentCloseThreat * 0.05
+        - breakPotential * 0.08
+        + Math.max(0, chakraEdge) * 0.02,
+      0.12,
+      0.94,
+    );
+    const guardDiscipline = clampNumber(
+      baseGuardDiscipline
+        + (style.guardDiscipline ?? 0)
+        + opponentCloseThreat * 0.18
+        + opponentRangeThreat * 0.14
+        - breakPotential * 0.06
+        - Math.max(0, speedEdge) * 0.01,
+      0.16,
+      0.92,
+    );
+    const idealRange = clampNumber(
+      baseIdealRange
+        + (style.idealRange ?? 0)
+        + (zoneAdvantage - breakPotential) * 28
+        + opponentCloseThreat * 12
+        - Math.max(0, speedEdge) * 6,
+      68,
+      204,
+    );
+    const retreatRange = clampNumber(
+      baseRetreatRange
+        + (style.retreatRange ?? 0)
+        + opponentCloseThreat * 24
+        + opponentRangeThreat * 14
+        - breakPotential * 12
+        + Math.max(0, -speedEdge) * 4,
+      44,
+      148,
+    );
+
+    return {
+      aggression,
+      zoning,
+      guardDiscipline,
+      idealRange,
+      retreatRange,
+      pressureBias: clampNumber(
+        (style.pressureBias ?? 0)
+          + breakPotential * 0.24
+          - opponentCloseThreat * 0.08
+          + Math.max(0, speedEdge) * 0.03,
+        -0.12,
+        0.38,
+      ),
+      projectileBias: clampNumber(
+        (style.projectileBias ?? 0)
+          + zoneAdvantage * 0.28
+          - breakPotential * 0.1
+          + Math.max(0, chakraEdge) * 0.03,
+        -0.12,
+        0.38,
+      ),
+      specialBias: clampNumber(
+        (style.specialBias ?? 0)
+          + breakPotential * 0.16
+          + zoneAdvantage * 0.1
+          + (opponent.guardBreakTimer > 0 ? 0.12 : 0),
+        -0.08,
+        0.34,
+      ),
+      teleportBias: clampNumber(
+        (style.teleportBias ?? 0)
+          + teleportWindow * 0.22
+          + Math.max(0, speedEdge) * 0.03,
+        -0.06,
+        0.36,
+      ),
+    };
+  }
+
   private createFighter(character: CharacterSummary, isCpu: boolean, x: number, y: number): RuntimeFighter {
+    const combatProfile = this.buildCombatProfile(character);
     return {
       id: character.id,
       name: character.name,
@@ -512,12 +802,13 @@ export class ShinobiGameRuntime {
       vx: 0,
       vy: 0,
       facingRight: true,
-      health: MAX_HEALTH,
-      maxHealth: MAX_HEALTH,
-      chakra: MAX_CHAKRA,
-      maxChakra: MAX_CHAKRA,
-      stamina: MAX_STAMINA,
-      maxStamina: MAX_STAMINA,
+      health: combatProfile.maxHealth,
+      displayHealth: combatProfile.maxHealth,
+      maxHealth: combatProfile.maxHealth,
+      chakra: combatProfile.maxChakra,
+      maxChakra: combatProfile.maxChakra,
+      stamina: combatProfile.maxStamina,
+      maxStamina: combatProfile.maxStamina,
       animationState: 'IDLE',
       stateText: 'PRET',
       attackVariant: null,
@@ -530,8 +821,11 @@ export class ShinobiGameRuntime {
       currentComboNodeId: null,
       bufferedAttack: null,
       lastAttackConnected: false,
+      comboCount: 0,
       comboChainTimer: 0,
+      comboTimer: 0,
       guardTimer: 0,
+      guardBreakTimer: 0,
       hitstunTimer: 0,
       hitFlashTimer: 0,
       hitShakeTimer: 0,
@@ -540,6 +834,9 @@ export class ShinobiGameRuntime {
       teleportCharges: 2,
       teleportCooldown: 0,
       awakenTimer: 0,
+      aiDecisionTimer: 0,
+      aiBurstTimer: 0,
+      combatProfile,
       comboConfig: this.buildDefaultComboConfig(),
       isCpu,
     };
@@ -598,6 +895,10 @@ export class ShinobiGameRuntime {
     fighter.hitFlashTimer = Math.max(0, fighter.hitFlashTimer - dt);
     fighter.hitShakeTimer = Math.max(0, fighter.hitShakeTimer - dt);
     fighter.comboChainTimer = Math.max(0, fighter.comboChainTimer - dt);
+    fighter.comboTimer = Math.max(0, fighter.comboTimer - dt);
+    fighter.guardBreakTimer = Math.max(0, fighter.guardBreakTimer - dt);
+    fighter.aiDecisionTimer = Math.max(0, fighter.aiDecisionTimer - dt);
+    fighter.aiBurstTimer = Math.max(0, fighter.aiBurstTimer - dt);
 
     if (fighter.teleportCooldown <= 0 && fighter.teleportCharges < 2) {
       fighter.teleportCharges = 2;
@@ -606,11 +907,29 @@ export class ShinobiGameRuntime {
       fighter.currentComboNodeId = null;
       fighter.bufferedAttack = null;
     }
+    if (fighter.comboTimer <= 0) {
+      fighter.comboCount = 0;
+    }
 
-    fighter.chakra = Math.min(fighter.maxChakra, fighter.chakra + dt * 4);
-    fighter.stamina = Math.min(fighter.maxStamina, fighter.stamina + dt * 9);
+    fighter.chakra = Math.min(fighter.maxChakra, fighter.chakra + dt * fighter.combatProfile.chakraRegenRate);
+    fighter.stamina = Math.min(fighter.maxStamina, fighter.stamina + dt * fighter.combatProfile.staminaRegenRate);
+    if (fighter.guardTimer > 0) {
+      fighter.stamina = Math.max(0, fighter.stamina - dt * fighter.combatProfile.guardStaminaDrainRate);
+      if (fighter.stamina <= 0) {
+        fighter.guardTimer = 0;
+      }
+    }
+    fighter.displayHealth =
+      fighter.displayHealth > fighter.health
+        ? Math.max(fighter.health, fighter.displayHealth - dt * BUFFERED_HEALTH_LERP_PER_SECOND)
+        : fighter.health;
 
-    if (fighter.hitstunTimer > 0) {
+    if (fighter.guardBreakTimer > 0) {
+      fighter.guardTimer = 0;
+      fighter.animationState = fighter.health <= 0 ? 'KO' : 'HIT';
+      fighter.stateText = fighter.health <= 0 ? 'KO' : 'GARDE BRISEE';
+      fighter.vx *= 0.84;
+    } else if (fighter.hitstunTimer > 0) {
       fighter.animationState = fighter.health <= 0 ? 'KO' : 'HIT';
       fighter.stateText = fighter.health <= 0 ? 'KO' : 'TOUCHE';
       fighter.vx *= 0.9;
@@ -642,15 +961,15 @@ export class ShinobiGameRuntime {
     if (this.keys.has('ArrowLeft')) move -= 1;
     if (this.keys.has('ArrowRight')) move += 1;
 
-    fighter.vx = move * PLAYER_SPEED * (fighter.awakenTimer > 0 ? 1.15 : 1);
+    fighter.vx = move * fighter.combatProfile.moveSpeed * (fighter.awakenTimer > 0 ? 1.12 : 1);
     fighter.stateText = move === 0 ? 'PRET' : 'MOUVEMENT';
     fighter.animationState = move === 0 ? 'IDLE' : 'WALK';
 
-    if (this.keys.has('KeyQ')) {
+    if (this.keys.has('KeyQ') && fighter.guardBreakTimer <= 0 && fighter.stamina > 0) {
       fighter.stateText = 'GARDE';
       fighter.animationState = 'BLOCK';
       fighter.guardTimer = 0.08;
-      fighter.chakra = Math.min(fighter.maxChakra, fighter.chakra + dt * 10);
+      fighter.chakra = Math.min(fighter.maxChakra, fighter.chakra + dt * fighter.combatProfile.guardChakraGainRate);
     }
 
     if (this.keys.has('ArrowDown')) {
@@ -666,7 +985,7 @@ export class ShinobiGameRuntime {
     }
 
     if (this.keys.has('ShiftLeft') || this.keys.has('ShiftRight')) {
-      fighter.vx = (fighter.facingRight ? 1 : -1) * PLAYER_SPEED * 2.2;
+      fighter.vx = (fighter.facingRight ? 1 : -1) * fighter.combatProfile.dashSpeed;
       fighter.stateText = 'DASH';
       fighter.animationState = 'DASH';
       this.keys.delete('ShiftLeft');
@@ -678,28 +997,135 @@ export class ShinobiGameRuntime {
 
   private updateCpu(fighter: RuntimeFighter, opponent: RuntimeFighter, dt: number): void {
     const distance = opponent.x - fighter.x;
-    const dir = Math.sign(distance);
-    fighter.vx = Math.abs(distance) > 120 ? dir * PLAYER_SPEED * 0.7 : 0;
-    fighter.stateText = fighter.vx === 0 ? 'OBSERVE' : 'APPROCHE';
-    fighter.animationState = fighter.vx === 0 ? 'IDLE' : 'RUN';
+    const distanceAbs = Math.abs(distance);
+    const dir = Math.sign(distance) || (fighter.facingRight ? 1 : -1);
+    const healthRatio = fighter.health / fighter.maxHealth;
+    const staminaRatio = fighter.stamina / fighter.maxStamina;
+    const chakraRatio = fighter.chakra / fighter.maxChakra;
+    const baseAggression = clampNumber(
+      0.36 + (fighter.combatProfile.speedRating + fighter.combatProfile.powerRating - fighter.combatProfile.defenseRating) * 0.04,
+      0.18,
+      0.9,
+    );
+    const baseZoning = clampNumber(
+      0.24 + (fighter.combatProfile.chakraRating - fighter.combatProfile.powerRating) * 0.08 + (fighter.combatProfile.defenseRating - 7) * 0.03,
+      0.12,
+      0.92,
+    );
+    const baseGuardDiscipline = clampNumber(
+      0.26 + (fighter.combatProfile.defenseRating - 6) * 0.08 + (fighter.combatProfile.chakraRating - 7) * 0.03,
+      0.16,
+      0.88,
+    );
+    const baseIdealRange = clampNumber(
+      98 + (fighter.combatProfile.chakraRating - fighter.combatProfile.powerRating) * 18 + (fighter.combatProfile.defenseRating - 7) * 10,
+      72,
+      188,
+    );
+    const baseRetreatRange = clampNumber(
+      58 + baseZoning * 54 + (fighter.combatProfile.defenseRating - fighter.combatProfile.powerRating) * 6,
+      48,
+      132,
+    );
+    const matchup = this.buildCpuMatchupPlan(
+      fighter,
+      opponent,
+      baseAggression,
+      baseZoning,
+      baseGuardDiscipline,
+      baseIdealRange,
+      baseRetreatRange,
+    );
+    const { aggression, zoning, guardDiscipline, idealRange, retreatRange } = matchup;
+    const opponentExposed = this.isCpuTargetExposed(opponent);
+    const incomingProjectile = this.hasIncomingProjectileThreat(fighter);
+    const shouldRetreat =
+      staminaRatio < 0.24 ||
+      (zoning > aggression + 0.08 && distanceAbs < retreatRange && !opponentExposed) ||
+      (matchup.projectileBias > 0.18 && distanceAbs < retreatRange - 8 && chakraRatio > 0.42 && !incomingProjectile);
+    const shouldClose =
+      opponentExposed ||
+      fighter.aiBurstTimer > 0 ||
+      distanceAbs > idealRange + 18 ||
+      (chakraRatio < 0.26 && distanceAbs < retreatRange) ||
+      (matchup.pressureBias > 0.18 && distanceAbs > 84 && staminaRatio > 0.28);
 
-    if (Math.random() < dt * 0.55) {
+    if (shouldRetreat) {
+      fighter.vx = -dir * fighter.combatProfile.moveSpeed * (opponentExposed ? 0.4 : 0.74);
+      fighter.stateText = 'REPLI';
+      fighter.animationState = 'WALK';
+    } else if (shouldClose) {
+      fighter.vx = dir * fighter.combatProfile.moveSpeed * (fighter.aiBurstTimer > 0 ? 0.96 : 0.76);
+      fighter.stateText = fighter.aiBurstTimer > 0 ? 'PRESSION' : 'APPROCHE';
+      fighter.animationState = fighter.aiBurstTimer > 0 ? 'RUN' : 'WALK';
+    } else if (distanceAbs < retreatRange && zoning > 0.58) {
+      fighter.vx = -dir * fighter.combatProfile.moveSpeed * 0.42;
+      fighter.stateText = 'ESPACE';
+      fighter.animationState = 'WALK';
+    } else {
+      fighter.vx = 0;
+      fighter.stateText = 'OBSERVE';
+      fighter.animationState = 'IDLE';
+    }
+
+    const shouldGuard =
+      fighter.guardBreakTimer <= 0 &&
+      fighter.stamina > fighter.maxStamina * 0.14 &&
+      (
+        incomingProjectile ||
+        (opponent.attackVariant && distanceAbs < idealRange + 56 && (guardDiscipline > aggression - matchup.pressureBias * 0.3 || healthRatio < 0.42))
+      );
+
+    if (shouldGuard) {
       fighter.guardTimer = 0.08;
       fighter.animationState = 'BLOCK';
       fighter.stateText = 'GARDE';
+      fighter.vx *= 0.25;
+      fighter.aiDecisionTimer = Math.max(fighter.aiDecisionTimer, 0.06);
+      return;
     }
 
-    if (Math.random() < dt * 1.4) {
-      if (Math.abs(distance) < 120) {
-        this.performAttack(fighter, opponent, Math.random() > 0.4 ? 'light' : 'heavy');
-      } else if (fighter.projectileCooldown <= 0 && fighter.chakra >= 10) {
-        this.spawnProjectile(fighter);
-      }
+    if (fighter.aiDecisionTimer > 0) return;
+
+    if (this.shouldCpuAwaken(fighter, opponent)) {
+      this.awaken(fighter);
+      fighter.aiDecisionTimer = this.getCpuDecisionInterval(fighter, 0.22);
+      return;
     }
 
-    if (Math.random() < dt * 0.4 && fighter.teleportCooldown <= 0 && fighter.teleportCharges > 0) {
+    if (this.shouldCpuTeleport(fighter, opponent, distanceAbs, aggression, zoning, incomingProjectile, opponentExposed, matchup)) {
       this.teleportBehind(fighter, opponent);
+      fighter.aiBurstTimer = Math.max(fighter.aiBurstTimer, 0.45);
+      fighter.aiDecisionTimer = this.getCpuDecisionInterval(fighter, 0.18);
+      return;
     }
+
+    const action = this.chooseCpuCombatAction(
+      fighter,
+      opponent,
+      distanceAbs,
+      idealRange,
+      aggression,
+      zoning,
+      chakraRatio,
+      staminaRatio,
+      opponentExposed,
+      matchup,
+    );
+
+    if (action === 'projectile') {
+      this.spawnProjectile(fighter);
+      fighter.aiDecisionTimer = this.getCpuDecisionInterval(fighter, 0.16);
+      return;
+    }
+
+    if (action) {
+      this.performAttack(fighter, opponent, action);
+      fighter.aiDecisionTimer = this.getCpuDecisionInterval(fighter, 0.12);
+      return;
+    }
+
+    fighter.aiDecisionTimer = this.getCpuDecisionInterval(fighter, 0.06);
   }
 
   private consumeCombatInputs(fighter: RuntimeFighter, opponent: RuntimeFighter | null, cpu: boolean): void {
@@ -737,11 +1163,12 @@ export class ShinobiGameRuntime {
     const attackSelection = this.resolveAttackSelection(attacker, type, null);
     const resolvedType = attackSelection.variantKey;
     const config = ATTACK_CONFIG[resolvedType];
+    const costs = this.resolveAttackResourceCosts(attacker, config, type);
 
-    if (attacker.chakra < config.chakra || attacker.stamina < config.stamina) return;
+    if (attacker.chakra < costs.chakraCost || attacker.stamina < costs.staminaCost) return;
 
-    attacker.chakra -= config.chakra;
-    attacker.stamina -= config.stamina;
+    attacker.chakra -= costs.chakraCost;
+    attacker.stamina -= costs.staminaCost;
     attacker.attackCooldown = config.recoveryAt;
     attacker.attackVariant = resolvedType;
     attacker.attackTimer = 0;
@@ -758,10 +1185,10 @@ export class ShinobiGameRuntime {
   }
 
   private spawnProjectile(fighter: RuntimeFighter): void {
-    if (fighter.projectileCooldown > 0 || fighter.chakra < 8) return;
+    if (fighter.projectileCooldown > 0 || fighter.chakra < fighter.combatProfile.projectileChakraCost) return;
     const projectileConfig = this.resolveProjectileConfig(fighter);
-    fighter.projectileCooldown = 0.9;
-    fighter.chakra -= 8;
+    fighter.projectileCooldown = fighter.combatProfile.projectileCooldown;
+    fighter.chakra -= fighter.combatProfile.projectileChakraCost;
     fighter.stateText = 'PROJECTILE';
     fighter.animationState = 'THROW';
     this.playSfx('projectile');
@@ -771,7 +1198,14 @@ export class ShinobiGameRuntime {
       x: fighter.x + (fighter.facingRight ? 42 : -42),
       y: fighter.y - 96,
       vx: fighter.facingRight ? projectileConfig.speed : -projectileConfig.speed,
-      damage: fighter.awakenTimer > 0 ? 14 : 10,
+      damage: Math.max(
+        6,
+        Math.round(
+          10
+          * fighter.combatProfile.projectileDamageScale
+          * (fighter.awakenTimer > 0 ? 1.18 : 1),
+        ),
+      ),
       ttl: projectileConfig.life / 60,
       rotation: 0,
       spinSpeed: projectileConfig.spinSpeed,
@@ -782,19 +1216,23 @@ export class ShinobiGameRuntime {
   }
 
   private awaken(fighter: RuntimeFighter): void {
-    if (fighter.chakra < 30) return;
-    fighter.chakra -= 30;
-    fighter.awakenTimer = 8;
+    if (fighter.chakra < fighter.combatProfile.awakenChakraCost) return;
+    fighter.chakra -= fighter.combatProfile.awakenChakraCost;
+    fighter.awakenTimer = fighter.combatProfile.awakenDuration;
     fighter.stateText = 'EVEIL';
     fighter.animationState = 'SPECIAL_TRANSFORM';
     this.playSfx('awaken');
   }
 
   private teleportBehind(fighter: RuntimeFighter, opponent: RuntimeFighter): void {
-    if (fighter.teleportCooldown > 0 || fighter.teleportCharges <= 0 || fighter.stamina < 16) return;
-    fighter.stamina -= 16;
+    if (
+      fighter.teleportCooldown > 0 ||
+      fighter.teleportCharges <= 0 ||
+      fighter.stamina < fighter.combatProfile.teleportStaminaCost
+    ) return;
+    fighter.stamina -= fighter.combatProfile.teleportStaminaCost;
     fighter.teleportCharges -= 1;
-    if (fighter.teleportCharges <= 0) fighter.teleportCooldown = 4.5;
+    if (fighter.teleportCharges <= 0) fighter.teleportCooldown = fighter.combatProfile.teleportCooldown;
     fighter.x = opponent.x + (opponent.facingRight ? -72 : 72);
     fighter.facingRight = fighter.x <= opponent.x;
     fighter.stateText = 'TELEPORT';
@@ -811,17 +1249,48 @@ export class ShinobiGameRuntime {
       if (projectile.ttl <= 0 || projectile.x < -50 || projectile.x > ARENA_WIDTH + 50) return false;
 
       const target = projectile.ownerId === p1?.id ? p2 : p1;
+      const owner = projectile.ownerId === p1?.id ? p1 : p2;
       if (!target) return true;
       if (this.rectsOverlap(this.getProjectileRect(projectile), this.getHurtbox(target))) {
-        const blocked = this.isBlockingAgainst(target, projectile.vx > 0 ? -1 : 1);
-        const damage = blocked ? Math.max(2, projectile.damage * 0.25) : projectile.damage;
-        target.health = Math.max(0, target.health - damage);
-        target.stateText = blocked ? 'GARDE' : 'IMPACT';
-        target.animationState = blocked ? 'BLOCK' : 'HIT';
-        target.hitstunTimer = blocked ? 0.12 : 0.2;
-        target.hitFlashTimer = blocked ? 0.08 : 0.16;
-        target.hitShakeTimer = blocked ? 0.06 : 0.14;
-        this.spawnImpactEffect(target.x, target.y - 92, blocked ? 'block' : 'hit');
+        const attackDir = projectile.vx > 0 ? -1 : 1;
+        const knockbackDir = -attackDir;
+        const blocked = this.isBlockingAgainst(target, attackDir);
+        const guardBroken = blocked && this.spendGuardStamina(
+          target,
+          PROJECTILE_GUARD_STAMINA_COST * target.combatProfile.guardCostScale,
+        );
+        const scaledDamageBase = projectile.damage * target.combatProfile.damageTakenScale;
+        const damage =
+          guardBroken ? Math.max(4, scaledDamageBase * 0.55) :
+          blocked ? Math.max(2, scaledDamageBase * 0.25) :
+          scaledDamageBase;
+
+        if (guardBroken) {
+          this.triggerGuardBreak(target, attackDir, damage, 0.3, 78);
+          if (owner) {
+            this.registerComboHit(owner, target);
+            this.rewardAttackMomentum(owner, false);
+          }
+        } else {
+          target.health = Math.max(0, target.health - damage);
+          target.stateText = blocked ? 'GARDE' : 'IMPACT';
+          target.animationState = blocked ? 'BLOCK' : target.health <= 0 ? 'KO' : 'HIT';
+          target.hitstunTimer = blocked ? 0.12 : 0.2;
+          target.hitFlashTimer = blocked ? 0.08 : 0.16;
+          target.hitShakeTimer = blocked ? 0.06 : 0.14;
+          target.vx += blocked ? knockbackDir * 18 : knockbackDir * 72;
+          if (owner) {
+            if (blocked) {
+              this.resetComboCounter(owner);
+              this.rewardAttackMomentum(owner, true);
+            } else {
+              this.registerComboHit(owner, target);
+              this.rewardAttackMomentum(owner, false);
+            }
+          }
+        }
+
+        this.spawnImpactEffect(target.x, target.y - 92, guardBroken || !blocked ? 'hit' : 'block');
         this.playSfx('projectile');
         return false;
       }
@@ -882,10 +1351,11 @@ export class ShinobiGameRuntime {
       name: fighter.name,
       stateText: fighter.stateText,
       healthPercent: fighter.health / fighter.maxHealth,
-      bufferedHealthPercent: fighter.health / fighter.maxHealth,
+      bufferedHealthPercent: fighter.displayHealth / fighter.maxHealth,
       chakraPercent: fighter.chakra / fighter.maxChakra,
       staminaPercent: fighter.stamina / fighter.maxStamina,
       healthText: `${Math.round(fighter.health)} / ${fighter.maxHealth}`,
+      comboCount: fighter.comboCount,
     };
   }
 
@@ -1009,16 +1479,7 @@ export class ShinobiGameRuntime {
     }
 
     if (fighter.attackTimer >= fighter.attackDuration) {
-      fighter.attackVariant = null;
-      fighter.attackTimer = 0;
-      fighter.attackDuration = 0;
-      fighter.attackActiveAt = 0;
-      fighter.attackRecoveryAt = 0;
-      fighter.attackHasHit = false;
-      fighter.currentAttackProfile = null;
-      fighter.currentComboNodeId = null;
-      fighter.bufferedAttack = null;
-      fighter.lastAttackConnected = false;
+      this.clearAttackState(fighter);
       fighter.animationState = fighter.y < GROUND_Y ? 'JUMP' : 'IDLE';
       fighter.stateText = fighter.y < GROUND_Y ? 'SAUT' : 'PRET';
     }
@@ -1037,9 +1498,36 @@ export class ShinobiGameRuntime {
     if (!this.rectsOverlap(attackRect, hurtbox)) return;
     const blocked = this.isBlockingAgainst(defender, attackDir);
     const boost = attacker.awakenTimer > 0 ? 1.2 : 1;
-    const damageBase = config.damage * (attackProfile?.damageMultiplier || 1);
+    const damageBase =
+      this.resolveAttackDamageScale(attacker, config)
+      * config.damage
+      * (attackProfile?.damageMultiplier || 1);
     const knockbackBase = attackProfile?.knockbackMultiplier || 1;
-    const damage = blocked ? Math.max(2, damageBase * 0.18) : damageBase * boost;
+    const knockbackDir = -attackDir;
+    const guardBroken = blocked && this.spendGuardStamina(
+      defender,
+      (MELEE_GUARD_STAMINA_COST + (config.animation === 'SPECIAL' ? 6 : 0)) * defender.combatProfile.guardCostScale,
+    );
+
+    if (guardBroken) {
+      const damage = Math.max(4, damageBase * 0.26 * defender.combatProfile.damageTakenScale);
+      this.triggerGuardBreak(
+        defender,
+        attackDir,
+        damage,
+        config.animation === 'SPECIAL' ? 0.42 : 0.32,
+        92 * knockbackBase,
+      );
+      attacker.lastAttackConnected = true;
+      this.registerComboHit(attacker, defender);
+      this.rewardAttackMomentum(attacker, false);
+      this.spawnImpactEffect(defender.x, defender.y - 92, 'hit');
+      this.playSfx('hit_heavy');
+      return;
+    }
+
+    const scaledDamage = damageBase * defender.combatProfile.damageTakenScale;
+    const damage = blocked ? Math.max(2, scaledDamage * 0.18) : scaledDamage * boost;
     defender.health = Math.max(0, defender.health - damage);
     defender.stateText = blocked ? 'GARDE' : 'TOUCHE';
     defender.animationState = blocked ? 'BLOCK' : defender.health <= 0 ? 'KO' : 'HIT';
@@ -1047,9 +1535,14 @@ export class ShinobiGameRuntime {
     defender.hitFlashTimer = blocked ? 0.08 : 0.18;
     defender.hitShakeTimer = blocked ? 0.08 : 0.16;
     this.spawnImpactEffect(defender.x, defender.y - 92, blocked ? 'block' : 'hit');
-    defender.vx += blocked ? (attackDir * 26 * knockbackBase) : (attackDir * 110 * knockbackBase);
-    if (!blocked) {
+    defender.vx += blocked ? (knockbackDir * 26 * knockbackBase) : (knockbackDir * 110 * knockbackBase);
+    if (blocked) {
+      this.resetComboCounter(attacker);
+      this.rewardAttackMomentum(attacker, true);
+    } else {
       attacker.lastAttackConnected = true;
+      this.registerComboHit(attacker, defender);
+      this.rewardAttackMomentum(attacker, false);
     }
     this.playSfx(blocked ? 'hit_light' : lightHit ? 'hit_light' : 'hit_heavy');
   }
@@ -1057,6 +1550,232 @@ export class ShinobiGameRuntime {
   private isBlockingAgainst(defender: RuntimeFighter, attackDir: number): boolean {
     if (defender.guardTimer <= 0) return false;
     return defender.facingRight ? attackDir > 0 : attackDir < 0;
+  }
+
+  private getCpuDecisionInterval(fighter: RuntimeFighter, extraDelay = 0): number {
+    return clampNumber(
+      0.22 - (fighter.combatProfile.speedRating - 7) * 0.012 - fighter.comboCount * 0.018 + extraDelay,
+      0.08,
+      0.38,
+    );
+  }
+
+  private isCpuTargetExposed(target: RuntimeFighter): boolean {
+    return (
+      target.guardBreakTimer > 0 ||
+      target.hitstunTimer > 0 ||
+      (!!target.attackVariant && target.attackTimer >= target.attackRecoveryAt * 0.62)
+    );
+  }
+
+  private hasIncomingProjectileThreat(fighter: RuntimeFighter): boolean {
+    return this.projectiles.some((projectile) => {
+      if (projectile.ownerId === fighter.id) return false;
+      const approachingFromLeft = projectile.vx > 0 && projectile.x < fighter.x;
+      const approachingFromRight = projectile.vx < 0 && projectile.x > fighter.x;
+      return (
+        (approachingFromLeft || approachingFromRight) &&
+        Math.abs(projectile.x - fighter.x) < 180 &&
+        Math.abs(projectile.y - (fighter.y - 92)) < 72
+      );
+    });
+  }
+
+  private shouldCpuAwaken(fighter: RuntimeFighter, opponent: RuntimeFighter): boolean {
+    const healthRatio = fighter.health / fighter.maxHealth;
+    const opponentRatio = opponent.health / opponent.maxHealth;
+    const chakraRatio = fighter.chakra / fighter.maxChakra;
+
+    if (fighter.awakenTimer > 0 || fighter.chakra < fighter.combatProfile.awakenChakraCost) return false;
+
+    return (
+      opponent.guardBreakTimer > 0 ||
+      (chakraRatio > 0.74 && healthRatio < 0.62 && healthRatio <= opponentRatio + 0.08) ||
+      (chakraRatio > 0.82 && opponentRatio < 0.38)
+    );
+  }
+
+  private shouldCpuTeleport(
+    fighter: RuntimeFighter,
+    opponent: RuntimeFighter,
+    distanceAbs: number,
+    aggression: number,
+    zoning: number,
+    incomingProjectile: boolean,
+    opponentExposed: boolean,
+    matchup: RuntimeCpuMatchupPlan,
+  ): boolean {
+    if (
+      fighter.teleportCooldown > 0 ||
+      fighter.teleportCharges <= 0 ||
+      fighter.stamina < fighter.combatProfile.teleportStaminaCost
+    ) return false;
+
+    const chakraPressure = fighter.chakra / fighter.maxChakra > 0.45;
+    return (
+      (incomingProjectile && (fighter.combatProfile.speedRating >= 8 || matchup.teleportBias > 0.12)) ||
+      (opponentExposed && distanceAbs > 88 && matchup.teleportBias > -0.02) ||
+      (distanceAbs > 164 && aggression + matchup.pressureBias > zoning && chakraPressure) ||
+      (fighter.aiBurstTimer > 0 && opponent.guardTimer > 0 && (fighter.combatProfile.speedRating >= 8 || matchup.teleportBias > 0.08))
+    );
+  }
+
+  private chooseCpuCombatAction(
+    fighter: RuntimeFighter,
+    opponent: RuntimeFighter,
+    distanceAbs: number,
+    idealRange: number,
+    aggression: number,
+    zoning: number,
+    chakraRatio: number,
+    staminaRatio: number,
+    opponentExposed: boolean,
+    matchup: RuntimeCpuMatchupPlan,
+  ): BufferedAttack['rawType'] | 'projectile' | null {
+    const closeRange = 110;
+    const midRange = 148;
+    const canProjectile =
+      fighter.projectileCooldown <= 0 &&
+      fighter.chakra >= fighter.combatProfile.projectileChakraCost;
+    const canSpecial = chakraRatio > 0.2;
+    const specialCommitThreshold = Math.max(0.3, 0.46 - matchup.specialBias * 0.32);
+    const projectileCommitThreshold = Math.max(0.22, 0.42 - matchup.projectileBias * 0.3);
+
+    if (opponentExposed) {
+      if (distanceAbs <= midRange && canSpecial && chakraRatio > Math.max(0.28, specialCommitThreshold - 0.08)) return 'special';
+      if (distanceAbs <= closeRange) {
+        if (matchup.pressureBias > 0.14 || fighter.combatProfile.powerRating > fighter.combatProfile.speedRating) return 'heavy';
+        return fighter.combatProfile.speedRating >= fighter.combatProfile.powerRating ? 'light' : 'heavy';
+      }
+    }
+
+    if (distanceAbs <= closeRange) {
+      if (opponent.guardTimer > 0 && (fighter.combatProfile.powerRating >= 8 || matchup.pressureBias > 0.12) && staminaRatio > 0.28) return 'heavy';
+      if (staminaRatio < 0.24) return canSpecial && chakraRatio > Math.max(0.34, specialCommitThreshold - 0.04) ? 'special' : 'light';
+      if (canSpecial && matchup.specialBias > 0.18 && chakraRatio > 0.38) return 'special';
+      if (fighter.combatProfile.powerRating - fighter.combatProfile.speedRating >= 2 || matchup.pressureBias > 0.16) return 'heavy';
+      return 'light';
+    }
+
+    if (distanceAbs <= midRange && canSpecial && chakraRatio > specialCommitThreshold && (aggression + matchup.pressureBias > 0.56 || opponent.guardBreakTimer > 0)) {
+      return 'special';
+    }
+
+    if (
+      canProjectile &&
+      chakraRatio > projectileCommitThreshold &&
+      distanceAbs >= Math.max(idealRange - 12, 112) &&
+      zoning + matchup.projectileBias >= 0.48 &&
+      (!opponentExposed || distanceAbs > midRange)
+    ) {
+      return 'projectile';
+    }
+
+    if (distanceAbs < idealRange + 18 && aggression + matchup.pressureBias > 0.52 && staminaRatio > 0.24) {
+      return fighter.combatProfile.powerRating >= 8 ? 'heavy' : 'light';
+    }
+
+    return null;
+  }
+
+  private resolveAttackResourceCosts(
+    fighter: RuntimeFighter,
+    config: (typeof ATTACK_CONFIG)[keyof typeof ATTACK_CONFIG],
+    type: 'light' | 'heavy' | 'special' | 'special1' | 'special2' | 'special3' | 'special4',
+  ): { chakraCost: number; staminaCost: number } {
+    const specialRoute = type.startsWith('special');
+    return {
+      chakraCost: specialRoute
+        ? Math.max(0, Math.round(config.chakra * fighter.combatProfile.specialChakraCostScale))
+        : config.chakra,
+      staminaCost: Math.max(
+        1,
+        Math.round(
+          config.stamina
+          * fighter.combatProfile.attackStaminaCostScale
+          * (specialRoute ? 1.04 : 1),
+        ),
+      ),
+    };
+  }
+
+  private resolveAttackDamageScale(
+    fighter: RuntimeFighter,
+    config: (typeof ATTACK_CONFIG)[keyof typeof ATTACK_CONFIG],
+  ): number {
+    return config.animation === 'SPECIAL'
+      ? fighter.combatProfile.specialDamageScale
+      : fighter.combatProfile.meleeDamageScale;
+  }
+
+  private clearAttackState(fighter: RuntimeFighter): void {
+    fighter.attackVariant = null;
+    fighter.attackTimer = 0;
+    fighter.attackDuration = 0;
+    fighter.attackActiveAt = 0;
+    fighter.attackRecoveryAt = 0;
+    fighter.attackHasHit = false;
+    fighter.currentAttackProfile = null;
+    fighter.currentComboNodeId = null;
+    fighter.bufferedAttack = null;
+    fighter.lastAttackConnected = false;
+  }
+
+  private resetComboCounter(fighter: RuntimeFighter): void {
+    fighter.comboCount = 0;
+    fighter.comboTimer = 0;
+  }
+
+  private registerComboHit(attacker: RuntimeFighter, defender: RuntimeFighter): void {
+    attacker.comboCount = attacker.comboTimer > 0 ? attacker.comboCount + 1 : 1;
+    attacker.comboTimer = COMBO_DISPLAY_WINDOW;
+    defender.comboCount = 0;
+    defender.comboTimer = 0;
+    if (attacker.isCpu) {
+      attacker.aiBurstTimer = Math.max(attacker.aiBurstTimer, 0.5);
+      attacker.aiDecisionTimer = 0;
+    }
+    if (defender.isCpu) {
+      defender.aiBurstTimer = 0;
+      defender.aiDecisionTimer = Math.min(defender.aiDecisionTimer, 0.06);
+    }
+  }
+
+  private rewardAttackMomentum(attacker: RuntimeFighter, blocked: boolean): void {
+    attacker.chakra = Math.min(attacker.maxChakra, attacker.chakra + (blocked ? 2 : 6));
+    if (!blocked) {
+      attacker.stamina = Math.min(attacker.maxStamina, attacker.stamina + 4);
+    }
+  }
+
+  private spendGuardStamina(defender: RuntimeFighter, amount: number): boolean {
+    defender.stamina = Math.max(0, defender.stamina - amount);
+    return defender.stamina <= 0;
+  }
+
+  private triggerGuardBreak(
+    defender: RuntimeFighter,
+    attackDir: number,
+    damage: number,
+    hitstun: number,
+    knockback: number,
+  ): void {
+    const knockbackDir = -attackDir;
+    this.clearAttackState(defender);
+    this.resetComboCounter(defender);
+    defender.guardTimer = 0;
+    defender.guardBreakTimer = Math.max(defender.guardBreakTimer, hitstun);
+    defender.health = Math.max(0, defender.health - damage);
+    defender.animationState = defender.health <= 0 ? 'KO' : 'HIT';
+    defender.stateText = defender.health <= 0 ? 'KO' : 'GARDE BRISEE';
+    defender.hitstunTimer = Math.max(defender.hitstunTimer, hitstun);
+    defender.hitFlashTimer = Math.max(defender.hitFlashTimer, 0.12);
+    defender.hitShakeTimer = Math.max(defender.hitShakeTimer, 0.2);
+    defender.vx += knockbackDir * knockback;
+    if (defender.isCpu) {
+      defender.aiBurstTimer = 0;
+      defender.aiDecisionTimer = 0.12;
+    }
   }
 
   private hydrateFighterConfig(fighter: RuntimeFighter): void {
@@ -1405,11 +2124,12 @@ export class ShinobiGameRuntime {
     const nextNodeId = this.resolveNextComboNodeId(fighter, buffered.routeType, buffered.direction);
     const selection = this.resolveAttackSelection(fighter, buffered.rawType, nextNodeId);
     const config = ATTACK_CONFIG[selection.variantKey];
-    if (fighter.chakra < config.chakra || fighter.stamina < config.stamina) return false;
+    const costs = this.resolveAttackResourceCosts(fighter, config, buffered.rawType);
+    if (fighter.chakra < costs.chakraCost || fighter.stamina < costs.staminaCost) return false;
 
     fighter.bufferedAttack = null;
-    fighter.chakra -= config.chakra;
-    fighter.stamina -= config.stamina;
+    fighter.chakra -= costs.chakraCost;
+    fighter.stamina -= costs.staminaCost;
     fighter.attackCooldown = config.recoveryAt;
     fighter.attackVariant = selection.variantKey;
     fighter.attackTimer = 0;

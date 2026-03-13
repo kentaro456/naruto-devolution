@@ -34,8 +34,6 @@ export default function App() {
 
     document.body.style.margin = '0';
     document.body.style.overflow = 'hidden';
-    document.body.style.background = '#020617';
-    document.body.style.color = '#e2e8f0';
     ensureUIBridge();
     let cancelled = false;
     setRuntimeStatus('loading');
@@ -43,7 +41,7 @@ export default function App() {
 
     const canvas = canvasRef.current;
     if (!canvas) {
-      setRuntimeError('Canvas host not found.');
+      setRuntimeError("Zone d'affichage introuvable.");
       setRuntimeStatus('error');
       return undefined;
     }
@@ -60,7 +58,7 @@ export default function App() {
       .catch((error: unknown) => {
         if (cancelled) return;
         console.error('Runtime boot failed:', error);
-        setRuntimeError(error instanceof Error ? error.message : 'Unknown runtime loading error.');
+        setRuntimeError(error instanceof Error ? error.message : "Le duel n'a pas pu s'ouvrir.");
         setRuntimeStatus('error');
       });
 
@@ -86,40 +84,73 @@ export default function App() {
   const roster = ui.roster || FALLBACK_UI.roster;
   const selectedPlayer = roster.find((char) => char.id === ui.selectedPlayerId) || null;
   const selectedCpu = roster.find((char) => char.id === ui.selectedCpuId) || null;
-  const showLoadingOverlay = runtimeStatus === 'loading' || ui.stageLoadingVisible;
   const loadingTitle =
-    runtimeStatus === 'loading' ? 'Ouverture du jeu' : ui.loadingTitle || 'Preparation du combat';
+    runtimeStatus === 'loading' ? "Ouverture de l'arene" : ui.loadingTitle || 'Annonce de la manche';
   const loadingMessage =
     runtimeStatus === 'loading'
-      ? 'Le moteur, le canvas et l’interface se mettent en place.'
-      : ui.loadingMessage || 'L’arene et les combattants se mettent en place avant le round.';
+      ? "Les portes du duel s'ouvrent. Encore un instant avant l'appel des combattants."
+      : ui.loadingMessage || 'Les combattants prennent position avant le signal.';
 
   const inFight = showShell && ui.hudVisible && !ui.menuVisible && !ui.charSelectVisible;
+  const showMenuOverlay = runtimeStatus === 'loading' || (showShell && ui.menuVisible);
+  const showBootOverlay = runtimeStatus === 'loading' && !showMenuOverlay;
+  const showStageLoadingOverlay = runtimeStatus !== 'loading' && ui.stageLoadingVisible;
 
   return (
     <div
-      className={`relative flex h-screen w-screen items-center justify-center overflow-hidden text-slate-100 ${inFight ? 'bg-black' : 'bg-slate-950 bg-cover bg-center'}`}
-      style={inFight ? undefined : { backgroundImage: `url('/assets/home-bg.png')` }}
+      className={`relative flex h-screen w-screen items-center justify-center overflow-hidden font-ui text-slate-100 ${inFight ? 'bg-[#05070c]' : 'bg-[#090c13]'}`}
     >
-      {!inFight && (
-        <div className="pointer-events-none absolute inset-0 bg-black/60 bg-[radial-gradient(circle_at_top,rgba(251,146,60,0.15),transparent_32%),radial-gradient(circle_at_bottom,rgba(244,63,94,0.15),transparent_30%)]" />
+      {!inFight ? (
+        <div
+          className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-30 saturate-[0.88]"
+          style={{ backgroundImage: `url('/assets/home-bg.png')` }}
+        />
+      ) : null}
+      <div
+        className={`pointer-events-none absolute inset-0 ${
+          inFight
+            ? 'bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.08),transparent_28%),radial-gradient(circle_at_bottom,rgba(251,146,60,0.08),transparent_24%),linear-gradient(180deg,rgba(2,6,23,0.45),rgba(2,6,23,0.72))]'
+            : 'bg-[radial-gradient(circle_at_top,rgba(251,146,60,0.22),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(244,63,94,0.14),transparent_24%),linear-gradient(180deg,rgba(2,6,23,0.56),rgba(2,6,23,0.84))]'
+        }`}
+      />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.08]" />
+      {!inFight ? (
+        <>
+          <div className="pointer-events-none absolute inset-[clamp(10px,2vw,22px)] rounded-[30px] border border-white/10 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]" />
+          <div className="pointer-events-none absolute left-4 top-4 rounded-full border border-white/10 bg-black/30 px-3 py-2 font-pixel text-[9px] uppercase tracking-[0.24em] text-white/65 sm:left-6 sm:top-6 sm:px-4">
+            Hall de combat
+          </div>
+        </>
+      ) : (
+        <div className="pointer-events-none absolute inset-0 shadow-[inset_0_80px_120px_rgba(2,6,23,0.55),inset_0_-120px_120px_rgba(2,6,23,0.65)]" />
       )}
       <canvas
         id="game-canvas"
         ref={canvasRef}
-        className="relative z-0 block bg-transparent shadow-[0_0_50px_rgba(2,6,23,0.65)] [image-rendering:pixelated]"
+        className={`relative z-0 block max-h-full max-w-full bg-transparent [image-rendering:pixelated] ${
+          inFight
+            ? 'shadow-[0_0_60px_rgba(2,6,23,0.72)]'
+            : 'shadow-[0_24px_72px_rgba(2,6,23,0.56)]'
+        }`}
       />
 
-      {showLoadingOverlay && (
+      {showBootOverlay && (
         <LoadingOverlay
           title={loadingTitle}
           message={loadingMessage}
-          variant={runtimeStatus === 'loading' ? 'boot' : 'fight'}
+          variant="boot"
+        />
+      )}
+      {showStageLoadingOverlay && (
+        <LoadingOverlay
+          title={loadingTitle}
+          message={loadingMessage}
+          variant="fight"
         />
       )}
       {runtimeStatus === 'error' && <ErrorOverlay runtimeError={runtimeError} />}
 
-      {showShell && ui.menuVisible && <MenuOverlay ui={ui} />}
+      {showMenuOverlay && <MenuOverlay ui={ui} runtimeReady={runtimeStatus === 'ready'} />}
       {showShell && ui.charSelectVisible && (
         <CharacterSelectOverlay ui={ui} selectedPlayer={selectedPlayer} selectedCpu={selectedCpu} />
       )}
